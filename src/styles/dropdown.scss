@@ -1,0 +1,28 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+
+.dropdown-wrapper {
+  width: 50%;
+
+  button {
+    border-radius: 0;
+  }
+}
+
+.dropdown-header {
+  width: 100%;
+}
+
+.dropdown-header-content {
+  width: 100%;
+}
+
+.dropdown-list {
+  width: 100%;
+}
+
+.dropdown-list-item {
+  width: 100%;
+}

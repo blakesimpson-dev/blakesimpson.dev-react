@@ -1,0 +1,70 @@
+@import '_colors.scss';
+
+@mixin display--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin display--space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin custom-scrollbar {
+  $scrollbar-width: 8px; // corresponds to `scrollbar-width: thin;`
+  $scrollbar-height: 8px; // corresponds to `scrollbar-width: thin;`
+
+  scrollbar-color: $color--primary $color--tertiary;
+  scrollbar-width: unset;
+
+  ::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: $scrollbar-height;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $color--tertiary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $color--primary;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($color--primary, 5%);
+  }
+}
+
+@mixin panel__box-shadow {
+  box-shadow: inset 0 0 1px $color--primary, 0 0 10px $color--primary;
+}
+
+@mixin panel__border {
+  border: 2px solid $color--primary;
+  border-radius: 1rem;
+}
+
+@mixin panel__background--diagonal {
+  // Note: undecided on the stroke...
+  // background: repeating-linear-gradient(
+  //   -45deg, 
+  //   $color--panel__background-stroke--one,
+  //   $color--panel__background-stroke--one 2px, 
+  //   $color--panel__background-stroke--two 2px, 
+  //   $color--panel__background-stroke--two 10px), 
+  //   linear-gradient(
+  //     135deg, 
+  //     $color--panel__background-gradient--start, 
+  //     $color--panel__background-gradient--finish
+  // );
+  background: linear-gradient(
+        135deg, 
+        $color--panel__background-gradient--start, 
+        $color--panel__background-gradient--finish)
+}
+
+@mixin panel__text-shadow {
+  text-shadow: 0px 0px 5px $color--panel__text-shadow;
+}

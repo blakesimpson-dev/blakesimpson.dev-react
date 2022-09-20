@@ -1,0 +1,41 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+.overlay {
+  width: 50%;
+  height: calc(100% - 14rem);
+  margin: 0 3rem 0 3rem;
+  @include panel__box-shadow;
+  @include panel__border;
+  @include panel__background--diagonal;
+  @include panel__text-shadow;
+
+  > * {
+    padding: 2rem;
+  }
+}
+
+.overlay__header {
+  @include display--space-between;
+  width: 100%;
+  height: 5rem;
+  padding: 2rem;
+  background-color: $color--panel__header-background;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.overlay__seperator {
+  width: 100%;
+  height: 2px;
+  padding: 0;
+  background-color: $color--primary;
+}
+
+.overlay__content {
+  margin: 2rem;
+  padding: 0 0.4rem 0 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: calc(100% - 9rem);
+}

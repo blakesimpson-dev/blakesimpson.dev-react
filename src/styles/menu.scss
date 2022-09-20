@@ -1,0 +1,39 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+.menu {
+  @include display--space-between;
+  z-index: 1000;
+  width: calc(100vw - 6rem);
+  height: 5rem;
+  margin: 2rem 3rem 0 3rem;
+  padding: 0 1rem 0 1rem;
+  @include panel__box-shadow;
+  @include panel__border;
+  @include panel__background--diagonal;
+  @include panel__text-shadow;  
+  background-color: $color--panel__header-background;
+
+  &__title {
+    font-size: 26px;
+    font-weight: $font-weight--bold;
+
+    :first-child {
+      margin-bottom: 0.2rem;
+    }
+
+    :last-child {
+      font-size: 18px;
+      font-weight: $font-weight--regular;
+    }
+  }
+
+  &__buttons {
+    @include display--center;
+
+    > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}
