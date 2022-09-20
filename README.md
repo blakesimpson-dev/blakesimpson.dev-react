@@ -16,6 +16,7 @@
     <li><a href="#project-files-description"> ➤ Project Files Description</a></li>
     <li><a href="#getting-started"> ➤ Getting Started</a></li>
     <li><a href="#credits"> ➤ Credits</a></li>
+    <li><a href="#contact"> ➤ Contact</a></li>
   </ol>
 </details>
 
