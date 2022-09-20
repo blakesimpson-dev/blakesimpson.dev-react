@@ -1,0 +1,33 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+$screen-alpha: 0.8;
+
+.gameboy-screen {
+  @include display--center;
+  font-family: $font-family--pixels;
+  font-size: 10px;
+  width: 200px;
+  height: 180px;
+  color: rgba($color--gameboy--light, $screen-alpha);
+  background-color: rgba($color--gameboy--light, $screen-alpha);
+  box-shadow: inset 0 0 1px rgba($color--gameboy--lightest, $screen-alpha), 0 0 10px rgba($color--gameboy--lightest, $screen-alpha);
+  border-radius: 4px;
+
+  &__title {
+    padding: 4px 8px 4px 8px;
+    background-color: rgba($color--gameboy--dark, $screen-alpha);
+    border: 3px solid rgba($color--gameboy--darkest, $screen-alpha);
+  }
+}
+
+$light-alpha: 0.3;
+
+.battery-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba($color--battery-light, $light-alpha);
+  box-shadow: 0 0 10px rgba($color--battery-light, $light-alpha);
+}

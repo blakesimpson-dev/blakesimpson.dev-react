@@ -1,0 +1,29 @@
+@import '_colors.scss';
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+$font-family--default: 'Roboto Mono', serif;
+$font-family--pixels: 'Press Start 2P', serif;
+$font-weight--thin: 200;
+$font-weight--regular: 400;
+$font-weight--bold: 600;
+$line-height--default: 1.6em;
+$font-size--default: 15px;
+$letter-spacing--default: 1px;
+$font-color--primary: $color--primary;
+
+@mixin font-default {
+  font-family: $font-family--default;
+  font-weight: $font-weight--regular;
+  -webkit-font-smoothing: antialiased;
+  line-height: $line-height--default;
+  font-size: $font-size--default;
+  letter-spacing: $letter-spacing--default;
+  color: $font-color--primary;
+  
+}
+
+h1 {
+  font-weight: $font-weight--thin;
+  line-height: 1em;
+}
