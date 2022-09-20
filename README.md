@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+<h1 align="center"> &lt;blakesimpson.dev /&gt; </h1>
+<h3 align="center"> KATAPLEXIA // キャタプレクシア // 3D Portfolio </h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"> 
+  <img src="preview-anim.gif" alt="Animated preview" height="800" width="800">
+</p>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
+<h2 id="contents"> :book: Contents</h2>
 
-In the project directory, you can run:
+<details open="open">
+  <summary>Contents</summary>
+  <ol>
+    <li><a href="#about-the-project"> ➤ About The Project</a></li>
+    <li><a href="#overview"> ➤ Overview</a></li>
+    <li><a href="#project-files-description"> ➤ Project Files Description</a></li>
+    <li><a href="#getting-started"> ➤ Getting Started</a></li>
+    <li><a href="#credits"> ➤ Credits</a></li>
+  </ol>
+</details>
 
-### `npm start`
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
+<h2 id="about-the-project"> :pencil: About The Project</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="justify"> 
+  About the project
+</p>
 
-### `npm test`
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- OVERVIEW -->
+<h2 id="overview"> :cloud: Overview</h2>
 
-### `npm run build`
+<p align="justify"> 
+  Project overview
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- PROJECT FILES DESCRIPTION -->
+<h2 id="project-files-description"> :floppy_disk: Project Files Description</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ul>
+  <li><b>somefile.js</b> - Description of file.</li>
+</ul>
 
-### `npm run eject`
+<h3>Some other supporting files</h3>
+<ul>
+  <li><b>someotherfile.js</b> - Description of file.</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
+<h2 id="getting-started"> :book: Getting Started</h2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p>In the project directory, you can run:</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<pre><code>$ npm start</code></pre>
+<p>
+  Runs the app in the development mode. Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in your browser.
+</p>
 
-## Learn More
+<pre><code>$ npm run build</code></pre>
+<p>
+  Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- CREDITS -->
+<h2 id="credits">Credits</h2>
 
-### Code Splitting
+<p>Blake Simpson</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/blakesimpson-dev)
+[![Twitter Badge](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Kataplexia_AU)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/blake-simpson-dev/)
 
-### Analyzing the Bundle Size
+<p>Acknowledgements:</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<ul>
+  <li>threejs journey, by Bruno Simon, <a href="https://threejs-journey.com/">https://threejs-journey.com/</a></li>
+  <li>Three.js contributors, <a href="https://threejs.org/">https://threejs.org/</a></li>
+  <li>pmndrs/drei, by Poimandres <a href="https://github.com/pmndrs/drei/">https://github.com/pmndrs/drei/</a></li>
+</ul>
 
-### Making a Progressive Web App
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- CONTACT -->
+<h2 id="contact"> :email: Contact</h2>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p><a href="mailto:blakesimpson.dev@outlook.com">blakesimpson.dev@outlook.com</a></p>
+<p><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" height="20px" /> Kataplexia#0539</p>
