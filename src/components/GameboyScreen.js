@@ -1,6 +1,6 @@
 import { Html } from '@react-three/drei'
 import PropTypes from 'prop-types'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/gameboy.scss'
 
 const GameboyScreen = ({ page }) => {

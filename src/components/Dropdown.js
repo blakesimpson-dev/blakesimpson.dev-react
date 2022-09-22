@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FaCaretUp } from 'react-icons/fa'
 import { FaCaretDown } from 'react-icons/fa'
 import { FaCheck } from 'react-icons/fa'
 import '../styles/dropdown.scss'
 
-const Dropdown = ({ items, setSelectedItem }) => {
+const Dropdown = ({ headerContent, items, setSelectedItem }) => {
   const [isOpen, setIsOpen] = useState()
-  const [headerContent, setHeaderContent] = useState()
 
   const selectItem = (item) => {
-    const { name, id } = item
-    setHeaderContent(name)
+    const { id } = item
     setIsOpen(false)
     setSelectedItem(id)
   }
-
-  useEffect(() => {
-    setHeaderContent(items[0].name)
-  }, [])
 
   return (
     <div className="dropdown-wrapper">
@@ -27,8 +21,8 @@ const Dropdown = ({ items, setSelectedItem }) => {
         className="dropdown-header"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="dropdown-header-content">{headerContent}</div>
-        {isOpen ? <FaCaretUp size={28} /> : <FaCaretDown size={28} />}
+        <div className="dropdown-header--content">{headerContent}</div>
+        {isOpen ? <FaCaretUp size={20} /> : <FaCaretDown size={20} />}
       </button>
       {isOpen && (
         <div role="list" className="dropdown-list">
@@ -39,7 +33,8 @@ const Dropdown = ({ items, setSelectedItem }) => {
               key={item.id}
               onClick={() => selectItem(item)}
             >
-              {item.name} {item.selected && <FaCheck />}
+              <div className="dropdown-list-item--content">{item.name}</div>
+              {item.selected && <FaCheck size={14} />}
             </button>
           ))}
         </div>
@@ -51,6 +46,7 @@ const Dropdown = ({ items, setSelectedItem }) => {
 Dropdown.displayName = 'Dropdown'
 
 Dropdown.propTypes = {
+  headerContent: PropTypes.string,
   items: PropTypes.array,
   setSelectedItem: PropTypes.func,
 }

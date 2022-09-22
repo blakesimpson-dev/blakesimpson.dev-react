@@ -10,7 +10,7 @@ import {
 } from '@react-three/postprocessing'
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
-import { useScene } from '../useScene'
+import { useScene } from '../hooks/useScene'
 import Screen from './Screen'
 import Fan from './Fan'
 import GameboyScreen from './GameboyScreen'
@@ -108,7 +108,7 @@ const Scene = ({ page, setPage }) => {
     <>
       <Selection>
         <group>
-          <Screen />
+          <Screen page={page} />
           <Fan speed={8} />
         </group>
         <group>

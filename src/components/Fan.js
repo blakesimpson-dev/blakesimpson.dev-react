@@ -1,7 +1,7 @@
 import { useFrame } from '@react-three/fiber'
 import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
-import { useScene } from '../useScene'
+import { useScene } from '../hooks/useScene'
 
 const Fan = ({ speed }) => {
   const fanMesh = useRef()
