@@ -2,27 +2,43 @@
 @import '_fonts.scss';
 @import '_mixins.scss';
 
-
 .dropdown-wrapper {
-  width: 50%;
+  position: absolute;
+  top: 25px;
+  width: 220px;
 
   button {
+    display: flex;
+    justify-content: flex-start;
+    font-family: $font-family--w95fa;
+    height: 23px;
+    background-color: $color--screen-background;
+    border: none;
     border-radius: 0;
   }
 }
 
 .dropdown-header {
   width: 100%;
-}
 
-.dropdown-header-content {
-  width: 100%;
+  &--content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 .dropdown-list {
   width: 100%;
+  border: 3px solid $color--screen-border;
 }
 
 .dropdown-list-item {
   width: 100%;
+
+  &--content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
 }

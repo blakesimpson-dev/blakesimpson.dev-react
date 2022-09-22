@@ -1,96 +1,22 @@
 import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
+import { useScene } from '../hooks/useScene'
+import useScreenItems from '../hooks/useScreenItems'
+import { useVideo } from '../hooks/useVideo'
 import '../materials/ScreenMaterial'
 import '../styles/screen.scss'
-import { useScene } from '../useScene'
-import { useVideo } from '../useVideo'
 import Dropdown from './Dropdown'
 
-const defaultItem = {
-  selected: true,
-  type: 'default',
-}
-
-const videoItem = {
-  selected: false,
-  type: 'video',
-}
-
-const Screen = () => {
+const Screen = ({ page }) => {
   const screenMesh = useRef()
-  const { nodes } = useScene('/models/model.glb')
-
-  const {
-    kataplexiaVideo,
-    bushbashVideo,
-    blitzVideo,
-    arcadianVideo,
-    catnipsVideo,
-    gundashVideo,
-    interstateVideo,
-    lmpoVideo,
-    resetVideos,
-  } = useVideo()
-
-  const [items] = useState([
-    {
-      ...defaultItem,
-      id: 0,
-      name: 'Screensaver',
-    },
-    {
-      ...videoItem,
-      id: 1,
-      name: 'Kataplexia Live',
-      video: kataplexiaVideo,
-    },
-    {
-      ...videoItem,
-      id: 2,
-      name: 'Bush Bash',
-      video: bushbashVideo,
-    },
-    {
-      ...videoItem,
-      id: 3,
-      name: 'Arcadian Dreams',
-      video: arcadianVideo,
-    },
-    {
-      ...videoItem,
-      id: 4,
-      name: 'Making Catnips',
-      video: catnipsVideo,
-    },
-    {
-      ...videoItem,
-      id: 5,
-      name: 'Gundash',
-      video: gundashVideo,
-    },
-    {
-      ...videoItem,
-      id: 6,
-      name: 'Interstate Arcade',
-      video: interstateVideo,
-    },
-    {
-      ...videoItem,
-      id: 7,
-      name: 'L.M.P.O.',
-      video: lmpoVideo,
-    },
-    {
-      ...videoItem,
-      id: 8,
-      name: 'Blitz Bandits',
-      video: blitzVideo,
-    },
-  ])
-
+  const { nodes, bootTexture } = useScene('/models/model.glb')
+  const { video, resetVideo, changeVideoSource } = useVideo()
+  const { items } = useScreenItems()
+  const [isScreenOn, setIsScreenOn] = useState(false)
+  const [screenOnDelay, setScreenOnDelay] = useState(4500)
   const [screenItem, setScreenItem] = useState(items[0])
-  const [screenVideo, setScreenVideo] = useState(null)
 
   const setSelectedItem = (id) => {
     items.forEach((item) => (item.selected = false))
@@ -99,21 +25,28 @@ const Screen = () => {
     })[0]
     item.selected = true
     setScreenItem(item)
-    resetVideos()
   }
 
   useEffect(() => {
     if (screenItem.type == 'video') {
-      setScreenVideo(screenItem.video)
+      resetVideo()
+      changeVideoSource(screenItem.url)
     }
   }, [screenItem])
 
   useEffect(() => {
-    if (screenVideo) screenVideo.play()
-  }, [screenVideo])
+    if (page == 'Home') {
+      setTimeout(() => {
+        setIsScreenOn(true)
+        setScreenOnDelay(2000)
+      }, screenOnDelay)
+    } else {
+      setIsScreenOn(false)
+    }
+  }, [page])
 
   useFrame((state) => {
-    if (screenItem.type == 'default')
+    if (isScreenOn && screenItem.type == 'default')
       screenMesh.current.material.uniforms.uTime.value = state.clock.elapsedTime
   })
 
@@ -121,16 +54,31 @@ const Screen = () => {
     <>
       <Html
         position={[-0.044494, 1.02884, -0.091586]}
-        scale={[0.04, 0.04, 0.04]}
+        scale={[0.0201, 0.02, 1]}
         rotation={[0, 0, 0]}
         transform
       >
-        <div className="screen">
-          <Dropdown
-            items={items}
-            setSelectedItem={(id) => setSelectedItem(id)}
-          />
-        </div>
+        {isScreenOn && (
+          <div className="screen">
+            <div className="screen__title--one">
+              Now Playing:&nbsp;
+              <span style={{ color: '#1f2523' }}>{screenItem.name}</span>
+            </div>
+            <Dropdown
+              headerContent="File"
+              items={items}
+              setSelectedItem={(id) => setSelectedItem(id)}
+            />
+            <div className="screen__spacer--one" />
+            <div className="screen__title--two">Details</div>
+            <div className="screen__details">{screenItem.details}</div>
+            <div className="screen__spacer--two" />
+            <div className="screen__taskbar">
+              <div>Now Playing</div>
+              <div>Details</div>
+            </div>
+          </div>
+        )}
       </Html>
       <mesh
         ref={screenMesh}
@@ -138,15 +86,27 @@ const Screen = () => {
         scale={[-1, 1, 1]}
         position={[-0.089, 0, 0]}
       >
-        {screenItem.type == 'default' && <screenMaterial attach="material" />}
-        {screenItem.type == 'video' && screenVideo && (
+        {screenItem.type == 'default' && isScreenOn && (
+          <screenMaterial attach="material" />
+        )}
+        {screenItem.type == 'video' && isScreenOn && (
           <meshBasicMaterial attach="material" color={'#AAAAAA'}>
-            <videoTexture attach="map" args={[screenVideo]} />
+            <videoTexture attach="map" args={[video]} />
           </meshBasicMaterial>
+        )}
+        {!isScreenOn && (
+          // <meshBasicMaterial attach="material" color={'#18191A'} />
+          <meshBasicMaterial attach="material" map={bootTexture} />
         )}
       </mesh>
     </>
   )
+}
+
+Screen.displayName = 'Screen'
+
+Screen.propTypes = {
+  page: PropTypes.string,
 }
 
 export default Screen

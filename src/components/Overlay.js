@@ -6,7 +6,7 @@ import Contact from '../pages/Contact'
 import Music from '../pages/Music'
 import Projects from '../pages/Projects'
 import '../styles/overlay.scss'
-import { useMotion } from '../useMotion'
+import { useMotion } from '../hooks/useMotion'
 
 const Overlay = ({ page, setPage }) => {
   const controls = useAnimationControls()

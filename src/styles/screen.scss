@@ -3,6 +3,74 @@
 @import '_mixins.scss';
 
 .screen {
-  width: 604px;
-  height: 357px;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family--w95fa;
+  box-shadow: inset 0 0 1px $color--primary, 0 0 5px $color--primary;
+  background-image: url('~/public/images/windows-95-extra.png');
+  width: 1208px;
+  height: 714px;
+  padding: 5px 0 0 5px;
+
+  &__title--one {
+    display: flex;
+    width: 50%;
+    height: 20px;
+    margin-left: 20px;
+    padding-left: 2px;
+    background-color: $color--screen-background--dark;
+  }
+
+  &__title--two {
+    width: 10%;
+    height: 18px;
+    margin: 4px 0 0 890px;
+    padding-left: 2px;
+    background-color: $color--screen-background--active;
+  }
+
+  &__details {
+    color: $color--screen-text;
+    width: 256px;
+    height: 112px;
+    margin: 4px 0 0 874px;
+    padding: 6px;
+    font-size: 20px;
+
+    p {
+      margin: 0;
+    }
+
+    a:link, a:visited {
+      color: blue;
+    }
+  }
+
+  &__taskbar {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin-left: 100px;
+    color: $color--screen-text;
+    font-size: 20px;
+
+    > * {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 280px;
+      margin-right: 8px;
+      padding: 6px 0 0 38px;
+    }
+  }
+
+  &__spacer {
+    &--one {
+      min-height: 434px;
+    }
+
+    &--two {
+      min-height: 74px;
+    }
+  }
 }

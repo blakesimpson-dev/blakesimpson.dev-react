@@ -4,6 +4,7 @@
 
 $font-family--default: 'Roboto Mono', serif;
 $font-family--pixels: 'Press Start 2P', serif;
+$font-family--w95fa: 'w95fa'; 
 $font-weight--thin: 200;
 $font-weight--regular: 400;
 $font-weight--bold: 600;
@@ -11,6 +12,11 @@ $line-height--default: 1.6em;
 $font-size--default: 15px;
 $letter-spacing--default: 1px;
 $font-color--primary: $color--primary;
+
+@font-face {
+  font-family: 'w95fa';
+  src: url('~/public/fonts/W95FA/w95fa.woff2');
+}
 
 @mixin font-default {
   font-family: $font-family--default;
@@ -20,7 +26,6 @@ $font-color--primary: $color--primary;
   font-size: $font-size--default;
   letter-spacing: $letter-spacing--default;
   color: $font-color--primary;
-  
 }
 
 h1 {

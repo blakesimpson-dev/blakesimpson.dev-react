@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 import * as THREE from 'three'
 import Menu from './Menu'
-import { useMotion } from '../useMotion'
+import { useMotion } from '../hooks/useMotion'
 import Overlay from './Overlay'
 import Scene from './Scene'
 import Frame from './Frame'
@@ -19,7 +19,7 @@ const Main = () => {
         camera={{
           near: 0.1,
           far: 4,
-          fov: 17.375,
+          fov: 19,
           position: [-0.0445, 1.022, 0.938],
           rotation: [0, 0, 0],
         }}
