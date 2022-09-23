@@ -14,9 +14,9 @@
   align-content: space-between;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: auto auto;
-  grid-template-areas: '... ... ..' 'copyright instructions links';  
+  grid-template-areas: '... ... ..' 'copyright instructions links';
   z-index: 1000;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .frame__copyright {

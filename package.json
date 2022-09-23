@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@emailjs/browser": "^3.7.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@react-three/drei": "^9.17.1",
     "@react-three/fiber": "^8.0.27",
@@ -57,7 +58,6 @@
     "jest": "^27.4.3",
     "jest-resolve": "^27.4.2",
     "jest-watch-typeahead": "^1.0.0",
-    "lerp": "^1.0.3",
     "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -72,6 +72,7 @@
     "react-icons": "^4.4.0",
     "react-promise-suspense": "^0.3.3",
     "react-refresh": "^0.11.0",
+    "react-responsive-carousel": "^3.2.23",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.54.9",
