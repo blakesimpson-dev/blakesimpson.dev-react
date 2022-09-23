@@ -1,0 +1,38 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 4rem);
+  height: auto;
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: $color--panel__header-background;
+  @include panel__border;
+
+  > * {
+    margin: 0.5rem;
+  }
+
+  &__input,
+  &__textarea {
+    display: flex;
+    flex-direction: column;
+
+    em {
+      color: $color--error;
+    }
+  }
+
+  &__input {
+    width: 50%;
+  }
+
+  &__textarea {
+    width: 95%;
+  }
+}

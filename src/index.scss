@@ -62,3 +62,42 @@ button:active {
   padding: 0;
   border-radius: 50%;
 }
+
+input,
+textarea {
+  font-family: $font-family--default;
+  background-color: $color--secondary;
+  border: 2px solid $color--primary;
+  border-radius: 6px;
+  padding: 4px;
+
+  &:focus {
+    outline: none;
+    background-color: $color--primary;
+    border: 2px solid $color--tertiary;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.music-page,
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contact-page {
+  &__badges {
+    display: flex;
+    justify-content: center;
+
+    > * {
+      margin: 0.5rem;
+    }
+  }
+}
