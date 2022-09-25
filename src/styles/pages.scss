@@ -1,0 +1,65 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+.music-page,
+.contact-page,
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contact-page {
+  &__badges {
+    display: flex;
+    justify-content: center;
+
+    > * {
+      margin: 0.5rem;
+    }
+  }
+}
+
+.projects-page {
+  &__project {
+    &--container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 2.5rem;
+      padding: 1.5rem;
+      background-color: $color--panel__header-background;
+      @include panel__border;
+    }
+
+    &--content {
+      text-align: left;
+    }
+
+    &--images {
+      $img-width: 224px;
+      $img-height: 122px;
+
+      img { 
+        min-width: $img-width;
+        max-width: $img-width;
+        min-height: $img-height;
+        max-height: $img-height;
+        object-fit: cover;
+        margin: 1rem;
+        pointer-events: all;
+      }
+    }
+
+    &--links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
+}

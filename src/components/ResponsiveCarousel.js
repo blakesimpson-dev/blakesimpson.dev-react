@@ -8,7 +8,7 @@ const ResponsiveCarousel = ({ content, autoPlay, showStatus }) => {
   const arrowStyles = {
     position: 'absolute',
     zIndex: 2,
-    top: 'calc(90px - 1rem)',
+    top: 'calc(50% - 2.25rem)',
     width: '2rem',
     height: '2rem',
     padding: '0',
@@ -52,7 +52,7 @@ const ResponsiveCarousel = ({ content, autoPlay, showStatus }) => {
 ResponsiveCarousel.displayName = 'Carousel'
 
 ResponsiveCarousel.propTypes = {
-  content: PropTypes.element,
+  content: PropTypes.array,
   autoPlay: PropTypes.bool,
   showStatus: PropTypes.bool,
 }
