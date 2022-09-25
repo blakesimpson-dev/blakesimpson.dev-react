@@ -81,23 +81,3 @@ textarea {
 textarea {
   resize: none;
 }
-
-.music-page,
-.contact-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
-}
-
-.contact-page {
-  &__badges {
-    display: flex;
-    justify-content: center;
-
-    > * {
-      margin: 0.5rem;
-    }
-  }
-}
