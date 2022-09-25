@@ -4,23 +4,117 @@
 
 .music-page,
 .contact-page,
+.about-page,
 .projects-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
+  @include display--flex-column;
+  height: auto;
+  overflow: auto;
+
+  &__blurb {
+    @include display--flex-row;
+    padding: 1rem;
+  }
+}
+
+.about-page {
+  > * {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__skills {
+    &__container {
+      @include display--flex-row-wrap;
+      padding: 0;
+    }
+
+    &--item {
+      @include display--flex-column;
+      min-width: 8rem;
+      margin: 1rem;
+      font-size: 16px;
+    }
+  }
+
+  &__proficiencies,
+  &__languages {
+    &__container {
+      @include display--flex-row-wrap;
+      padding-bottom: 2rem;
+      background-color: $color--panel__header-background;
+      @include panel__border;
+    }
+
+    &--item {
+      @include display--flex-column;
+      margin: 2rem;
+      min-width: 4rem;
+      max-width: 4rem;
+      min-height: 4rem;
+      max-height: 4rem;
+
+      img {
+        margin-bottom: 0.5rem;
+        min-width: 4rem;
+        max-width: 4rem;
+        min-height: 4rem;
+        max-height: 4rem;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__attributes {
+    &__container {
+      @include display--flex-row-wrap;
+      padding: 1rem;
+      background-color: $color--panel__header-background;
+      @include panel__border;
+    }
+
+    &--item {
+      @include display--flex-column;
+      min-width: 8rem;
+      margin: 1rem;
+    }
+  }
+
+  &__history {
+    &__container {
+      @include display--flex-column;
+
+      > *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--item {
+      padding: 1rem;
+      background-color: $color--panel__header-background;
+      @include panel__border;
+
+      
+    }
+  }
 }
 
 .contact-page {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
   &__badges {
-    display: flex;
-    justify-content: center;
+    @include display--center;
 
     > * {
       margin: 0.5rem;
     }
   }
+}
+
+.music-page {
+  justify-content: center;
+  height: 100%;
 }
 
 .projects-page {
@@ -30,7 +124,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 2.5rem;
+      margin: 0 2.5rem 2.5rem 2.5rem;
       padding: 1.5rem;
       background-color: $color--panel__header-background;
       @include panel__border;
@@ -41,8 +135,8 @@
     }
 
     &--images {
-      $img-width: 224px;
-      $img-height: 122px;
+      $img-width: 200px;
+      $img-height: 110px;
 
       img { 
         min-width: $img-width;

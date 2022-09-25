@@ -13,8 +13,10 @@ const Music = ({ setPage }) => {
       name="Music"
       content={
         <div className="music-page">
-          <div>
+          <div className="music-page__blurb">
+            <img className="avatar" src="/images/kataplexia-avatar.png" />
             <p>
+              <h1>KATAPLEXIA // キャタプレクシア</h1>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
               finibus iaculis massa ut fermentum. Ut eget aliquam ipsum.
               Suspendisse ullamcorper laoreet arcu a suscipit. Aliquam nisl

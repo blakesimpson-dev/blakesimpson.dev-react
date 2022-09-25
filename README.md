@@ -95,3 +95,7 @@
 
 <p><a href="mailto:blakesimpson.dev@outlook.com">blakesimpson.dev@outlook.com</a></p>
 <p><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" height="20px" /> Kataplexia#0539</p>
+
+<p align="center"> 
+  <img src="mail-anim.gif" alt="Animated mail" height="215" width="214">
+</p>

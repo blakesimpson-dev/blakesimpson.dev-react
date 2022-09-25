@@ -14,7 +14,8 @@ const Projects = ({ setPage }) => {
       name="Projects"
       content={
         <div className="projects-page">
-          <div>
+          <div className="projects-page__blurb">
+            <img className="avatar" src="/images/project-avatar.png" />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
               finibus iaculis massa ut fermentum. Ut eget aliquam ipsum.
