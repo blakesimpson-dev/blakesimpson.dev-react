@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export const useGames = () => {
   const [gameData] = useState([
     {
-      title: <h1>Ghoul Britannia: Land of Hope and Gorey</h1>,
+      title: <h2>Ghoul Britannia: Land of Hope and Gorey</h2>,
       content: (
         <p>
           Ghoul Britannia: Land of Hope and Gorey is a point and click adventure
@@ -67,7 +67,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Aliensche!</h1>,
+      title: <h2>Aliensche!</h2>,
       content: (
         <p>
           Aliensche! was my entry into Ludum Dare LDJAM #33. As an extra
@@ -114,7 +114,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Blitz Bandits</h1>,
+      title: <h2>Blitz Bandits</h2>,
       content: (
         <p>
           GET BLITZ&apos;D! Blitz Bandits is a 2 player arena shooter with a
@@ -177,7 +177,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Bush Bash</h1>,
+      title: <h2>Bush Bash</h2>,
       content: (
         <p>
           Bush Bash is epic. A two player co-op game, the driver must navigate
@@ -243,7 +243,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Catnips</h1>,
+      title: <h2>Catnips</h2>,
       content: (
         <p>
           Catnips is a 2-team cat milking simulator. Described as “nifty” and
@@ -299,7 +299,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Arcadian Dreams: Electric Forest</h1>,
+      title: <h2>Arcadian Dreams: Electric Forest</h2>,
       content: (
         <p>
           Electric Forest is a collaboration between SK and local artist
@@ -349,7 +349,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Gundash</h1>,
+      title: <h2>Gundash</h2>,
       content: (
         <p>
           Gundash is a 4 player platformer race. Each player can use their
@@ -397,7 +397,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Skulls</h1>,
+      title: <h2>Skulls</h2>,
       content: (
         <p>
           Skulls is a very simple 2-4 player game. Each player must collect
@@ -436,7 +436,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Icarus</h1>,
+      title: <h2>Icarus</h2>,
       content: (
         <p>
           Icarus is a 2 player co-op game about saving a sun from aliens, for
@@ -476,7 +476,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Two Shot Robot</h1>,
+      title: <h2>Two Shot Robot</h2>,
       content: (
         <p>
           Two Shot is an interesting little 2 player platformer where each
@@ -524,7 +524,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>RT</h1>,
+      title: <h2>RT</h2>,
       content: (
         <p>
           RT is a gallery wanderer. Drift around the gallery, check out the art.
@@ -570,7 +570,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Seed x Sable</h1>,
+      title: <h2>Seed x Sable</h2>,
       content: (
         <p>
           This version of Seed was created as a collaboration between SK Games
@@ -620,7 +620,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Astral Diplomacy</h1>,
+      title: <h2>Astral Diplomacy</h2>,
       content: (
         <p>
           Astral is a 2 vs 1 space shooter. Think of it as a boss fight, one
@@ -659,7 +659,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Ocean Commotion</h1>,
+      title: <h2>Ocean Commotion</h2>,
       content: (
         <p>
           Ocean Commotion is a nautical whack-a-mole with custom made foot
@@ -698,7 +698,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Drop</h1>,
+      title: <h2>Drop</h2>,
       content: (
         <p>
           Drop is a musical timing game for one or more players. Keeping the
@@ -745,7 +745,7 @@ export const useGames = () => {
       ],
     },
     {
-      title: <h1>Bassball</h1>,
+      title: <h2>Bassball</h2>,
       content: (
         <p>
           Bassball sits at the intersection of fishing and fighting. Players
@@ -783,7 +783,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Cog & Balls</h1>,
+      title: <h2>Cog & Balls</h2>,
       content: (
         <p>
           Cog and Balls is a multiplayer pinball-meets-pong game with a good
@@ -821,7 +821,7 @@ export const useGames = () => {
       links: [],
     },
     {
-      title: <h1>Biru</h1>,
+      title: <h2>Biru</h2>,
       content: (
         <p>
           Biru is a 4 player ninja-kick fight. Each ninja can only dash and

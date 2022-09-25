@@ -34,6 +34,10 @@ a {
   color: $color--primary;
 }
 
+hr {
+  color: $color--primary;
+}
+
 button {
   @include display--center;
   @include font-default;
@@ -80,4 +84,13 @@ textarea {
 
 textarea {
   resize: none;
+}
+
+.avatar {
+  outline: 4px solid $color--secondary;
+  outline-offset: -2px;
+  border-radius: 50%;
+  max-width: 140px;
+  max-height: 140px;
+  margin-right: 2rem;
 }

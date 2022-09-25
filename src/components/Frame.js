@@ -19,7 +19,7 @@ const Frame = () => {
           rel="noreferrer"
         >
           <FaExternalLinkSquareAlt size={18} />
-          <img src="/images/github-logo.png" height="18px" />
+          <img src="/images/logos/github-logo.png" height="18px" />
         </a>
       </div>
     </div>

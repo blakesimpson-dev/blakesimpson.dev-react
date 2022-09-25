@@ -10,7 +10,12 @@ const Contact = ({ setPage }) => {
       name="Contact"
       content={
         <div className="contact-page">
-          <div className="contact-page__details">
+          <div className="contact-page__blurb">
+            <img
+              src="/images/mail-anim.gif"
+              height="90px"
+              style={{ marginRight: '2rem' }}
+            />
             <p>
               Thank you for taking the time to view my portfolio. If you have
               any questions or would like to discuss a role, please do not
