@@ -1,7 +1,162 @@
 import React, { useState } from 'react'
 
-export const useGames = () => {
-  const [gameData] = useState([
+export const useProjects = () => {
+  const [projectData] = useState([
+    {
+      title: <h2>Three.js Portal</h2>,
+      content: (
+        <p>
+          Portal was a small performance test I created in preparation for
+          creating my digital portfolio. The aim was to investigate methods for
+          texture baking and optimization to allow the experience to run
+          smoothly at high FPS on a range of devices.
+        </p>
+      ),
+      images: [
+        <a
+          key="portal-img-1"
+          href="/images/projects/portal-1.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="portal-img-1" src="/images/projects/portal-1.png" />
+        </a>,
+        <a
+          key="portal-img-2"
+          href="/images/projects/portal-2.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="portal-img-2" src="/images/projects/portal-2.png" />
+        </a>,
+        <a
+          key="portal-img-3"
+          href="/images/projects/portal-3.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="portal-img-3" src="/images/projects/portal-3.png" />
+        </a>,
+      ],
+      links: [
+        <a
+          key="portal-link-1"
+          href="https://polite-tanuki-e48e8b.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Three.js Portal
+        </a>,
+        <a
+          key="portal-link-2"
+          href="https://github.com/blakesimpson-dev/threejs-portal"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Three.js Portal on Github
+        </a>,
+      ],
+    },
+    {
+      title: <h2>Spartan Energy</h2>,
+      content: (
+        <p>
+          The Spartan Energy website was a commission for a client who runs a
+          small Solar Energy business out of NSW. The client required the
+          ability to manage his own content so a headless CMS was used to allow
+          for this. All branding, design and development was done under heavy
+          time constraint to meet up with the date for the launch of the
+          business.
+        </p>
+      ),
+      images: [
+        <a
+          key="spartan-img-1"
+          href="/images/projects/spartan-1.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="spartan-img-1" src="/images/projects/spartan-1.png" />
+        </a>,
+        <a
+          key="spartan-img-2"
+          href="/images/projects/spartan-2.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="spartan-img-2" src="/images/projects/spartan-2.png" />
+        </a>,
+        <a
+          key="spartan-img-3"
+          href="/images/projects/spartan-3.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="spartan-img-3" src="/images/projects/spartan-3.png" />
+        </a>,
+      ],
+      links: [
+        <a
+          key="spartan-link-1"
+          href="https://spartanenergy.com.au"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Spartan Energy
+        </a>,
+      ],
+    },
+    {
+      title: <h2>Insig Technologies</h2>,
+      content: (
+        <p>
+          During my tenure at Insig Technologies I was promoted to Senior and
+          was involved in the production of various digital mining applications
+          and supporting software including: Insig Condition Monitoring System,
+          Insig Computerised Maintenance Management System, Insig Enterprise
+          Asset Management System, Tanami Shaft Sinking Training Simulation and
+          the Edna May Lidar Mapping project. I also built the Insig UI Library
+          packages for use in all current and future Insig applications.
+        </p>
+      ),
+      images: [
+        <a
+          key="uilib-img-1"
+          href="/images/projects/uilib-1.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="uilib-img-1" src="/images/projects/uilib-1.png" />
+        </a>,
+        <a
+          key="uilib-img-2"
+          href="/images/projects/uilib-2.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="uilib-img-2" src="/images/projects/uilib-2.png" />
+        </a>,
+        <a
+          key="uilib-img-3"
+          href="/images/projects/uilib-3.png"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img alt="uilib-img-3" src="/images/projects/uilib-3.png" />
+        </a>,
+      ],
+      links: [
+        <a
+          key="insig-link-1"
+          href="https://www.insigtech.com.au/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Insig Technologies
+        </a>,
+      ],
+    },
+
     {
       title: <h2>Ghoul Britannia: Land of Hope and Gorey</h2>,
       content: (
@@ -860,7 +1015,7 @@ export const useGames = () => {
     },
   ])
 
-  return { gameData }
+  return { projectData }
 }
 
-export default useGames
+export default useProjects

@@ -2,14 +2,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Page from '../components/Page'
 import { useAbout } from '../hooks/useAbout'
+import { FaFilePdf } from 'react-icons/fa'
 
 const About = ({ setPage }) => {
   const {
     skillData,
     attributeData,
+    achievementData,
     proficiencyData,
     languageData,
     historyData,
+    educationData,
+    referenceData,
   } = useAbout()
 
   return (
@@ -20,20 +24,33 @@ const About = ({ setPage }) => {
         <div className="about-page">
           <div className="about-page__blurb">
             <img className="avatar" src="/images/blake-avatar.png" />
-            <p>
+            <div>
               <h1>Blake Simpson - Senior Developer</h1>
-              Whilst working freelance as an indie, being key to a fresh startup
-              or leading a team as a senior in a larger company, I have produced
-              a multitude of interactive titles and software. As a motivated
-              autodidact, I have also trained myself in numerous programming
-              languages, frameworks and development environments. This process
-              has informed me about myself and my chosen field of work, whilst
-              equipping me with the skills necessary to think and operate
-              successfully &apos;outside of the box&apos;. My personal studies
-              have left me with a broad understanding of design methodology and
-              a deep knowledge of how software and digital experiences intersect
-              with people and the spaces they inhabit.
-            </p>
+              <p>
+                Whilst working freelance as an indie, being key to a fresh
+                startup or leading a team as a senior in a larger company, I
+                have produced a multitude of interactive titles and software. As
+                a motivated autodidact, I have also trained myself in numerous
+                programming languages, frameworks and development environments.
+                This process has informed me about myself and my chosen field of
+                work, whilst equipping me with the skills necessary to think and
+                operate successfully &apos;outside of the box&apos;. My personal
+                studies have left me with a broad understanding of design
+                methodology and a deep knowledge of how software and digital
+                experiences intersect with people and the spaces they inhabit.
+              </p>
+              {referenceData.map((item, index) => {
+                return (
+                  <div key={`reference-${index}`}>
+                    <br />
+                    <FaFilePdf />
+                    <a href={item.path} target="_blank" rel="noreferrer">
+                      {item.name}
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
           </div>
           <div className="about-page__skills__container">
             {skillData.map((item, index) => {
@@ -94,18 +111,51 @@ const About = ({ setPage }) => {
               })}
             </div>
           </div>
+
+          <div className="about-page__achievements">
+            <h2>Achievements</h2>
+            <div className="about-page__achievements__container">
+              {achievementData.map((item, index) => {
+                return (
+                  <div
+                    key={`achievement-${index}`}
+                    className="about-page__achievements--item"
+                  >
+                    {item.title}
+                    {item.content}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
           <div className="about-page__history">
             <h2>Work History</h2>
             <div className="about-page__history__container">
-              {historyData.map((item) => {
+              {historyData.map((item, index) => {
                 return (
-                  <>
-                    <div className="about-page__history--item">
-                      <h3>{item.title}</h3>
-                      <hr />
-                      {item.content}
-                    </div>
-                  </>
+                  <div
+                    key={`history-${index}`}
+                    className="about-page__history--item"
+                  >
+                    {item.title}
+                    {item.content}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          <div className="about-page__education">
+            <h2>Education History</h2>
+            <div className="about-page__education__container">
+              {educationData.map((item, index) => {
+                return (
+                  <div
+                    key={`education-${index}`}
+                    className="about-page__education--item"
+                  >
+                    {item.title}
+                    {item.content}
+                  </div>
                 )
               })}
             </div>
