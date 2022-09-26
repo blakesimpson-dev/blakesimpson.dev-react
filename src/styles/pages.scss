@@ -8,7 +8,8 @@
 .projects-page {
   @include display--flex-column;
   height: auto;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &__blurb {
     @include display--flex-row;
@@ -76,10 +77,33 @@
       @include display--flex-column;
       min-width: 8rem;
       margin: 1rem;
+      font-size: 16px;
     }
   }
 
-  &__history {
+  &__achievements {
+    &__container {
+      @include display--flex-row-wrap;
+
+      > *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      > :nth-child(odd) {
+        margin-right: 1rem;
+      }
+    }
+
+    &--item {
+      width: calc(50% - 0.5rem);
+      padding: 1rem;
+      background-color: $color--panel__header-background;
+      @include panel__border;
+    }
+  }
+
+  &__history,
+  &__education {
     &__container {
       @include display--flex-column;
 
@@ -92,8 +116,6 @@
       padding: 1rem;
       background-color: $color--panel__header-background;
       @include panel__border;
-
-      
     }
   }
 }
@@ -101,7 +123,6 @@
 .contact-page {
   justify-content: center;
   align-items: center;
-  height: 100%;
 
   &__badges {
     @include display--center;
@@ -114,7 +135,6 @@
 
 .music-page {
   justify-content: center;
-  height: 100%;
 }
 
 .projects-page {
@@ -155,5 +175,26 @@
       align-items: flex-start;
       width: 100%;
     }
+  }
+}
+
+.unsupported-page {
+  @include display--flex-column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+  @include font-default;
+  @include panel__background--diagonal;
+  background-color: $color--tertiary;
+
+  > * {
+    text-align: center;
+    margin: 1rem;
+  }
+
+  img {
+
+    max-width: 200px;
   }
 }

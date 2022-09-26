@@ -131,11 +131,61 @@ export const useAbout = () => {
     },
   ])
 
-  const [achievementData] = useState([])
+  const [achievementData] = useState([
+    {
+      title: <h2>Visualisation, Procedural Music and Chiptune Performances</h2>,
+      content: (
+        <p>
+          Square Sounds Festival Melbourne, Square Sounds Festival Japan and
+          venues across Australia.
+        </p>
+      ),
+    },
+    {
+      title: <h2>Bush Bash: Touring Exhibition</h2>,
+      content: (
+        <p>
+          &apos;Videogames: Design/Play/Disrupt&apos; exhibition (2018), London
+          Visual Arts Museum and others across Europe.
+        </p>
+      ),
+    },
+    {
+      title: <h2>WA Culture and the arts funding Ambassador</h2>,
+      content: (
+        <p>
+          Ambassador to Senator Scott Ludlam regarding grants for independent
+          games development in WA (2016).
+        </p>
+      ),
+    },
+    {
+      title: <h2>Repeat Game of the Year Award Nominations</h2>,
+      content: (
+        <p>Western Australian Screen Awards, Perth (2013, 2014 and 2015)</p>
+      ),
+    },
+    {
+      title: <h2>Visualisation Performance</h2>,
+      content: <p>Square Sounds Festival, Melbourne (2015)</p>,
+    },
+    {
+      title: <h2>Interstate Arcade Australian Showcase</h2>,
+      content: (
+        <p>
+          SK Games National Tour Melbourne, Brisbane, Sydney and Perth (2014)
+        </p>
+      ),
+    },
+    {
+      title: <h2>Game Developer Association (GDAA) Representative</h2>,
+      content: <p>Game Connect Asia Pacific Convention, Melbourne (2014)</p>,
+    },
+  ])
 
   const [historyData] = useState([
     {
-      title: <h3>Senior Developer @ Insig Technologies: Perth 2020-2022</h3>,
+      title: <h2>Senior Developer @ Insig Technologies: Perth 2020-2022</h2>,
       content: (
         <p>
           At Insig Tech I have worked across the full stack, primarily in the
@@ -148,7 +198,7 @@ export const useAbout = () => {
       ),
     },
     {
-      title: <h3>Lead Developer @ Binary Space: Perth 2017-2019</h3>,
+      title: <h2>Lead Developer @ Binary Space: Perth 2017-2019</h2>,
       content: (
         <p>
           Working for Binary Space was an incredibly rewarding experience, our
@@ -162,7 +212,7 @@ export const useAbout = () => {
       ),
     },
     {
-      title: <h3>Developer @ Immersia: Perth 2016-2017</h3>,
+      title: <h2>Developer @ Immersia: Perth 2016-2017</h2>,
       content: (
         <p>
           A short contractual stint of work with Immersia VR saw me developing
@@ -174,7 +224,7 @@ export const useAbout = () => {
       ),
     },
     {
-      title: <h3>Lead Developer @ SK Games: Perth 2010-2015</h3>,
+      title: <h2>Lead Developer @ SK Games: Perth 2010-2015</h2>,
       content: (
         <p>
           Producing and showcasing over 20 titles at SK Games, I developed an
@@ -188,10 +238,10 @@ export const useAbout = () => {
     },
     {
       title: (
-        <h3>
+        <h2>
           Freelance Developer and Visual Artist: Perth, Melbourne and Abroad
           2010-2015
-        </h3>
+        </h2>
       ),
       content: (
         <p>
@@ -203,7 +253,59 @@ export const useAbout = () => {
     },
   ])
 
-  const [educationData] = useState([])
+  const [educationData] = useState([
+    {
+      title: <h2>Bachelor of Computer Science</h2>,
+      content: (
+        <p>
+          Edith Cowan University, Perth
+          <br />
+          Bachelor of Computer Science: Software Engineering
+        </p>
+      ),
+    },
+    {
+      title: <h2>Interactive Media Design</h2>,
+      content: (
+        <p>
+          Qantm College, Perth
+          <br />
+          Bachelor of Interactive Entertainment Technology
+        </p>
+      ),
+    },
+    {
+      title: <h2>Architectural Design</h2>,
+      content: (
+        <p>
+          University of Western Australia, Perth
+          <br />
+          Bachelor of Environmental Design
+        </p>
+      ),
+    },
+    {
+      title: <h2>Sacred Heart College</h2>,
+      content: (
+        <p>
+          Chemistry, Physics, Biology, Calculus, English Literature, Japanese
+          <br />
+          Achieved TER: 96.25
+        </p>
+      ),
+    },
+  ])
+
+  const [referenceData] = useState([
+    {
+      name: 'Personal Reference - Barry Levin',
+      path: '/references/bl-reference.pdf',
+    },
+    {
+      name: 'Professional Reference - Louis Roots',
+      path: '/references/sk-reference.pdf',
+    },
+  ])
 
   return {
     skillData,
@@ -213,6 +315,7 @@ export const useAbout = () => {
     achievementData,
     historyData,
     educationData,
+    referenceData,
   }
 }
 

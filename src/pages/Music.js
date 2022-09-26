@@ -15,18 +15,30 @@ const Music = ({ setPage }) => {
         <div className="music-page">
           <div className="music-page__blurb">
             <img className="avatar" src="/images/kataplexia-avatar.png" />
-            <p>
+            <div>
               <h1>KATAPLEXIA // キャタプレクシア</h1>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              finibus iaculis massa ut fermentum. Ut eget aliquam ipsum.
-              Suspendisse ullamcorper laoreet arcu a suscipit. Aliquam nisl
-              purus, iaculis eu lobortis sit amet, pharetra ut ligula. Curabitur
-              et velit et massa bibendum porttitor. Mauris laoreet vel felis et
-              rutrum. Nulla facilisi. Nunc ac justo vitae ex accumsan
-              ullamcorper eu id nibh. In hac habitasse platea dictumst. Ut
-              sodales, odio sagittis ornare porttitor, lectus mi iaculis odio,
-              eget rhoncus nulla nibh ac leo.
-            </p>
+              <p>
+                I have been performing, creating and enjoying music for over a
+                decade, having toured Europe, America and Japan. These days I
+                primarily create chiptunes using a piece of software called{' '}
+                <a
+                  href="https://www.littlesounddj.com/lsd/index.php"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Little Sound DJ
+                </a>
+                . I have recently started to use the new{' '}
+                <a
+                  href="https://dirtywave.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Dirtywave M8 Tracker
+                </a>{' '}
+                and see myself pursuing this more in the future.
+              </p>
+            </div>
           </div>
           <ResponsiveCarousel
             content={soundcloudIFrames.map((iframe, index) => {
