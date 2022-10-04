@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import * as THREE from 'three'
 import Menu from './Menu'
 import { useMotion } from '../hooks/useMotion'
@@ -36,7 +36,9 @@ const Main = () => {
               state.gl.setClearColor('#FFFFFF')
             }}
           >
-            <Scene page={page} setPage={setPage} />
+            <Suspense fallback={null}>
+              <Scene page={page} setPage={setPage} />
+            </Suspense>
           </Canvas>
           <Menu page={page} setPage={setPage} />
           <Overlay page={page} setPage={setPage} />
