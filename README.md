@@ -13,7 +13,6 @@
   <ol>
     <li><a href="#about-the-project"> ➤ About The Project</a></li>
     <li><a href="#overview"> ➤ Overview</a></li>
-    <li><a href="#project-files-description"> ➤ Project Files Description</a></li>
     <li><a href="#getting-started"> ➤ Getting Started</a></li>
     <li><a href="#credits"> ➤ Credits</a></li>
     <li><a href="#contact"> ➤ Contact</a></li>
@@ -26,7 +25,7 @@
 <h2 id="about-the-project"> :pencil: About The Project</h2>
 
 <p align="justify"> 
-  About the project
+  <b>blakesimpson.dev</b> is a digital portfolio and resume containing a collection of projects, examples of produced music and personal information.      
 </p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
@@ -35,22 +34,8 @@
 <h2 id="overview"> :cloud: Overview</h2>
 
 <p align="justify"> 
-  Project overview
+  The project uses an omptimised GLTF scene, created in Blender, which uses a low poly count and baked textures for performance. With react-three-fiber, the scene is injected into the application, which is then overlayed with standard react components to create the experience. This website was my first fully-fledged three.js and react application and was intended to be a learning experiment.
 </p>
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
-
-<!-- PROJECT FILES DESCRIPTION -->
-<h2 id="project-files-description"> :floppy_disk: Project Files Description</h2>
-
-<ul>
-  <li><b>somefile.js</b> - Description of file.</li>
-</ul>
-
-<h3>Some other supporting files</h3>
-<ul>
-  <li><b>someotherfile.js</b> - Description of file.</li>
-</ul>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
 
