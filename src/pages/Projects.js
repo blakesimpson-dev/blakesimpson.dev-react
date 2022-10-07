@@ -1,12 +1,29 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useState } from 'react'
 import Page from '../components/Page'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
 import { useProjects } from '../hooks/useProjects'
 import { FaExternalLinkSquareAlt } from 'react-icons/fa'
+import Modal from 'react-modal'
+import ProgressiveImg from '../components/ProgressiveImg'
+import { FaTimes } from 'react-icons/fa'
+
+Modal.setAppElement('#root')
 
 const Projects = ({ setPage }) => {
   const { projectData } = useProjects()
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const [modalContent, setModalContent] = useState(null)
+
+  const openModal = (modalContent) => {
+    setModalContent(modalContent)
+    setIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalContent(null)
+    setIsOpen(false)
+  }
 
   return (
     <Page
@@ -28,6 +45,22 @@ const Projects = ({ setPage }) => {
               </p>
             </div>
           </div>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            className="modal__panel"
+            overlayClassName="modal__overlay"
+          >
+            <div className="overlay__header">
+              <h1>{modalContent}</h1>
+              <button className="button--cancel" onClick={closeModal}>
+                <FaTimes />
+              </button>
+            </div>
+            <div className="modal__content">
+              <img src={modalContent} />
+            </div>
+          </Modal>
           <ResponsiveCarousel
             content={projectData.map((item, index) => {
               return (
@@ -39,7 +72,18 @@ const Projects = ({ setPage }) => {
                     {item.title}
                   </div>
                   <div className="projects-page__project--images">
-                    {item.images}
+                    {item.images.map((image, index) => {
+                      return (
+                        <ProgressiveImg
+                          onClick={() => openModal(image.src)}
+                          key={`${item.id}-modal-button-${index}`}
+                          style={{ cursor: 'pointer' }}
+                          alt={image.alt}
+                          src={image.src}
+                          compressedSrc={image.compressedSrc}
+                        />
+                      )
+                    })}
                   </div>
                   <div className="projects-page__project--content">
                     {item.content}

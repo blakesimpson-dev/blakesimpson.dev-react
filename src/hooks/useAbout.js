@@ -24,110 +24,136 @@ export const useAbout = () => {
   const [proficiencyData] = useState([
     {
       name: 'Git',
-      logo: '/images/logos/git-logo.png',
+      src: '/images/logos/git-logo.png',
+      compressedSrc: '/images/logos/compressed/git-logo.png',
     },
     {
       name: 'NPM',
-      logo: '/images/logos/npm-logo.png',
+      src: '/images/logos/npm-logo.png',
+      compressedSrc: '/images/logos/compressed/npm-logo.png',
     },
     {
       name: 'Node.js',
-      logo: '/images/logos/nodejs-logo.png',
+      src: '/images/logos/nodejs-logo.png',
+      compressedSrc: '/images/logos/compressed/nodejs-logo.png',
     },
     {
       name: 'Three.js',
-      logo: '/images/logos/threejs-logo.png',
+      src: '/images/logos/threejs-logo.png',
+      compressedSrc: '/images/logos/compressed/threejs-logo.png',
     },
     {
       name: 'Vite.js',
-      logo: '/images/logos/vite-logo.png',
+      src: '/images/logos/vite-logo.png',
+      compressedSrc: '/images/logos/compressed/vite-logo.png',
     },
     {
       name: 'Vue.js',
-      logo: '/images/logos/vuejs-logo.png',
+      src: '/images/logos/vuejs-logo.png',
+      compressedSrc: '/images/logos/compressed/vuejs-logo.png',
     },
     {
       name: 'React',
-      logo: '/images/logos/react-logo.png',
+      src: '/images/logos/react-logo.png',
+      compressedSrc: '/images/logos/compressed/react-logo.png',
     },
     {
       name: 'Angular',
-      logo: '/images/logos/angular-logo.png',
+      src: '/images/logos/angular-logo.png',
+      compressedSrc: '/images/logos/compressed/angular-logo.png',
     },
     {
       name: 'Webpack',
-      logo: '/images/logos/webpack-logo.png',
+      src: '/images/logos/webpack-logo.png',
+      compressedSrc: '/images/logos/compressed/webpack-logo.png',
     },
     {
       name: 'Unity',
-      logo: '/images/logos/unity-logo.png',
+      src: '/images/logos/unity-logo.png',
+      compressedSrc: '/images/logos/compressed/unity-logo.png',
     },
     {
       name: 'Mono',
-      logo: '/images/logos/mono-logo.png',
+      src: '/images/logos/mono-logo.png',
+      compressedSrc: '/images/logos/compressed/mono-logo.png',
     },
     {
       name: 'Docker',
-      logo: '/images/logos/docker-logo.png',
+      src: '/images/logos/docker-logo.png',
+      compressedSrc: '/images/logos/compressed/docker-logo.png',
     },
     {
       name: 'VSCode',
-      logo: '/images/logos/vscode-logo.png',
+      src: '/images/logos/vscode-logo.png',
+      compressedSrc: '/images/logos/compressed/vscode-logo.png',
     },
     {
       name: 'VS',
-      logo: '/images/logos/visualstudio-logo.png',
+      src: '/images/logos/visualstudio-logo.png',
+      compressedSrc: '/images/logos/compressed/visualstudio-logo.png',
     },
   ])
 
   const [languageData] = useState([
     {
       name: 'js',
-      logo: '/images/logos/javascript-logo.png',
+      src: '/images/logos/javascript-logo.png',
+      compressedSrc: '/images/logos/compressed/javascript-logo.png',
     },
     {
       name: 'ts',
-      logo: '/images/logos/typescript-logo.png',
+      src: '/images/logos/typescript-logo.png',
+      compressedSrc: '/images/logos/compressed/typescript-logo.png',
     },
     {
       name: 'CSS',
-      logo: '/images/logos/css-logo.png',
+      src: '/images/logos/css-logo.png',
+      compressedSrc: '/images/logos/compressed/css-logo.png',
     },
     {
       name: 'SCSS',
-      logo: '/images/logos/scss-logo.png',
+      src: '/images/logos/scss-logo.png',
+      compressedSrc: '/images/logos/compressed/scss-logo.png',
     },
     {
       name: 'C',
-      logo: '/images/logos/c-logo.png',
+      src: '/images/logos/c-logo.png',
+      compressedSrc: '/images/logos/compressed/c-logo.png',
     },
     {
       name: 'C++',
-      logo: '/images/logos/cplusplus-logo.png',
+      src: '/images/logos/cplusplus-logo.png',
+      compressedSrc: '/images/logos/compressed/cplusplus-logo.png',
     },
     {
       name: 'C#',
-      logo: '/images/logos/csharp-logo.png',
+      src: '/images/logos/csharp-logo.png',
+      compressedSrc: '/images/logos/compressed/csharp-logo.png',
     },
     {
       name: 'Lua',
-      logo: '/images/logos/lua-logo.webp',
+      src: '/images/logos/lua-logo.webp',
+      compressedSrc: '/images/logos/compressed/lua-logo.png',
     },
     {
       name: 'PHP',
-      logo: '/images/logos/php-logo.png',
+      src: '/images/logos/php-logo.png',
+      compressedSrc: '/images/logos/compressed/php-logo.png',
     },
     {
       name: 'Python',
-      logo: '/images/logos/python-logo.png',
+      src: '/images/logos/python-logo.png',
+      compressedSrc: '/images/logos/compressed/python-logo.png',
     },
     {
       name: 'WebGL',
-      logo: '/images/logos/webgl-logo.png',
+      src: '/images/logos/webgl-logo.png',
+      compressedSrc: '/images/logos/compressed/webgl-logo.png',
     },
     {
       name: 'OpenGL',
-      logo: '/images/logos/opengl-logo.png',
+      src: '/images/logos/opengl-logo.png',
+      compressedSrc: '/images/logos/compressed/opengl-logo.png',
     },
   ])
 
@@ -298,12 +324,16 @@ export const useAbout = () => {
 
   const [referenceData] = useState([
     {
-      name: 'Personal Reference - Barry Levin',
-      path: '/references/bl-reference.pdf',
+      name: 'Professional Reference - Bruce Newton',
+      path: '/references/bn-reference.pdf',
     },
     {
       name: 'Professional Reference - Louis Roots',
       path: '/references/sk-reference.pdf',
+    },
+    {
+      name: 'Personal Reference - Barry Levin',
+      path: '/references/bl-reference.pdf',
     },
   ])
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export const useProjects = () => {
   const [projectData] = useState([
     {
+      id: 'portal',
       title: <h2>Three.js Portal</h2>,
       content: (
         <p>
@@ -13,30 +14,22 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="portal-img-1"
-          href="/images/projects/portal-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="portal-img-1" src="/images/projects/portal-1.png" />
-        </a>,
-        <a
-          key="portal-img-2"
-          href="/images/projects/portal-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="portal-img-2" src="/images/projects/portal-2.png" />
-        </a>,
-        <a
-          key="portal-img-3"
-          href="/images/projects/portal-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="portal-img-3" src="/images/projects/portal-3.png" />
-        </a>,
+        {
+          alt: 'portal-img-1',
+          src: '/images/projects/portal-1.png',
+          compressedSrc: '/images/projects/compressed/portal-1.png',
+        },
+        {
+          alt: 'portal-img-2',
+          src: '/images/projects/portal-2.png',
+          compressedSrc: '/images/projects/compressed/portal-2.png',
+        },
+
+        {
+          alt: 'portal-img-3',
+          src: '/images/projects/portal-3.png',
+          compressedSrc: '/images/projects/compressed/portal-3.png',
+        },
       ],
       links: [
         <a
@@ -58,6 +51,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'spartan',
       title: <h2>Spartan Energy</h2>,
       content: (
         <p>
@@ -70,30 +64,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="spartan-img-1"
-          href="/images/projects/spartan-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="spartan-img-1" src="/images/projects/spartan-1.png" />
-        </a>,
-        <a
-          key="spartan-img-2"
-          href="/images/projects/spartan-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="spartan-img-2" src="/images/projects/spartan-2.png" />
-        </a>,
-        <a
-          key="spartan-img-3"
-          href="/images/projects/spartan-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="spartan-img-3" src="/images/projects/spartan-3.png" />
-        </a>,
+        {
+          alt: 'spartan-img-1',
+          src: '/images/projects/spartan-1.png',
+          compressedSrc: '/images/projects/compressed/spartan-1.png',
+        },
+        {
+          alt: 'spartan-img-2',
+          src: '/images/projects/spartan-2.png',
+          compressedSrc: '/images/projects/compressed/spartan-2.png',
+        },
+        {
+          alt: 'spartan-img-3',
+          src: '/images/projects/spartan-3.png',
+          compressedSrc: '/images/projects/compressed/spartan-3.png',
+        },
       ],
       links: [
         <a
@@ -107,6 +92,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'insig',
       title: <h2>Insig Technologies</h2>,
       content: (
         <p>
@@ -120,30 +106,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="uilib-img-1"
-          href="/images/projects/uilib-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="uilib-img-1" src="/images/projects/uilib-1.png" />
-        </a>,
-        <a
-          key="uilib-img-2"
-          href="/images/projects/uilib-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="uilib-img-2" src="/images/projects/uilib-2.png" />
-        </a>,
-        <a
-          key="uilib-img-3"
-          href="/images/projects/uilib-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="uilib-img-3" src="/images/projects/uilib-3.png" />
-        </a>,
+        {
+          alt: 'insig-img-1',
+          src: '/images/projects/uilib-1.png',
+          compressedSrc: '/images/projects/compressed/uilib-1.png',
+        },
+        {
+          alt: 'insig-img-2',
+          src: '/images/projects/uilib-2.png',
+          compressedSrc: '/images/projects/compressed/uilib-2.png',
+        },
+        {
+          alt: 'insig-img-3',
+          src: '/images/projects/uilib-3.png',
+          compressedSrc: '/images/projects/compressed/uilib-3.png',
+        },
       ],
       links: [
         <a
@@ -156,8 +133,8 @@ export const useProjects = () => {
         </a>,
       ],
     },
-
     {
+      id: 'hope-and-gorey',
       title: <h2>Ghoul Britannia: Land of Hope and Gorey</h2>,
       content: (
         <p>
@@ -168,39 +145,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="hope-and-gorey-img-1"
-          href="/images/games/hope-and-gorey-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            alt="hope-and-gorey-img-1"
-            src="/images/games/hope-and-gorey-1.png"
-          />
-        </a>,
-        <a
-          key="hope-and-gorey-img-2"
-          href="/images/games/hope-and-gorey-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            alt="hope-and-gorey-img-2"
-            src="/images/games/hope-and-gorey-2.png"
-          />
-        </a>,
-        <a
-          key="hope-and-gorey-img-3"
-          href="/images/games/hope-and-gorey-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            alt="hope-and-gorey-img-3"
-            src="/images/games/hope-and-gorey-3.png"
-          />
-        </a>,
+        {
+          alt: 'hope-and-gorey-img-1',
+          src: '/images/games/hope-and-gorey-1.png',
+          compressedSrc: '/images/games/compressed/hope-and-gorey-1.png',
+        },
+        {
+          alt: 'hope-and-gorey-img-2',
+          src: '/images/games/hope-and-gorey-2.png',
+          compressedSrc: '/images/games/compressed/hope-and-gorey-2.png',
+        },
+        {
+          alt: 'hope-and-gorey-img-3',
+          src: '/images/games/hope-and-gorey-3.png',
+          compressedSrc: '/images/games/compressed/hope-and-gorey-3.png',
+        },
       ],
       links: [
         <a
@@ -222,6 +181,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'aliensche',
       title: <h2>Aliensche!</h2>,
       content: (
         <p>
@@ -232,30 +192,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="aliensche-img-1"
-          href="/images/games/aliensche-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="aliensche-img-1" src="/images/games/aliensche-1.png" />
-        </a>,
-        <a
-          key="aliensche-img-2"
-          href="/images/games/aliensche-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="aliensche-img-2" src="/images/games/aliensche-2.png" />
-        </a>,
-        <a
-          key="aliensche-img-3"
-          href="/images/games/aliensche-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="aliensche-img-3" src="/images/games/aliensche-3.png" />
-        </a>,
+        {
+          alt: 'aliensche-img-1',
+          src: '/images/games/aliensche-1.png',
+          compressedSrc: '/images/games/compressed/aliensche-1.png',
+        },
+        {
+          alt: 'aliensche-img-2',
+          src: '/images/games/aliensche-2.png',
+          compressedSrc: '/images/games/compressed/aliensche-2.png',
+        },
+        {
+          alt: 'aliensche-img-3',
+          src: '/images/games/aliensche-3.png',
+          compressedSrc: '/images/games/compressed/aliensche-3.png',
+        },
       ],
       links: [
         <a
@@ -269,6 +220,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'blitz',
       title: <h2>Blitz Bandits</h2>,
       content: (
         <p>
@@ -279,30 +231,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="blitz-img-1"
-          href="/images/games/blitz-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="blitz-img-1" src="/images/games/blitz-1.png" />
-        </a>,
-        <a
-          key="blitz-img-2"
-          href="/images/games/blitz-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="blitz-img-2" src="/images/games/blitz-2.png" />
-        </a>,
-        <a
-          key="blitz-img-3"
-          href="/images/games/blitz-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="blitz-img-3" src="/images/games/blitz-3.png" />
-        </a>,
+        {
+          alt: 'blitz-img-1',
+          src: '/images/games/blitz-1.png',
+          compressedSrc: '/images/games/compressed/blitz-1.png',
+        },
+        {
+          alt: 'blitz-img-2',
+          src: '/images/games/blitz-2.png',
+          compressedSrc: '/images/games/compressed/blitz-2.png',
+        },
+        {
+          alt: 'blitz-img-3',
+          src: '/images/games/blitz-3.png',
+          compressedSrc: '/images/games/compressed/blitz-3.png',
+        },
       ],
       links: [
         <a
@@ -332,6 +275,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'bushbash',
       title: <h2>Bush Bash</h2>,
       content: (
         <p>
@@ -345,30 +289,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="bushbash-img-1"
-          href="/images/games/bushbash-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bushbash-img-1" src="/images/games/bushbash-1.png" />
-        </a>,
-        <a
-          key="bushbash-img-2"
-          href="/images/games/bushbash-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bushbash-img-2" src="/images/games/bushbash-2.png" />
-        </a>,
-        <a
-          key="bushbash-img-3"
-          href="/images/games/bushbash-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bushbash-img-3" src="/images/games/bushbash-3.png" />
-        </a>,
+        {
+          alt: 'bushbash-img-1',
+          src: '/images/games/bushbash-1.png',
+          compressedSrc: '/images/games/compressed/bushbash-1.png',
+        },
+        {
+          alt: 'bushbash-img-2',
+          src: '/images/games/bushbash-2.png',
+          compressedSrc: '/images/games/compressed/bushbash-2.png',
+        },
+        {
+          alt: 'bushbash-img-3',
+          src: '/images/games/bushbash-3.png',
+          compressedSrc: '/images/games/compressed/bushbash-3.png',
+        },
       ],
       links: [
         <a
@@ -398,6 +333,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'catnips',
       title: <h2>Catnips</h2>,
       content: (
         <p>
@@ -409,30 +345,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="catnips-img-1"
-          href="/images/games/catnips-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="catnips-img-1" src="/images/games/catnips-1.png" />
-        </a>,
-        <a
-          key="catnips-img-2"
-          href="/images/games/catnips-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="catnips-img-2" src="/images/games/catnips-2.png" />
-        </a>,
-        <a
-          key="catnips-img-3"
-          href="/images/games/catnips-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="catnips-img-3" src="/images/games/catnips-3.png" />
-        </a>,
+        {
+          alt: 'catnips-img-1',
+          src: '/images/games/catnips-1.png',
+          compressedSrc: '/images/games/compressed/catnips-1.png',
+        },
+        {
+          alt: 'catnips-img-2',
+          src: '/images/games/catnips-2.png',
+          compressedSrc: '/images/games/compressed/catnips-2.png',
+        },
+        {
+          alt: 'catnips-img-3',
+          src: '/images/games/catnips-3.png',
+          compressedSrc: '/images/games/compressed/catnips-3.png',
+        },
       ],
       links: [
         <a
@@ -454,6 +381,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'electric',
       title: <h2>Arcadian Dreams: Electric Forest</h2>,
       content: (
         <p>
@@ -467,30 +395,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="electric-img-1"
-          href="/images/games/electric-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="electric-img-1" src="/images/games/electric-1.png" />
-        </a>,
-        <a
-          key="electric-img-2"
-          href="/images/games/electric-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="electric-img-2" src="/images/games/electric-2.png" />
-        </a>,
-        <a
-          key="electric-img-3"
-          href="/images/games/electric-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="electric-img-3" src="/images/games/electric-3.png" />
-        </a>,
+        {
+          alt: 'electric-img-1',
+          src: '/images/games/electric-1.png',
+          compressedSrc: '/images/games/compressed/electric-1.png',
+        },
+        {
+          alt: 'electric-img-2',
+          src: '/images/games/electric-2.png',
+          compressedSrc: '/images/games/compressed/electric-2.png',
+        },
+        {
+          alt: 'electric-img-3',
+          src: '/images/games/electric-3.png',
+          compressedSrc: '/images/games/compressed/electric-3.png',
+        },
       ],
       links: [
         <a
@@ -504,6 +423,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'gundash',
       title: <h2>Gundash</h2>,
       content: (
         <p>
@@ -515,30 +435,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="gundash-img-1"
-          href="/images/games/gundash-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="gundash-img-1" src="/images/games/gundash-1.png" />
-        </a>,
-        <a
-          key="gundash-img-2"
-          href="/images/games/gundash-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="gundash-img-2" src="/images/games/gundash-2.png" />
-        </a>,
-        <a
-          key="gundash-img-3"
-          href="/images/games/gundash-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="gundash-img-3" src="/images/games/gundash-3.png" />
-        </a>,
+        {
+          alt: 'gundash-img-1',
+          src: '/images/games/gundash-1.png',
+          compressedSrc: '/images/games/compressed/gundash-1.png',
+        },
+        {
+          alt: 'gundash-img-2',
+          src: '/images/games/gundash-2.png',
+          compressedSrc: '/images/games/compressed/gundash-2.png',
+        },
+        {
+          alt: 'gundash-img-3',
+          src: '/images/games/gundash-3.png',
+          compressedSrc: '/images/games/compressed/gundash-3.png',
+        },
       ],
       links: [
         <a
@@ -552,6 +463,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'skulls',
       title: <h2>Skulls</h2>,
       content: (
         <p>
@@ -563,34 +475,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="skulls-img-1"
-          href="/images/games/skulls-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="skulls-img-1" src="/images/games/skulls-1.png" />
-        </a>,
-        <a
-          key="skulls-img-2"
-          href="/images/games/skulls-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="skulls-img-2" src="/images/games/skulls-2.png" />
-        </a>,
-        <a
-          key="skulls-img-3"
-          href="/images/games/skulls-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="skulls-img-3" src="/images/games/skulls-3.png" />
-        </a>,
+        {
+          alt: 'skulls-img-1',
+          src: '/images/games/skulls-1.png',
+          compressedSrc: '/images/games/compressed/skulls-1.png',
+        },
+        {
+          alt: 'skulls-img-2',
+          src: '/images/games/skulls-2.png',
+          compressedSrc: '/images/games/compressed/skulls-2.png',
+        },
+        {
+          alt: 'skulls-img-3',
+          src: '/images/games/skulls-3.png',
+          compressedSrc: '/images/games/compressed/skulls-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'icarus',
       title: <h2>Icarus</h2>,
       content: (
         <p>
@@ -603,34 +507,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="icarus-img-1"
-          href="/images/games/icarus-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="icarus-img-1" src="/images/games/icarus-1.png" />
-        </a>,
-        <a
-          key="icarus-img-2"
-          href="/images/games/icarus-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="icarus-img-2" src="/images/games/icarus-2.png" />
-        </a>,
-        <a
-          key="icarus-img-3"
-          href="/images/games/icarus-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="icarus-img-3" src="/images/games/icarus-3.png" />
-        </a>,
+        {
+          alt: 'icarus-img-1',
+          src: '/images/games/icarus-1.png',
+          compressedSrc: '/images/games/compressed/icarus-1.png',
+        },
+        {
+          alt: 'icarus-img-2',
+          src: '/images/games/icarus-2.png',
+          compressedSrc: '/images/games/compressed/icarus-2.png',
+        },
+        {
+          alt: 'icarus-img-3',
+          src: '/images/games/icarus-3.png',
+          compressedSrc: '/images/games/compressed/icarus-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'twoshot',
       title: <h2>Two Shot Robot</h2>,
       content: (
         <p>
@@ -642,30 +538,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="twoshot-img-1"
-          href="/images/games/twoshot-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="twoshot-img-1" src="/images/games/twoshot-1.png" />
-        </a>,
-        <a
-          key="twoshot-img-2"
-          href="/images/games/twoshot-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="twoshot-img-2" src="/images/games/twoshot-2.png" />
-        </a>,
-        <a
-          key="twoshot-img-3"
-          href="/images/games/twoshot-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="twoshot-img-3" src="/images/games/twoshot-3.png" />
-        </a>,
+        {
+          alt: 'twoshot-img-1',
+          src: '/images/games/twoshot-1.png',
+          compressedSrc: '/images/games/compressed/twoshot-1.png',
+        },
+        {
+          alt: 'twoshot-img-2',
+          src: '/images/games/twoshot-2.png',
+          compressedSrc: '/images/games/compressed/twoshot-2.png',
+        },
+        {
+          alt: 'twoshot-img-3',
+          src: '/images/games/twoshot-3.png',
+          compressedSrc: '/images/games/compressed/twoshot-3.png',
+        },
       ],
       links: [
         <a
@@ -679,6 +566,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'rt',
       title: <h2>RT</h2>,
       content: (
         <p>
@@ -688,30 +576,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="rt-img-1"
-          href="/images/games/rt-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="rt-img-1" src="/images/games/rt-1.png" />
-        </a>,
-        <a
-          key="rt-img-2"
-          href="/images/games/rt-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="rt-img-2" src="/images/games/rt-2.png" />
-        </a>,
-        <a
-          key="rt-img-3"
-          href="/images/games/rt-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="rt-img-3" src="/images/games/rt-3.png" />
-        </a>,
+        {
+          alt: 'rt-img-1',
+          src: '/images/games/rt-1.png',
+          compressedSrc: '/images/games/compressed/rt-1.png',
+        },
+        {
+          alt: 'rt-img-2',
+          src: '/images/games/rt-2.png',
+          compressedSrc: '/images/games/compressed/rt-2.png',
+        },
+        {
+          alt: 'rt-img-3',
+          src: '/images/games/rt-3.png',
+          compressedSrc: '/images/games/compressed/rt-3.png',
+        },
       ],
       links: [
         <a
@@ -725,6 +604,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'seed',
       title: <h2>Seed x Sable</h2>,
       content: (
         <p>
@@ -738,30 +618,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="seed-img-1"
-          href="/images/games/seed-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="seed-img-1" src="/images/games/seed-1.png" />
-        </a>,
-        <a
-          key="seed-img-2"
-          href="/images/games/seed-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="seed-img-2" src="/images/games/seed-2.png" />
-        </a>,
-        <a
-          key="seed-img-3"
-          href="/images/games/seed-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="seed-img-3" src="/images/games/seed-3.png" />
-        </a>,
+        {
+          alt: 'seed-img-1',
+          src: '/images/games/seed-1.png',
+          compressedSrc: '/images/games/compressed/seed-1.png',
+        },
+        {
+          alt: 'seed-img-2',
+          src: '/images/games/seed-2.png',
+          compressedSrc: '/images/games/compressed/seed-2.png',
+        },
+        {
+          alt: 'seed-img-3',
+          src: '/images/games/seed-3.png',
+          compressedSrc: '/images/games/compressed/seed-3.png',
+        },
       ],
       links: [
         <a
@@ -775,6 +646,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'astral',
       title: <h2>Astral Diplomacy</h2>,
       content: (
         <p>
@@ -786,34 +658,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="astral-img-1"
-          href="/images/games/astral-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="astral-img-1" src="/images/games/astral-1.png" />
-        </a>,
-        <a
-          key="astral-img-2"
-          href="/images/games/astral-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="astral-img-2" src="/images/games/astral-2.png" />
-        </a>,
-        <a
-          key="astral-img-3"
-          href="/images/games/astral-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="astral-img-3" src="/images/games/astral-3.png" />
-        </a>,
+        {
+          alt: 'astral-img-1',
+          src: '/images/games/astral-1.png',
+          compressedSrc: '/images/games/compressed/astral-1.png',
+        },
+        {
+          alt: 'astral-img-2',
+          src: '/images/games/astral-2.png',
+          compressedSrc: '/images/games/compressed/astral-2.png',
+        },
+        {
+          alt: 'astral-img-3',
+          src: '/images/games/astral-3.png',
+          compressedSrc: '/images/games/compressed/astral-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'ocean',
       title: <h2>Ocean Commotion</h2>,
       content: (
         <p>
@@ -825,34 +689,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="ocean-img-1"
-          href="/images/games/ocean-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="ocean-img-1" src="/images/games/ocean-1.png" />
-        </a>,
-        <a
-          key="ocean-img-2"
-          href="/images/games/ocean-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="ocean-img-2" src="/images/games/ocean-2.png" />
-        </a>,
-        <a
-          key="ocean-img-3"
-          href="/images/games/ocean-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="ocean-img-3" src="/images/games/ocean-3.png" />
-        </a>,
+        {
+          alt: 'ocean-img-1',
+          src: '/images/games/ocean-1.png',
+          compressedSrc: '/images/games/compressed/ocean-1.png',
+        },
+        {
+          alt: 'ocean-img-2',
+          src: '/images/games/ocean-2.png',
+          compressedSrc: '/images/games/compressed/ocean-2.png',
+        },
+        {
+          alt: 'ocean-img-3',
+          src: '/images/games/ocean-3.png',
+          compressedSrc: '/images/games/compressed/ocean-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'drop',
       title: <h2>Drop</h2>,
       content: (
         <p>
@@ -863,30 +719,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="drop-img-1"
-          href="/images/games/drop-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="drop-img-1" src="/images/games/drop-1.png" />
-        </a>,
-        <a
-          key="drop-img-2"
-          href="/images/games/drop-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="drop-img-2" src="/images/games/drop-2.png" />
-        </a>,
-        <a
-          key="drop-img-3"
-          href="/images/games/drop-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="drop-img-3" src="/images/games/drop-3.png" />
-        </a>,
+        {
+          alt: 'drop-img-1',
+          src: '/images/games/drop-1.png',
+          compressedSrc: '/images/games/compressed/drop-1.png',
+        },
+        {
+          alt: 'drop-img-2',
+          src: '/images/games/drop-2.png',
+          compressedSrc: '/images/games/compressed/drop-2.png',
+        },
+        {
+          alt: 'drop-img-3',
+          src: '/images/games/drop-3.png',
+          compressedSrc: '/images/games/compressed/drop-3.png',
+        },
       ],
       links: [
         <a
@@ -900,6 +747,7 @@ export const useProjects = () => {
       ],
     },
     {
+      id: 'bassball',
       title: <h2>Bassball</h2>,
       content: (
         <p>
@@ -910,34 +758,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="bassball-img-1"
-          href="/images/games/bassball-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bassball-img-1" src="/images/games/bassball-1.png" />
-        </a>,
-        <a
-          key="bassball-img-2"
-          href="/images/games/bassball-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bassball-img-2" src="/images/games/bassball-2.png" />
-        </a>,
-        <a
-          key="bassball-img-3"
-          href="/images/games/bassball-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="bassball-img-3" src="/images/games/bassball-3.png" />
-        </a>,
+        {
+          alt: 'bassball-img-1',
+          src: '/images/games/bassball-1.png',
+          compressedSrc: '/images/games/compressed/bassball-1.png',
+        },
+        {
+          alt: 'bassball-img-2',
+          src: '/images/games/bassball-2.png',
+          compressedSrc: '/images/games/compressed/bassball-2.png',
+        },
+        {
+          alt: 'bassball-img-3',
+          src: '/images/games/bassball-3.png',
+          compressedSrc: '/images/games/compressed/bassball-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'cogandballs',
       title: <h2>Cog & Balls</h2>,
       content: (
         <p>
@@ -948,34 +788,26 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="cogandballs-img-1"
-          href="/images/games/cogandballs-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="cogandballs-img-1" src="/images/games/cogandballs-1.png" />
-        </a>,
-        <a
-          key="cogandballs-img-2"
-          href="/images/games/cogandballs-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="cogandballs-img-2" src="/images/games/cogandballs-2.png" />
-        </a>,
-        <a
-          key="cogandballs-img-3"
-          href="/images/games/cogandballs-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="cogandballs-img-3" src="/images/games/cogandballs-3.png" />
-        </a>,
+        {
+          alt: 'cogandballs-img-1',
+          src: '/images/games/cogandballs-1.png',
+          compressedSrc: '/images/games/compressed/cogandballs-1.png',
+        },
+        {
+          alt: 'cogandballs-img-2',
+          src: '/images/games/cogandballs-2.png',
+          compressedSrc: '/images/games/compressed/cogandballs-2.png',
+        },
+        {
+          alt: 'cogandballs-img-3',
+          src: '/images/games/cogandballs-3.png',
+          compressedSrc: '/images/games/compressed/cogandballs-3.png',
+        },
       ],
       links: [],
     },
     {
+      id: 'biru',
       title: <h2>Biru</h2>,
       content: (
         <p>
@@ -986,30 +818,21 @@ export const useProjects = () => {
         </p>
       ),
       images: [
-        <a
-          key="biru-img-1"
-          href="/images/games/biru-1.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="biru-img-1" src="/images/games/biru-1.png" />
-        </a>,
-        <a
-          key="biru-img-2"
-          href="/images/games/biru-2.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="biru-img-2" src="/images/games/biru-2.png" />
-        </a>,
-        <a
-          key="biru-img-3"
-          href="/images/games/biru-3.png"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img alt="biru-img-3" src="/images/games/biru-3.png" />
-        </a>,
+        {
+          alt: 'biru-img-1',
+          src: '/images/games/biru-1.png',
+          compressedSrc: '/images/games/compressed/biru-1.png',
+        },
+        {
+          alt: 'biru-img-2',
+          src: '/images/games/biru-2.png',
+          compressedSrc: '/images/games/compressed/biru-2.png',
+        },
+        {
+          alt: 'biru-img-3',
+          src: '/images/games/biru-3.png',
+          compressedSrc: '/images/games/compressed/biru-3.png',
+        },
       ],
       links: [],
     },

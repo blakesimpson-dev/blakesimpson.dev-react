@@ -94,3 +94,56 @@ textarea {
   max-height: 140px;
   margin-right: 2rem;
 }
+
+.image {
+  &--loading {
+    filter: blur(10px);
+    clip-path: inset(0);
+  }
+
+  &--loaded {
+    filter: blur(0px);
+    transition: filter 0.5s linear;
+  }  
+}
+
+.modal {
+  &__overlay {
+    @include font-default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+  }
+
+  &__panel {
+    position: absolute;
+    @include panel__box-shadow;
+    @include panel__border;
+    @include panel__background--diagonal;
+    @include panel__text-shadow;
+    top: 2rem;
+    left: 3rem;
+    right: 3rem;
+    bottom: 2rem;
+    z-index: 1002;
+    background-color: black;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 0 0.4rem 0 0;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% - 9rem);
+
+    img {
+      max-height: 100%;
+    }
+  }
+}

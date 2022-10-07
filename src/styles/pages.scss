@@ -54,6 +54,10 @@
       min-height: 4rem;
       max-height: 4rem;
 
+      span {
+        text-align: center;
+      }
+
       img {
         margin-bottom: 0.5rem;
         min-width: 4rem;
@@ -155,8 +159,13 @@
     }
 
     &--images {
+      @include display--flex-row-wrap;
       $img-width: 200px;
       $img-height: 110px;
+
+      > * {
+        margin: 1rem;
+      }
 
       img { 
         min-width: $img-width;
@@ -164,7 +173,6 @@
         min-height: $img-height;
         max-height: $img-height;
         object-fit: cover;
-        margin: 1rem;
         pointer-events: all;
       }
     }

@@ -3,6 +3,7 @@ import React from 'react'
 import Page from '../components/Page'
 import { useAbout } from '../hooks/useAbout'
 import { FaFilePdf } from 'react-icons/fa'
+import ProgressiveImg from '../components/ProgressiveImg'
 
 const About = ({ setPage }) => {
   const {
@@ -42,7 +43,6 @@ const About = ({ setPage }) => {
               {referenceData.map((item, index) => {
                 return (
                   <div key={`reference-${index}`}>
-                    <br />
                     <FaFilePdf />
                     <a href={item.path} target="_blank" rel="noreferrer">
                       {item.name}
@@ -73,7 +73,11 @@ const About = ({ setPage }) => {
                     key={`proficiency-${index}`}
                     className="about-page__proficiencies--item"
                   >
-                    <img src={item.logo} />
+                    <ProgressiveImg
+                      alt={`proficiency-logo-${item.name}`}
+                      src={item.src}
+                      compressedSrc={item.compressedSrc}
+                    />
                     <span>{item.name}</span>
                   </div>
                 )
@@ -89,7 +93,11 @@ const About = ({ setPage }) => {
                     key={`language-${index}`}
                     className="about-page__languages--item"
                   >
-                    <img src={item.logo} />
+                    <ProgressiveImg
+                      alt={`language-logo-${item.name}`}
+                      src={item.src}
+                      compressedSrc={item.compressedSrc}
+                    />
                     <span>{item.name}</span>
                   </div>
                 )
