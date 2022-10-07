@@ -28,17 +28,18 @@ const About = ({ setPage }) => {
             <div>
               <h1>Blake Simpson - Senior Developer</h1>
               <p>
-                Whilst working freelance as an indie, being key to a fresh
-                startup or leading a team as a senior in a larger company, I
-                have produced a multitude of interactive titles and software. As
-                a motivated autodidact, I have also trained myself in numerous
-                programming languages, frameworks and development environments.
-                This process has informed me about myself and my chosen field of
-                work, whilst equipping me with the skills necessary to think and
-                operate successfully &apos;outside of the box&apos;. My personal
-                studies have left me with a broad understanding of design
-                methodology and a deep knowledge of how software and digital
-                experiences intersect with people and the spaces they inhabit.
+                I&apos;ve created a wide range of interactive titles and
+                software while working freelance as an indie, as a key member of
+                a new startup, and as a senior leader in a larger corporation.
+                As a motivated autodidact, I have also trained myself in
+                numerous programming languages, frameworks, and development
+                environments. This process has informed me about myself and my
+                chosen field of work, whilst equipping me with the skills
+                necessary to think and operate successfully outside of the box.
+                My personal studies have left me with a broad understanding of
+                design methodology and a deep knowledge of how software and
+                digital experiences intersect with people and the spaces they
+                inhabit.
               </p>
               {referenceData.map((item, index) => {
                 return (

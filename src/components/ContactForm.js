@@ -3,9 +3,21 @@ import React, { useRef, useState } from 'react'
 import { FaEnvelope } from 'react-icons/fa'
 import '../styles/contact-form.scss'
 
-const serviceId = 'service_jzx694n'
-const templateId = 'template_yt1xkh2'
-const publicKey = 'krpJ-SYhO0dBVSINd'
+let serviceId
+let templateId
+let publicKey
+
+fetch('/.netlify/functions/emailjs')
+  .then((response) => {
+    console.log(response)
+    response.json()
+  })
+  .then((json) => {
+    console.log(json)
+    serviceId = json.serviceId
+    templateId = json.templateId
+    publicKey = json.publicKey
+  })
 
 const ContactForm = () => {
   const form = useRef()
