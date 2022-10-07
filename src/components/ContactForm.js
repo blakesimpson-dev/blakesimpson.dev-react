@@ -1,19 +1,6 @@
-import emailjs from '@emailjs/browser'
 import React, { useRef, useState } from 'react'
 import { FaEnvelope } from 'react-icons/fa'
 import '../styles/contact-form.scss'
-
-let serviceId
-let templateId
-let publicKey
-
-fetch('https://blakesimpson.dev/.netlify/functions/emailjs')
-  .then((response) => response.json())
-  .then((json) => {
-    serviceId = json.serviceId
-    templateId = json.templateId
-    publicKey = json.publicKey
-  })
 
 const ContactForm = () => {
   const form = useRef()
@@ -22,26 +9,22 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-      (result) => {
-        setTimeout(() => {
-          setSubmitted(true)
-        }, 100)
-      },
-      (error) => {
-        console.error(error)
-      },
-    )
+    setTimeout(() => {
+      setSubmitted(true)
+    }, 100)
   }
 
   return (
     <form
+      name="contactForm"
       className="contact-form"
       ref={form}
       onSubmit={handleSubmit}
       method="POST"
       target="_blank"
     >
+      <input type="hidden" name="form-name" value="contactForm" />
+
       {isSubmitted && (
         <span>Thank you for reaching out to me. I will be in touch soon.</span>
       )}
