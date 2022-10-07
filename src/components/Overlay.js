@@ -1,12 +1,12 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
+import { useMotion } from '../hooks/useMotion'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Music from '../pages/Music'
 import Projects from '../pages/Projects'
 import '../styles/overlay.scss'
-import { useMotion } from '../hooks/useMotion'
 
 const Overlay = ({ page, setPage }) => {
   const controls = useAnimationControls()

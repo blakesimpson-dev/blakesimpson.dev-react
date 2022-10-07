@@ -1,8 +1,8 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
-import '../styles/menu.scss'
 import { useMotion } from '../hooks/useMotion'
+import '../styles/menu.scss'
 
 let useInitialMotion = true
 

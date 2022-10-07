@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
 import PropType from 'prop-types'
+import React, { useEffect, useState } from 'react'
 
 const ProgressiveImg = ({ compressedSrc, src, alt, ...props }) => {
   const [imgSrc, setImgSrc] = useState(compressedSrc || src)

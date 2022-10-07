@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { FaCaretUp } from 'react-icons/fa'
-import { FaCaretDown } from 'react-icons/fa'
-import { FaCheck } from 'react-icons/fa'
+import React, { useState } from 'react'
+import { FaCaretDown, FaCaretUp, FaCheck } from 'react-icons/fa'
 import '../styles/dropdown.scss'
 
 const Dropdown = ({ headerContent, items, setSelectedItem }) => {

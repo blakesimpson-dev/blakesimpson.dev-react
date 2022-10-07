@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Page from '../components/Page'
 import ContactForm from '../components/ContactForm'
+import Page from '../components/Page'
 
 const Contact = ({ setPage }) => {
   return (

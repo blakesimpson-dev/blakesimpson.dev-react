@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Page from '../components/Page'
-import { useAbout } from '../hooks/useAbout'
 import { FaFilePdf } from 'react-icons/fa'
+import Page from '../components/Page'
 import ProgressiveImg from '../components/ProgressiveImg'
+import { useAbout } from '../hooks/useAbout'
 
 const About = ({ setPage }) => {
   const {

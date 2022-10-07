@@ -1,28 +1,26 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import { FaExternalLinkSquareAlt } from 'react-icons/fa'
+import ImgModal from '../components/ImgModal'
 import Page from '../components/Page'
+import ProgressiveImg from '../components/ProgressiveImg'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
 import { useProjects } from '../hooks/useProjects'
-import { FaExternalLinkSquareAlt } from 'react-icons/fa'
-import Modal from 'react-modal'
-import ProgressiveImg from '../components/ProgressiveImg'
-import { FaTimes } from 'react-icons/fa'
-
-Modal.setAppElement('#root')
 
 const Projects = ({ setPage }) => {
   const { projectData } = useProjects()
-  const [modalIsOpen, setIsOpen] = useState(false)
-  const [modalContent, setModalContent] = useState(null)
+  const imgModal = useRef()
+  const [imgModalSrc, setImgModalSrc] = useState(null)
+  const [isImgModalOpen, setIsImgModalOpen] = useState(false)
 
-  const openModal = (modalContent) => {
-    setModalContent(modalContent)
-    setIsOpen(true)
+  const openImgModal = (imgModalSrc) => {
+    setImgModalSrc(imgModalSrc)
+    setIsImgModalOpen(true)
   }
 
-  const closeModal = () => {
-    setModalContent(null)
-    setIsOpen(false)
+  const closeImgModal = () => {
+    setImgModalSrc(null)
+    setIsImgModalOpen(false)
   }
 
   return (
@@ -45,7 +43,13 @@ const Projects = ({ setPage }) => {
               </p>
             </div>
           </div>
-          <Modal
+          <ImgModal
+            innerRef={imgModal}
+            src={imgModalSrc}
+            isImgModalOpen={isImgModalOpen}
+            closeImgModal={closeImgModal}
+          />
+          {/* <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             className="modal__panel"
@@ -60,7 +64,7 @@ const Projects = ({ setPage }) => {
             <div className="modal__content">
               <img src={modalContent} />
             </div>
-          </Modal>
+          </Modal> */}
           <ResponsiveCarousel
             content={projectData.map((item, index) => {
               return (
@@ -75,7 +79,7 @@ const Projects = ({ setPage }) => {
                     {item.images.map((image, index) => {
                       return (
                         <ProgressiveImg
-                          onClick={() => openModal(image.src)}
+                          onClick={() => openImgModal(image.src)}
                           key={`${item.id}-modal-button-${index}`}
                           style={{ cursor: 'pointer' }}
                           alt={image.alt}
