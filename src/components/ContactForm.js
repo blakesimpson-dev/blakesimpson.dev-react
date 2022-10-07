@@ -7,13 +7,9 @@ let serviceId
 let templateId
 let publicKey
 
-fetch('/.netlify/functions/emailjs')
-  .then((response) => {
-    console.log(response)
-    response.json()
-  })
+fetch('https://blakesimpson.dev/.netlify/functions/emailjs')
+  .then((response) => response.json())
   .then((json) => {
-    console.log(json)
     serviceId = json.serviceId
     templateId = json.templateId
     publicKey = json.publicKey
@@ -28,13 +24,12 @@ const ContactForm = () => {
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
-        console.log(result)
         setTimeout(() => {
           setSubmitted(true)
         }, 100)
       },
       (error) => {
-        console.log(error)
+        console.error(error)
       },
     )
   }
