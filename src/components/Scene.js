@@ -11,9 +11,9 @@ import {
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { useScene } from '../hooks/useScene'
-import Screen from './Screen'
 import Fan from './Fan'
 import GameboyScreen from './GameboyScreen'
+import Screen from './Screen'
 
 const Scene = ({ page, setPage }) => {
   const {

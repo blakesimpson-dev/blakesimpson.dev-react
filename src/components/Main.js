@@ -1,13 +1,13 @@
 import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 import React, { Suspense, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import * as THREE from 'three'
-import Menu from './Menu'
 import { useMotion } from '../hooks/useMotion'
+import Frame from './Frame'
+import Menu from './Menu'
 import Overlay from './Overlay'
 import Scene from './Scene'
-import Frame from './Frame'
-import { useMediaQuery } from 'react-responsive'
 import Unsupported from './Unsupported'
 
 const Main = () => {

@@ -50,15 +50,27 @@ button {
   background-color: $color--primary;
   cursor: pointer;
   transition: 0.3s;
+
+  &:hover {
+    background-color: $color--secondary;
+  }
+
+  &:active {
+    background-color: $color--tertiary;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-button:hover {
-  background-color: $color--secondary;
-}
+// button:hover {
+//   background-color: $color--secondary;
+// }
 
-button:active {
-  background-color: $color--tertiary;
-}
+// button:active {
+//   background-color: $color--tertiary;
+// }
 
 .button--cancel {
   width: 2rem;

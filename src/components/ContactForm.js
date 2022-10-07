@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react'
-import '../styles/contact-form.scss'
-import { FaEnvelope } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
+import React, { useRef, useState } from 'react'
+import { FaEnvelope } from 'react-icons/fa'
+import '../styles/contact-form.scss'
 
 const serviceId = 'service_jzx694n'
 const templateId = 'template_yt1xkh2'
