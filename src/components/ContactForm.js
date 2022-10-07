@@ -22,13 +22,15 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       method="POST"
       target="_blank"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
     >
       {isSubmitted && (
         <span>Thank you for reaching out to me. I will be in touch soon.</span>
       )}
       {!isSubmitted && (
         <>
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="contactForm" />
           <h1>Send me a message</h1>
           <div className="contact-form__input">
             <label htmlFor="name">
