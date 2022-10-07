@@ -16,7 +16,7 @@ const ContactForm = () => {
 
   return (
     <form
-      name="contact"
+      name="contactForm"
       className="contact-form"
       ref={form}
       onSubmit={handleSubmit}
