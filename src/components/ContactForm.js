@@ -21,6 +21,7 @@ const ContactForm = () => {
       method="POST"
       data-netlify="true"
       className="contact-form"
+      action="/success"
     >
       <input type="hidden" name="form-name" value="contact" />
       <h1>Send me a message</h1>
