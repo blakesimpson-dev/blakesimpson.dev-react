@@ -1,0 +1,43 @@
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_mixins.scss';
+
+.modal {
+  &__overlay {
+    @include font-default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+  }
+
+  &__panel {
+    position: absolute;
+    @include panel__box-shadow;
+    @include panel__border;
+    @include panel__background--diagonal;
+    @include panel__text-shadow;
+    top: 1.75rem;
+    left: 3rem;
+    right: 3rem;
+    bottom: 1.75rem;
+    z-index: 1002;
+    background-color: black;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% - 5rem);
+
+    img {
+      max-width: calc(100% - 4rem);
+      max-height: calc(100% - 4rem);
+    }
+  }
+}

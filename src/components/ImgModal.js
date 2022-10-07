@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import Modal from 'react-modal'
+import '../styles/modal.scss'
 
 Modal.setAppElement('#root')
 
