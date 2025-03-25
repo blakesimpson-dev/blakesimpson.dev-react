@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "adelia";
+}
+@media (min-width: 0) {
+  h1 {
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 640px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 6rem;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 8rem;
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 5rem;
+    line-height: 10rem;
+  }
+}
+@media (min-width: 1920px) {
+  h1 {
+    font-size: 9rem;
+    line-height: 18rem;
+  }
+}
+
+h2 {
+  font-family: "tangerine-bold";
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+h3 {
+  font-family: "tangerine-bold";
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+main {
+  font-family: "tangerine";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  color: rgb(31, 28, 25);
+  height: 200vh;
+  box-shadow: 8px 8px 80px #8a4d0f inset;
+  background-image: url("~/public/images/wedding/textured-paper.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  position: relative;
+}
+
+.splash-container,
+.form-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.splash-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url("~/public/images/wedding/top-mushies.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  filter: sepia(0.7) opacity(0.5);
+  mix-blend-mode: hard-light;
+}
+
+.form-container::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url("~/public/images/wedding/left-mushies.png"), url("~/public/images/wedding/right-mushies.png");
+  background-position: left -200% center, right -60% center;
+  background-repeat: no-repeat;
+  background-size: 80%, 60%;
+  filter: sepia(0.7) opacity(0.5);
+  mix-blend-mode: hard-light;
+}
+
+.splash-title,
+.splash-names,
+.splash-details {
+  z-index: 1;
+  max-width: 90%;
+  mix-blend-mode: difference;
+}/*# sourceMappingURL=wedding.css.map */

@@ -4,11 +4,13 @@ import React, { Suspense, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import * as THREE from 'three'
 import { useMotion } from '../hooks/useMotion'
-import Frame from './Frame'
-import Menu from './Menu'
-import Overlay from './Overlay'
-import Scene from './Scene'
-import Unsupported from './Unsupported'
+import Frame from '../components/Frame'
+import Menu from '../components/Menu'
+import Overlay from '../components/Overlay'
+import Scene from '../components/Scene'
+import Unsupported from '../components/Unsupported'
+import './main.scss'
+import '../styles/pages.scss'
 
 const Main = () => {
   const [page, setPage] = useState('Home')

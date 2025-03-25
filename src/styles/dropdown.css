@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.dropdown-wrapper {
+  position: absolute;
+  top: 25px;
+  width: 220px;
+}
+.dropdown-wrapper button {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "w95fa";
+  font-size: 16px;
+  height: 23px;
+  background-color: #C4C9CC;
+  border: none;
+  border-radius: 0;
+}
+
+.dropdown-header {
+  width: 100%;
+}
+.dropdown-header--content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dropdown-list {
+  width: 100%;
+  border: 3px solid #5D5E60;
+}
+
+.dropdown-list-item {
+  width: 100%;
+}
+.dropdown-list-item--content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}/*# sourceMappingURL=dropdown.css.map */
