@@ -4,7 +4,10 @@
 
 $font-family--default: 'Roboto Mono', serif;
 $font-family--pixels: 'Press Start 2P', serif;
-$font-family--w95fa: 'w95fa'; 
+$font-family--w95fa: 'w95fa';
+$font-family--adelia: 'adelia';
+$font-family--tangerine: 'tangerine';
+$font-family--tangerine-bold: 'tangerine-bold';
 $font-weight--thin: 200;
 $font-weight--regular: 400;
 $font-weight--bold: 600;
@@ -18,17 +21,51 @@ $font-color--primary: $color--primary;
   src: url('~/public/fonts/W95FA/w95fa.woff2');
 }
 
+@font-face {
+  font-family: 'adelia';
+  src: url('~/public/fonts/adelia/adelia.woff2');
+}
+
+@font-face {
+  font-family: 'tangerine';
+  src: url('~/public/fonts/tangerine/tangerine.woff2');
+}
+
+@font-face {
+  font-family: 'tangerine-bold';
+  src: url('~/public/fonts/tangerine/tangerine-bold.woff2');
+}
+
 @mixin font-default {
   font-family: $font-family--default;
   font-weight: $font-weight--regular;
-  -webkit-font-smoothing: antialiased;
   line-height: $line-height--default;
   font-size: $font-size--default;
   letter-spacing: $letter-spacing--default;
   color: $font-color--primary;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
-h1, h2, h3, h4, h5 {
+@mixin font-default--wedding {
+  font-family: $font-family--tangerine;
+  font-weight: $font-weight--regular;
+  line-height: $line-height--default;
+  font-size: $font-size--default;
+  letter-spacing: $letter-spacing--default;
+  color: rgb(63, 57, 50);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: $font-weight--thin;
   line-height: 1em;
 }

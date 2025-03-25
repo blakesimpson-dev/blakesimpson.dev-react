@@ -1,11 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Main from './components/Main'
-import './index.scss'
-import './styles/pages.scss'
+import Routes from './routes'
 
 const App = () => {
-  return <Main />
+  return <Routes />
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

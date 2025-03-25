@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 2rem);
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid #FFFFFF;
+  border-radius: 1rem;
+}
+.contact-form > * {
+  margin: 0.5rem;
+}
+.contact-form__input, .contact-form__textarea {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form__input em, .contact-form__textarea em {
+  color: #ff4122;
+}
+.contact-form__input {
+  width: 50%;
+}
+.contact-form__textarea {
+  width: 95%;
+}/*# sourceMappingURL=contact-form.css.map */

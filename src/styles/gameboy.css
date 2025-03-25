@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.gameboy-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Press Start 2P", serif;
+  font-size: 10px;
+  width: 200px;
+  height: 180px;
+  color: rgba(139, 172, 15, 0.8);
+  background-color: rgba(139, 172, 15, 0.8);
+  box-shadow: inset 0 0 1px rgba(155, 188, 15, 0.8), 0 0 10px rgba(155, 188, 15, 0.8);
+  border-radius: 4px;
+}
+.gameboy-screen__title {
+  padding: 4px 8px 4px 8px;
+  background-color: rgba(48, 98, 48, 0.8);
+  border: 3px solid rgba(15, 56, 15, 0.8);
+}
+
+.battery-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(187, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(187, 0, 0, 0.3);
+}/*# sourceMappingURL=gameboy.css.map */

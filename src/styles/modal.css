@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.modal__overlay {
+  font-family: "Roboto Mono", serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  line-height: 1.6em;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+}
+.modal__panel {
+  position: absolute;
+  box-shadow: inset 0 0 1px #FFFFFF, 0 0 4px #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 1rem;
+  background: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.035) 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 10px), linear-gradient(135deg, rgba(31, 37, 35, 0.8), rgba(255, 255, 255, 0.5));
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4);
+  top: 1.75rem;
+  left: 3rem;
+  right: 3rem;
+  bottom: 1.75rem;
+  z-index: 1002;
+  background-color: black;
+}
+.modal__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 5rem);
+}
+.modal__content img {
+  max-width: calc(100% - 4rem);
+  max-height: calc(100% - 4rem);
+}/*# sourceMappingURL=modal.css.map */

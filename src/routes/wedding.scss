@@ -1,0 +1,588 @@
+@import '../styles/_colors.scss';
+@import '../styles/_fonts.scss';
+@import '../styles/_mixins.scss';
+
+.wedding-main::before {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  background-image: url('~/public/images/wedding/textured-paper.png');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.45;
+  -webkit-box-shadow: inset 2px 2px 100px rgba(138, 77, 15, 1.0);
+  -moz-box-shadow: inset 2px 2px 100px rgba(138, 77, 15, 1.0);
+  box-shadow: inset 2px 2px 100px rgba(138, 77, 15, 1.0);
+}
+
+.wedding-main {
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-family: $font-family--adelia;
+
+    // Phone 
+    @media screen and (max-width: 480px) {
+      font-size: 14vw;
+      line-height: 16vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 8vw;
+      line-height: 20vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 8vw;
+      line-height: 20vw;
+    }
+
+    // Laptop
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+      font-size: 8vw;
+      line-height: 20vw;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+      font-size: 6vw;
+      line-height: 15vw;
+    }
+  }
+
+  h2 {
+    font-family: $font-family--tangerine-bold;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      font-size: 8vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 7vw;
+    }
+
+    // Laptop
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+      font-size: 6vw;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+      font-size: 4vw;
+    }
+  }
+
+  h3 {
+    font-family: $font-family--tangerine;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      font-size: 6vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 4vw;
+    }
+
+    // Laptop
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+      font-size: 3vw;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+      font-size: 2vw;
+    }
+  }
+}
+
+.splash-container::before {
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  content: "";
+  background: url('~/public/images/wedding/top-mushies.png');
+  background-repeat: no-repeat;
+  filter: sepia(0.25) opacity(0.55);
+  mix-blend-mode: saturation;
+
+  // Phone
+  @media screen and (max-width: 480px) {
+    background-position: 10vw 40vh;
+    background-size: 80vw;
+  }
+
+  // Tablet
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    background-position: center;
+    background-size: 90vw;
+  }
+
+  // Laptop
+  @media screen and (min-width: 769px) and (max-width: 1279px) {
+    background-position: center;
+    background-size: 90vw;
+  }
+
+  // Desktop
+  @media screen and (min-width: 1280px) {
+    background-position: center;
+    background-size: 50vw;
+  }
+}
+
+.splash-container {
+  @include font-default--wedding;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  &--title {
+    z-index: 1;
+    width: 100vw;
+    padding: 2.5vw;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      padding: 6vw 2.5vw 6vw 2.5vw;
+
+      div {
+        margin-top: 10vw;
+      }
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      padding: 6vw 2.5vw 6vw 2.5vw;
+
+      div {
+        margin-top: 10vw;
+      }
+    }
+  }
+
+  &--details {
+    z-index: 1;
+    width: 100vw;
+    padding: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      padding: 6vw 2.5vw 6vw 2.5vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      padding: 6vw 2.5vw 6vw 2.5vw;
+    }
+  }
+}
+
+.footer-container--mobile {
+  width: 100vw;
+  height: 20vh;
+  padding-bottom: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  button.footer-button {
+    font-family: $font-family--tangerine-bold;
+    font-size: 6vw;
+    line-height: 8vw;
+    z-index: 1;
+    margin: 2vw;
+    border: none;
+    background: linear-gradient(0deg, #e0bcaf, rgba(255, 255, 255, 0.65));
+    border-bottom: 2px solid #b8998e;
+    width: 40vw;
+  }
+}
+
+.footer-container {
+  width: 100vw;
+  height: 20vh;
+  padding-bottom: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  button.footer-button {
+    font-family: $font-family--tangerine-bold;
+    z-index: 1;
+    height: 8vw;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 4vw;
+  }
+
+  button.footer-button:hover {
+    font-size: 8vw;
+  }
+
+  button.footer-button--left::before {
+    content: "";
+    width: 8vw;
+    height: 20vw;
+    background-image: url('~/public/images/wedding/left-branch.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.25) opacity(0.55);
+    mix-blend-mode: saturation;
+    rotate: -75deg;
+  }
+
+  button.footer-button--right::after {
+    content: "";
+    width: 8vw;
+    height: 20vw;
+    background-image: url('~/public/images/wedding/left-branch.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.25) opacity(0.55);
+    mix-blend-mode: saturation;
+    rotate: 75deg;
+    transform: rotateX(0deg) rotateY(180deg);
+  }
+}
+
+.accomodation-container {
+  width: 100vw;
+  height: 80vh;
+
+  // Laptop
+  @media screen and (min-width: 769px) and (max-width: 1279px) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  img {
+    z-index: 1;
+    border: 2px dotted rgba(138, 77, 15, 0.25);
+    border-radius: 10px;
+  }
+
+  img:hover {
+    cursor: pointer !important;
+  }
+
+  &--top {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 25vh;
+    padding: 5vw 5vw 2.5vw 5vw;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      max-height: 15vh;
+    }
+  }
+
+  &--bottom {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 55vh;
+    padding: 0 5vw 5vw 5vw;
+    justify-content: center;
+
+    img {
+      border: 2px dotted rgba(138, 77, 15, 0.25);
+      border-radius: 20px;
+      width: 80%;
+      height: 95%;
+      object-fit: cover;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--left {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+    padding: 2.5vw 2.5vw 2.5vw 2.5vw;
+    justify-content: space-around;
+    align-items: left;
+
+    img {
+      max-height: 15vh;
+    }
+  }
+
+  &--right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 80vh;
+    padding: 5vw 5vw 5vw 5vw;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      border: 2px dotted rgba(138, 77, 15, 0.25);
+      border-radius: 20px;
+      width: 80%;
+      height: 95%;
+      object-fit: cover;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--centre {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80vh;
+    padding: 2.5vw 2.5vw 2.5vw 2.5vw;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+
+    img {
+
+      // Phone 
+      @media screen and (max-width: 480px) {
+        max-width: 80vw;
+      }
+
+      // Tablet
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        max-width: 55vw;
+      }
+    }
+  }
+}
+
+.accomodation-container--bottom::after {
+  z-index: 1;
+  position: absolute;
+  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  border-radius: 10px;
+  content: "Rosewood Guest House location";
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1vw;
+  line-height: 2vw;
+  font-weight: 500;
+  color: rgb(63, 57, 50);
+  background-color: rgba(181, 182, 134, 0.75);
+  mix-blend-mode: luminosity;
+}
+
+.accomodation-container--right::after {
+  z-index: 1;
+  position: absolute;
+  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+  transform: translate(0, -25vh);
+  border-radius: 10px;
+  content: "Rosewood Guest House location";
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1vw;
+  line-height: 2vw;
+  font-weight: 500;
+  color: rgb(63, 57, 50);
+  background-color: rgba(181, 182, 134, 0.75);
+  mix-blend-mode: luminosity;
+}
+
+.wedding-contact-form__container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wedding-contact-form {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(63, 57, 50);
+  width: 100vw;
+  height: 80vh;
+
+  // Phone
+  @media screen and (max-width: 480px) {
+    margin-top: 5vw;
+    justify-content: start !important;
+    align-items: center;
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
+  // Tablet
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+
+  // Laptop
+  @media screen and (min-width: 769px) and (max-width: 1279px) {
+    font-size: 2vw;
+    line-height: 4vw;
+  }
+
+  // Desktop
+  @media screen and (min-width: 1280px) {
+    font-size: 1vw;
+    line-height: 2vw;
+  }
+
+  select {
+    padding: 0.75vw 0.5vw 0.75vw 0.5vw !important;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    background-color: #f7f2ef;
+    border: 2px solid #c9b5ae;
+    color: rgb(63, 57, 50);
+    border-radius: 6px;
+    padding: 0.5vw;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      font-size: 4vw;
+      line-height: 5vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 3vw;
+      line-height: 4vw;
+    }
+
+    // Laptop
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+      font-size: 2vw;
+      line-height: 4vw;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+      font-size: 1vw;
+      line-height: 2vw;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgb(221, 185, 172);
+      border: 2px solid #88675b;
+    }
+  }
+
+  >* {
+    margin: 0.5rem;
+  }
+
+  &__input,
+  &__textarea {
+    display: flex;
+    flex-direction: column;
+
+    em {
+      color: $color--error;
+    }
+  }
+
+  &__input {
+    width: 60%;
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      width: 80% !important;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      width: 80% !important;
+    }
+  }
+
+  button {
+    font-family: $font-family--tangerine-bold;
+
+    z-index: 1;
+    margin: 2vw;
+    border: none;
+    background: linear-gradient(0deg, #e0bcaf, rgba(255, 255, 255, 0.65));
+    border-bottom: 2px solid #b8998e;
+
+
+    // Phone
+    @media screen and (max-width: 480px) {
+      font-size: 6vw;
+      line-height: 8vw;
+      width: 40vw;
+    }
+
+    // Tablet
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+      font-size: 4vw;
+      line-height: 6vw;
+      width: 30vw;
+    }
+
+    // Laptop
+    @media screen and (min-width: 769px) and (max-width: 1279px) {
+      font-size: 2.5vw;
+      line-height: 5vw;
+      width: 25vw;
+    }
+
+    // Desktop
+    @media screen and (min-width: 1280px) {
+      font-size: 2vw;
+      line-height: 3vw;
+      width: 20vw;
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
-@import 'styles/_colors.scss';
-@import 'styles/_fonts.scss';
-@import 'styles/_mixins.scss';
+@import '../styles/_colors.scss';
+@import '../styles/_fonts.scss';
+@import '../styles/_mixins.scss';
 
 * {
   box-sizing: border-box;
@@ -108,5 +108,5 @@ textarea {
   &--loaded {
     filter: blur(0px);
     transition: filter 0.5s linear;
-  }  
+  }
 }

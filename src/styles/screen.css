@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@font-face {
+  font-family: "w95fa";
+  src: url("~/public/fonts/W95FA/w95fa.woff2");
+}
+@font-face {
+  font-family: "adelia";
+  src: url("~/public/fonts/adelia/adelia.woff2");
+}
+@font-face {
+  font-family: "tangerine";
+  src: url("~/public/fonts/tangerine/tangerine.woff2");
+}
+@font-face {
+  font-family: "tangerine-bold";
+  src: url("~/public/fonts/tangerine/tangerine-bold.woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 200;
+  line-height: 1em;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  font-family: "w95fa";
+  box-shadow: inset 0 0 1px #FFFFFF, 0 0 5px #FFFFFF;
+  background-image: url("~/public/images/windows-95-extra.png");
+  width: 1208px;
+  height: 714px;
+  padding: 5px 0 0 5px;
+}
+.screen__title--one {
+  display: flex;
+  width: 50%;
+  height: 20px;
+  margin-left: 20px;
+  padding-left: 2px;
+  font-size: 16px;
+  background-color: #8D8D93;
+}
+.screen__title--two {
+  width: 10%;
+  height: 18px;
+  margin: 4px 0 0 890px;
+  padding-left: 2px;
+  font-size: 16px;
+  background-color: #010081;
+}
+.screen__details {
+  color: #1f2523;
+  width: 256px;
+  height: 112px;
+  margin: 4px 0 0 874px;
+  padding: 6px;
+  font-size: 20px;
+  line-height: 26px;
+}
+.screen__details p {
+  margin: 0;
+}
+.screen__details a:link, .screen__details a:visited {
+  color: blue;
+}
+.screen__taskbar {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-left: 100px;
+  color: #1f2523;
+  font-size: 20px;
+}
+.screen__taskbar > * {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 280px;
+  margin-right: 8px;
+  padding: 6px 0 0 38px;
+}
+.screen__spacer--one {
+  min-height: 434px;
+}
+.screen__spacer--two {
+  min-height: 74px;
+}/*# sourceMappingURL=screen.css.map */
