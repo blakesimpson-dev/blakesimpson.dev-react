@@ -163,6 +163,7 @@ textarea {
   max-width: 140px;
   max-height: 140px;
   margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 .image--loading {

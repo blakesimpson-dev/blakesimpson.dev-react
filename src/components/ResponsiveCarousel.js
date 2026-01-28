@@ -4,7 +4,7 @@ import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const ResponsiveCarousel = ({ content, autoPlay, showStatus }) => {
+const ResponsiveCarousel = ({ content, autoPlay, showStatus, showIndicators, showThumbs }) => {
   const arrowStyles = {
     position: 'absolute',
     zIndex: 2,
@@ -19,6 +19,8 @@ const ResponsiveCarousel = ({ content, autoPlay, showStatus }) => {
     <Carousel
       autoPlay={autoPlay}
       showStatus={showStatus}
+      showIndicators={showIndicators}
+      showThumbs={showThumbs}
       renderArrowPrev={(onClickHandler, hasPrev, label) =>
         hasPrev && (
           <button
@@ -55,11 +57,15 @@ ResponsiveCarousel.propTypes = {
   content: PropTypes.array,
   autoPlay: PropTypes.bool,
   showStatus: PropTypes.bool,
+  showIndicators: PropTypes.bool,
+  showThumbs: PropTypes.bool,
 }
 
 ResponsiveCarousel.defaultProps = {
   autoPlay: false,
   showStatus: false,
+  showIndicators: false,
+  showThumbs: false,
 }
 
 export default ResponsiveCarousel
