@@ -91,12 +91,13 @@ textarea {
 }
 
 .avatar {
-  outline: 4px solid $color--secondary;
+  outline: 3px solid $color--secondary;
   outline-offset: -2px;
   border-radius: 50%;
-  max-width: 140px;
-  max-height: 140px;
-  margin-right: 2rem;
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .image {

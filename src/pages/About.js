@@ -26,20 +26,17 @@ const About = ({ setPage }) => {
           <div className="about-page__blurb">
             <img className="avatar" src="/images/blake-avatar.png" />
             <div>
-              <h1>Blake Simpson - Senior Developer</h1>
+              <h1>Blake Simpson - Technical Lead</h1>
               <p>
-                I&apos;ve created a wide range of interactive titles and
-                software while working freelance as an indie, as a key member of
-                a new startup, and as a senior leader in a larger corporation.
-                As a motivated autodidact, I have also trained myself in
-                numerous programming languages, frameworks, and development
-                environments. This process has informed me about myself and my
-                chosen field of work, whilst equipping me with the skills
-                necessary to think and operate successfully outside of the box.
-                My personal studies have left me with a broad understanding of
-                design methodology and a deep knowledge of how software and
-                digital experiences intersect with people and the spaces they
-                inhabit.
+                I am a passionate full-stack developer who has led teams across
+                diverse environments and built software that matters. My
+                professional background includes working on mission-critical
+                emergency services systems, innovative safety management
+                solutions, groundbreaking interactive experiences, and tools
+                that have engaged and supported vulnerable communities.
+                Proficient in multiple languages and frameworks, I bring
+                creative problem-solving and a human-centered design approach to
+                applications where user experience is critical.
               </p>
               {referenceData.map((item, index) => {
                 return (

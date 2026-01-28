@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Main from './Main'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import React from 'react'
-import Wedding from './Wedding'
+// import Wedding from './Wedding'
 import RSVP from '../wedding-pages/RSVP'
 import Accomodation from '../wedding-pages/Accomodation'
 
@@ -13,9 +13,9 @@ const Routes = () => {
         <Route path="/" exact>
           <Main />
         </Route>
-        <Route path="/wedding" exact>
-          <Wedding />
-        </Route>
+        {/* <Route path="/wedding" exact> */}
+          {/* <Wedding /> */}
+        {/* </Route> */}
         <Route path="/rsvp" exact>
           <RSVP />
         </Route>

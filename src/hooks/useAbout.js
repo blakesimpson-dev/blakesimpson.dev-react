@@ -159,6 +159,25 @@ export const useAbout = () => {
 
   const [achievementData] = useState([
     {
+      title: <h2>Emergency Response Platforms</h2>,
+      content: (
+        <p>
+          Pitched and delivered Emergency WA platform for WA Government&apos;s
+          Department of Fire and Emergency Services; rapidly adapted solution
+          for Manitoba government during 2025 Canadian wildfire crisis
+        </p>
+      ),
+    },
+    {
+      title: <h2>Government Security Clearance</h2>,
+      content: (
+        <p>
+          Maintained active security clearance for mission-critical government
+          emergency services infrastructure (2022-2025)
+        </p>
+      ),
+    },
+    {
       title: <h2>Visualisation, Procedural Music and Chiptune Performances</h2>,
       content: (
         <p>
@@ -211,55 +230,130 @@ export const useAbout = () => {
 
   const [historyData] = useState([
     {
-      title: <h2>Senior Developer @ Insig Technologies: Perth 2020-2022</h2>,
+      title: <h2>Technical Lead @ Genvis: Perth 2022-2025</h2>,
       content: (
-        <p>
-          At Insig Tech I have worked across the full stack, primarily in the
-          front end, to assist in the design, development and deployment of
-          applications made available at mine sites across the globe. I have
-          also produced LiDAR visualizations, VR training and engineering
-          walkthrough simulation software and personally built, documented and
-          deployed the Insig UI Library.
-        </p>
+        <ul>
+          <li>
+            Delivered the successful pitch to secure the Emergency WA platform
+            rework contract for the WA Government&apos;s Department of Fire and
+            Emergency Services (2024)
+          </li>
+          <li>
+            Led teams across multiple phases to deliver Emergency WA, a
+            mission-critical and highly available emergency services platform
+            serving all responders across WA
+          </li>
+          <li>
+            Rapidly rebranded, reconfigured and deployed our solution to support
+            the Manitoba government during 2025 Canadian wildfire crisis,
+            enabling critical emergency response coordination for vulnerable
+            populations
+          </li>
+          <li>
+            Ensured 99.9999% uptime through AWS multi-region architecture,
+            auto-scaling, CloudWatch alerting and automated disaster recovery
+          </li>
+          <li>
+            Maintained active security clearance for government systems access
+          </li>
+          <li>
+            Architected and developed highly available software solutions using
+            modern frameworks and AWS cloud infrastructure
+          </li>
+          <li>
+            Established coding standards, review processes, and WCAG 2.2
+            accessibility compliance across all platform applications
+          </li>
+          <li>
+            Coordinated agile workflows and sprint planning for distributed
+            development team as Scrum Master
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: <h2>Senior Developer @ Insig Technologies: Perth 2019-2022</h2>,
+      content: (
+        <ul>
+          <li>
+            Architected and developed innovative software solutions using modern
+            frameworks and on-premise Kubernetes cluster deployments
+          </li>
+          <li>
+            Managed on-premise deployments across multiple mining operations in
+            developing nations
+          </li>
+          <li>
+            Developed VR safety training and LiDAR visualizations for
+            international mining operations
+          </li>
+          <li>
+            Created reusable UI library adopted across 6 projects, reducing
+            development time and ensuring UX consistency
+          </li>
+          <li>
+            Transformed complex industrial workflows into user-friendly digital
+            experiences
+          </li>
+          <li>
+            Coordinated agile workflows and sprint planning for distributed
+            development team as Scrum Master
+          </li>
+        </ul>
       ),
     },
     {
       title: <h2>Lead Developer @ Binary Space: Perth 2017-2019</h2>,
       content: (
-        <p>
-          Working for Binary Space was an incredibly rewarding experience, our
-          title &apos;Ghoul Britannia: Land of Hope and Gorey&apos; has been
-          featured in gaming press and shown at conventions in Australia,
-          America and Europe. To collaborate online with team-members from
-          across the globe has granted me important insights and I look forward
-          to applying all that I have learned from the production of this title
-          going forward in my career.
-        </p>
+        <ul>
+          <li>
+            Led a team to develop &apos;Ghoul Britannia: Land of Hope and
+            Gorey&apos;, featured in gaming press and exhibited at conventions
+            across Australia, America, and Europe
+          </li>
+          <li>
+            Released on Steam with positive reception; Nintendo Switch release
+            in development
+          </li>
+          <li>
+            Established agile workflows and drove technical architecture, code
+            reviews, and QA processes for the distributed team
+          </li>
+        </ul>
       ),
     },
     {
       title: <h2>Developer @ Immersia: Perth 2016-2017</h2>,
       content: (
-        <p>
-          A short contractual stint of work with Immersia VR saw me developing
-          and designing for multiple Virtual Reality applications. Having access
-          to development kits and hardware, this work was thoroughly engaging,
-          and I was able to adapt my skillset to working in a virtual reality
-          space.
-        </p>
+        <ul>
+          <li>
+            Built multiple VR applications during the platform&apos;s early era,
+            working with development kits and emerging hardware
+          </li>
+          <li>
+            Adapted to VR-specific challenges including spatial design,
+            performance optimization, and motion comfort
+          </li>
+        </ul>
       ),
     },
     {
-      title: <h2>Lead Developer @ SK Games: Perth 2010-2015</h2>,
+      title: <h2>Developer @ SK Games: Perth 2010-2015</h2>,
       content: (
-        <p>
-          Producing and showcasing over 20 titles at SK Games, I developed an
-          interest towards the &apos;space around the game&apos; by creating
-          custom software and hardware solutions. In doing so, our company
-          successfully expanded the perception of games and reached new
-          audiences through our products. Now established as an Interactive
-          Gallery in Melbourne, SK continues to expand the gaming space.
-        </p>
+        <ul>
+          <li>
+            Showcased 20+ interactive titles to 45,000+ attendees at ACMI
+            Melbourne, PAX Australia, and GCAP
+          </li>
+          <li>
+            Pioneered accessible gaming solutions for non-traditional exhibition
+            spaces
+          </li>
+          <li>
+            Contributed to company&apos;s evolution from indie studio to
+            established Interactive Gallery in Melbourne
+          </li>
+        </ul>
       ),
     },
     {
