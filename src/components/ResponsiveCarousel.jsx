@@ -4,7 +4,13 @@ import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const ResponsiveCarousel = ({ content, autoPlay, showStatus, showIndicators, showThumbs }) => {
+const ResponsiveCarousel = ({
+  content,
+  autoPlay = false,
+  showStatus = false,
+  showIndicators = false,
+  showThumbs = false,
+}) => {
   const arrowStyles = {
     position: 'absolute',
     zIndex: 2,
@@ -59,13 +65,6 @@ ResponsiveCarousel.propTypes = {
   showStatus: PropTypes.bool,
   showIndicators: PropTypes.bool,
   showThumbs: PropTypes.bool,
-}
-
-ResponsiveCarousel.defaultProps = {
-  autoPlay: false,
-  showStatus: false,
-  showIndicators: false,
-  showThumbs: false,
 }
 
 export default ResponsiveCarousel
