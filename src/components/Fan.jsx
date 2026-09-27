@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { useScene } from '../hooks/useScene'
 
-const Fan = ({ speed }) => {
+const Fan = ({ speed = 5 }) => {
   const fanMesh = useRef()
   const { fanMeshGeometry, bakedObjectsMaterial } =
     useScene('/models/model.glb')
@@ -26,10 +26,6 @@ Fan.displayName = 'Fan'
 
 Fan.propTypes = {
   speed: PropTypes.number,
-}
-
-Fan.defaultProps = {
-  speed: 5,
 }
 
 export default Fan

@@ -3,6 +3,9 @@
 @import '_mixins.scss';
 
 .overlay {
+  // Keep above the fixed canvas once framer-motion clears the transform
+  position: relative;
+  z-index: 1000;
   width: 50%;
   height: calc(100% - 14rem);
   margin: 0 3rem 0 3rem;

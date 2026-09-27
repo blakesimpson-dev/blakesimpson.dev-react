@@ -4,6 +4,9 @@
 
 .menu {
   @include display--space-between;
+  // z-index needs a positioned element; before framer-motion 11 the leftover
+  // translateZ(0) transform kept this above the fixed canvas instead
+  position: relative;
   z-index: 1000;
   width: calc(100vw - 6rem);
   height: 5rem;

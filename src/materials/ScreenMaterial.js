@@ -13,7 +13,10 @@ class ScreenMaterial extends ShaderMaterial {
         THREE.UniformsLib['fog'],
         {
           uTime: { value: 0 },
-          uMixColor: { value: new Color('#85c7e6') },
+          // Raw (unconverted) value, matching how r141 passed it to the shader
+          uMixColor: {
+            value: new Color().setHex(0x85c7e6, THREE.LinearSRGBColorSpace),
+          },
         },
       ]),
       fog: true,
@@ -21,7 +24,7 @@ class ScreenMaterial extends ShaderMaterial {
   }
 
   set uTime(value) {
-    this.uniforms.utime.value = value
+    this.uniforms.uTime.value = value
   }
 
   get uTime() {

@@ -1,4 +1,4 @@
-import { useAnimations, useGLTF } from '@react-three/drei'
+import { useAnimations, useGLTF, useTexture } from '@react-three/drei'
 import { useThree } from '@react-three/fiber'
 import { useMemo } from 'react'
 import * as THREE from 'three'
@@ -15,20 +15,27 @@ export const useScene = (path) => {
     actions[key].setLoop(THREE.LoopOnce)
   })
 
-  const textureLoader = new THREE.TextureLoader()
+  // Cached by useTexture, so Scene/Screen/Fan share one load per texture
+  const [bakedRoomTexture, bakedObjectsTexture, bootTexture] = useTexture([
+    '/textures/bakedRoom.jpg',
+    '/textures/bakedObjects.jpg',
+    '/textures/boot.jpg',
+  ])
 
-  const bakedRoomTexture = textureLoader.load('textures/bakedRoom.jpg')
-  bakedRoomTexture.flipY = false
-  bakedRoomTexture.encoding = THREE.sRGBEncoding
+  useMemo(() => {
+    bakedRoomTexture.flipY = false
+    bakedRoomTexture.colorSpace = THREE.SRGBColorSpace
+    bakedRoomTexture.needsUpdate = true
 
-  const bakedObjectsTexture = textureLoader.load('textures/bakedObjects.jpg')
-  bakedObjectsTexture.flipY = false
-  bakedObjectsTexture.encoding = THREE.sRGBEncoding
+    bakedObjectsTexture.flipY = false
+    bakedObjectsTexture.colorSpace = THREE.SRGBColorSpace
+    bakedObjectsTexture.needsUpdate = true
 
-  const bootTexture = textureLoader.load('textures/boot.jpg')
-  bootTexture.flipY = true
-  bootTexture.encoding = THREE.sRGBEncoding
-  bootTexture.offset = new THREE.Vector2(-0.03, -0.015)
+    bootTexture.flipY = true
+    bootTexture.colorSpace = THREE.SRGBColorSpace
+    bootTexture.offset.set(-0.03, -0.015)
+    bootTexture.needsUpdate = true
+  }, [bakedRoomTexture, bakedObjectsTexture, bootTexture])
 
   const fanMeshGeometry = useMemo(() => nodes.FanMesh.geometry, [])
   const mergedRoomGeometry = useMemo(() => nodes.MergedRoomMesh.geometry, [])

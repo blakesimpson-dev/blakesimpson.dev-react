@@ -24,6 +24,8 @@ const Main = () => {
           <Canvas
             style={{ position: 'fixed' }}
             camera={{
+              // Matches the glTF camera node the CameraActionNLA* tracks target
+              name: 'Camera',
               near: 0.1,
               far: 4,
               fov: 19,
@@ -32,7 +34,6 @@ const Main = () => {
             }}
             gl={{
               toneMapping: THREE.NoToneMapping,
-              encoding: THREE.sRGBEncoding,
             }}
             onCreated={(state) => {
               state.gl.setClearColor('#FFFFFF')

@@ -2,12 +2,16 @@ import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
+import { Color, LinearSRGBColorSpace } from 'three'
 import { useScene } from '../hooks/useScene'
 import useScreenItems from '../hooks/useScreenItems'
 import { useVideo } from '../hooks/useVideo'
 import '../materials/ScreenMaterial'
 import '../styles/screen.scss'
 import Dropdown from './Dropdown'
+
+// Raw (unconverted) value, matching how r141 applied '#AAAAAA'
+const videoTint = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace)
 
 const Screen = ({ page }) => {
   const screenMesh = useRef()
@@ -90,7 +94,7 @@ const Screen = ({ page }) => {
           <screenMaterial attach="material" />
         )}
         {screenItem.type == 'video' && isScreenOn && (
-          <meshBasicMaterial attach="material" color={'#AAAAAA'}>
+          <meshBasicMaterial attach="material" color={videoTint}>
             <videoTexture attach="map" args={[video]} />
           </meshBasicMaterial>
         )}
