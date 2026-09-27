@@ -1,11 +1,10 @@
 import { useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
-import { useScene } from '../hooks/useScene'
+import { useSceneAssets } from '../hooks/useSceneAssets'
 
 const Fan = ({ speed = 5 }) => {
   const fanMesh = useRef()
-  const { fanMeshGeometry, bakedObjectsMaterial } =
-    useScene('/models/model.glb')
+  const { nodes, bakedObjectsMaterial } = useSceneAssets()
 
   useFrame((state, delta) => {
     fanMesh.current.rotation.z -= speed * delta
@@ -14,7 +13,7 @@ const Fan = ({ speed = 5 }) => {
   return (
     <mesh
       ref={fanMesh}
-      geometry={fanMeshGeometry}
+      geometry={nodes.FanMesh.geometry}
       material={bakedObjectsMaterial}
       position={[0.63934, 1.0817, -0.2041]}
     />

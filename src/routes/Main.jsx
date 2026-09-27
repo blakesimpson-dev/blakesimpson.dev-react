@@ -14,13 +14,20 @@ import '../styles/pages.scss'
 
 const Main = () => {
   const [page, setPage] = useState('Home')
+  // Fade in only once Scene has mounted (its assets have loaded), so the
+  // canvas clear colour never shows while the model and textures load
+  const [isSceneReady, setSceneReady] = useState(false)
   const { mainMotion } = useMotion()
   const isSupported = useMediaQuery({ query: '(min-width: 1280px)' })
 
   return (
     <>
       {isSupported && (
-        <motion.main variants={mainMotion} initial="hidden" animate="visible">
+        <motion.main
+          variants={mainMotion}
+          initial="hidden"
+          animate={isSceneReady ? 'visible' : 'hidden'}
+        >
           <Canvas
             style={{ position: 'fixed' }}
             camera={{
@@ -40,7 +47,7 @@ const Main = () => {
             }}
           >
             <Suspense fallback={null}>
-              <Scene page={page} setPage={setPage} />
+              <Scene page={page} setPage={setPage} onReady={setSceneReady} />
             </Suspense>
           </Canvas>
           <Menu page={page} setPage={setPage} />
