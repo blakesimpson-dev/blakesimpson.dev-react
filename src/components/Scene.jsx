@@ -154,7 +154,7 @@ const Scene = ({ page, setPage }) => {
           })}
           <GameboyScreen page={page} />
         </group>
-        <EffectComposer>
+        <EffectComposer enableNormalPass>
           <Outline
             blur
             edgeStrength={5}
