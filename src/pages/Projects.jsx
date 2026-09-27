@@ -4,10 +4,9 @@ import ImgModal from '../components/ImgModal'
 import Page from '../components/Page'
 import ProgressiveImg from '../components/ProgressiveImg'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { useProjects } from '../hooks/useProjects'
+import { projectData } from '../content/projects'
 
 const Projects = ({ setPage }) => {
-  const { projectData } = useProjects()
   const imgModal = useRef()
   const [imgModalSrc, setImgModalSrc] = useState(null)
   const [isImgModalOpen, setIsImgModalOpen] = useState(false)
@@ -46,22 +45,6 @@ const Projects = ({ setPage }) => {
             isImgModalOpen={isImgModalOpen}
             closeImgModal={closeImgModal}
           />
-          {/* <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            className="modal__panel"
-            overlayClassName="modal__overlay"
-          >
-            <div className="overlay__header">
-              <h1>{modalContent}</h1>
-              <button className="button--cancel" onClick={closeModal}>
-                <FaTimes />
-              </button>
-            </div>
-            <div className="modal__content">
-              <img src={modalContent} />
-            </div>
-          </Modal> */}
           <ResponsiveCarousel
             content={projectData.map((item, index) => {
               return (

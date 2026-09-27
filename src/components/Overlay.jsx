@@ -1,6 +1,6 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import React, { useEffect } from 'react'
-import { useMotion } from '../hooks/useMotion'
+import { overlayMotion } from '../constants/motion'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Music from '../pages/Music'
@@ -9,7 +9,6 @@ import '../styles/overlay.scss'
 
 const Overlay = ({ page, setPage }) => {
   const controls = useAnimationControls()
-  const { overlayMotion } = useMotion()
 
   useEffect(() => {
     switch (page) {

@@ -1,6 +1,6 @@
-@use '../styles/colors' as *;
-@use '../styles/fonts' as *;
-@use '../styles/mixins' as *;
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'mixins' as *;
 
 * {
   box-sizing: border-box;

@@ -1,11 +1,10 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
-import { useMotion } from '../hooks/useMotion'
+import { menuMotion } from '../constants/motion'
 import '../styles/menu.scss'
 
 const Menu = ({ page, setPage }) => {
   const controls = useAnimationControls()
-  const { menuMotion } = useMotion()
   // First reveal waits for the intro camera move; later ones are quicker
   const isFirstReveal = useRef(true)
 

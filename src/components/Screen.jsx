@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import React, { useEffect, useRef, useState } from 'react'
 import { Color, LinearSRGBColorSpace } from 'three'
 import { useSceneAssets } from '../hooks/useSceneAssets'
-import useScreenItems from '../hooks/useScreenItems'
+import { screenItems as items } from '../content/screenItems'
 import { useVideo } from '../hooks/useVideo'
 import '../materials/ScreenMaterial'
 import '../styles/screen.scss'
@@ -17,7 +17,6 @@ const Screen = ({ page }) => {
   const hasBooted = useRef(false)
   const { nodes, bootTexture } = useSceneAssets()
   const { video, resetVideo, changeVideoSource } = useVideo()
-  const { items } = useScreenItems()
   const [isScreenOn, setIsScreenOn] = useState(false)
   const [selectedId, setSelectedId] = useState(items[0].id)
   const screenItem = items.find((item) => item.id === selectedId)
