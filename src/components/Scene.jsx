@@ -5,10 +5,10 @@ import {
   Outline,
   Select,
   Selection,
-  SSAO,
 } from '@react-three/postprocessing'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useCameraActions } from '../hooks/useCameraActions'
+import { renderQuality } from '../constants/renderQuality'
 import { useSceneAssets } from '../hooks/useSceneAssets'
 import Fan from './Fan'
 import GameboyScreen from './GameboyScreen'
@@ -174,7 +174,7 @@ const Scene = ({ page, setPage, onReady }) => {
         ))}
         <GameboyScreen page={page} />
       </group>
-      <EffectComposer enableNormalPass>
+      <EffectComposer multisampling={renderQuality.msaa}>
         <Outline
           blur
           edgeStrength={5}
@@ -182,7 +182,6 @@ const Scene = ({ page, setPage, onReady }) => {
           hiddenEdgeColor="#FFFFFF"
         />
         <BrightnessContrast brightness={0.1} contrast={0.15} />
-        <SSAO />
       </EffectComposer>
     </Selection>
   )

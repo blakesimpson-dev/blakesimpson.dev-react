@@ -1,9 +1,11 @@
+import { Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 import React, { Suspense, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import * as THREE from 'three'
 import { mainMotion } from '../constants/motion'
+import { renderQuality } from '../constants/renderQuality'
 import Frame from '../components/Frame'
 import Menu from '../components/Menu'
 import Overlay from '../components/Overlay'
@@ -29,6 +31,7 @@ const Home = () => {
         >
           <Canvas
             style={{ position: 'fixed' }}
+            dpr={[1, renderQuality.maxDpr]}
             camera={{
               // Matches the glTF camera node the CameraActionNLA* tracks target
               name: 'Camera',
@@ -45,6 +48,7 @@ const Home = () => {
               state.gl.setClearColor('#FFFFFF')
             }}
           >
+            {renderQuality.stats && <Stats />}
             <Suspense fallback={null}>
               <Scene page={page} setPage={setPage} onReady={setSceneReady} />
             </Suspense>
