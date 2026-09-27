@@ -42,10 +42,10 @@ const Overlay = ({ page, setPage }) => {
       initial={overlayMotion.hidden}
       animate={controls}
     >
-      {page == 'Music' && <Music setPage={setPage} />}
-      {page == 'Projects' && <Projects setPage={setPage} />}
-      {page == 'About' && <About setPage={setPage} />}
-      {page == 'Contact' && <Contact setPage={setPage} />}
+      {page === 'Music' && <Music setPage={setPage} />}
+      {page === 'Projects' && <Projects setPage={setPage} />}
+      {page === 'About' && <About setPage={setPage} />}
+      {page === 'Contact' && <Contact setPage={setPage} />}
     </motion.div>
   )
 }

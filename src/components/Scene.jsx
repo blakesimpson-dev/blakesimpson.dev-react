@@ -59,7 +59,7 @@ const Scene = ({ page, setPage }) => {
       setTimeout(() => setSelectionEnabled(true), 4200)
     }
 
-    if (currentPage == 'Home' && page != 'Home') {
+    if (currentPage === 'Home' && page !== 'Home') {
       switch (page) {
         case 'Projects':
           zoomIn('CameraActionNLA2')
@@ -77,7 +77,7 @@ const Scene = ({ page, setPage }) => {
           zoomIn('CameraActionNLA5')
           break
       }
-    } else if (currentPage != 'Home' && page == 'Home') {
+    } else if (currentPage !== 'Home' && page === 'Home') {
       switch (currentPage) {
         case 'Projects':
           zoomOut('CameraActionNLA2')
@@ -141,7 +141,7 @@ const Scene = ({ page, setPage }) => {
           })}
           {selectableObjects.map((object, index) => {
             return (
-              <Select key={index} enabled={hovered == object.name}>
+              <Select key={index} enabled={hovered === object.name}>
                 <mesh
                   name={object.name}
                   page={object.page}

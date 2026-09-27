@@ -24,21 +24,21 @@ const Screen = ({ page }) => {
   const setSelectedItem = (id) => {
     items.forEach((item) => (item.selected = false))
     const item = items.filter((item) => {
-      return item.id == id
+      return item.id === id
     })[0]
     item.selected = true
     setScreenItem(item)
   }
 
   useEffect(() => {
-    if (screenItem.type == 'video') {
+    if (screenItem.type === 'video') {
       resetVideo()
       changeVideoSource(screenItem.url)
     }
   }, [screenItem])
 
   useEffect(() => {
-    if (page == 'Home') {
+    if (page === 'Home') {
       setTimeout(() => {
         setIsScreenOn(true)
         setScreenOnDelay(2000)
@@ -49,7 +49,7 @@ const Screen = ({ page }) => {
   }, [page])
 
   useFrame((state) => {
-    if (isScreenOn && screenItem.type == 'default')
+    if (isScreenOn && screenItem.type === 'default')
       screenMesh.current.material.uniforms.uTime.value = state.clock.elapsedTime
   })
 
@@ -89,10 +89,10 @@ const Screen = ({ page }) => {
         scale={[-1, 1, 1]}
         position={[-0.089, 0, 0]}
       >
-        {screenItem.type == 'default' && isScreenOn && (
+        {screenItem.type === 'default' && isScreenOn && (
           <screenMaterial attach="material" />
         )}
-        {screenItem.type == 'video' && isScreenOn && (
+        {screenItem.type === 'video' && isScreenOn && (
           <meshBasicMaterial attach="material" color={videoTint}>
             <videoTexture attach="map" args={[video]} />
           </meshBasicMaterial>

@@ -6,7 +6,7 @@ const GameboyScreen = ({ page }) => {
   const [isScreenOn, setIsScreenOn] = useState(false)
 
   useEffect(() => {
-    if (page == 'Music') {
+    if (page === 'Music') {
       setTimeout(() => setIsScreenOn(true), 2000)
     } else {
       setIsScreenOn(false)
