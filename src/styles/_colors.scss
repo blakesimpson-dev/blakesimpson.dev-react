@@ -1,11 +1,11 @@
-$color--primary: #FFFFFF;
-$color--secondary: #BBBBBB;
+$color--primary: #ffffff;
+$color--secondary: #bbbbbb;
 $color--tertiary: #575757;
 $color--error: #ff4122;
 
-$color--screen-background--dark: #8D8D93;
-$color--screen-background: #C4C9CC;
-$color--screen-border: #5D5E60;
+$color--screen-background--dark: #8d8d93;
+$color--screen-background: #c4c9cc;
+$color--screen-border: #5d5e60;
 $color--screen-background--active: #010081;
 $color--screen-text: #1f2523;
 
@@ -17,9 +17,8 @@ $color--panel__background-stroke--two: rgba($color--primary, 0.01);
 $color--panel__background-gradient--start: rgba($color--screen-text, 0.95);
 $color--panel__background-gradient--finish: rgba($color--screen-border, 0.75);
 
-$color--gameboy--darkest: #0F380F;
+$color--gameboy--darkest: #0f380f;
 $color--gameboy--dark: #306230;
-$color--gameboy--light: #8BAC0F;
-$color--gameboy--lightest: #9BBC0F;
-$color--battery-light: #BB0000;
-
+$color--gameboy--light: #8bac0f;
+$color--gameboy--lightest: #9bbc0f;
+$color--battery-light: #bb0000;

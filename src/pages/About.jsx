@@ -167,7 +167,7 @@ const About = ({ setPage }) => {
           </div>
         </div>
       }
-    ></Page>
+    />
   )
 }
 

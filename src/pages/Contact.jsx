@@ -48,7 +48,7 @@ const Contact = ({ setPage }) => {
           </div>
         </div>
       }
-    ></Page>
+    />
   )
 }
 

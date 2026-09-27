@@ -56,7 +56,7 @@ const Music = ({ setPage }) => {
           />
         </div>
       }
-    ></Page>
+    />
   )
 }
 

@@ -12,7 +12,9 @@ $screen-alpha: 0.8;
   height: 180px;
   color: rgba($color--gameboy--light, $screen-alpha);
   background-color: rgba($color--gameboy--light, $screen-alpha);
-  box-shadow: inset 0 0 1px rgba($color--gameboy--lightest, $screen-alpha), 0 0 10px rgba($color--gameboy--lightest, $screen-alpha);
+  box-shadow:
+    inset 0 0 1px rgba($color--gameboy--lightest, $screen-alpha),
+    0 0 10px rgba($color--gameboy--lightest, $screen-alpha);
   border-radius: 4px;
 
   &__title {
