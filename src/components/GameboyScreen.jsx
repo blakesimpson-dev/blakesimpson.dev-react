@@ -1,5 +1,4 @@
 import { Html } from '@react-three/drei'
-import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import '../styles/gameboy.scss'
 
@@ -43,9 +42,5 @@ const GameboyScreen = ({ page }) => {
 }
 
 GameboyScreen.displayName = 'GameboyScreen'
-
-GameboyScreen.propTypes = {
-  page: PropTypes.string,
-}
 
 export default GameboyScreen

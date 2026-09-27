@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 import Modal from 'react-modal'
@@ -29,12 +28,5 @@ const ImgModal = ({ innerRef, src, isImgModalOpen, closeImgModal }) => {
 }
 
 ImgModal.displayName = 'ImgModal'
-
-ImgModal.propTypes = {
-  innerRef: PropTypes.object,
-  src: PropTypes.string,
-  isImgModalOpen: PropTypes.bool,
-  closeImgModal: PropTypes.func,
-}
 
 export default ImgModal

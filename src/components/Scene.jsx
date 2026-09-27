@@ -8,7 +8,6 @@ import {
   Selection,
   SSAO,
 } from '@react-three/postprocessing'
-import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { useScene } from '../hooks/useScene'
 import Fan from './Fan'
@@ -170,10 +169,5 @@ const Scene = ({ page, setPage }) => {
 }
 
 Scene.displayName = 'Scene'
-
-Scene.propTypes = {
-  page: PropTypes.string,
-  setPage: PropTypes.func,
-}
 
 export default Scene

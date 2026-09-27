@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import ContactForm from '../components/ContactForm'
 import Page from '../components/Page'
@@ -54,9 +53,5 @@ const Contact = ({ setPage }) => {
 }
 
 Contact.displayName = 'Contact'
-
-Contact.propTypes = {
-  setPage: PropTypes.func,
-}
 
 export default Contact

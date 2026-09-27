@@ -1,5 +1,4 @@
 import { motion, useAnimationControls } from 'framer-motion'
-import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useMotion } from '../hooks/useMotion'
 import '../styles/menu.scss'
@@ -49,10 +48,5 @@ const Menu = ({ page, setPage }) => {
 }
 
 Menu.displayName = 'Menu'
-
-Menu.propTypes = {
-  page: PropTypes.string,
-  setPage: PropTypes.func,
-}
 
 export default Menu

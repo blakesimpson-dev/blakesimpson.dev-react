@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { FaFilePdf } from 'react-icons/fa'
 import Page from '../components/Page'
@@ -173,9 +172,5 @@ const About = ({ setPage }) => {
 }
 
 About.displayName = 'About'
-
-About.propTypes = {
-  setPage: PropTypes.func,
-}
 
 export default About

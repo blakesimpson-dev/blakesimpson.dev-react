@@ -1,6 +1,5 @@
 import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { Color, LinearSRGBColorSpace } from 'three'
 import { useScene } from '../hooks/useScene'
@@ -108,9 +107,5 @@ const Screen = ({ page }) => {
 }
 
 Screen.displayName = 'Screen'
-
-Screen.propTypes = {
-  page: PropTypes.string,
-}
 
 export default Screen
