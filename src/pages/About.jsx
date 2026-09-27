@@ -2,20 +2,18 @@ import React from 'react'
 import { FaFilePdf } from 'react-icons/fa'
 import Page from '../components/Page'
 import ProgressiveImg from '../components/ProgressiveImg'
-import { useAbout } from '../hooks/useAbout'
+import {
+  achievementData,
+  attributeData,
+  educationData,
+  historyData,
+  languageData,
+  proficiencyData,
+  referenceData,
+  skillData,
+} from '../content/about'
 
 const About = ({ setPage }) => {
-  const {
-    skillData,
-    attributeData,
-    achievementData,
-    proficiencyData,
-    languageData,
-    historyData,
-    educationData,
-    referenceData,
-  } = useAbout()
-
   return (
     <Page
       setPage={setPage}

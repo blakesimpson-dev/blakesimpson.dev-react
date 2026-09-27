@@ -4,14 +4,14 @@ import {
   Route,
   Routes,
 } from 'react-router-dom'
-import Main from './Main'
+import Home from '../pages/Home'
 import React from 'react'
 
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

@@ -1,11 +1,9 @@
 import React from 'react'
 import Page from '../components/Page'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { useMusic } from '../hooks/useMusic'
+import { getSoundcloudIFrameSource, soundcloudIFrames } from '../content/music'
 
 const Music = ({ setPage }) => {
-  const { soundcloudIFrames, getSoundcloudIFrameSource } = useMusic()
-
   return (
     <Page
       setPage={setPage}

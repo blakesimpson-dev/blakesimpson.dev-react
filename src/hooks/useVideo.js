@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
+
+const createVideoElement = () => {
+  const video = document.createElement('video')
+  video.crossOrigin = 'Anonymous'
+  video.loop = true
+  video.muted = true
+  return video
+}
 
 export const useVideo = () => {
-  const videoElement = () => {
-    const video = document.createElement('video')
-    video.crossOrigin = 'Anonymous'
-    video.loop = true
-    video.muted = true
-    return video
-  }
+  const [video] = useState(createVideoElement)
 
-  const [video] = useState(() => {
-    return videoElement()
-  })
-
-  const resetVideo = () => {
+  const resetVideo = useCallback(() => {
     video.pause()
     video.currentTime = 0
-  }
+  }, [video])
 
-  const changeVideoSource = (path) => {
-    video.src = path
-    video.load()
-    video.play()
-  }
+  const changeVideoSource = useCallback(
+    (path) => {
+      video.src = path
+      video.load()
+      video.play()
+    },
+    [video],
+  )
 
   return {
     video,

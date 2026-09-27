@@ -3,24 +3,30 @@ import { motion } from 'framer-motion'
 import React, { Suspense, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import * as THREE from 'three'
-import { useMotion } from '../hooks/useMotion'
+import { mainMotion } from '../constants/motion'
 import Frame from '../components/Frame'
 import Menu from '../components/Menu'
 import Overlay from '../components/Overlay'
 import Scene from '../components/Scene'
 import Unsupported from '../components/Unsupported'
-import './main.scss'
+import '../styles/main.scss'
 import '../styles/pages.scss'
 
-const Main = () => {
+const Home = () => {
   const [page, setPage] = useState('Home')
-  const { mainMotion } = useMotion()
+  // Fade in only once Scene has mounted (its assets have loaded), so the
+  // canvas clear colour never shows while the model and textures load
+  const [isSceneReady, setSceneReady] = useState(false)
   const isSupported = useMediaQuery({ query: '(min-width: 1280px)' })
 
   return (
     <>
       {isSupported && (
-        <motion.main variants={mainMotion} initial="hidden" animate="visible">
+        <motion.main
+          variants={mainMotion}
+          initial="hidden"
+          animate={isSceneReady ? 'visible' : 'hidden'}
+        >
           <Canvas
             style={{ position: 'fixed' }}
             camera={{
@@ -40,7 +46,7 @@ const Main = () => {
             }}
           >
             <Suspense fallback={null}>
-              <Scene page={page} setPage={setPage} />
+              <Scene page={page} setPage={setPage} onReady={setSceneReady} />
             </Suspense>
           </Canvas>
           <Menu page={page} setPage={setPage} />
@@ -53,4 +59,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Home
