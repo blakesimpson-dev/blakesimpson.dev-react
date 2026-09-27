@@ -32,7 +32,6 @@ const Main = () => {
             }}
             gl={{
               toneMapping: THREE.NoToneMapping,
-              encoding: THREE.sRGBEncoding,
             }}
             onCreated={(state) => {
               state.gl.setClearColor('#FFFFFF')

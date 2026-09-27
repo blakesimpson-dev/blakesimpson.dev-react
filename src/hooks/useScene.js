@@ -19,15 +19,15 @@ export const useScene = (path) => {
 
   const bakedRoomTexture = textureLoader.load('textures/bakedRoom.jpg')
   bakedRoomTexture.flipY = false
-  bakedRoomTexture.encoding = THREE.sRGBEncoding
+  bakedRoomTexture.colorSpace = THREE.SRGBColorSpace
 
   const bakedObjectsTexture = textureLoader.load('textures/bakedObjects.jpg')
   bakedObjectsTexture.flipY = false
-  bakedObjectsTexture.encoding = THREE.sRGBEncoding
+  bakedObjectsTexture.colorSpace = THREE.SRGBColorSpace
 
   const bootTexture = textureLoader.load('textures/boot.jpg')
   bootTexture.flipY = true
-  bootTexture.encoding = THREE.sRGBEncoding
+  bootTexture.colorSpace = THREE.SRGBColorSpace
   bootTexture.offset = new THREE.Vector2(-0.03, -0.015)
 
   const fanMeshGeometry = useMemo(() => nodes.FanMesh.geometry, [])
