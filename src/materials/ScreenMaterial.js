@@ -1,8 +1,8 @@
 import { extend } from '@react-three/fiber'
 import * as THREE from 'three'
 import { Color, ShaderMaterial } from 'three'
-import screenFragmentShader from '../shaders/screen-fragment.glsl'
-import screenVertexShader from '../shaders/screen-vertex.glsl'
+import screenFragmentShader from '../shaders/screen-fragment.glsl?raw'
+import screenVertexShader from '../shaders/screen-vertex.glsl?raw'
 
 class ScreenMaterial extends ShaderMaterial {
   constructor() {
