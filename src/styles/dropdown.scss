@@ -1,6 +1,6 @@
-@import '_colors.scss';
-@import '_fonts.scss';
-@import '_mixins.scss';
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'mixins' as *;
 
 .dropdown-wrapper {
   position: absolute;
