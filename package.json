@@ -2,6 +2,7 @@
   "name": "blakesimpson.dev-react",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=22"
   },
