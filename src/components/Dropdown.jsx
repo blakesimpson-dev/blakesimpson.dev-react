@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FaCaretDown, FaCaretUp, FaCheck } from 'react-icons/fa'
 import '../styles/dropdown.scss'
 
-const Dropdown = ({ headerContent, items, setSelectedItem }) => {
+const Dropdown = ({ headerContent, items, selectedId, setSelectedItem }) => {
   const [isOpen, setIsOpen] = useState()
 
   const selectItem = (item) => {
@@ -31,7 +31,7 @@ const Dropdown = ({ headerContent, items, setSelectedItem }) => {
               onClick={() => selectItem(item)}
             >
               <div className="dropdown-list-item--content">{item.name}</div>
-              {item.selected && <FaCheck size={14} />}
+              {item.id === selectedId && <FaCheck size={14} />}
             </button>
           ))}
         </div>

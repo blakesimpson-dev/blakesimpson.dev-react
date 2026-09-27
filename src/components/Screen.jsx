@@ -2,7 +2,7 @@ import { Html } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import React, { useEffect, useRef, useState } from 'react'
 import { Color, LinearSRGBColorSpace } from 'three'
-import { useScene } from '../hooks/useScene'
+import { useSceneAssets } from '../hooks/useSceneAssets'
 import useScreenItems from '../hooks/useScreenItems'
 import { useVideo } from '../hooks/useVideo'
 import '../materials/ScreenMaterial'
@@ -14,36 +14,33 @@ const videoTint = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace)
 
 const Screen = ({ page }) => {
   const screenMesh = useRef()
-  const { nodes, bootTexture } = useScene('/models/model.glb')
+  const hasBooted = useRef(false)
+  const { nodes, bootTexture } = useSceneAssets()
   const { video, resetVideo, changeVideoSource } = useVideo()
   const { items } = useScreenItems()
   const [isScreenOn, setIsScreenOn] = useState(false)
-  const [screenOnDelay, setScreenOnDelay] = useState(4500)
-  const [screenItem, setScreenItem] = useState(items[0])
-
-  const setSelectedItem = (id) => {
-    items.forEach((item) => (item.selected = false))
-    const item = items.filter((item) => {
-      return item.id === id
-    })[0]
-    item.selected = true
-    setScreenItem(item)
-  }
+  const [selectedId, setSelectedId] = useState(items[0].id)
+  const screenItem = items.find((item) => item.id === selectedId)
 
   useEffect(() => {
     if (screenItem.type === 'video') {
       resetVideo()
       changeVideoSource(screenItem.url)
     }
-  }, [screenItem])
+  }, [screenItem, resetVideo, changeVideoSource])
 
+  // Turn the screen on after the camera settles on Home (longer on first load)
   useEffect(() => {
-    if (page === 'Home') {
-      setTimeout(() => {
+    if (page !== 'Home') return
+    const timer = setTimeout(
+      () => {
+        hasBooted.current = true
         setIsScreenOn(true)
-        setScreenOnDelay(2000)
-      }, screenOnDelay)
-    } else {
+      },
+      hasBooted.current ? 2000 : 4500,
+    )
+    return () => {
+      clearTimeout(timer)
       setIsScreenOn(false)
     }
   }, [page])
@@ -70,7 +67,8 @@ const Screen = ({ page }) => {
             <Dropdown
               headerContent="File"
               items={items}
-              setSelectedItem={(id) => setSelectedItem(id)}
+              selectedId={selectedId}
+              setSelectedItem={setSelectedId}
             />
             <div className="screen__spacer--one" />
             <div className="screen__title--two">Details</div>
@@ -98,7 +96,6 @@ const Screen = ({ page }) => {
           </meshBasicMaterial>
         )}
         {!isScreenOn && (
-          // <meshBasicMaterial attach="material" color={'#18191A'} />
           <meshBasicMaterial attach="material" map={bootTexture} />
         )}
       </mesh>
