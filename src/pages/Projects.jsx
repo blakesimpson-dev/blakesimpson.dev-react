@@ -32,11 +32,11 @@ const Projects = ({ setPage }) => {
             <img className="avatar" src="/images/project-avatar.png" />
             <div>
               <p>
-                I&apos;ve built everything from Arduino-based racing game controllers
-                to enterprise mining applications deployed worldwide. While I
-                love working with hardware, my greatest satisfaction comes from
-                crafting intuitive user experiences that deliver results within
-                practical constraints.
+                I&apos;ve built everything from Arduino-based racing game
+                controllers to enterprise mining applications deployed
+                worldwide. While I love working with hardware, my greatest
+                satisfaction comes from crafting intuitive user experiences that
+                deliver results within practical constraints.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Projects = ({ setPage }) => {
           />
         </div>
       }
-    ></Page>
+    />
   )
 }
 

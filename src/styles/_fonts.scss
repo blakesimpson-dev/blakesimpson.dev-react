@@ -1,6 +1,6 @@
 @use 'colors' as *;
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 $font-family--default: 'Roboto Mono', serif;
 $font-family--pixels: 'Press Start 2P', serif;
@@ -28,7 +28,6 @@ $font-color--primary: $color--primary;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 h1,

@@ -15,7 +15,7 @@
   @include panel__box-shadow;
   @include panel__border;
   @include panel__background--diagonal;
-  @include panel__text-shadow;  
+  @include panel__text-shadow;
   background-color: $color--panel__header-background;
 
   &__title {
