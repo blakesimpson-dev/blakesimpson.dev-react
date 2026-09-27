@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import Main from './Main'
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import React from 'react'
 // import Wedding from './Wedding'
 import RSVP from '../wedding-pages/RSVP'
