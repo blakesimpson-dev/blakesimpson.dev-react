@@ -33,7 +33,7 @@ const Overlay = ({ page, setPage }) => {
         controls.start('hidden')
         break
     }
-  }, [page])
+  }, [page, controls])
 
   return (
     <motion.div

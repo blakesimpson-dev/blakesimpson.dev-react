@@ -1,30 +1,25 @@
 import { motion, useAnimationControls } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useMotion } from '../hooks/useMotion'
 import '../styles/menu.scss'
-
-let useInitialMotion = true
 
 const Menu = ({ page, setPage }) => {
   const controls = useAnimationControls()
   const { menuMotion } = useMotion()
+  // First reveal waits for the intro camera move; later ones are quicker
+  const isFirstReveal = useRef(true)
 
   useEffect(() => {
-    const initialSequence = async () => {
-      await controls.start('visibleInitial')
-      useInitialMotion = false
+    if (page !== 'Home') {
+      controls.start('hidden')
+    } else if (isFirstReveal.current) {
+      controls
+        .start('visibleInitial')
+        .then(() => (isFirstReveal.current = false))
+    } else {
+      controls.start('visible')
     }
-
-    switch (page) {
-      case 'Home':
-        useInitialMotion ? initialSequence() : controls.start('visible')
-        break
-
-      default:
-        controls.start('hidden')
-        break
-    }
-  }, [page])
+  }, [page, controls])
 
   return (
     <motion.div
