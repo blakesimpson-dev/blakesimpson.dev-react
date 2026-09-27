@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
 import { FaExternalLinkSquareAlt } from 'react-icons/fa'
 import ImgModal from '../components/ImgModal'
@@ -113,9 +112,5 @@ const Projects = ({ setPage }) => {
 }
 
 Projects.displayName = 'Projects'
-
-Projects.propTypes = {
-  setPage: PropTypes.func,
-}
 
 export default Projects

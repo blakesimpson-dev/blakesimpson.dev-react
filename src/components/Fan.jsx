@@ -1,5 +1,4 @@
 import { useFrame } from '@react-three/fiber'
-import PropTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { useScene } from '../hooks/useScene'
 
@@ -23,9 +22,5 @@ const Fan = ({ speed = 5 }) => {
 }
 
 Fan.displayName = 'Fan'
-
-Fan.propTypes = {
-  speed: PropTypes.number,
-}
 
 export default Fan

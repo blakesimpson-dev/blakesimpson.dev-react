@@ -1,5 +1,4 @@
 import { motion, useAnimationControls } from 'framer-motion'
-import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { useMotion } from '../hooks/useMotion'
 import About from '../pages/About'
@@ -52,10 +51,5 @@ const Overlay = ({ page, setPage }) => {
 }
 
 Overlay.displayName = 'Overlay'
-
-Overlay.propTypes = {
-  page: PropTypes.string,
-  setPage: PropTypes.func,
-}
 
 export default Overlay

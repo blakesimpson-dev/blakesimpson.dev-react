@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import { Carousel } from 'react-responsive-carousel'
@@ -58,13 +57,5 @@ const ResponsiveCarousel = ({
 }
 
 ResponsiveCarousel.displayName = 'Carousel'
-
-ResponsiveCarousel.propTypes = {
-  content: PropTypes.array,
-  autoPlay: PropTypes.bool,
-  showStatus: PropTypes.bool,
-  showIndicators: PropTypes.bool,
-  showThumbs: PropTypes.bool,
-}
 
 export default ResponsiveCarousel

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import Page from '../components/Page'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
@@ -62,9 +61,5 @@ const Music = ({ setPage }) => {
 }
 
 Music.displayName = 'Music'
-
-Music.propTypes = {
-  setPage: PropTypes.func,
-}
 
 export default Music

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
 
@@ -18,11 +17,5 @@ const Page = ({ setPage, name, content }) => {
 }
 
 Page.displayName = 'Page'
-
-Page.propTypes = {
-  setPage: PropTypes.func,
-  name: PropTypes.string,
-  content: PropTypes.element,
-}
 
 export default Page

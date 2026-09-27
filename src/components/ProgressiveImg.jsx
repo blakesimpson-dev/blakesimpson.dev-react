@@ -1,4 +1,3 @@
-import PropType from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 const ProgressiveImg = ({ compressedSrc, src, alt, ...props }) => {
@@ -24,12 +23,6 @@ const ProgressiveImg = ({ compressedSrc, src, alt, ...props }) => {
       className={`${loadClass}`}
     />
   )
-}
-
-ProgressiveImg.propTypes = {
-  compressedSrc: PropType.string,
-  src: PropType.string,
-  alt: PropType.string,
 }
 
 export default ProgressiveImg

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { FaCaretDown, FaCaretUp, FaCheck } from 'react-icons/fa'
 import '../styles/dropdown.scss'
@@ -42,11 +41,5 @@ const Dropdown = ({ headerContent, items, setSelectedItem }) => {
 }
 
 Dropdown.displayName = 'Dropdown'
-
-Dropdown.propTypes = {
-  headerContent: PropTypes.string,
-  items: PropTypes.array,
-  setSelectedItem: PropTypes.func,
-}
 
 export default Dropdown
