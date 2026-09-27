@@ -24,7 +24,7 @@ class ScreenMaterial extends ShaderMaterial {
   }
 
   set uTime(value) {
-    this.uniforms.utime.value = value
+    this.uniforms.uTime.value = value
   }
 
   get uTime() {
