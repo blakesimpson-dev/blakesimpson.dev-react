@@ -24,6 +24,8 @@ const Main = () => {
           <Canvas
             style={{ position: 'fixed' }}
             camera={{
+              // Matches the glTF camera node the CameraActionNLA* tracks target
+              name: 'Camera',
               near: 0.1,
               far: 4,
               fov: 19,
