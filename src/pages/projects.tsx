@@ -16,7 +16,6 @@ export function Projects({setPage}: OverlayPageProps) {
   const isCompact = useIsCompact();
   const {blurb, projects} = PROJECTS;
 
-  // A modal adds nothing on a phone screen: open the full image in a tab
   function openImage(image: ProjectImage) {
     if (isCompact) {
       window.open(image.src, '_blank', 'noopener');
@@ -51,8 +50,7 @@ export function Projects({setPage}: OverlayPageProps) {
                   <ProgressiveImg
                     key={image.src}
                     style={{cursor: 'pointer'}}
-                    // Every slide mounts at once: show the thumbnail and
-                    // leave the full-size image until it's opened
+                    // Every slide mounts at once, so load thumbnails, not full images
                     src={image.thumbSrc}
                     alt={image.alt}
                     compressedSrc={image.compressedSrc}

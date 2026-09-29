@@ -1,18 +1,18 @@
 @use 'colors' as *;
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-$font-family--default: 'Roboto Mono', serif;
+$font-family--default: 'IBM Plex Mono', monospace;
 $font-family--pixels: 'Press Start 2P', serif;
 $font-family--w95fa: 'w95fa';
-$font-weight--thin: 200;
-$font-weight--regular: 400;
-$font-weight--bold: 600;
+$font-weight--heading: 600;
+// Plex Mono's 400 reads too light on the frosted panels
+$font-weight--regular: 500;
+$font-weight--bold: 700;
 $line-height--default: 1.6em;
 $font-size--default: 14px;
-// Phones and tablets keep the smaller size their layouts were built around
 $font-size--compact: 12px;
-$letter-spacing--default: 1px;
+$letter-spacing--default: normal;
 $font-color--primary: $color--primary;
 
 @font-face {
@@ -37,6 +37,6 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: $font-weight--thin;
+  font-weight: $font-weight--heading;
   line-height: 1.25em;
 }

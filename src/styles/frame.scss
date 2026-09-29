@@ -24,6 +24,10 @@
   grid-area: copyright;
 }
 
+.frame__copyright--short {
+  display: none;
+}
+
 .frame__instructions {
   text-align: center;
   grid-area: instructions;
@@ -38,7 +42,6 @@
   align-items: center;
   gap: 1rem;
 
-  // Icon + text/logo in each link, centred on one line
   a {
     display: inline-flex;
     align-items: center;
@@ -47,14 +50,12 @@
   }
 }
 
-// CV link beside the GitHub logo: plain white text with an icon, not a
-// button
 .frame__cv {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   color: $color--primary;
-  // Matches the 18px GitHub logo beside it (14px in compact, below)
+  // Matches the GitHub logo's height
   font-size: 18px;
   font-weight: $font-weight--bold;
   text-decoration: none;
@@ -64,8 +65,7 @@
   }
 }
 
-// Compact (phones/tablets): a one-line footer below the page panel; no desk
-// to explore, so no instructions ----------------------------------------------
+// Compact
 
 .is-compact {
   .frame {
@@ -84,6 +84,14 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+
+  .frame__copyright--full {
+    display: none;
+  }
+
+  .frame__copyright--short {
+    display: inline;
   }
 
   .frame__links {

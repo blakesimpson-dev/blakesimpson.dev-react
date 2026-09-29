@@ -15,7 +15,6 @@ interface DropdownProps<Id> {
   onSelect: (id: Id) => void;
 }
 
-/** A Windows 95 style menu: a header button that opens a checked list. */
 export function Dropdown<Id extends string | number>({
   headerContent,
   items,

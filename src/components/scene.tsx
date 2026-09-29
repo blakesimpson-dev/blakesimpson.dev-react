@@ -1,4 +1,3 @@
-import {meshBounds} from '@react-three/drei';
 import type {ThreeEvent} from '@react-three/fiber';
 import {
   BrightnessContrast,
@@ -28,11 +27,9 @@ import {Screen} from './screen';
 interface SceneProps {
   page: PageName;
   setPage: SetPage;
-  /** Called once the scene's assets have loaded and it has mounted. */
   onReady: (isReady: boolean) => void;
 }
 
-/** The desk: baked meshes, camera moves between pages, hover and click. */
 export function Scene({page, setPage, onReady}: SceneProps) {
   const {nodes, animations, materials, glassMaterial} = useSceneAssets();
   const actions = useCameraActions(animations);
@@ -41,12 +38,11 @@ export function Scene({page, setPage, onReady}: SceneProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const previousPage = useRef(page);
 
-  // Assets have loaded once Scene mounts (it suspends until then)
+  // Assets have loaded once this mounts (it suspends until then)
   useEffect(() => {
     onReady(true);
   }, [onReady]);
 
-  // Intro camera move on first load
   useEffect(() => {
     playIntro(actions.intro);
     const timer = setTimeout(() => {
@@ -57,7 +53,6 @@ export function Scene({page, setPage, onReady}: SceneProps) {
     };
   }, [actions]);
 
-  // Zoom between the Home view and a page when the page changes
   useEffect(() => {
     const from = previousPage.current;
     previousPage.current = page;
@@ -132,7 +127,6 @@ export function Scene({page, setPage, onReady}: SceneProps) {
         <mesh geometry={nodes.PCGlassMesh.geometry} material={glassMaterial} />
       </group>
       <group
-        raycast={meshBounds}
         onPointerOver={handlePointerOver}
         onPointerOut={handlePointerOut}
         onClick={handleClick}

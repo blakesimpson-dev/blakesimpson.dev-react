@@ -6,7 +6,6 @@ import '../styles/carousel.scss';
 
 interface ResponsiveCarouselProps {
   children: ReactElement[];
-  /** Extra class on the carousel root, e.g. to restyle its arrows. */
   className?: string;
   autoPlay?: boolean;
   showStatus?: boolean;
@@ -14,7 +13,6 @@ interface ResponsiveCarouselProps {
   showThumbs?: boolean;
 }
 
-/** react-responsive-carousel with round arrow buttons and no chrome. */
 export function ResponsiveCarousel({
   children,
   className,

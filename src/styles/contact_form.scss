@@ -28,7 +28,6 @@
     }
   }
 
-  // Fields fill the form up to a readable width, at any screen size
   &__input,
   &__textarea {
     width: 100%;
@@ -37,5 +36,9 @@
 
   textarea {
     min-height: 10rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
   }
 }

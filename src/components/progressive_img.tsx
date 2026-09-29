@@ -4,11 +4,9 @@ import type {ImgHTMLAttributes} from 'react';
 interface ProgressiveImgProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  /** Small placeholder shown until src has loaded. */
   compressedSrc?: string;
 }
 
-/** An image that shows a small placeholder until the full image loads. */
 export function ProgressiveImg({
   src,
   alt,

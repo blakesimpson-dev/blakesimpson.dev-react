@@ -83,7 +83,6 @@ export function About({setPage}: OverlayPageProps) {
   );
 }
 
-/** Props shared by the About sections; section names the BEM block. */
 interface SectionProps {
   section: string;
   title: string;

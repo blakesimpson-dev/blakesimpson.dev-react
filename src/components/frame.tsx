@@ -3,11 +3,15 @@ import {SITE} from '../content';
 import {Markdown} from './markdown';
 import '../styles/frame.scss';
 
-/** Fixed page chrome: copyright, instructions and the repository link. */
 export function Frame() {
   return (
     <div className="frame">
-      <div className="frame__copyright">{SITE.frame.copyright}</div>
+      <div className="frame__copyright">
+        <span className="frame__copyright--full">{SITE.frame.copyright}</span>
+        <span className="frame__copyright--short">
+          {SITE.frame.copyrightShort}
+        </span>
+      </div>
       <div className="frame__instructions">
         <Markdown text={SITE.frame.instructions} inline />
       </div>

@@ -1,9 +1,7 @@
 import type {CameraProps} from '@react-three/fiber';
 
-/** Vertical field of view (degrees), chosen for a 16:9 desktop window. */
 export const CAMERA_FOV = 19;
 
-/** Start pose; the glTF camera clips then animate this camera. */
 export const CAMERA: CameraProps = {
   // Matches the glTF camera node the CameraActionNLA* tracks target
   name: 'Camera',

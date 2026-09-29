@@ -10,12 +10,10 @@ export interface ModalImage {
 }
 
 interface ImgModalProps {
-  /** The image to show; the modal is closed while this is null. */
   image: ModalImage | null;
   onClose: () => void;
 }
 
-/** Full-size view of a project screenshot. */
 export function ImgModal({image, onClose}: ImgModalProps) {
   return (
     <Modal

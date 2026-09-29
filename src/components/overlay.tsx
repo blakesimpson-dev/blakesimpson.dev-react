@@ -8,7 +8,6 @@ import {Music} from '../pages/music';
 import {Projects} from '../pages/projects';
 import '../styles/overlay.scss';
 
-/** Desktop OVERLAY_MOTION variant per page: Music sits left of the Gameboy. */
 const OVERLAY_VARIANTS: Record<PageName, string> = {
   Home: 'hidden',
   Music: 'visibleLeft',
@@ -20,17 +19,10 @@ const OVERLAY_VARIANTS: Record<PageName, string> = {
 interface OverlayProps {
   page: PageName;
   setPage: SetPage;
-  /** Compact: full width, no left/right placement around the desk. */
   isCompact: boolean;
-  /** Called with true while the panel is sliding, false once it settles. */
   onTransitionChange: (isTransitioning: boolean) => void;
 }
 
-/**
- * The panel that slides in over the desk with the current page. Changing
- * page slides the old one out before the new one's content is swapped in,
- * so the content never changes while the panel is visible.
- */
 export function Overlay({
   page,
   setPage,
@@ -38,7 +30,7 @@ export function Overlay({
   onTransitionChange,
 }: OverlayProps) {
   const controls = useAnimationControls();
-  // The page whose content is showing; lags `page` while the panel hides
+  // Lags `page` while the panel hides, so content never swaps on screen
   const [shownPage, setShownPage] = useState(page);
   const shownPageRef = useRef(page);
 
@@ -72,8 +64,7 @@ export function Overlay({
 
   return (
     <motion.div
-      // Music sits at the bottom of the screen on desktop. Keyed off the
-      // shown page, so the class only changes while the panel is hidden.
+      // Keyed off shownPage so the class only changes while hidden
       className={
         !isCompact && shownPage === 'Music'
           ? 'overlay overlay--bottom'

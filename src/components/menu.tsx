@@ -11,22 +11,13 @@ import '../styles/menu.scss';
 interface MenuProps {
   page: PageName;
   setPage: SetPage;
-  /** Compact: a hamburger menu that stays visible on every page. */
   isCompact: boolean;
-  /** Blocks navigation while the page panel is sliding. */
   isNavDisabled: boolean;
 }
 
-/**
- * Site title and page navigation. On desktop it shows page buttons and hides
- * while a page is open (the desk objects are the other way in). Compact mode
- * uses a hamburger menu and stays visible, except on short (landscape)
- * screens, where it hides like desktop to give the page the room; the page's
- * close button brings it back.
- */
 export function Menu({page, setPage, isCompact, isNavDisabled}: MenuProps) {
   const controls = useAnimationControls();
-  // First reveal waits for the intro camera move; later ones are quicker
+  // The first reveal waits for the intro camera move
   const isFirstReveal = useRef(true);
   const isShort = useIsShortViewport();
   const hidesOnPages = !isCompact || isShort;
@@ -52,7 +43,6 @@ export function Menu({page, setPage, isCompact, isNavDisabled}: MenuProps) {
     >
       <div className="menu__title">
         <div>{SITE.menu.title}</div>
-        {!isCompact && <div>{SITE.menu.subtitle}</div>}
       </div>
       {isCompact ? (
         <HamburgerNav
@@ -85,13 +75,11 @@ interface HamburgerNavProps {
   isDisabled: boolean;
 }
 
-/** Compact navigation: a bars button opening a list of every page. */
 function HamburgerNav({page, setPage, isDisabled}: HamburgerNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const nav = useRef<HTMLDivElement>(null);
   const isListShown = isOpen && !isDisabled;
 
-  // Close when tapping anywhere outside the menu
   useEffect(() => {
     if (!isListShown) {
       return;
