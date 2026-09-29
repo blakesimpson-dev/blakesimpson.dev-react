@@ -9,7 +9,9 @@ $font-weight--thin: 200;
 $font-weight--regular: 400;
 $font-weight--bold: 600;
 $line-height--default: 1.6em;
-$font-size--default: 12px;
+$font-size--default: 14px;
+// Phones and tablets keep the smaller size their layouts were built around
+$font-size--compact: 12px;
 $letter-spacing--default: 1px;
 $font-color--primary: $color--primary;
 

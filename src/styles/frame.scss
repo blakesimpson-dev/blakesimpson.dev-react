@@ -33,11 +33,34 @@
   pointer-events: auto;
   text-align: end;
   grid-area: links;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 
+  // Icon + text/logo in each link, centred on one line
   a {
-    img {
-      margin-left: 4px;
-    }
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+  }
+}
+
+// CV link beside the GitHub logo: plain white text with an icon, not a
+// button
+.frame__cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: $color--primary;
+  // Matches the 18px GitHub logo beside it (14px in compact, below)
+  font-size: 18px;
+  font-weight: $font-weight--bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -73,5 +96,9 @@
 
   .frame__instructions {
     display: none;
+  }
+
+  .frame__cv {
+    font-size: 14px;
   }
 }

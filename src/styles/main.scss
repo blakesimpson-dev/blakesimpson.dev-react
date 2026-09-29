@@ -115,6 +115,12 @@ textarea {
 // Compact (phones/tablets, set on <main> by pages/home.tsx). Shared sizes for
 // the menu, page panel and frame; tighter on short (landscape) screens.
 .is-compact {
+  font-size: $font-size--compact;
+
+  button {
+    font-size: $font-size--compact;
+  }
+
   --compact-inset: 0.5rem;
   --compact-gap: 0.5rem;
   --compact-menu-height: 3rem;

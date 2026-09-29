@@ -1,4 +1,4 @@
-import {FaExternalLinkSquareAlt} from 'react-icons/fa';
+import {FaExternalLinkSquareAlt, FaFilePdf} from 'react-icons/fa';
 import {SITE} from '../content';
 import {Markdown} from './markdown';
 import '../styles/frame.scss';
@@ -12,6 +12,15 @@ export function Frame() {
         <Markdown text={SITE.frame.instructions} inline />
       </div>
       <div className="frame__links">
+        <a
+          className="frame__cv"
+          href={SITE.cv.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaFilePdf size={18} />
+          {SITE.cv.label}
+        </a>
         <a href={SITE.frame.repository.href} target="_blank" rel="noreferrer">
           <FaExternalLinkSquareAlt size={18} />
           <img

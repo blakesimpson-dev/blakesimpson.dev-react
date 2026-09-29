@@ -72,7 +72,13 @@ export function Overlay({
 
   return (
     <motion.div
-      className="overlay"
+      // Music sits at the bottom of the screen on desktop. Keyed off the
+      // shown page, so the class only changes while the panel is hidden.
+      className={
+        !isCompact && shownPage === 'Music'
+          ? 'overlay overlay--bottom'
+          : 'overlay'
+      }
       variants={OVERLAY_MOTION}
       initial={getVariant('Home', isCompact)}
       animate={controls}
