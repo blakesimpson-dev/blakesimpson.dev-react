@@ -2,16 +2,8 @@ import React from 'react';
 import {FaFilePdf} from 'react-icons/fa';
 import Page from '../components/page';
 import ProgressiveImg from '../components/progressive_img';
-import {
-  ACHIEVEMENT_DATA,
-  ATTRIBUTE_DATA,
-  EDUCATION_DATA,
-  HISTORY_DATA,
-  LANGUAGE_DATA,
-  PROFICIENCY_DATA,
-  REFERENCE_DATA,
-  SKILL_DATA,
-} from '../content/about';
+import {ABOUT} from '../content';
+import {Markdown} from '../components/markdown';
 
 const About = ({setPage}) => {
   return (
@@ -21,21 +13,11 @@ const About = ({setPage}) => {
       content={
         <div className="about-page">
           <div className="about-page__blurb">
-            <img className="avatar" src="/images/blake_avatar.png" />
+            <img className="avatar" src={ABOUT.blurb.avatar} />
             <div>
-              <h1>Blake Simpson - Technical Lead</h1>
-              <p>
-                I am a passionate full-stack developer who has led teams across
-                diverse environments and built software that matters. My
-                professional background includes working on mission-critical
-                emergency services systems, innovative safety management
-                solutions, groundbreaking interactive experiences, and tools
-                that have engaged and supported vulnerable communities.
-                Proficient in multiple languages and frameworks, I bring
-                creative problem-solving and a human-centered design approach to
-                applications where user experience is critical.
-              </p>
-              {REFERENCE_DATA.map((item, index) => {
+              <h1>{ABOUT.blurb.heading}</h1>
+              <Markdown text={ABOUT.blurb.body} />
+              {ABOUT.references.map((item, index) => {
                 return (
                   <div key={`reference-${index}`}>
                     <FaFilePdf />
@@ -48,7 +30,7 @@ const About = ({setPage}) => {
             </div>
           </div>
           <div className="about-page__skills__container">
-            {SKILL_DATA.map((item, index) => {
+            {ABOUT.skills.map((item, index) => {
               return (
                 <div
                   key={`skill-${index}`}
@@ -62,7 +44,7 @@ const About = ({setPage}) => {
           <div className="about-page__proficiencies">
             <h2>Proficiencies</h2>
             <div className="about-page__proficiencies__container">
-              {PROFICIENCY_DATA.map((item, index) => {
+              {ABOUT.proficiencies.map((item, index) => {
                 return (
                   <div
                     key={`proficiency-${index}`}
@@ -82,7 +64,7 @@ const About = ({setPage}) => {
           <div className="about-page__languages">
             <h2>Languages</h2>
             <div className="about-page__languages__container">
-              {LANGUAGE_DATA.map((item, index) => {
+              {ABOUT.languages.map((item, index) => {
                 return (
                   <div
                     key={`language-${index}`}
@@ -102,7 +84,7 @@ const About = ({setPage}) => {
           <div className="about-page__attributes">
             <h2>Attributes</h2>
             <div className="about-page__attributes__container">
-              {ATTRIBUTE_DATA.map((item, index) => {
+              {ABOUT.attributes.map((item, index) => {
                 return (
                   <div
                     key={`attribute-${index}`}
@@ -118,14 +100,14 @@ const About = ({setPage}) => {
           <div className="about-page__achievements">
             <h2>Achievements</h2>
             <div className="about-page__achievements__container">
-              {ACHIEVEMENT_DATA.map((item, index) => {
+              {ABOUT.achievements.map((item, index) => {
                 return (
                   <div
                     key={`achievement-${index}`}
                     className="about-page__achievements--item"
                   >
-                    {item.title}
-                    {item.content}
+                    <h2>{item.title}</h2>
+                    <Markdown text={item.body} />
                   </div>
                 );
               })}
@@ -134,14 +116,14 @@ const About = ({setPage}) => {
           <div className="about-page__history">
             <h2>Work History</h2>
             <div className="about-page__history__container">
-              {HISTORY_DATA.map((item, index) => {
+              {ABOUT.history.map((item, index) => {
                 return (
                   <div
                     key={`history-${index}`}
                     className="about-page__history--item"
                   >
-                    {item.title}
-                    {item.content}
+                    <h2>{item.title}</h2>
+                    <Markdown text={item.body} />
                   </div>
                 );
               })}
@@ -150,14 +132,14 @@ const About = ({setPage}) => {
           <div className="about-page__education">
             <h2>Education History</h2>
             <div className="about-page__education__container">
-              {EDUCATION_DATA.map((item, index) => {
+              {ABOUT.education.map((item, index) => {
                 return (
                   <div
                     key={`education-${index}`}
                     className="about-page__education--item"
                   >
-                    {item.title}
-                    {item.content}
+                    <h2>{item.title}</h2>
+                    <Markdown text={item.body} />
                   </div>
                 );
               })}

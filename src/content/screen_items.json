@@ -1,0 +1,67 @@
+[
+  {
+    "id": 0,
+    "name": "Squares GLSL",
+    "details": "GLSL Fragment Shader adapted for use with react-three-fiber from [Pretty Hip](https://www.shadertoy.com/view/XsBfRW). Definitely some squares."
+  },
+  {
+    "id": 1,
+    "name": "Kataplexia @ SS2020",
+    "url": "/videos/kataplexia_540.mp4",
+    "details": "KATAPLEXIA performing a live DMG set at [Squaresounds Festival](http://squaresoundsfestival.com/) in Melbourne 2020."
+  },
+  {
+    "id": 2,
+    "name": "Making Bush Bash",
+    "url": "/videos/making_bushbash_360.mp4",
+    "details": "A modified half-car complete with a 2 Player shoot 'em up racing game. [View on Youtube](https://youtu.be/8sEWVJV0bbA)."
+  },
+  {
+    "id": 3,
+    "name": "Bush Bash Launch",
+    "url": "/videos/bushbash_360.mp4",
+    "details": "A modified half-car complete with a 2 Player shoot 'em up racing game. [View on Youtube](https://youtu.be/v6zDTnKGocU)."
+  },
+  {
+    "id": 4,
+    "name": "Arcadian Dreams",
+    "url": "/videos/arcadian_360.mp4",
+    "details": "An exhibited art and music colab game split over a wall mounted digital Triptych. [View on Youtube](https://youtu.be/c5cUeHQ_wWM)."
+  },
+  {
+    "id": 5,
+    "name": "Making Catnips",
+    "url": "/videos/making_catnips_360.mp4",
+    "details": "Multiplayer kitten feeding game for 2-16 players with real plush cat controllers. [View on Youtube](https://youtu.be/msECnidIvW0)."
+  },
+  {
+    "id": 6,
+    "name": "Catnips",
+    "url": "/videos/catnips_360.mp4",
+    "details": "Multiplayer kitten feeding game for 2-16 players with real plush cat controllers. [View on Youtube](https://youtu.be/j_XTsG_eGOI)."
+  },
+  {
+    "id": 7,
+    "name": "Gundash Event",
+    "url": "/videos/gundash_360.mp4",
+    "details": "Multiplayer shooter/racing hybrid for 2-4 players with an online leaderboard. [View on Youtube](https://youtu.be/B6V1K1tKwT0)."
+  },
+  {
+    "id": 8,
+    "name": "Interstate Arcade",
+    "url": "/videos/interstate_360.mp4",
+    "details": "Pop-up indie games arcade in Melbourne. The arcade toured around Australia. [View on Youtube](https://youtu.be/jnHv-lnLanw)."
+  },
+  {
+    "id": 9,
+    "name": "L.M.P.O.",
+    "url": "/videos/lmpo_360.mp4",
+    "details": "Local Multiplayer Only Bakery take over with local indie games and bands. [View on Youtube](https://youtu.be/SuYJ079wjCs)."
+  },
+  {
+    "id": 10,
+    "name": "Blitz Bandits",
+    "url": "/videos/blitzbandits_360.mp4",
+    "details": "2 player arena shooter with a DMG aesthetic and music by the great [Atomsmasha](https://soundcloud.com/atomsmasha). [View on Youtube](https://youtu.be/F09pRDOUxjw)."
+  }
+]

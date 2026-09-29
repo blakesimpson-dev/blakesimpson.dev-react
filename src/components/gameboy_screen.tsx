@@ -1,5 +1,6 @@
 import {Html} from '@react-three/drei';
 import React, {useEffect, useState} from 'react';
+import {SITE} from '../content';
 import '../styles/gameboy.scss';
 
 const GameboyScreen = ({page}) => {
@@ -26,7 +27,7 @@ const GameboyScreen = ({page}) => {
             transform
           >
             <div className="gameboy-screen">
-              <div className="gameboy-screen__title">Kataplexia</div>
+              <div className="gameboy-screen__title">{SITE.gameboy.title}</div>
             </div>
           </Html>
           <Html

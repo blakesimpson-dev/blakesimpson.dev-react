@@ -1,7 +1,25 @@
 import React from 'react';
 import Page from '../components/page';
 import ResponsiveCarousel from '../components/responsive_carousel';
-import {getSoundcloudIFrameSource, SOUNDCLOUD_IFRAMES} from '../content/music';
+import {MUSIC} from '../content';
+import type {SoundcloudPlayer, Track} from '../content/types';
+import {Markdown} from '../components/markdown';
+
+const SOUNDCLOUD_PLAYER_URL =
+  'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/';
+
+function getSoundcloudSource(track: Track, player: SoundcloudPlayer) {
+  return [
+    `${SOUNDCLOUD_PLAYER_URL}${track.id}`,
+    `&color=${player.color}`,
+    `&auto_play=${track.autoPlay}`,
+    `&hide_related=${player.hideRelated}`,
+    `&show_comments=${player.showComments}`,
+    `&show_user=${player.showUser}`,
+    `&show_reposts=${player.showReposts}`,
+    `&show_teaser=${player.showTeaser}`,
+  ].join('');
+}
 
 const Music = ({setPage}) => {
   return (
@@ -11,43 +29,24 @@ const Music = ({setPage}) => {
       content={
         <div className="music-page">
           <div className="music-page__blurb">
-            <img className="avatar" src="/images/kataplexia_avatar.png" />
+            <img className="avatar" src={MUSIC.blurb.avatar} />
             <div>
-              <h1>KATAPLEXIA // キャタプレクシア</h1>
-              <p>
-                I have been performing, creating and enjoying music for over a
-                decade, having toured Europe, America and Japan. These days I
-                primarily create chiptunes using a piece of software called{' '}
-                <a
-                  href="https://www.littlesounddj.com/lsd/index.php"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Little Sound DJ
-                </a>
-                . I have recently started to use the new{' '}
-                <a
-                  href="https://dirtywave.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Dirtywave M8 Tracker
-                </a>{' '}
-                and see myself pursuing this more in the future.
-              </p>
+              <h1>{MUSIC.blurb.heading}</h1>
+              <Markdown text={MUSIC.blurb.body} />
             </div>
           </div>
           <ResponsiveCarousel
-            content={SOUNDCLOUD_IFRAMES.map((iframe, index) => {
+            content={MUSIC.tracks.map(track => {
               return (
                 <iframe
-                  key={index}
-                  width={iframe.width}
-                  height={iframe.height}
+                  key={track.id}
+                  width={MUSIC.player.width}
+                  height={MUSIC.player.height}
                   scrolling="no"
                   frameBorder="no"
                   allow="autoplay"
-                  src={getSoundcloudIFrameSource(iframe)}
+                  title={track.title}
+                  src={getSoundcloudSource(track, MUSIC.player)}
                 />
               );
             })}

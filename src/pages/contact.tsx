@@ -1,6 +1,8 @@
 import React from 'react';
 import ContactForm from '../components/contact_form';
 import Page from '../components/page';
+import {Markdown} from '../components/markdown';
+import {CONTACT} from '../content';
 
 const Contact = ({setPage}) => {
   return (
@@ -10,36 +12,20 @@ const Contact = ({setPage}) => {
       content={
         <div className="contact-page">
           <div className="contact-page__blurb">
-            <p>
-              Thank you for taking the time to view my portfolio. If you have
-              any questions or would like to discuss a role, please do not
-              hesitate to contact me using the methods below.
-            </p>
+            <Markdown text={CONTACT.blurb.body} />
           </div>
           <ContactForm />
           <div className="contact-page__badges">
-            <a
-              href="https://github.com/blakesimpson-dev"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-            </a>
-            <a
-              href="https://twitter.com/Kataplexia_AU"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/blake-simpson-dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-            </a>
+            {CONTACT.badges.map(badge => (
+              <a
+                key={badge.name}
+                href={badge.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={badge.image} alt={badge.name} />
+              </a>
+            ))}
           </div>
         </div>
       }

@@ -3,7 +3,8 @@ import {useFrame} from '@react-three/fiber';
 import React, {useEffect, useRef, useState} from 'react';
 import {Color, LinearSRGBColorSpace} from 'three';
 import {useSceneAssets} from '../hooks/use_scene_assets';
-import {SCREEN_ITEMS} from '../content/screen_items';
+import {SCREEN_ITEMS} from '../content';
+import {Markdown} from './markdown';
 import {useVideo} from '../hooks/use_video';
 import '../materials/screen_material';
 import '../styles/screen.scss';
@@ -22,7 +23,7 @@ const Screen = ({page}) => {
   const screenItem = SCREEN_ITEMS.find(item => item.id === selectedId);
 
   useEffect(() => {
-    if (screenItem.type === 'video') {
+    if (screenItem.url !== undefined) {
       resetVideo();
       changeVideoSource(screenItem.url);
     }
@@ -45,7 +46,7 @@ const Screen = ({page}) => {
   }, [page]);
 
   useFrame(state => {
-    if (isScreenOn && screenItem.type === 'default')
+    if (isScreenOn && screenItem.url === undefined)
       screenMesh.current.material.uniforms.uTime.value =
         state.clock.elapsedTime;
   });
@@ -72,7 +73,9 @@ const Screen = ({page}) => {
             />
             <div className="screen__spacer--one" />
             <div className="screen__title--two">Details</div>
-            <div className="screen__details">{screenItem.details}</div>
+            <div className="screen__details">
+              <Markdown text={screenItem.details} />
+            </div>
             <div className="screen__spacer--two" />
             <div className="screen__taskbar">
               <div>Now Playing</div>
@@ -87,10 +90,10 @@ const Screen = ({page}) => {
         scale={[-1, 1, 1]}
         position={[-0.089, 0, 0]}
       >
-        {screenItem.type === 'default' && isScreenOn && (
+        {screenItem.url === undefined && isScreenOn && (
           <screenMaterial attach="material" />
         )}
-        {screenItem.type === 'video' && isScreenOn && (
+        {screenItem.url !== undefined && isScreenOn && (
           <meshBasicMaterial attach="material" color={VIDEO_TINT}>
             <videoTexture attach="map" args={[video]} />
           </meshBasicMaterial>

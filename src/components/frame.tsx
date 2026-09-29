@@ -1,25 +1,24 @@
 import React from 'react';
 import {FaExternalLinkSquareAlt} from 'react-icons/fa';
+import {SITE} from '../content';
+import {Markdown} from './markdown';
 import '../styles/frame.scss';
 
 const Frame = () => {
   return (
     <div className="frame">
-      <div className="frame__copyright">
-        ©2022 — Blake Simpson. All rights reserved.
-      </div>
+      <div className="frame__copyright">{SITE.frame.copyright}</div>
       <div className="frame__instructions">
-        Explore! Interact with the screen&apos;s <b>File</b> menu and{' '}
-        <b>objects on the desk</b>.
+        <Markdown text={SITE.frame.instructions} inline />
       </div>
       <div className="frame__links">
-        <a
-          href="https://github.com/blakesimpson-dev/blakesimpson.dev-react"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={SITE.frame.repository.href} target="_blank" rel="noreferrer">
           <FaExternalLinkSquareAlt size={18} />
-          <img src="/images/logos/github_logo.png" height="18px" />
+          <img
+            src={SITE.frame.repository.image}
+            alt={SITE.frame.repository.label}
+            height="18px"
+          />
         </a>
       </div>
     </div>

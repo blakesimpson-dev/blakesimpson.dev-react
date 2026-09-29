@@ -1,6 +1,7 @@
 import {motion, useAnimationControls} from 'framer-motion';
 import React, {useEffect, useRef} from 'react';
 import {MENU_MOTION} from '../constants/motion';
+import {SITE} from '../content';
 import '../styles/menu.scss';
 
 const Menu = ({page, setPage}) => {
@@ -28,8 +29,8 @@ const Menu = ({page, setPage}) => {
       animate={controls}
     >
       <div className="menu__title">
-        <div>&lt;blakesimpson.dev /&gt;</div>
-        <div>KATAPLEXIA // キャタプレクシア // 3D Portfolio</div>
+        <div>{SITE.menu.title}</div>
+        <div>{SITE.menu.subtitle}</div>
       </div>
       <div className="menu__buttons">
         <button onClick={() => setPage('Music')}>Music</button>

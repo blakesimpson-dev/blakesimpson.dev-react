@@ -4,7 +4,8 @@ import ImgModal from '../components/img_modal';
 import Page from '../components/page';
 import ProgressiveImg from '../components/progressive_img';
 import ResponsiveCarousel from '../components/responsive_carousel';
-import {PROJECT_DATA} from '../content/projects';
+import {PROJECTS} from '../content';
+import {Markdown} from '../components/markdown';
 
 const Projects = ({setPage}) => {
   const imgModal = useRef();
@@ -28,15 +29,9 @@ const Projects = ({setPage}) => {
       content={
         <div className="projects-page">
           <div className="projects-page__blurb">
-            <img className="avatar" src="/images/project_avatar.png" />
+            <img className="avatar" src={PROJECTS.blurb.avatar} />
             <div>
-              <p>
-                I&apos;ve built everything from Arduino-based racing game
-                controllers to enterprise mining applications deployed
-                worldwide. While I love working with hardware, my greatest
-                satisfaction comes from crafting intuitive user experiences that
-                deliver results within practical constraints.
-              </p>
+              <Markdown text={PROJECTS.blurb.body} />
             </div>
           </div>
           <ImgModal
@@ -46,14 +41,14 @@ const Projects = ({setPage}) => {
             closeImgModal={closeImgModal}
           />
           <ResponsiveCarousel
-            content={PROJECT_DATA.map((item, index) => {
+            content={PROJECTS.projects.map((item, index) => {
               return (
                 <div
                   key={`project-${index}`}
                   className="projects-page__project--container"
                 >
                   <div className="projects-page__project--title">
-                    {item.title}
+                    <h2>{item.title}</h2>
                   </div>
                   <div className="projects-page__project--images">
                     {item.images.map((image, index) => {
@@ -70,16 +65,18 @@ const Projects = ({setPage}) => {
                     })}
                   </div>
                   <div className="projects-page__project--content">
-                    {item.content}
+                    <Markdown text={item.body} />
                   </div>
                   <div className="projects-page__project--links">
-                    {item.links.map((item, index) => {
+                    {item.links.map((link, index) => {
                       return (
                         <div key={`link-${index}`}>
                           <FaExternalLinkSquareAlt
                             style={{marginRight: '4px'}}
                           />
-                          {item}
+                          <a href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                          </a>
                         </div>
                       );
                     })}
