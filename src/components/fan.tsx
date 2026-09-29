@@ -9,9 +9,9 @@ interface FanProps {
 }
 
 /** The PC case fan, spinning continuously. */
-export function Fan({speed = 5}: FanProps) {
+export function Fan({speed = 8}: FanProps) {
   const fan = useRef<Mesh>(null);
-  const {nodes, bakedObjectsMaterial} = useSceneAssets();
+  const {nodes, materials} = useSceneAssets();
 
   useFrame((state, delta) => {
     if (fan.current) {
@@ -23,7 +23,7 @@ export function Fan({speed = 5}: FanProps) {
     <mesh
       ref={fan}
       geometry={nodes.FanMesh.geometry}
-      material={bakedObjectsMaterial}
+      material={materials.objects}
       position={[0.63934, 1.0817, -0.2041]}
     />
   );
