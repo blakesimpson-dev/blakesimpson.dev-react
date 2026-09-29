@@ -1,7 +1,7 @@
-import React from 'react'
-import { FaFilePdf } from 'react-icons/fa'
-import Page from '../components/Page'
-import ProgressiveImg from '../components/ProgressiveImg'
+import React from 'react';
+import {FaFilePdf} from 'react-icons/fa';
+import Page from '../components/Page';
+import ProgressiveImg from '../components/ProgressiveImg';
 import {
   ACHIEVEMENT_DATA,
   ATTRIBUTE_DATA,
@@ -11,9 +11,9 @@ import {
   PROFICIENCY_DATA,
   REFERENCE_DATA,
   SKILL_DATA,
-} from '../content/about'
+} from '../content/about';
 
-const About = ({ setPage }) => {
+const About = ({setPage}) => {
   return (
     <Page
       setPage={setPage}
@@ -43,7 +43,7 @@ const About = ({ setPage }) => {
                       {item.name}
                     </a>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -56,7 +56,7 @@ const About = ({ setPage }) => {
                 >
                   <span>{item}</span>
                 </div>
-              )
+              );
             })}
           </div>
           <div className="about-page__proficiencies">
@@ -75,7 +75,7 @@ const About = ({ setPage }) => {
                     />
                     <span>{item.name}</span>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -95,7 +95,7 @@ const About = ({ setPage }) => {
                     />
                     <span>{item.name}</span>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -110,7 +110,7 @@ const About = ({ setPage }) => {
                   >
                     <span>{item}</span>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -127,7 +127,7 @@ const About = ({ setPage }) => {
                     {item.title}
                     {item.content}
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -143,7 +143,7 @@ const About = ({ setPage }) => {
                     {item.title}
                     {item.content}
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -159,16 +159,16 @@ const About = ({ setPage }) => {
                     {item.title}
                     {item.content}
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       }
     />
-  )
-}
+  );
+};
 
-About.displayName = 'About'
+About.displayName = 'About';
 
-export default About
+export default About;

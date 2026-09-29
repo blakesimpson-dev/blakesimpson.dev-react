@@ -1,25 +1,25 @@
-import { Stats } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import { motion } from 'framer-motion'
-import React, { Suspense, useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
-import * as THREE from 'three'
-import { MAIN_MOTION } from '../constants/motion'
-import { RENDER_QUALITY } from '../constants/renderQuality'
-import Frame from '../components/Frame'
-import Menu from '../components/Menu'
-import Overlay from '../components/Overlay'
-import Scene from '../components/Scene'
-import Unsupported from '../components/Unsupported'
-import '../styles/main.scss'
-import '../styles/pages.scss'
+import {Stats} from '@react-three/drei';
+import {Canvas} from '@react-three/fiber';
+import {motion} from 'framer-motion';
+import React, {Suspense, useState} from 'react';
+import {useMediaQuery} from 'react-responsive';
+import * as THREE from 'three';
+import {MAIN_MOTION} from '../constants/motion';
+import {RENDER_QUALITY} from '../constants/renderQuality';
+import Frame from '../components/Frame';
+import Menu from '../components/Menu';
+import Overlay from '../components/Overlay';
+import Scene from '../components/Scene';
+import Unsupported from '../components/Unsupported';
+import '../styles/main.scss';
+import '../styles/pages.scss';
 
 const Home = () => {
-  const [page, setPage] = useState('Home')
+  const [page, setPage] = useState('Home');
   // Fade in only once Scene has mounted (its assets have loaded), so the
   // canvas clear colour never shows while the model and textures load
-  const [isSceneReady, setSceneReady] = useState(false)
-  const isSupported = useMediaQuery({ query: '(min-width: 1280px)' })
+  const [isSceneReady, setSceneReady] = useState(false);
+  const isSupported = useMediaQuery({query: '(min-width: 1280px)'});
 
   return (
     <>
@@ -30,7 +30,7 @@ const Home = () => {
           animate={isSceneReady ? 'visible' : 'hidden'}
         >
           <Canvas
-            style={{ position: 'fixed' }}
+            style={{position: 'fixed'}}
             dpr={[1, RENDER_QUALITY.maxDpr]}
             camera={{
               // Matches the glTF camera node the CameraActionNLA* tracks target
@@ -44,8 +44,8 @@ const Home = () => {
             gl={{
               toneMapping: THREE.NoToneMapping,
             }}
-            onCreated={(state) => {
-              state.gl.setClearColor('#FFFFFF')
+            onCreated={state => {
+              state.gl.setClearColor('#FFFFFF');
             }}
           >
             {RENDER_QUALITY.stats && <Stats />}
@@ -60,7 +60,7 @@ const Home = () => {
       )}
       {!isSupported && <Unsupported />}
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { FaEnvelope } from 'react-icons/fa'
-import '../styles/contact-form.scss'
+import React from 'react';
+import {FaEnvelope} from 'react-icons/fa';
+import '../styles/contact-form.scss';
 
 const ContactForm = () => {
   return (
@@ -35,7 +35,7 @@ const ContactForm = () => {
         &nbsp;Send
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

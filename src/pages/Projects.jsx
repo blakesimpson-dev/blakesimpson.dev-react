@@ -1,25 +1,25 @@
-import React, { useRef, useState } from 'react'
-import { FaExternalLinkSquareAlt } from 'react-icons/fa'
-import ImgModal from '../components/ImgModal'
-import Page from '../components/Page'
-import ProgressiveImg from '../components/ProgressiveImg'
-import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { PROJECT_DATA } from '../content/projects'
+import React, {useRef, useState} from 'react';
+import {FaExternalLinkSquareAlt} from 'react-icons/fa';
+import ImgModal from '../components/ImgModal';
+import Page from '../components/Page';
+import ProgressiveImg from '../components/ProgressiveImg';
+import ResponsiveCarousel from '../components/ResponsiveCarousel';
+import {PROJECT_DATA} from '../content/projects';
 
-const Projects = ({ setPage }) => {
-  const imgModal = useRef()
-  const [imgModalSrc, setImgModalSrc] = useState(null)
-  const [isImgModalOpen, setIsImgModalOpen] = useState(false)
+const Projects = ({setPage}) => {
+  const imgModal = useRef();
+  const [imgModalSrc, setImgModalSrc] = useState(null);
+  const [isImgModalOpen, setIsImgModalOpen] = useState(false);
 
-  const openImgModal = (imgModalSrc) => {
-    setImgModalSrc(imgModalSrc)
-    setIsImgModalOpen(true)
-  }
+  const openImgModal = imgModalSrc => {
+    setImgModalSrc(imgModalSrc);
+    setIsImgModalOpen(true);
+  };
 
   const closeImgModal = () => {
-    setImgModalSrc(null)
-    setIsImgModalOpen(false)
-  }
+    setImgModalSrc(null);
+    setIsImgModalOpen(false);
+  };
 
   return (
     <Page
@@ -61,12 +61,12 @@ const Projects = ({ setPage }) => {
                         <ProgressiveImg
                           onClick={() => openImgModal(image.src)}
                           key={`${item.id}-modal-button-${index}`}
-                          style={{ cursor: 'pointer' }}
+                          style={{cursor: 'pointer'}}
                           alt={image.alt}
                           src={image.src}
                           compressedSrc={image.compressedSrc}
                         />
-                      )
+                      );
                     })}
                   </div>
                   <div className="projects-page__project--content">
@@ -77,23 +77,23 @@ const Projects = ({ setPage }) => {
                       return (
                         <div key={`link-${index}`}>
                           <FaExternalLinkSquareAlt
-                            style={{ marginRight: '4px' }}
+                            style={{marginRight: '4px'}}
                           />
                           {item}
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
-              )
+              );
             })}
           />
         </div>
       }
     />
-  )
-}
+  );
+};
 
-Projects.displayName = 'Projects'
+Projects.displayName = 'Projects';
 
-export default Projects
+export default Projects;

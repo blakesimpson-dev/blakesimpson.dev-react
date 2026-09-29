@@ -1,9 +1,9 @@
-import React from 'react'
-import Page from '../components/Page'
-import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { getSoundcloudIFrameSource, SOUNDCLOUD_IFRAMES } from '../content/music'
+import React from 'react';
+import Page from '../components/Page';
+import ResponsiveCarousel from '../components/ResponsiveCarousel';
+import {getSoundcloudIFrameSource, SOUNDCLOUD_IFRAMES} from '../content/music';
 
-const Music = ({ setPage }) => {
+const Music = ({setPage}) => {
   return (
     <Page
       setPage={setPage}
@@ -49,15 +49,15 @@ const Music = ({ setPage }) => {
                   allow="autoplay"
                   src={getSoundcloudIFrameSource(iframe)}
                 />
-              )
+              );
             })}
           />
         </div>
       }
     />
-  )
-}
+  );
+};
 
-Music.displayName = 'Music'
+Music.displayName = 'Music';
 
-export default Music
+export default Music;

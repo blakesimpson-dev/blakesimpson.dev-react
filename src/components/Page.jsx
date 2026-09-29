@@ -1,7 +1,7 @@
-import React from 'react'
-import { FaTimes } from 'react-icons/fa'
+import React from 'react';
+import {FaTimes} from 'react-icons/fa';
 
-const Page = ({ setPage, name, content }) => {
+const Page = ({setPage, name, content}) => {
   return (
     <>
       <div className="overlay__header">
@@ -13,9 +13,9 @@ const Page = ({ setPage, name, content }) => {
       <div className="overlay__seperator" />
       <div className="overlay__content">{content}</div>
     </>
-  )
-}
+  );
+};
 
-Page.displayName = 'Page'
+Page.displayName = 'Page';
 
-export default Page
+export default Page;

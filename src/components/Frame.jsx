@@ -1,6 +1,6 @@
-import React from 'react'
-import { FaExternalLinkSquareAlt } from 'react-icons/fa'
-import '../styles/frame.scss'
+import React from 'react';
+import {FaExternalLinkSquareAlt} from 'react-icons/fa';
+import '../styles/frame.scss';
 
 const Frame = () => {
   return (
@@ -23,7 +23,7 @@ const Frame = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Frame
+export default Frame;

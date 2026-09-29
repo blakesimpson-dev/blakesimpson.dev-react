@@ -3,9 +3,9 @@ import {
   Navigate,
   Route,
   Routes,
-} from 'react-router-dom'
-import Home from '../pages/Home'
-import React from 'react'
+} from 'react-router-dom';
+import Home from '../pages/Home';
+import React from 'react';
 
 const AppRoutes = () => {
   return (
@@ -15,7 +15,7 @@ const AppRoutes = () => {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default AppRoutes
+export default AppRoutes;

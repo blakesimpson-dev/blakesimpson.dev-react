@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const DEFAULT_ITEM = {
   type: 'default',
-}
+};
 
 const VIDEO_ITEM = {
   type: 'video',
-}
+};
 
 export const SCREEN_ITEMS = [
   {
@@ -197,4 +197,4 @@ export const SCREEN_ITEMS = [
       </p>
     ),
   },
-]
+];

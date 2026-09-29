@@ -1,47 +1,47 @@
-import { useGLTF, useTexture } from '@react-three/drei'
-import { useMemo } from 'react'
-import * as THREE from 'three'
+import {useGLTF, useTexture} from '@react-three/drei';
+import {useMemo} from 'react';
+import * as THREE from 'three';
 
-const MODEL_PATH = '/models/model.glb'
+const MODEL_PATH = '/models/model.glb';
 const TEXTURE_PATHS = [
   '/textures/bakedRoom.jpg',
   '/textures/bakedObjects.jpg',
   '/textures/boot.jpg',
-]
+];
 
 // Loads the baked room model and its textures. useGLTF/useTexture cache by
 // path, so every component calling this shares one load of each asset.
 export const useSceneAssets = () => {
-  const { nodes, animations } = useGLTF(MODEL_PATH)
+  const {nodes, animations} = useGLTF(MODEL_PATH);
   const [bakedRoomTexture, bakedObjectsTexture, bootTexture] = useTexture([
     ...TEXTURE_PATHS,
-  ])
+  ]);
 
   // Configure the shared textures once, before their first upload
   useMemo(() => {
-    bakedRoomTexture.flipY = false
-    bakedRoomTexture.colorSpace = THREE.SRGBColorSpace
-    bakedRoomTexture.needsUpdate = true
+    bakedRoomTexture.flipY = false;
+    bakedRoomTexture.colorSpace = THREE.SRGBColorSpace;
+    bakedRoomTexture.needsUpdate = true;
 
-    bakedObjectsTexture.flipY = false
-    bakedObjectsTexture.colorSpace = THREE.SRGBColorSpace
-    bakedObjectsTexture.needsUpdate = true
+    bakedObjectsTexture.flipY = false;
+    bakedObjectsTexture.colorSpace = THREE.SRGBColorSpace;
+    bakedObjectsTexture.needsUpdate = true;
 
-    bootTexture.flipY = true
-    bootTexture.colorSpace = THREE.SRGBColorSpace
-    bootTexture.offset.set(-0.03, -0.015)
-    bootTexture.needsUpdate = true
-  }, [bakedRoomTexture, bakedObjectsTexture, bootTexture])
+    bootTexture.flipY = true;
+    bootTexture.colorSpace = THREE.SRGBColorSpace;
+    bootTexture.offset.set(-0.03, -0.015);
+    bootTexture.needsUpdate = true;
+  }, [bakedRoomTexture, bakedObjectsTexture, bootTexture]);
 
   const bakedRoomMaterial = useMemo(
-    () => new THREE.MeshBasicMaterial({ map: bakedRoomTexture }),
+    () => new THREE.MeshBasicMaterial({map: bakedRoomTexture}),
     [bakedRoomTexture],
-  )
+  );
 
   const bakedObjectsMaterial = useMemo(
-    () => new THREE.MeshBasicMaterial({ map: bakedObjectsTexture }),
+    () => new THREE.MeshBasicMaterial({map: bakedObjectsTexture}),
     [bakedObjectsTexture],
-  )
+  );
 
   const glassMaterial = useMemo(
     () =>
@@ -51,7 +51,7 @@ export const useSceneAssets = () => {
         opacity: 0.005,
       }),
     [],
-  )
+  );
 
   return {
     nodes,
@@ -60,7 +60,7 @@ export const useSceneAssets = () => {
     bakedRoomMaterial,
     bakedObjectsMaterial,
     glassMaterial,
-  }
-}
+  };
+};
 
-export default useSceneAssets
+export default useSceneAssets;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Unsupported = () => {
   return (
@@ -10,7 +10,7 @@ const Unsupported = () => {
         for Mobile is under construction.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Unsupported
+export default Unsupported;

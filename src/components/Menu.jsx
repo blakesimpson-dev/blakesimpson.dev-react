@@ -1,24 +1,24 @@
-import { motion, useAnimationControls } from 'framer-motion'
-import React, { useEffect, useRef } from 'react'
-import { MENU_MOTION } from '../constants/motion'
-import '../styles/menu.scss'
+import {motion, useAnimationControls} from 'framer-motion';
+import React, {useEffect, useRef} from 'react';
+import {MENU_MOTION} from '../constants/motion';
+import '../styles/menu.scss';
 
-const Menu = ({ page, setPage }) => {
-  const controls = useAnimationControls()
+const Menu = ({page, setPage}) => {
+  const controls = useAnimationControls();
   // First reveal waits for the intro camera move; later ones are quicker
-  const isFirstReveal = useRef(true)
+  const isFirstReveal = useRef(true);
 
   useEffect(() => {
     if (page !== 'Home') {
-      controls.start('hidden')
+      controls.start('hidden');
     } else if (isFirstReveal.current) {
       controls
         .start('visibleInitial')
-        .then(() => (isFirstReveal.current = false))
+        .then(() => (isFirstReveal.current = false));
     } else {
-      controls.start('visible')
+      controls.start('visible');
     }
-  }, [page, controls])
+  }, [page, controls]);
 
   return (
     <motion.div
@@ -38,9 +38,9 @@ const Menu = ({ page, setPage }) => {
         <button onClick={() => setPage('Contact')}>Contact</button>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-Menu.displayName = 'Menu'
+Menu.displayName = 'Menu';
 
-export default Menu
+export default Menu;

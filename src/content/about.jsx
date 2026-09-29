@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const SKILL_DATA = [
   'Communicator',
@@ -6,7 +6,7 @@ export const SKILL_DATA = [
   'Manager',
   'Leader',
   'Creator',
-]
+];
 
 export const ATTRIBUTE_DATA = [
   'Passionate',
@@ -18,7 +18,7 @@ export const ATTRIBUTE_DATA = [
   'Assertive',
   'Balanced',
   'Organised',
-]
+];
 
 export const PROFICIENCY_DATA = [
   {
@@ -91,7 +91,7 @@ export const PROFICIENCY_DATA = [
     src: '/images/logos/visualstudio-logo.png',
     compressedSrc: '/images/logos/compressed/visualstudio-logo.png',
   },
-]
+];
 
 export const LANGUAGE_DATA = [
   {
@@ -154,7 +154,7 @@ export const LANGUAGE_DATA = [
     src: '/images/logos/opengl-logo.png',
     compressedSrc: '/images/logos/compressed/opengl-logo.png',
   },
-]
+];
 
 export const ACHIEVEMENT_DATA = [
   {
@@ -223,7 +223,7 @@ export const ACHIEVEMENT_DATA = [
     title: <h2>Game Developer Association (GDAA) Representative</h2>,
     content: <p>Game Connect Asia Pacific Convention, Melbourne (2014)</p>,
   },
-]
+];
 
 export const HISTORY_DATA = [
   {
@@ -367,7 +367,7 @@ export const HISTORY_DATA = [
       </p>
     ),
   },
-]
+];
 
 export const EDUCATION_DATA = [
   {
@@ -410,7 +410,7 @@ export const EDUCATION_DATA = [
       </p>
     ),
   },
-]
+];
 
 export const REFERENCE_DATA = [
   {
@@ -425,4 +425,4 @@ export const REFERENCE_DATA = [
     name: 'Personal Reference - Barry Levin',
     path: '/references/bl-reference.pdf',
   },
-]
+];

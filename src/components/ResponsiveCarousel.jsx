@@ -1,7 +1,7 @@
-import React from 'react'
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import React from 'react';
+import {FaCaretLeft, FaCaretRight} from 'react-icons/fa';
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const ResponsiveCarousel = ({
   content,
@@ -18,7 +18,7 @@ const ResponsiveCarousel = ({
     height: '2rem',
     padding: '0',
     borderRadius: '50%',
-  }
+  };
 
   return (
     <Carousel
@@ -32,7 +32,7 @@ const ResponsiveCarousel = ({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{ ...arrowStyles, left: 0 }}
+            style={{...arrowStyles, left: 0}}
           >
             <FaCaretLeft />
           </button>
@@ -44,7 +44,7 @@ const ResponsiveCarousel = ({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{ ...arrowStyles, right: 0 }}
+            style={{...arrowStyles, right: 0}}
           >
             <FaCaretRight />
           </button>
@@ -53,9 +53,9 @@ const ResponsiveCarousel = ({
     >
       {content}
     </Carousel>
-  )
-}
+  );
+};
 
-ResponsiveCarousel.displayName = 'Carousel'
+ResponsiveCarousel.displayName = 'Carousel';
 
-export default ResponsiveCarousel
+export default ResponsiveCarousel;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const PROJECT_DATA = [
   {
@@ -831,4 +831,4 @@ export const PROJECT_DATA = [
     ],
     links: [],
   },
-]
+];

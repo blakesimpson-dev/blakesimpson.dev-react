@@ -1,19 +1,19 @@
-import { Html } from '@react-three/drei'
-import React, { useEffect, useState } from 'react'
-import '../styles/gameboy.scss'
+import {Html} from '@react-three/drei';
+import React, {useEffect, useState} from 'react';
+import '../styles/gameboy.scss';
 
-const GameboyScreen = ({ page }) => {
-  const [isScreenOn, setIsScreenOn] = useState(false)
+const GameboyScreen = ({page}) => {
+  const [isScreenOn, setIsScreenOn] = useState(false);
 
   // Turn the Gameboy screen on once the camera has zoomed in on Music
   useEffect(() => {
-    if (page !== 'Music') return
-    const timer = setTimeout(() => setIsScreenOn(true), 2000)
+    if (page !== 'Music') return;
+    const timer = setTimeout(() => setIsScreenOn(true), 2000);
     return () => {
-      clearTimeout(timer)
-      setIsScreenOn(false)
-    }
-  }, [page])
+      clearTimeout(timer);
+      setIsScreenOn(false);
+    };
+  }, [page]);
 
   return (
     <>
@@ -40,9 +40,9 @@ const GameboyScreen = ({ page }) => {
         </>
       )}
     </>
-  )
-}
+  );
+};
 
-GameboyScreen.displayName = 'GameboyScreen'
+GameboyScreen.displayName = 'GameboyScreen';
 
-export default GameboyScreen
+export default GameboyScreen;

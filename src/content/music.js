@@ -7,7 +7,7 @@ const DEFAULT_SC_IFRAME = {
   showUser: false,
   showReposts: false,
   showTeaser: false,
-}
+};
 
 const MUSIC_DATA = [
   {
@@ -82,20 +82,20 @@ const MUSIC_DATA = [
     href: 'https://soundcloud.com/kataplexia_au/beast',
     title: 'Beast',
   },
-]
+];
 
-export const SOUNDCLOUD_IFRAMES = MUSIC_DATA.map((data) => ({
+export const SOUNDCLOUD_IFRAMES = MUSIC_DATA.map(data => ({
   ...DEFAULT_SC_IFRAME,
   id: data.id,
   autoPlay: data.autoPlay,
   href: data.href,
   title: data.title,
-}))
+}));
 
 const SC_IFRAME_URL =
-  'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'
+  'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/';
 
-export const getSoundcloudIFrameSource = (iframe) =>
+export const getSoundcloudIFrameSource = iframe =>
   [
     `${SC_IFRAME_URL}${iframe.id}`,
     `&color=${iframe.color}`,
@@ -105,4 +105,4 @@ export const getSoundcloudIFrameSource = (iframe) =>
     `&show_user=${iframe.showUser}`,
     `&show_reposts=${iframe.showReposts}`,
     `&show_teaser=${iframe.showTeaser}`,
-  ].join('')
+  ].join('');

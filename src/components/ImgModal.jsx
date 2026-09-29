@@ -1,11 +1,11 @@
-import React from 'react'
-import { FaTimes } from 'react-icons/fa'
-import Modal from 'react-modal'
-import '../styles/modal.scss'
+import React from 'react';
+import {FaTimes} from 'react-icons/fa';
+import Modal from 'react-modal';
+import '../styles/modal.scss';
 
-Modal.setAppElement('#root')
+Modal.setAppElement('#root');
 
-const ImgModal = ({ innerRef, src, isImgModalOpen, closeImgModal }) => {
+const ImgModal = ({innerRef, src, isImgModalOpen, closeImgModal}) => {
   return (
     <Modal
       ref={innerRef}
@@ -24,9 +24,9 @@ const ImgModal = ({ innerRef, src, isImgModalOpen, closeImgModal }) => {
         <img src={src} />
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-ImgModal.displayName = 'ImgModal'
+ImgModal.displayName = 'ImgModal';
 
-export default ImgModal
+export default ImgModal;

@@ -1,12 +1,12 @@
-import prettier from 'eslint-config-prettier/flat'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import globals from 'globals'
-import neostandard from 'neostandard'
+import prettier from 'eslint-config-prettier/flat';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
+import neostandard from 'neostandard';
 
 export default [
   // Styleguide: neostandard for code rules; Prettier owns formatting (noStyle)
-  ...neostandard({ noStyle: true, ignores: ['build/'] }),
+  ...neostandard({noStyle: true, ignores: ['build/']}),
   react.configs.flat.recommended,
   reactHooks.configs.flat.recommended,
   {
@@ -15,7 +15,7 @@ export default [
       globals: globals.browser,
     },
     settings: {
-      react: { version: 'detect' },
+      react: {version: 'detect'},
     },
     rules: {
       // React 19 no longer checks propTypes
@@ -49,4 +49,4 @@ export default [
     },
   },
   prettier,
-]
+];

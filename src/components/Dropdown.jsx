@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { FaCaretDown, FaCaretUp, FaCheck } from 'react-icons/fa'
-import '../styles/dropdown.scss'
+import React, {useState} from 'react';
+import {FaCaretDown, FaCaretUp, FaCheck} from 'react-icons/fa';
+import '../styles/dropdown.scss';
 
-const Dropdown = ({ headerContent, items, selectedId, setSelectedItem }) => {
-  const [isOpen, setIsOpen] = useState()
+const Dropdown = ({headerContent, items, selectedId, setSelectedItem}) => {
+  const [isOpen, setIsOpen] = useState();
 
-  const selectItem = (item) => {
-    const { id } = item
-    setIsOpen(false)
-    setSelectedItem(id)
-  }
+  const selectItem = item => {
+    const {id} = item;
+    setIsOpen(false);
+    setSelectedItem(id);
+  };
 
   return (
     <div className="dropdown-wrapper">
@@ -23,7 +23,7 @@ const Dropdown = ({ headerContent, items, selectedId, setSelectedItem }) => {
       </button>
       {isOpen && (
         <div role="list" className="dropdown-list">
-          {items.map((item) => (
+          {items.map(item => (
             <button
               type="button"
               className="dropdown-list-item"
@@ -37,9 +37,9 @@ const Dropdown = ({ headerContent, items, selectedId, setSelectedItem }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-Dropdown.displayName = 'Dropdown'
+Dropdown.displayName = 'Dropdown';
 
-export default Dropdown
+export default Dropdown;

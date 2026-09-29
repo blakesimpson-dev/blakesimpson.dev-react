@@ -1,8 +1,8 @@
-import React from 'react'
-import ContactForm from '../components/ContactForm'
-import Page from '../components/Page'
+import React from 'react';
+import ContactForm from '../components/ContactForm';
+import Page from '../components/Page';
 
-const Contact = ({ setPage }) => {
+const Contact = ({setPage}) => {
   return (
     <Page
       setPage={setPage}
@@ -44,9 +44,9 @@ const Contact = ({ setPage }) => {
         </div>
       }
     />
-  )
-}
+  );
+};
 
-Contact.displayName = 'Contact'
+Contact.displayName = 'Contact';
 
-export default Contact
+export default Contact;

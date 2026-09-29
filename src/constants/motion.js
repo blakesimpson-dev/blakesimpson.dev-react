@@ -3,7 +3,7 @@ const SPRING_DEFAULT = {
   damping: 10,
   mass: 0.375,
   stiffness: 100,
-}
+};
 
 export const MAIN_MOTION = {
   hidden: {
@@ -15,7 +15,7 @@ export const MAIN_MOTION = {
       duration: 2,
     },
   },
-}
+};
 
 export const MENU_MOTION = {
   hidden: {
@@ -38,7 +38,7 @@ export const MENU_MOTION = {
       delay: 1.8,
     },
   },
-}
+};
 
 export const OVERLAY_MOTION = {
   hidden: {
@@ -61,4 +61,4 @@ export const OVERLAY_MOTION = {
       delay: 2,
     },
   },
-}
+};
