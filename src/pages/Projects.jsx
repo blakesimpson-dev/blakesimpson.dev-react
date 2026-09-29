@@ -4,7 +4,7 @@ import ImgModal from '../components/ImgModal'
 import Page from '../components/Page'
 import ProgressiveImg from '../components/ProgressiveImg'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { projectData } from '../content/projects'
+import { PROJECT_DATA } from '../content/projects'
 
 const Projects = ({ setPage }) => {
   const imgModal = useRef()
@@ -46,7 +46,7 @@ const Projects = ({ setPage }) => {
             closeImgModal={closeImgModal}
           />
           <ResponsiveCarousel
-            content={projectData.map((item, index) => {
+            content={PROJECT_DATA.map((item, index) => {
               return (
                 <div
                   key={`project-${index}`}

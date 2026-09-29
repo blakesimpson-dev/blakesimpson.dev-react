@@ -3,14 +3,14 @@ import { useFrame } from '@react-three/fiber'
 import React, { useEffect, useRef, useState } from 'react'
 import { Color, LinearSRGBColorSpace } from 'three'
 import { useSceneAssets } from '../hooks/useSceneAssets'
-import { screenItems as items } from '../content/screenItems'
+import { SCREEN_ITEMS } from '../content/screenItems'
 import { useVideo } from '../hooks/useVideo'
 import '../materials/ScreenMaterial'
 import '../styles/screen.scss'
 import Dropdown from './Dropdown'
 
 // Raw (unconverted) value, matching how r141 applied '#AAAAAA'
-const videoTint = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace)
+const VIDEO_TINT = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace)
 
 const Screen = ({ page }) => {
   const screenMesh = useRef()
@@ -18,8 +18,8 @@ const Screen = ({ page }) => {
   const { nodes, bootTexture } = useSceneAssets()
   const { video, resetVideo, changeVideoSource } = useVideo()
   const [isScreenOn, setIsScreenOn] = useState(false)
-  const [selectedId, setSelectedId] = useState(items[0].id)
-  const screenItem = items.find((item) => item.id === selectedId)
+  const [selectedId, setSelectedId] = useState(SCREEN_ITEMS[0].id)
+  const screenItem = SCREEN_ITEMS.find((item) => item.id === selectedId)
 
   useEffect(() => {
     if (screenItem.type === 'video') {
@@ -65,7 +65,7 @@ const Screen = ({ page }) => {
             </div>
             <Dropdown
               headerContent="File"
-              items={items}
+              items={SCREEN_ITEMS}
               selectedId={selectedId}
               setSelectedItem={setSelectedId}
             />
@@ -90,7 +90,7 @@ const Screen = ({ page }) => {
           <screenMaterial attach="material" />
         )}
         {screenItem.type === 'video' && isScreenOn && (
-          <meshBasicMaterial attach="material" color={videoTint}>
+          <meshBasicMaterial attach="material" color={VIDEO_TINT}>
             <videoTexture attach="map" args={[video]} />
           </meshBasicMaterial>
         )}

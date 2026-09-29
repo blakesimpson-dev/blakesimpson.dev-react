@@ -7,7 +7,7 @@ const params = new URLSearchParams(window.location.search)
 const numberParam = (key, fallback) =>
   params.has(key) ? Number(params.get(key)) : fallback
 
-export const renderQuality = {
+export const RENDER_QUALITY = {
   // FPS / frame time panel
   stats: params.has('stats'),
   // Max device pixel ratio (r3f default is 2)

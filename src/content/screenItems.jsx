@@ -1,16 +1,16 @@
 import React from 'react'
 
-const defaultItem = {
+const DEFAULT_ITEM = {
   type: 'default',
 }
 
-const videoItem = {
+const VIDEO_ITEM = {
   type: 'video',
 }
 
-export const screenItems = [
+export const SCREEN_ITEMS = [
   {
-    ...defaultItem,
+    ...DEFAULT_ITEM,
     id: 0,
     name: 'Squares GLSL',
     details: (
@@ -28,7 +28,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 1,
     name: 'Kataplexia @ SS2020',
     url: '/videos/kataplexia-540.mp4',
@@ -47,7 +47,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 2,
     name: 'Making Bush Bash',
     url: '/videos/making-bushbash-360.mp4',
@@ -63,7 +63,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 3,
     name: 'Bush Bash Launch',
     url: '/videos/bushbash-360.mp4',
@@ -79,7 +79,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 4,
     name: 'Arcadian Dreams',
     url: '/videos/arcadian-360.mp4',
@@ -95,7 +95,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 5,
     name: 'Making Catnips',
     url: '/videos/making-catnips-360.mp4',
@@ -111,7 +111,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 6,
     name: 'Catnips',
     url: '/videos/catnips-360.mp4',
@@ -127,7 +127,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 7,
     name: 'Gundash Event',
     url: '/videos/gundash-360.mp4',
@@ -143,7 +143,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 8,
     name: 'Interstate Arcade',
     url: '/videos/interstate-360.mp4',
@@ -159,7 +159,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 9,
     name: 'L.M.P.O.',
     url: '/videos/lmpo-360.mp4',
@@ -175,7 +175,7 @@ export const screenItems = [
     ),
   },
   {
-    ...videoItem,
+    ...VIDEO_ITEM,
     id: 10,
     name: 'Blitz Bandits',
     url: '/videos/blitzbandits-360.mp4',

@@ -1,6 +1,6 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import React, { useEffect } from 'react'
-import { overlayMotion } from '../constants/motion'
+import { OVERLAY_MOTION } from '../constants/motion'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Music from '../pages/Music'
@@ -37,8 +37,8 @@ const Overlay = ({ page, setPage }) => {
   return (
     <motion.div
       className="overlay"
-      variants={overlayMotion}
-      initial={overlayMotion.hidden}
+      variants={OVERLAY_MOTION}
+      initial={OVERLAY_MOTION.hidden}
       animate={controls}
     >
       {page === 'Music' && <Music setPage={setPage} />}

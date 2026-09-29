@@ -8,7 +8,7 @@ import {
 } from '@react-three/postprocessing'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useCameraActions } from '../hooks/useCameraActions'
-import { renderQuality } from '../constants/renderQuality'
+import { RENDER_QUALITY } from '../constants/renderQuality'
 import { useSceneAssets } from '../hooks/useSceneAssets'
 import Fan from './Fan'
 import GameboyScreen from './GameboyScreen'
@@ -174,7 +174,7 @@ const Scene = ({ page, setPage, onReady }) => {
         ))}
         <GameboyScreen page={page} />
       </group>
-      <EffectComposer multisampling={renderQuality.msaa}>
+      <EffectComposer multisampling={RENDER_QUALITY.msaa}>
         <Outline
           blur
           edgeStrength={5}

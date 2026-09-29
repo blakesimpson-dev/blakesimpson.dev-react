@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../components/Page'
 import ResponsiveCarousel from '../components/ResponsiveCarousel'
-import { getSoundcloudIFrameSource, soundcloudIFrames } from '../content/music'
+import { getSoundcloudIFrameSource, SOUNDCLOUD_IFRAMES } from '../content/music'
 
 const Music = ({ setPage }) => {
   return (
@@ -38,7 +38,7 @@ const Music = ({ setPage }) => {
             </div>
           </div>
           <ResponsiveCarousel
-            content={soundcloudIFrames.map((iframe, index) => {
+            content={SOUNDCLOUD_IFRAMES.map((iframe, index) => {
               return (
                 <iframe
                   key={index}

@@ -1,6 +1,6 @@
 import { motion, useAnimationControls } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
-import { menuMotion } from '../constants/motion'
+import { MENU_MOTION } from '../constants/motion'
 import '../styles/menu.scss'
 
 const Menu = ({ page, setPage }) => {
@@ -23,7 +23,7 @@ const Menu = ({ page, setPage }) => {
   return (
     <motion.div
       className="menu"
-      variants={menuMotion}
+      variants={MENU_MOTION}
       initial="hidden"
       animate={controls}
     >
