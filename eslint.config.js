@@ -119,7 +119,14 @@ export default tseslint.config(
     },
   },
   {
-    files: ['vite.config.js', 'eslint.config.js'],
+    files: ['vite.config.ts'],
+    rules: {
+      // Vite reads the config from the default export
+      'no-restricted-exports': 'off',
+    },
+  },
+  {
+    files: ['vite.config.ts', 'eslint.config.js'],
     languageOptions: {
       globals: globals.node,
     },
