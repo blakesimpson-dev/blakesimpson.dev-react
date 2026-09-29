@@ -7,22 +7,12 @@ import {
   Selection,
 } from '@react-three/postprocessing';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {useCameraActions} from '../hooks/use_camera_actions';
+import {playIntro, useCameraActions} from '../hooks/use_camera_actions';
 import {RENDER_QUALITY} from '../constants/render_quality';
 import {useSceneAssets} from '../hooks/use_scene_assets';
 import Fan from './fan';
 import GameboyScreen from './gameboy_screen';
 import Screen from './screen';
-
-const INTRO_ACTION = 'CameraActionNLA1';
-
-// Camera clip that zooms from the Home view to each page
-const PAGE_ACTIONS = {
-  Projects: 'CameraActionNLA2',
-  Music: 'CameraActionNLA3',
-  About: 'CameraActionNLA4',
-  Contact: 'CameraActionNLA5',
-};
 
 const Scene = ({page, setPage, onReady}) => {
   const {
@@ -85,9 +75,7 @@ const Scene = ({page, setPage, onReady}) => {
 
   // Intro camera move on first load
   useEffect(() => {
-    const intro = actions[INTRO_ACTION];
-    intro.timeScale = 2;
-    intro.play().startAt(2.5);
+    playIntro(actions.intro);
     const timer = setTimeout(() => setSelectionEnabled(true), 4200);
     return () => clearTimeout(timer);
   }, [actions]);
@@ -96,11 +84,11 @@ const Scene = ({page, setPage, onReady}) => {
   useEffect(() => {
     const from = previousPage.current;
     previousPage.current = page;
-    const intro = actions[INTRO_ACTION];
+    const {intro} = actions;
     let timer;
 
     if (from === 'Home' && page !== 'Home') {
-      const action = actions[PAGE_ACTIONS[page]];
+      const action = actions.pages[page];
       action.reset();
       action.timeScale = 2;
       intro.time = intro.getClip().duration;
@@ -109,7 +97,7 @@ const Scene = ({page, setPage, onReady}) => {
       setSelectionEnabled(false);
       setHovered(null);
     } else if (from !== 'Home' && page === 'Home') {
-      const action = actions[PAGE_ACTIONS[from]];
+      const action = actions.pages[from];
       intro.reset();
       action.time = action.getClip().duration;
       action.paused = false;
