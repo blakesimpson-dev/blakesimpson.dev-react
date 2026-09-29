@@ -1,4 +1,5 @@
 import {FaFilePdf} from 'react-icons/fa';
+import {BlurbHeading} from '../components/blurb_heading';
 import {Markdown} from '../components/markdown';
 import {Page} from '../components/page';
 import type {OverlayPageProps} from '../components/page';
@@ -10,12 +11,12 @@ export function About({setPage}: OverlayPageProps) {
   const {blurb, references, skills} = ABOUT;
 
   return (
-    <Page name="About" setPage={setPage}>
+    <Page name="About" avatar={blurb.avatar} setPage={setPage}>
       <div className="about-page">
         <div className="about-page__blurb">
           <img className="avatar" src={blurb.avatar} alt="" />
           <div>
-            <h1>{blurb.heading}</h1>
+            {blurb.heading && <BlurbHeading text={blurb.heading} />}
             <Markdown text={blurb.body} />
             {references.map(reference => (
               <div key={reference.path}>
@@ -88,10 +89,10 @@ function LogoSection({section, title, logos}: LogoSectionProps) {
           <div key={logo.name} className={`about-page__${section}--item`}>
             <ProgressiveImg
               src={logo.src}
-              alt={`${logo.name} logo`}
+              alt={logo.name}
+              title={logo.name}
               compressedSrc={logo.compressedSrc}
             />
-            <span>{logo.name}</span>
           </div>
         ))}
       </div>

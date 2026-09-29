@@ -8,13 +8,25 @@ import type {OverlayPageProps} from '../components/page';
 import {ProgressiveImg} from '../components/progressive_img';
 import {ResponsiveCarousel} from '../components/responsive_carousel';
 import {PROJECTS} from '../content';
+import type {ProjectImage} from '../content/types';
+import {useIsCompact} from '../hooks/use_is_compact';
 
 export function Projects({setPage}: OverlayPageProps) {
   const [modalImage, setModalImage] = useState<ModalImage | null>(null);
+  const isCompact = useIsCompact();
   const {blurb, projects} = PROJECTS;
 
+  // A modal adds nothing on a phone screen: open the full image in a tab
+  function openImage(image: ProjectImage) {
+    if (isCompact) {
+      window.open(image.src, '_blank', 'noopener');
+    } else {
+      setModalImage(image);
+    }
+  }
+
   return (
-    <Page name="Projects" setPage={setPage}>
+    <Page name="Projects" avatar={blurb.avatar} setPage={setPage}>
       <div className="projects-page">
         <div className="projects-page__blurb">
           <img className="avatar" src={blurb.avatar} alt="" />
@@ -28,7 +40,7 @@ export function Projects({setPage}: OverlayPageProps) {
             setModalImage(null);
           }}
         />
-        <ResponsiveCarousel>
+        <ResponsiveCarousel className="carousel--titled">
           {projects.map(project => (
             <div key={project.id} className="projects-page__project--container">
               <div className="projects-page__project--title">
@@ -39,11 +51,13 @@ export function Projects({setPage}: OverlayPageProps) {
                   <ProgressiveImg
                     key={image.src}
                     style={{cursor: 'pointer'}}
-                    src={image.src}
+                    // Every slide mounts at once: show the thumbnail and
+                    // leave the full-size image until it's opened
+                    src={image.thumbSrc}
                     alt={image.alt}
                     compressedSrc={image.compressedSrc}
                     onClick={() => {
-                      setModalImage(image);
+                      openImage(image);
                     }}
                   />
                 ))}

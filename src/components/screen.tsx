@@ -22,13 +22,15 @@ const VIDEO_TINT = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace);
 
 interface ScreenProps {
   page: PageName;
+  /** Compact backdrop: the boot image then the shader, without the DOM UI. */
+  isBackdrop?: boolean;
 }
 
 /**
  * The monitor: a boot image, then either the GLSL shader or a project video,
  * picked from the DOM UI's File menu.
  */
-export function Screen({page}: ScreenProps) {
+export function Screen({page, isBackdrop = false}: ScreenProps) {
   const shaderMaterial = useRef<ScreenMaterial>(null);
   const hasBooted = useRef(false);
   const {nodes, bootTexture} = useSceneAssets();
@@ -70,37 +72,39 @@ export function Screen({page}: ScreenProps) {
 
   return (
     <>
-      <Html
-        position={[-0.044494, 1.02884, -0.091586]}
-        scale={[0.0201, 0.02, 1]}
-        rotation={[0, 0, 0]}
-        transform
-      >
-        {isScreenOn && (
-          <div className="screen">
-            <div className="screen__title--one">
-              Now Playing:&nbsp;
-              <span style={{color: '#1f2523'}}>{screenItem.name}</span>
+      {!isBackdrop && (
+        <Html
+          position={[-0.044494, 1.02884, -0.091586]}
+          scale={[0.0201, 0.02, 1]}
+          rotation={[0, 0, 0]}
+          transform
+        >
+          {isScreenOn && (
+            <div className="screen">
+              <div className="screen__title--one">
+                Now Playing:&nbsp;
+                <span style={{color: '#1f2523'}}>{screenItem.name}</span>
+              </div>
+              <Dropdown
+                headerContent="File"
+                items={SCREEN_ITEMS}
+                selectedId={selectedId}
+                onSelect={setSelectedId}
+              />
+              <div className="screen__spacer--one" />
+              <div className="screen__title--two">Details</div>
+              <div className="screen__details">
+                <Markdown text={screenItem.details} />
+              </div>
+              <div className="screen__spacer--two" />
+              <div className="screen__taskbar">
+                <div>Now Playing</div>
+                <div>Details</div>
+              </div>
             </div>
-            <Dropdown
-              headerContent="File"
-              items={SCREEN_ITEMS}
-              selectedId={selectedId}
-              onSelect={setSelectedId}
-            />
-            <div className="screen__spacer--one" />
-            <div className="screen__title--two">Details</div>
-            <div className="screen__details">
-              <Markdown text={screenItem.details} />
-            </div>
-            <div className="screen__spacer--two" />
-            <div className="screen__taskbar">
-              <div>Now Playing</div>
-              <div>Details</div>
-            </div>
-          </div>
-        )}
-      </Html>
+          )}
+        </Html>
+      )}
       <mesh
         geometry={nodes.ScreenMesh.geometry}
         scale={[-1, 1, 1]}

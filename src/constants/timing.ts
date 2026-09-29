@@ -23,9 +23,13 @@ export const GAMEBOY_DELAY = 2;
 /** The menu slides in once the camera settles on Home. */
 export const MENU_DELAY_INTRO = 4.5;
 export const MENU_DELAY_RETURN = 1.8;
+/** Compact has no camera move: return as the page panel leaves. */
+export const MENU_DELAY_RETURN_COMPACT = 0.2;
 
 /** A page's overlay slides in as its camera zoom finishes. */
 export const OVERLAY_DELAY = 2;
+/** Compact mode has no camera zoom to wait for. */
+export const OVERLAY_DELAY_COMPACT = 0.1;
 
 /** Converts a timing above to milliseconds for setTimeout. */
 export function toMs(seconds: number): number {

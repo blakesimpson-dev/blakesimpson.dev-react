@@ -32,6 +32,7 @@
 
     &--item {
       @include display--flex-column;
+      align-items: center;
       min-width: 8rem;
       margin: 1rem;
       font-size: 16px;
@@ -60,7 +61,6 @@
       }
 
       img {
-        margin-bottom: 0.5rem;
         min-width: 4rem;
         max-width: 4rem;
         min-height: 4rem;
@@ -80,6 +80,7 @@
 
     &--item {
       @include display--flex-column;
+      align-items: center;
       min-width: 8rem;
       margin: 1rem;
       font-size: 16px;
@@ -128,14 +129,6 @@
 .contact-page {
   justify-content: center;
   align-items: center;
-
-  &__badges {
-    @include display--center;
-
-    > * {
-      margin: 0.5rem;
-    }
-  }
 }
 
 .music-page {
@@ -154,6 +147,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      // Every slide is as tall as the tallest one; fill it, so a short
+      // project's box doesn't leave a gap below it
+      height: 100%;
       margin: 0 2.5rem 0 2.5rem;
       padding: 1.5rem;
       background-color: $color--panel__header-background;
@@ -188,26 +184,175 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
+      // The carousel centres slide text; a wrapped link should stay left
+      text-align: left;
+
+      > div {
+        display: flex;
+        align-items: baseline;
+
+        svg {
+          flex-shrink: 0;
+        }
+      }
     }
   }
 }
 
-.unsupported-page {
-  @include display--flex-column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0.5rem;
-  @include font-default;
-  @include panel__background--diagonal;
-  background-color: $color--tertiary;
+// Compact (phones/tablets): single column, tighter spacing ------------------
 
-  > * {
-    text-align: center;
-    margin: 1rem;
+.is-compact {
+  .music-page,
+  .contact-page,
+  .about-page,
+  .projects-page {
+    padding: 0;
   }
 
-  img {
-    max-width: 200px;
+  // The avatar moves to the panel's title bar (overlay.scss); the heading
+  // stays centred, the text left-aligned
+  .avatar {
+    display: none;
+  }
+
+  .music-page__blurb,
+  .contact-page__blurb,
+  .about-page__blurb,
+  .projects-page__blurb {
+    display: block;
+    padding: 0.5rem 0;
+    text-align: left;
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+
+  .contact-form h1 {
+    font-size: 1.1rem;
+  }
+
+  // BlurbHeading: one part per line, no separator
+  .blurb-heading__separator {
+    display: none;
+  }
+
+  .blurb-heading__part {
+    display: block;
+  }
+
+  // More room to write on narrow screens; landscape keeps it short
+  .contact-form textarea {
+    min-height: 9rem;
+
+    @media (max-height: 500px) {
+      min-height: 4rem;
+    }
+  }
+
+  @media (max-height: 500px) {
+    .music-page__blurb h1,
+    .about-page__blurb h1 {
+      font-size: 1rem;
+    }
+  }
+
+  .about-page {
+    > * {
+      padding: 0.5rem 0;
+    }
+
+    &__skills,
+    &__attributes {
+      &--item {
+        min-width: 7rem;
+        margin: 0.5rem;
+      }
+    }
+
+    &__proficiencies,
+    &__languages {
+      &__container {
+        padding-bottom: 1rem;
+      }
+
+      &--item {
+        margin: 0.75rem;
+        min-width: 2.5rem;
+        max-width: 2.5rem;
+        min-height: 2.5rem;
+        max-height: 2.5rem;
+        font-size: 10px;
+
+        img {
+          min-width: 2.5rem;
+          max-width: 2.5rem;
+          min-height: 2.5rem;
+          max-height: 2.5rem;
+        }
+      }
+    }
+
+    &__achievements,
+    &__history,
+    &__education {
+      &--item {
+        padding: 0.75rem;
+
+        h2 {
+          margin-top: 0;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &__achievements {
+      &__container > :nth-child(odd) {
+        margin-right: 0;
+      }
+
+      &--item {
+        width: 100%;
+      }
+    }
+  }
+
+  .projects-page__project {
+    &--container {
+      // Top-aligned, so the title stays level with the carousel arrows
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0.75rem;
+    }
+
+    &--title h2 {
+      // Room for the carousel arrows on the same row (carousel.scss)
+      margin: 0 0 0.5rem 0;
+      padding: 0 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    &--images {
+      > * {
+        margin: 0.25rem;
+      }
+
+      // Two screenshots fit on one row; the rest are for desktop
+      > :nth-child(n + 3) {
+        display: none;
+      }
+    }
+
+    &--content p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
   }
 }

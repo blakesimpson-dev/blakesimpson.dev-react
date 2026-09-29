@@ -1,20 +1,13 @@
-import type {CSSProperties, ReactElement} from 'react';
+import type {ReactElement} from 'react';
 import {FaCaretLeft, FaCaretRight} from 'react-icons/fa';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
-const ARROW_STYLES: CSSProperties = {
-  position: 'absolute',
-  zIndex: 2,
-  top: 'calc(50% - 2.25rem)',
-  width: '2rem',
-  height: '2rem',
-  padding: '0',
-  borderRadius: '50%',
-};
+import '../styles/carousel.scss';
 
 interface ResponsiveCarouselProps {
   children: ReactElement[];
+  /** Extra class on the carousel root, e.g. to restyle its arrows. */
+  className?: string;
   autoPlay?: boolean;
   showStatus?: boolean;
   showIndicators?: boolean;
@@ -24,6 +17,7 @@ interface ResponsiveCarouselProps {
 /** react-responsive-carousel with round arrow buttons and no chrome. */
 export function ResponsiveCarousel({
   children,
+  className,
   autoPlay = false,
   showStatus = false,
   showIndicators = false,
@@ -31,6 +25,7 @@ export function ResponsiveCarousel({
 }: ResponsiveCarouselProps) {
   return (
     <Carousel
+      className={className}
       autoPlay={autoPlay}
       showStatus={showStatus}
       showIndicators={showIndicators}
@@ -41,7 +36,7 @@ export function ResponsiveCarousel({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{...ARROW_STYLES, left: 0}}
+            className="carousel-arrow carousel-arrow--prev"
           >
             <FaCaretLeft />
           </button>
@@ -53,7 +48,7 @@ export function ResponsiveCarousel({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{...ARROW_STYLES, right: 0}}
+            className="carousel-arrow carousel-arrow--next"
           >
             <FaCaretRight />
           </button>

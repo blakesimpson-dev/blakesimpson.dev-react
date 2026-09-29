@@ -28,11 +28,10 @@
     }
   }
 
-  &__input {
-    width: 50%;
-  }
-
+  // Fields fill the form up to a readable width, at any screen size
+  &__input,
   &__textarea {
-    width: 95%;
+    width: 100%;
+    max-width: 32rem;
   }
 }

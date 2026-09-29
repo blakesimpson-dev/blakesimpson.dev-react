@@ -1,5 +1,5 @@
 import {motion, useAnimationControls} from 'framer-motion';
-import {useEffect} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {OVERLAY_MOTION} from '../constants/motion';
 import type {PageName, SetPage} from '../constants/pages';
 import {About} from '../pages/about';
@@ -8,7 +8,7 @@ import {Music} from '../pages/music';
 import {Projects} from '../pages/projects';
 import '../styles/overlay.scss';
 
-/** OVERLAY_MOTION variant for each page: Music sits left of the Gameboy. */
+/** Desktop OVERLAY_MOTION variant per page: Music sits left of the Gameboy. */
 const OVERLAY_VARIANTS: Record<PageName, string> = {
   Home: 'hidden',
   Music: 'visibleLeft',
@@ -20,27 +20,74 @@ const OVERLAY_VARIANTS: Record<PageName, string> = {
 interface OverlayProps {
   page: PageName;
   setPage: SetPage;
+  /** Compact: full width, no left/right placement around the desk. */
+  isCompact: boolean;
+  /** Called with true while the panel is sliding, false once it settles. */
+  onTransitionChange: (isTransitioning: boolean) => void;
 }
 
-/** The panel that slides in over the desk with the current page. */
-export function Overlay({page, setPage}: OverlayProps) {
+/**
+ * The panel that slides in over the desk with the current page. Changing
+ * page slides the old one out before the new one's content is swapped in,
+ * so the content never changes while the panel is visible.
+ */
+export function Overlay({
+  page,
+  setPage,
+  isCompact,
+  onTransitionChange,
+}: OverlayProps) {
   const controls = useAnimationControls();
+  // The page whose content is showing; lags `page` while the panel hides
+  const [shownPage, setShownPage] = useState(page);
+  const shownPageRef = useRef(page);
 
   useEffect(() => {
-    void controls.start(OVERLAY_VARIANTS[page]);
-  }, [page, controls]);
+    let isCancelled = false;
+
+    async function transition() {
+      onTransitionChange(true);
+      const current = shownPageRef.current;
+      if (current !== 'Home' && current !== page) {
+        await controls.start(getVariant('Home', isCompact));
+        if (isCancelled) {
+          return;
+        }
+      }
+      shownPageRef.current = page;
+      setShownPage(page);
+      if (page !== 'Home') {
+        await controls.start(getVariant(page, isCompact));
+      }
+      if (!isCancelled) {
+        onTransitionChange(false);
+      }
+    }
+
+    void transition();
+    return () => {
+      isCancelled = true;
+    };
+  }, [page, isCompact, controls, onTransitionChange]);
 
   return (
     <motion.div
       className="overlay"
       variants={OVERLAY_MOTION}
-      initial="hidden"
+      initial={getVariant('Home', isCompact)}
       animate={controls}
     >
-      {page === 'Music' && <Music setPage={setPage} />}
-      {page === 'Projects' && <Projects setPage={setPage} />}
-      {page === 'About' && <About setPage={setPage} />}
-      {page === 'Contact' && <Contact setPage={setPage} />}
+      {shownPage === 'Music' && <Music setPage={setPage} />}
+      {shownPage === 'Projects' && <Projects setPage={setPage} />}
+      {shownPage === 'About' && <About setPage={setPage} />}
+      {shownPage === 'Contact' && <Contact setPage={setPage} />}
     </motion.div>
   );
+}
+
+function getVariant(page: PageName, isCompact: boolean): string {
+  if (isCompact) {
+    return page === 'Home' ? 'hiddenCompact' : 'visibleCompact';
+  }
+  return OVERLAY_VARIANTS[page];
 }

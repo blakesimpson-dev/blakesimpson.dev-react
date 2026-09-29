@@ -1,0 +1,66 @@
+@use 'colors' as *;
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 2.25rem);
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+
+  // A little clear of the panel edges
+  &--prev {
+    left: 0.25rem;
+  }
+
+  &--next {
+    right: 0.25rem;
+  }
+}
+
+// Compact: slides use the full width, so the arrows move to a row above the
+// slide, level with its edges, instead of covering it
+.is-compact {
+  .carousel.carousel-slider {
+    padding-top: 2.5rem;
+  }
+
+  .carousel-arrow {
+    top: 0;
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  // The library insets iframes (40px each side, 40px below) to leave room
+  // for its own arrows
+  .carousel .slide iframe {
+    width: 100%;
+    margin: 0;
+  }
+
+  // Slides that start with a title (projects): arrows on the title's row
+  .carousel--titled {
+    .carousel.carousel-slider {
+      padding-top: 0;
+    }
+
+    .carousel-arrow {
+      top: 0.375rem;
+
+      &--prev {
+        left: 0.25rem;
+      }
+
+      &--next {
+        right: 0.25rem;
+      }
+    }
+  }
+}

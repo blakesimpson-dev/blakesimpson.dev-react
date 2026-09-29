@@ -111,3 +111,24 @@ textarea {
     transition: filter 0.5s linear;
   }
 }
+
+// Compact (phones/tablets, set on <main> by pages/home.tsx). Shared sizes for
+// the menu, page panel and frame; tighter on short (landscape) screens.
+.is-compact {
+  --compact-inset: 0.5rem;
+  --compact-gap: 0.5rem;
+  --compact-menu-height: 3rem;
+  // Vertical space the menu takes above the page panel
+  --compact-menu-space: calc(var(--compact-gap) + var(--compact-menu-height));
+  --compact-header-height: 3rem;
+  --compact-footer-height: 1.75rem;
+
+  @media (max-height: 500px) {
+    --compact-menu-height: 2.75rem;
+    // The menu hides while a page is open (menu.tsx), so the panel takes its
+    // space
+    --compact-menu-space: 0px;
+    --compact-header-height: 2.25rem;
+    --compact-footer-height: 1.5rem;
+  }
+}
