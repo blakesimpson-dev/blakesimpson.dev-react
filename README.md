@@ -40,8 +40,15 @@ cost against quality:
 - `?stats` - FPS / frame time panel
 - `?dpr=2` - max device pixel ratio
 - `?msaa=8` - EffectComposer MSAA samples
+- `?compact` / `?desktop` - force the phone or desktop layout
+- `?fps=60` - compact redraw rate
 
-Desktop only for now (viewport of at least 1280px).
+## Phones and tablets
+
+Below 1280px, or on touch screens, the desk becomes a backdrop: no hover or
+post-processing, 2048² textures with the colour grade baked into the
+material, 1x resolution, redrawn at 30 fps and paused while a page is open.
+Pages open from the menu's hamburger button.
 
 ## Build and run
 
