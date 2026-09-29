@@ -1,4 +1,4 @@
-import {useGLTF, useTexture} from '@react-three/drei';
+import {useGLTF, useKTX2, useTexture} from '@react-three/drei';
 import {useMemo} from 'react';
 import {Mesh, MeshBasicMaterial, SRGBColorSpace} from 'three';
 import type {Object3D, Texture} from 'three';
@@ -7,22 +7,20 @@ import {applyColorGrade} from '../materials/color_grade';
 import {useIsCompact} from './use_is_compact';
 
 const MODEL_PATH = '/models/model.glb';
-const TEXTURE_PATHS = {
+const BAKED_PATHS = {
   bakedRoom: '/textures/baked_room.jpg',
   bakedObjects: '/textures/baked_objects.jpg',
-  boot: '/textures/boot.jpg',
 };
-// 2048² copies for phones: the 4096² bakes take ~85 MB of GPU memory each
-// with mipmaps, which risks iOS Safari reloading the page
-const COMPACT_TEXTURE_PATHS = {
-  ...TEXTURE_PATHS,
-  bakedRoom: '/textures/2048/baked_room.jpg',
-  bakedObjects: '/textures/2048/baked_objects.jpg',
+// A 4096² JPG takes ~85 MB of GPU memory with mipmaps (iOS Safari may reload
+// the page); these 2048² KTX2 files stay compressed on the GPU, ~3 MB each
+const COMPACT_BAKED_PATHS = {
+  bakedRoom: '/textures/2048/baked_room.ktx2',
+  bakedObjects: '/textures/2048/baked_objects.ktx2',
 };
+const BOOT_PATH = '/textures/boot.jpg';
 const GLASS_COLOR = '#B9ECEE';
 const GLASS_OPACITY = 0.005;
 
-/** Mesh node names in public/models/model.glb. */
 const MESH_NAMES = [
   'CoffeeCupMesh',
   'EnvelopeMesh',
@@ -40,7 +38,6 @@ const MESH_NAMES = [
 
 export type MeshName = (typeof MESH_NAMES)[number];
 
-/** Picks the model's meshes out of the loaded nodes, failing on a mismatch. */
 function getMeshes(nodes: Record<string, Object3D>): Record<MeshName, Mesh> {
   const entries = MESH_NAMES.map(name => {
     const node = nodes[name];
@@ -53,9 +50,7 @@ function getMeshes(nodes: Record<string, Object3D>): Record<MeshName, Mesh> {
   return Object.fromEntries(entries) as Record<MeshName, Mesh>;
 }
 
-// Textures are shared by every caller (useTexture caches by path). Configure
-// each one once, during the first render and before drei uploads it to the
-// GPU; setting needsUpdate again later would upload it again.
+// Shared textures (useTexture caches by path): configure once, before drei uploads them; another needsUpdate would re-upload
 const configuredTextures = new WeakSet<Texture>();
 
 function configureTexture(texture: Texture, flipY: boolean): void {
@@ -68,7 +63,14 @@ function configureTexture(texture: Texture, flipY: boolean): void {
   texture.needsUpdate = true;
 }
 
-/** The unlit material for a baked texture, graded in compact mode. */
+function useBakedTextures() {
+  return useTexture(BAKED_PATHS);
+}
+
+function useCompactBakedTextures() {
+  return useKTX2(COMPACT_BAKED_PATHS);
+}
+
 function createBakedMaterial(
   map: Texture,
   isGraded: boolean,
@@ -80,19 +82,15 @@ function createBakedMaterial(
   return material;
 }
 
-/**
- * Loads the baked room model and its textures. useGLTF/useTexture cache by
- * path, so every component calling this shares one load of each asset.
- * Compact mode gets the smaller textures, graded in the material because
- * there's no post-processing.
- */
 export function useSceneAssets() {
   const isCompact = useIsCompact();
   const gltf = useGLTF(MODEL_PATH);
   const nodes = useMemo(() => getMeshes(gltf.nodes), [gltf.nodes]);
-  const textures = useTexture(
-    isCompact ? COMPACT_TEXTURE_PATHS : TEXTURE_PATHS,
-  );
+  // Switching modes swaps the whole canvas (home.tsx), so a mounted scene
+  // always calls the same one of these
+  const baked = (isCompact ? useCompactBakedTextures : useBakedTextures)();
+  const boot = useTexture(BOOT_PATH);
+  const textures = {...baked, boot};
 
   configureTexture(textures.bakedRoom, false);
   configureTexture(textures.bakedObjects, false);
