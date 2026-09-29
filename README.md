@@ -1,6 +1,6 @@
 # blakesimpson.dev
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/<NETLIFY_SITE_ID>/deploy-status)](https://app.netlify.com/sites/<NETLIFY_SITE_NAME>/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b992b601-8d56-4f0f-b6b1-d61dd926d9d2/deploy-status)](https://app.netlify.com/sites/<NETLIFY_SITE_NAME>/deploys)
 ![React 19](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
 ![three.js r186](https://img.shields.io/badge/three.js-r186-000000?logo=threedotjs&logoColor=white)
 ![Vite 8](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)
@@ -10,7 +10,7 @@ A 3D portfolio in JS using three.js, live at
 [blakesimpson.dev](https://blakesimpson.dev). Clicking objects on the desk opens 
 the Music, Projects, About and Contact pages.
 
-![Preview](docs/preview.gif)
+![Preview](docs/preview-anim.gif)
 
 ## How it works
 
