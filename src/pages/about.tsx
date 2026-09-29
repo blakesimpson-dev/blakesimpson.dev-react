@@ -1,10 +1,10 @@
-import {FaFilePdf} from 'react-icons/fa';
+import {FaFileDownload, FaFilePdf} from 'react-icons/fa';
 import {BlurbHeading} from '../components/blurb_heading';
 import {Markdown} from '../components/markdown';
 import {Page} from '../components/page';
 import type {OverlayPageProps} from '../components/page';
 import {ProgressiveImg} from '../components/progressive_img';
-import {ABOUT} from '../content';
+import {ABOUT, SITE} from '../content';
 import type {Entry, Logo} from '../content/types';
 
 export function About({setPage}: OverlayPageProps) {
@@ -18,14 +18,27 @@ export function About({setPage}: OverlayPageProps) {
           <div>
             {blurb.heading && <BlurbHeading text={blurb.heading} />}
             <Markdown text={blurb.body} />
-            {references.map(reference => (
-              <div key={reference.path}>
-                <FaFilePdf />
-                <a href={reference.path} target="_blank" rel="noreferrer">
-                  {reference.name}
-                </a>
+            <div className="about-page__links">
+              <a
+                className="about-page__cv"
+                href={SITE.cv.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFileDownload />
+                {ABOUT.cvLabel}
+              </a>
+              <div className="about-page__references">
+                {references.map(reference => (
+                  <div key={reference.path}>
+                    <FaFilePdf />
+                    <a href={reference.path} target="_blank" rel="noreferrer">
+                      {reference.name}
+                    </a>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
         <div className="about-page__skills__container">

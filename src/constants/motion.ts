@@ -65,6 +65,8 @@ export const OVERLAY_MOTION: Variants = {
     y: '-100vh',
     x: '25vw',
   },
+  // Music sits at the bottom-left; the bottom alignment is CSS
+  // (.overlay--bottom), so y stays a plain 0 here
   visibleLeft: {
     y: 0,
     x: 0,

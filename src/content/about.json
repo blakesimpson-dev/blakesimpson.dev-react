@@ -18,6 +18,7 @@
       "path": "/references/bl_reference.pdf"
     }
   ],
+  "cvLabel": "View my CV",
   "skills": ["Communicator", "Motivator", "Manager", "Leader", "Creator"],
   "attributes": [
     "Passionate",
@@ -100,6 +101,22 @@
       "name": "VS",
       "src": "/images/logos/visualstudio_logo.png",
       "compressedSrc": "/images/logos/compressed/visualstudio_logo.png"
+    },
+    {
+      "name": "PostgreSQL",
+      "src": "/images/logos/postgresql_logo.svg"
+    },
+    {
+      "name": "MongoDB",
+      "src": "/images/logos/mongodb_logo.svg"
+    },
+    {
+      "name": "Kubernetes",
+      "src": "/images/logos/kubernetes_logo.svg"
+    },
+    {
+      "name": "AWS",
+      "src": "/images/logos/aws_logo.svg"
     }
   ],
   "languages": [
@@ -162,6 +179,30 @@
       "name": "OpenGL",
       "src": "/images/logos/opengl_logo.png",
       "compressedSrc": "/images/logos/compressed/opengl_logo.png"
+    },
+    {
+      "name": "Java",
+      "src": "/images/logos/java_logo.svg"
+    },
+    {
+      "name": "Rust",
+      "src": "/images/logos/rust_logo.svg"
+    },
+    {
+      "name": "Go",
+      "src": "/images/logos/go_logo.svg"
+    },
+    {
+      "name": "Metal",
+      "src": "/images/logos/metal_logo.svg"
+    },
+    {
+      "name": "Vulkan",
+      "src": "/images/logos/vulkan_logo.svg"
+    },
+    {
+      "name": "Bash",
+      "src": "/images/logos/bash_logo.svg"
     }
   ],
   "achievements": [

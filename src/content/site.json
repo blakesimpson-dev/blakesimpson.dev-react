@@ -14,5 +14,9 @@
   },
   "gameboy": {
     "title": "Kataplexia"
+  },
+  "cv": {
+    "label": "View my CV",
+    "href": "/blakesimpson_cv.pdf"
   }
 }

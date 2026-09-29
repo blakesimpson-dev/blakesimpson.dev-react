@@ -18,8 +18,11 @@ export interface ProgressiveImage {
   compressedSrc: string;
 }
 
-export interface Logo extends ProgressiveImage {
+/** Technology logo; SVGs need no placeholder, so compressedSrc is optional. */
+export interface Logo {
   name: string;
+  src: string;
+  compressedSrc?: string;
 }
 
 export interface ProjectImage extends ProgressiveImage {
@@ -42,6 +45,8 @@ export interface Reference {
 export interface AboutContent {
   blurb: Blurb;
   references: Reference[];
+  /** Text of the CV button beside the references (the link is SITE.cv). */
+  cvLabel: string;
   skills: string[];
   attributes: string[];
   proficiencies: Logo[];
@@ -106,6 +111,8 @@ export interface ImageLink extends Link {
 }
 
 export interface SiteContent {
+  /** The CV PDF, linked from the frame footer and the About page. */
+  cv: Link;
   menu: {title: string; subtitle: string};
   frame: {copyright: string; instructions: string; repository: ImageLink};
   gameboy: {title: string};

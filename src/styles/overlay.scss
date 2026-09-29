@@ -9,7 +9,11 @@
   // Half the screen, capped for wide monitors (above ~1920px); keep in step
   // with OVERLAY_MOTION.visibleRight in constants/motion.ts
   width: min(50%, 60rem);
-  height: calc(100% - 14rem);
+  // Desktop: as tall as the page needs, up to the space available; longer
+  // pages scroll inside .overlay__content. Compact sets a fixed height.
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 14rem);
   margin: 0 3rem 0 3rem;
   @include panel__box-shadow;
   @include panel__border;
@@ -21,8 +25,17 @@
   }
 }
 
+// Desktop Music panel: anchored to the bottom (same 7rem clearance as the
+// top), with the fit-to-content height from .overlay
+.overlay--bottom {
+  position: absolute;
+  bottom: 7rem;
+  left: 0;
+}
+
 .overlay__header {
   @include display--space-between;
+  flex-shrink: 0;
   width: 100%;
   height: 5rem;
   padding: 2rem;
@@ -43,6 +56,7 @@
 }
 
 .overlay__separator {
+  flex-shrink: 0;
   width: 100%;
   height: 2px;
   padding: 0;
@@ -54,10 +68,12 @@
   padding: 0 0.4rem 0 0;
   overflow: auto;
   overflow-x: hidden;
-  height: calc(100% - 9rem);
-  // Centre short pages vertically. Auto margins (unlike justify-content:
-  // center) fall back to 0 when the page is taller, so it still scrolls from
-  // the top
+  // Takes what's left of the panel; min-height 0 lets it shrink and scroll
+  flex: 1 1 auto;
+  min-height: 0;
+  // Centre short pages vertically (compact's full-height panels). Auto
+  // margins (unlike justify-content: center) fall back to 0 when the page is
+  // taller, so it still scrolls from the top
   display: flex;
   flex-direction: column;
 
@@ -71,6 +87,8 @@
 
 .is-compact {
   .overlay {
+    // Full height rather than the desktop's fit-to-content
+    max-height: none;
     width: calc(100% - 2 * var(--compact-inset));
     // Everything between the menu (if shown) and the frame's footer
     height: calc(

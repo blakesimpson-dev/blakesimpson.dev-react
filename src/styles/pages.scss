@@ -150,10 +150,16 @@
       // Every slide is as tall as the tallest one; fill it, so a short
       // project's box doesn't leave a gap below it
       height: 100%;
-      margin: 0 2.5rem 0 2.5rem;
+      // Gutters leave room for the carousel arrows (carousel.scss)
+      margin: 0 3rem 0 3rem;
       padding: 1.5rem;
       background-color: $color--panel__header-background;
       @include panel__border;
+    }
+
+    &--title h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
     }
 
     &--content {
@@ -199,6 +205,49 @@
   }
 }
 
+// Row under the blurb text, as wide as it: CV button at the left, the
+// references stacked and centred at the right
+.about-page__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.about-page__references {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+// Space between the blurb and the carousel below it
+.projects-page__blurb,
+.music-page__blurb {
+  margin-bottom: 1.5rem;
+}
+
+// CV button: an outlined pill, so it reads as the main action rather than
+// another reference link
+.about-page__cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.4rem 1rem;
+  color: $color--primary;
+  text-decoration: none;
+  border: 2px solid $color--primary;
+  border-radius: 10px;
+  background-color: $color--panel__header-background;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba($color--primary, 0.35);
+  }
+}
+
 // Compact (phones/tablets): single column, tighter spacing ------------------
 
 .is-compact {
@@ -234,6 +283,23 @@
     font-size: 1.1rem;
   }
 
+  // Narrow: the CV button above the references, both left-aligned
+  .about-page__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .about-page__references {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .projects-page__blurb,
+  .music-page__blurb {
+    margin-bottom: 0.75rem;
+  }
+
   // BlurbHeading: one part per line, no separator
   .blurb-heading__separator {
     display: none;
@@ -245,7 +311,7 @@
 
   // More room to write on narrow screens; landscape keeps it short
   .contact-form textarea {
-    min-height: 9rem;
+    min-height: 12rem;
 
     @media (max-height: 500px) {
       min-height: 4rem;
@@ -330,7 +396,7 @@
     &--title h2 {
       // Room for the carousel arrows on the same row (carousel.scss)
       margin: 0 0 0.5rem 0;
-      padding: 0 2.5rem;
+      padding: 0 2rem;
       font-size: 1.1rem;
     }
 
