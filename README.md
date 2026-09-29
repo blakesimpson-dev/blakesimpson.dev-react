@@ -45,24 +45,12 @@ cost against quality:
 
 ## Phones and tablets
 
-Below 1280px, or on touch screens, the desk becomes a backdrop: no hover or
-post-processing, 2048² textures with the colour grade baked into the
-material, 1x resolution, redrawn at 30 fps and paused while a page is open.
-Pages open from the menu's hamburger button.
-
-## Build and run
-
-Requires Node 22 (see `.nvmrc`).
-
-```sh
-npm install
-npm run dev
-```
-
-The dev server runs on http://localhost:3000. Netlify builds with
-`npm run build` and publishes `build/`.
+Below 1280px, or on touch screens, the desk is a lighter, non-interactive
+backdrop: smaller textures, no post-processing, 30 fps, paused behind pages.
 
 ## Scripts
+
+Requires Node 22 (see `.nvmrc`).
 
 | Script                    | Purpose                                                |
 | ------------------------- | ------------------------------------------------------ |
