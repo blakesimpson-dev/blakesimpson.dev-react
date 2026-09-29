@@ -1,9 +1,106 @@
 {
   "blurb": {
     "avatar": "/images/project_avatar.png",
-    "body": "I've built everything from Arduino-based racing game controllers to enterprise mining applications deployed worldwide. While I love working with hardware, my greatest satisfaction comes from crafting intuitive user experiences that deliver results within practical constraints."
+    "body": "I've built everything from Arduino racing game controllers to enterprise mining apps used worldwide. I love hardware, but I most enjoy crafting intuitive experiences that deliver within practical constraints."
   },
   "projects": [
+    {
+      "id": "emergency-wa",
+      "title": "Emergency WA",
+      "body": "Western Australia's emergency warnings and incidents platform for DFES. As Technical Lead at Genvis I pitched and delivered it, with 99.9999% uptime on multi-region AWS, then adapted it for Manitoba during the 2025 Canadian wildfires.",
+      "images": [
+        {
+          "alt": "Emergency WA incident detail",
+          "src": "/images/projects/emergency_wa_1.png",
+          "thumbSrc": "/images/projects/thumbs/emergency_wa_1.jpg",
+          "compressedSrc": "/images/projects/compressed/emergency_wa_1.jpg"
+        },
+        {
+          "alt": "Emergency WA fire danger ratings",
+          "src": "/images/projects/emergency_wa_2.png",
+          "thumbSrc": "/images/projects/thumbs/emergency_wa_2.jpg",
+          "compressedSrc": "/images/projects/compressed/emergency_wa_2.jpg"
+        },
+        {
+          "alt": "Emergency WA alert",
+          "src": "/images/projects/emergency_wa_3.png",
+          "thumbSrc": "/images/projects/thumbs/emergency_wa_3.jpg",
+          "compressedSrc": "/images/projects/compressed/emergency_wa_3.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "Emergency WA",
+          "href": "https://www.emergency.wa.gov.au/"
+        },
+        {
+          "label": "DFES Recovery",
+          "href": "https://recovery.dfes.wa.gov.au/"
+        }
+      ]
+    },
+    {
+      "id": "milli",
+      "title": "Milli",
+      "body": "A free app helping people experiencing family and domestic violence stay safe and reach support on their terms. As Technical Lead at Genvis I led its development, on Cudo, so victim-survivors and service providers can message and share information securely.",
+      "images": [
+        {
+          "alt": "Milli app screens",
+          "src": "/images/projects/milli_1.png",
+          "thumbSrc": "/images/projects/thumbs/milli_1.jpg",
+          "compressedSrc": "/images/projects/compressed/milli_1.jpg"
+        },
+        {
+          "alt": "Milli case list in Cudo",
+          "src": "/images/projects/milli_2.png",
+          "thumbSrc": "/images/projects/thumbs/milli_2.jpg",
+          "compressedSrc": "/images/projects/compressed/milli_2.jpg"
+        },
+        {
+          "alt": "Cudo messaging centre",
+          "src": "/images/projects/milli_3.png",
+          "thumbSrc": "/images/projects/thumbs/milli_3.jpg",
+          "compressedSrc": "/images/projects/compressed/milli_3.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "Safe with Milli",
+          "href": "https://genvis.co/genvis/milli"
+        }
+      ]
+    },
+    {
+      "id": "cudo",
+      "title": "Cudo",
+      "body": "Genvis' work OS for public safety and support agencies: case management, project boards, events, multi-channel messaging, interactive maps, public portals and reporting. As Technical Lead I led development across the platform.",
+      "images": [
+        {
+          "alt": "Cudo case management",
+          "src": "/images/projects/cudo_1.png",
+          "thumbSrc": "/images/projects/thumbs/cudo_1.jpg",
+          "compressedSrc": "/images/projects/compressed/cudo_1.jpg"
+        },
+        {
+          "alt": "Cudo interactive maps",
+          "src": "/images/projects/cudo_2.png",
+          "thumbSrc": "/images/projects/thumbs/cudo_2.jpg",
+          "compressedSrc": "/images/projects/compressed/cudo_2.jpg"
+        },
+        {
+          "alt": "Cudo project boards",
+          "src": "/images/projects/cudo_3.png",
+          "thumbSrc": "/images/projects/thumbs/cudo_3.jpg",
+          "compressedSrc": "/images/projects/compressed/cudo_3.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "Cudo features",
+          "href": "https://genvis.co/products/cudo/features"
+        }
+      ]
+    },
     {
       "id": "portal",
       "title": "Three.js Portal",
@@ -12,16 +109,19 @@
         {
           "alt": "portal-img-1",
           "src": "/images/projects/portal_1.png",
+          "thumbSrc": "/images/projects/thumbs/portal_1.jpg",
           "compressedSrc": "/images/projects/compressed/portal_1.jpg"
         },
         {
           "alt": "portal-img-2",
           "src": "/images/projects/portal_2.png",
+          "thumbSrc": "/images/projects/thumbs/portal_2.jpg",
           "compressedSrc": "/images/projects/compressed/portal_2.jpg"
         },
         {
           "alt": "portal-img-3",
           "src": "/images/projects/portal_3.png",
+          "thumbSrc": "/images/projects/thumbs/portal_3.jpg",
           "compressedSrc": "/images/projects/compressed/portal_3.jpg"
         }
       ],
@@ -39,21 +139,24 @@
     {
       "id": "spartan",
       "title": "Spartan Energy",
-      "body": "The Spartan Energy website was a commission for a client who runs a small Solar Energy business out of NSW. The client required the ability to manage his own content so a headless CMS was used to allow for this. All branding, design and development was done under heavy time constraint to meet up with the date for the launch of the business.",
+      "body": "A website for a small NSW solar energy business. A headless CMS lets the client manage his own content, and all branding, design and development was done under a tight deadline for the business launch.",
       "images": [
         {
           "alt": "spartan-img-1",
           "src": "/images/projects/spartan_1.png",
+          "thumbSrc": "/images/projects/thumbs/spartan_1.jpg",
           "compressedSrc": "/images/projects/compressed/spartan_1.jpg"
         },
         {
           "alt": "spartan-img-2",
           "src": "/images/projects/spartan_2.png",
+          "thumbSrc": "/images/projects/thumbs/spartan_2.jpg",
           "compressedSrc": "/images/projects/compressed/spartan_2.jpg"
         },
         {
           "alt": "spartan-img-3",
           "src": "/images/projects/spartan_3.png",
+          "thumbSrc": "/images/projects/thumbs/spartan_3.jpg",
           "compressedSrc": "/images/projects/compressed/spartan_3.jpg"
         }
       ],
@@ -66,22 +169,25 @@
     },
     {
       "id": "insig",
-      "title": "Insig Technologies",
-      "body": "During my tenure at Insig Technologies I was promoted to Senior and was involved in the production of various digital mining applications and supporting software including: Insig Condition Monitoring System, Insig Computerised Maintenance Management System, Insig Enterprise Asset Management System, Tanami Shaft Sinking Training Simulation and the Edna May Lidar Mapping project. I also built the Insig UI Library packages for use in all current and future Insig applications.",
+      "title": "Insig Tech",
+      "body": "Promoted to Senior at Insig, I built mining software including condition monitoring, maintenance and asset management systems, the Tanami shaft sinking training sim and Edna May LiDAR mapping, plus the Insig UI Library used across their apps.",
       "images": [
         {
           "alt": "insig-img-1",
           "src": "/images/projects/uilib_1.png",
+          "thumbSrc": "/images/projects/thumbs/uilib_1.jpg",
           "compressedSrc": "/images/projects/compressed/uilib_1.jpg"
         },
         {
           "alt": "insig-img-2",
           "src": "/images/projects/uilib_2.png",
+          "thumbSrc": "/images/projects/thumbs/uilib_2.jpg",
           "compressedSrc": "/images/projects/compressed/uilib_2.jpg"
         },
         {
           "alt": "insig-img-3",
           "src": "/images/projects/uilib_3.png",
+          "thumbSrc": "/images/projects/thumbs/uilib_3.jpg",
           "compressedSrc": "/images/projects/compressed/uilib_3.jpg"
         }
       ],
@@ -94,22 +200,25 @@
     },
     {
       "id": "hope-and-gorey",
-      "title": "Ghoul Britannia: Land of Hope and Gorey",
+      "title": "Ghoul Britannia",
       "body": "Ghoul Britannia: Land of Hope and Gorey is a point and click adventure game, reminiscent of 90's adventure games with story-driven gameplay and puzzles to solve. A unique art style combines beautiful hand-painted 2D backgrounds and lively 3D characters.",
       "images": [
         {
           "alt": "hope-and-gorey-img-1",
           "src": "/images/games/hope_and_gorey_1.png",
+          "thumbSrc": "/images/games/thumbs/hope_and_gorey_1.jpg",
           "compressedSrc": "/images/games/compressed/hope_and_gorey_1.jpg"
         },
         {
           "alt": "hope-and-gorey-img-2",
           "src": "/images/games/hope_and_gorey_2.png",
+          "thumbSrc": "/images/games/thumbs/hope_and_gorey_2.jpg",
           "compressedSrc": "/images/games/compressed/hope_and_gorey_2.jpg"
         },
         {
           "alt": "hope-and-gorey-img-3",
           "src": "/images/games/hope_and_gorey_3.png",
+          "thumbSrc": "/images/games/thumbs/hope_and_gorey_3.jpg",
           "compressedSrc": "/images/games/compressed/hope_and_gorey_3.jpg"
         }
       ],
@@ -132,16 +241,19 @@
         {
           "alt": "aliensche-img-1",
           "src": "/images/games/aliensche_1.png",
+          "thumbSrc": "/images/games/thumbs/aliensche_1.jpg",
           "compressedSrc": "/images/games/compressed/aliensche_1.jpg"
         },
         {
           "alt": "aliensche-img-2",
           "src": "/images/games/aliensche_2.png",
+          "thumbSrc": "/images/games/thumbs/aliensche_2.jpg",
           "compressedSrc": "/images/games/compressed/aliensche_2.jpg"
         },
         {
           "alt": "aliensche-img-3",
           "src": "/images/games/aliensche_3.png",
+          "thumbSrc": "/images/games/thumbs/aliensche_3.jpg",
           "compressedSrc": "/images/games/compressed/aliensche_3.jpg"
         }
       ],
@@ -160,16 +272,19 @@
         {
           "alt": "blitz-img-1",
           "src": "/images/games/blitz_1.png",
+          "thumbSrc": "/images/games/thumbs/blitz_1.jpg",
           "compressedSrc": "/images/games/compressed/blitz_1.jpg"
         },
         {
           "alt": "blitz-img-2",
           "src": "/images/games/blitz_2.png",
+          "thumbSrc": "/images/games/thumbs/blitz_2.jpg",
           "compressedSrc": "/images/games/compressed/blitz_2.jpg"
         },
         {
           "alt": "blitz-img-3",
           "src": "/images/games/blitz_3.png",
+          "thumbSrc": "/images/games/thumbs/blitz_3.jpg",
           "compressedSrc": "/images/games/compressed/blitz_3.jpg"
         }
       ],
@@ -191,21 +306,24 @@
     {
       "id": "bushbash",
       "title": "Bush Bash",
-      "body": "Bush Bash is epic. A two player co-op game, the driver must navigate obstacles and try to pick up fuel cans to keep the car running, and the gunner must clear the enemies that will slowly drain your fuel as they shoot you. The cabinet was once a Mitsubishi Magna, but now it’s been kitted out with a dash display, ammo indicator, radio, and the steering wheel is still actually connected to the tires. How did we do it? Magic.",
+      "body": "Bush Bash is epic. The driver dodges obstacles and grabs fuel cans while the gunner shoots the enemies draining your fuel. The cabinet was once a Mitsubishi Magna, kitted out with a dash display, ammo indicator, radio and a steering wheel still connected to the tires. Magic.",
       "images": [
         {
           "alt": "bushbash-img-1",
           "src": "/images/games/bushbash_1.png",
+          "thumbSrc": "/images/games/thumbs/bushbash_1.jpg",
           "compressedSrc": "/images/games/compressed/bushbash_1.jpg"
         },
         {
           "alt": "bushbash-img-2",
           "src": "/images/games/bushbash_2.png",
+          "thumbSrc": "/images/games/thumbs/bushbash_2.jpg",
           "compressedSrc": "/images/games/compressed/bushbash_2.jpg"
         },
         {
           "alt": "bushbash-img-3",
           "src": "/images/games/bushbash_3.png",
+          "thumbSrc": "/images/games/thumbs/bushbash_3.jpg",
           "compressedSrc": "/images/games/compressed/bushbash_3.jpg"
         }
       ],
@@ -232,16 +350,19 @@
         {
           "alt": "catnips-img-1",
           "src": "/images/games/catnips_1.png",
+          "thumbSrc": "/images/games/thumbs/catnips_1.jpg",
           "compressedSrc": "/images/games/compressed/catnips_1.jpg"
         },
         {
           "alt": "catnips-img-2",
           "src": "/images/games/catnips_2.png",
+          "thumbSrc": "/images/games/thumbs/catnips_2.jpg",
           "compressedSrc": "/images/games/compressed/catnips_2.jpg"
         },
         {
           "alt": "catnips-img-3",
           "src": "/images/games/catnips_3.png",
+          "thumbSrc": "/images/games/thumbs/catnips_3.jpg",
           "compressedSrc": "/images/games/compressed/catnips_3.jpg"
         }
       ],
@@ -258,22 +379,25 @@
     },
     {
       "id": "electric",
-      "title": "Arcadian Dreams: Electric Forest",
-      "body": "Electric Forest is a collaboration between SK and local artist Arcadian Dreams. The game consists of floating around a surreal landscape as either a balloon or one of two bees. Up to three players can control at any one time, and when no one is controlling the characters simply float around. The bees can pop the balloon, causing another balloon to replace it, if you want to call that the win condition, be our guest.",
+      "title": "Electric Forest",
+      "body": "A collaboration between SK and artist Arcadian Dreams. Up to three players float through a surreal landscape as a balloon or one of two bees; left alone, they drift. Bees can pop the balloon and another takes its place, if you want to call that winning.",
       "images": [
         {
           "alt": "electric-img-1",
           "src": "/images/games/electric_1.png",
+          "thumbSrc": "/images/games/thumbs/electric_1.jpg",
           "compressedSrc": "/images/games/compressed/electric_1.jpg"
         },
         {
           "alt": "electric-img-2",
           "src": "/images/games/electric_2.png",
+          "thumbSrc": "/images/games/thumbs/electric_2.jpg",
           "compressedSrc": "/images/games/compressed/electric_2.jpg"
         },
         {
           "alt": "electric-img-3",
           "src": "/images/games/electric_3.png",
+          "thumbSrc": "/images/games/thumbs/electric_3.jpg",
           "compressedSrc": "/images/games/compressed/electric_3.jpg"
         }
       ],
@@ -292,16 +416,19 @@
         {
           "alt": "gundash-img-1",
           "src": "/images/games/gundash_1.png",
+          "thumbSrc": "/images/games/thumbs/gundash_1.jpg",
           "compressedSrc": "/images/games/compressed/gundash_1.jpg"
         },
         {
           "alt": "gundash-img-2",
           "src": "/images/games/gundash_2.png",
+          "thumbSrc": "/images/games/thumbs/gundash_2.jpg",
           "compressedSrc": "/images/games/compressed/gundash_2.jpg"
         },
         {
           "alt": "gundash-img-3",
           "src": "/images/games/gundash_3.png",
+          "thumbSrc": "/images/games/thumbs/gundash_3.jpg",
           "compressedSrc": "/images/games/compressed/gundash_3.jpg"
         }
       ],
@@ -320,16 +447,19 @@
         {
           "alt": "skulls-img-1",
           "src": "/images/games/skulls_1.png",
+          "thumbSrc": "/images/games/thumbs/skulls_1.jpg",
           "compressedSrc": "/images/games/compressed/skulls_1.jpg"
         },
         {
           "alt": "skulls-img-2",
           "src": "/images/games/skulls_2.png",
+          "thumbSrc": "/images/games/thumbs/skulls_2.jpg",
           "compressedSrc": "/images/games/compressed/skulls_2.jpg"
         },
         {
           "alt": "skulls-img-3",
           "src": "/images/games/skulls_3.png",
+          "thumbSrc": "/images/games/thumbs/skulls_3.jpg",
           "compressedSrc": "/images/games/compressed/skulls_3.jpg"
         }
       ],
@@ -343,16 +473,19 @@
         {
           "alt": "icarus-img-1",
           "src": "/images/games/icarus_1.png",
+          "thumbSrc": "/images/games/thumbs/icarus_1.jpg",
           "compressedSrc": "/images/games/compressed/icarus_1.jpg"
         },
         {
           "alt": "icarus-img-2",
           "src": "/images/games/icarus_2.png",
+          "thumbSrc": "/images/games/thumbs/icarus_2.jpg",
           "compressedSrc": "/images/games/compressed/icarus_2.jpg"
         },
         {
           "alt": "icarus-img-3",
           "src": "/images/games/icarus_3.png",
+          "thumbSrc": "/images/games/thumbs/icarus_3.jpg",
           "compressedSrc": "/images/games/compressed/icarus_3.jpg"
         }
       ],
@@ -366,16 +499,19 @@
         {
           "alt": "twoshot-img-1",
           "src": "/images/games/twoshot_1.png",
+          "thumbSrc": "/images/games/thumbs/twoshot_1.jpg",
           "compressedSrc": "/images/games/compressed/twoshot_1.jpg"
         },
         {
           "alt": "twoshot-img-2",
           "src": "/images/games/twoshot_2.png",
+          "thumbSrc": "/images/games/thumbs/twoshot_2.jpg",
           "compressedSrc": "/images/games/compressed/twoshot_2.jpg"
         },
         {
           "alt": "twoshot-img-3",
           "src": "/images/games/twoshot_3.png",
+          "thumbSrc": "/images/games/thumbs/twoshot_3.jpg",
           "compressedSrc": "/images/games/compressed/twoshot_3.jpg"
         }
       ],
@@ -394,16 +530,19 @@
         {
           "alt": "rt-img-1",
           "src": "/images/games/rt_1.png",
+          "thumbSrc": "/images/games/thumbs/rt_1.jpg",
           "compressedSrc": "/images/games/compressed/rt_1.jpg"
         },
         {
           "alt": "rt-img-2",
           "src": "/images/games/rt_2.png",
+          "thumbSrc": "/images/games/thumbs/rt_2.jpg",
           "compressedSrc": "/images/games/compressed/rt_2.jpg"
         },
         {
           "alt": "rt-img-3",
           "src": "/images/games/rt_3.png",
+          "thumbSrc": "/images/games/thumbs/rt_3.jpg",
           "compressedSrc": "/images/games/compressed/rt_3.jpg"
         }
       ],
@@ -422,16 +561,19 @@
         {
           "alt": "seed-img-1",
           "src": "/images/games/seed_1.png",
+          "thumbSrc": "/images/games/thumbs/seed_1.jpg",
           "compressedSrc": "/images/games/compressed/seed_1.jpg"
         },
         {
           "alt": "seed-img-2",
           "src": "/images/games/seed_2.png",
+          "thumbSrc": "/images/games/thumbs/seed_2.jpg",
           "compressedSrc": "/images/games/compressed/seed_2.jpg"
         },
         {
           "alt": "seed-img-3",
           "src": "/images/games/seed_3.png",
+          "thumbSrc": "/images/games/thumbs/seed_3.jpg",
           "compressedSrc": "/images/games/compressed/seed_3.jpg"
         }
       ],
@@ -450,16 +592,19 @@
         {
           "alt": "astral-img-1",
           "src": "/images/games/astral_1.png",
+          "thumbSrc": "/images/games/thumbs/astral_1.jpg",
           "compressedSrc": "/images/games/compressed/astral_1.jpg"
         },
         {
           "alt": "astral-img-2",
           "src": "/images/games/astral_2.png",
+          "thumbSrc": "/images/games/thumbs/astral_2.jpg",
           "compressedSrc": "/images/games/compressed/astral_2.jpg"
         },
         {
           "alt": "astral-img-3",
           "src": "/images/games/astral_3.png",
+          "thumbSrc": "/images/games/thumbs/astral_3.jpg",
           "compressedSrc": "/images/games/compressed/astral_3.jpg"
         }
       ],
@@ -473,16 +618,19 @@
         {
           "alt": "ocean-img-1",
           "src": "/images/games/ocean_1.png",
+          "thumbSrc": "/images/games/thumbs/ocean_1.jpg",
           "compressedSrc": "/images/games/compressed/ocean_1.jpg"
         },
         {
           "alt": "ocean-img-2",
           "src": "/images/games/ocean_2.png",
+          "thumbSrc": "/images/games/thumbs/ocean_2.jpg",
           "compressedSrc": "/images/games/compressed/ocean_2.jpg"
         },
         {
           "alt": "ocean-img-3",
           "src": "/images/games/ocean_3.png",
+          "thumbSrc": "/images/games/thumbs/ocean_3.jpg",
           "compressedSrc": "/images/games/compressed/ocean_3.jpg"
         }
       ],
@@ -496,16 +644,19 @@
         {
           "alt": "drop-img-1",
           "src": "/images/games/drop_1.png",
+          "thumbSrc": "/images/games/thumbs/drop_1.jpg",
           "compressedSrc": "/images/games/compressed/drop_1.jpg"
         },
         {
           "alt": "drop-img-2",
           "src": "/images/games/drop_2.png",
+          "thumbSrc": "/images/games/thumbs/drop_2.jpg",
           "compressedSrc": "/images/games/compressed/drop_2.jpg"
         },
         {
           "alt": "drop-img-3",
           "src": "/images/games/drop_3.png",
+          "thumbSrc": "/images/games/thumbs/drop_3.jpg",
           "compressedSrc": "/images/games/compressed/drop_3.jpg"
         }
       ],
@@ -524,16 +675,19 @@
         {
           "alt": "bassball-img-1",
           "src": "/images/games/bassball_1.png",
+          "thumbSrc": "/images/games/thumbs/bassball_1.jpg",
           "compressedSrc": "/images/games/compressed/bassball_1.jpg"
         },
         {
           "alt": "bassball-img-2",
           "src": "/images/games/bassball_2.png",
+          "thumbSrc": "/images/games/thumbs/bassball_2.jpg",
           "compressedSrc": "/images/games/compressed/bassball_2.jpg"
         },
         {
           "alt": "bassball-img-3",
           "src": "/images/games/bassball_3.png",
+          "thumbSrc": "/images/games/thumbs/bassball_3.jpg",
           "compressedSrc": "/images/games/compressed/bassball_3.jpg"
         }
       ],
@@ -547,16 +701,19 @@
         {
           "alt": "cogandballs-img-1",
           "src": "/images/games/cogandballs_1.png",
+          "thumbSrc": "/images/games/thumbs/cogandballs_1.jpg",
           "compressedSrc": "/images/games/compressed/cogandballs_1.jpg"
         },
         {
           "alt": "cogandballs-img-2",
           "src": "/images/games/cogandballs_2.png",
+          "thumbSrc": "/images/games/thumbs/cogandballs_2.jpg",
           "compressedSrc": "/images/games/compressed/cogandballs_2.jpg"
         },
         {
           "alt": "cogandballs-img-3",
           "src": "/images/games/cogandballs_3.png",
+          "thumbSrc": "/images/games/thumbs/cogandballs_3.jpg",
           "compressedSrc": "/images/games/compressed/cogandballs_3.jpg"
         }
       ],
@@ -570,16 +727,19 @@
         {
           "alt": "biru-img-1",
           "src": "/images/games/biru_1.png",
+          "thumbSrc": "/images/games/thumbs/biru_1.jpg",
           "compressedSrc": "/images/games/compressed/biru_1.jpg"
         },
         {
           "alt": "biru-img-2",
           "src": "/images/games/biru_2.png",
+          "thumbSrc": "/images/games/thumbs/biru_2.jpg",
           "compressedSrc": "/images/games/compressed/biru_2.jpg"
         },
         {
           "alt": "biru-img-3",
           "src": "/images/games/biru_3.png",
+          "thumbSrc": "/images/games/thumbs/biru_3.jpg",
           "compressedSrc": "/images/games/compressed/biru_3.jpg"
         }
       ],

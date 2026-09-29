@@ -1,3 +1,4 @@
+import {BlurbHeading} from '../components/blurb_heading';
 import {Markdown} from '../components/markdown';
 import {Page} from '../components/page';
 import type {OverlayPageProps} from '../components/page';
@@ -29,12 +30,12 @@ export function Music({setPage}: OverlayPageProps) {
   const {blurb, player, tracks} = MUSIC;
 
   return (
-    <Page name="Music" setPage={setPage}>
+    <Page name="Music" avatar={blurb.avatar} setPage={setPage}>
       <div className="music-page">
         <div className="music-page__blurb">
           <img className="avatar" src={blurb.avatar} alt="" />
           <div>
-            <h1>{blurb.heading}</h1>
+            {blurb.heading && <BlurbHeading text={blurb.heading} />}
             <Markdown text={blurb.body} />
           </div>
         </div>

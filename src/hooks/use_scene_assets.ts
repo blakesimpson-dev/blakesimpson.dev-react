@@ -2,12 +2,22 @@ import {useGLTF, useTexture} from '@react-three/drei';
 import {useMemo} from 'react';
 import {Mesh, MeshBasicMaterial, SRGBColorSpace} from 'three';
 import type {Object3D, Texture} from 'three';
+import type {BakedMaterial} from '../constants/scene_objects';
+import {applyColorGrade} from '../materials/color_grade';
+import {useIsCompact} from './use_is_compact';
 
 const MODEL_PATH = '/models/model.glb';
 const TEXTURE_PATHS = {
   bakedRoom: '/textures/baked_room.jpg',
   bakedObjects: '/textures/baked_objects.jpg',
   boot: '/textures/boot.jpg',
+};
+// 2048² copies for phones: the 4096² bakes take ~85 MB of GPU memory each
+// with mipmaps, which risks iOS Safari reloading the page
+const COMPACT_TEXTURE_PATHS = {
+  ...TEXTURE_PATHS,
+  bakedRoom: '/textures/2048/baked_room.jpg',
+  bakedObjects: '/textures/2048/baked_objects.jpg',
 };
 const GLASS_COLOR = '#B9ECEE';
 const GLASS_OPACITY = 0.005;
@@ -58,27 +68,43 @@ function configureTexture(texture: Texture, flipY: boolean): void {
   texture.needsUpdate = true;
 }
 
+/** The unlit material for a baked texture, graded in compact mode. */
+function createBakedMaterial(
+  map: Texture,
+  isGraded: boolean,
+): MeshBasicMaterial {
+  const material = new MeshBasicMaterial({map});
+  if (isGraded) {
+    applyColorGrade(material);
+  }
+  return material;
+}
+
 /**
  * Loads the baked room model and its textures. useGLTF/useTexture cache by
  * path, so every component calling this shares one load of each asset.
+ * Compact mode gets the smaller textures, graded in the material because
+ * there's no post-processing.
  */
 export function useSceneAssets() {
+  const isCompact = useIsCompact();
   const gltf = useGLTF(MODEL_PATH);
   const nodes = useMemo(() => getMeshes(gltf.nodes), [gltf.nodes]);
-  const textures = useTexture(TEXTURE_PATHS);
+  const textures = useTexture(
+    isCompact ? COMPACT_TEXTURE_PATHS : TEXTURE_PATHS,
+  );
 
   configureTexture(textures.bakedRoom, false);
   configureTexture(textures.bakedObjects, false);
   configureTexture(textures.boot, true);
   textures.boot.offset.set(-0.03, -0.015);
 
-  const bakedRoomMaterial = useMemo(
-    () => new MeshBasicMaterial({map: textures.bakedRoom}),
-    [textures.bakedRoom],
-  );
-  const bakedObjectsMaterial = useMemo(
-    () => new MeshBasicMaterial({map: textures.bakedObjects}),
-    [textures.bakedObjects],
+  const materials: Record<BakedMaterial, MeshBasicMaterial> = useMemo(
+    () => ({
+      room: createBakedMaterial(textures.bakedRoom, isCompact),
+      objects: createBakedMaterial(textures.bakedObjects, isCompact),
+    }),
+    [textures.bakedRoom, textures.bakedObjects, isCompact],
   );
   const glassMaterial = useMemo(
     () =>
@@ -94,8 +120,7 @@ export function useSceneAssets() {
     nodes,
     animations: gltf.animations,
     bootTexture: textures.boot,
-    bakedRoomMaterial,
-    bakedObjectsMaterial,
+    materials,
     glassMaterial,
   };
 }

@@ -8,9 +8,17 @@ export function ContactForm() {
       name="contact"
       method="POST"
       data-netlify="true"
+      data-netlify-honeypot="bot-field"
       className="contact-form"
     >
       <input type="hidden" name="form-name" value="contact" />
+      {/* Honeypot: hidden from people; Netlify drops submissions that fill it */}
+      <p hidden aria-hidden="true">
+        <label>
+          Leave this empty:{' '}
+          <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       <h1>Send me a message</h1>
       <div className="contact-form__input">
         <label htmlFor="name">

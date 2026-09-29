@@ -20,10 +20,11 @@ const GOOGLE_TS_RULES = {
     {selector: 'default', format: ['camelCase']},
     {selector: 'import', format: ['camelCase', 'PascalCase']},
     {selector: 'function', format: ['camelCase', 'PascalCase']},
+    // PascalCase for components created by lazy() or memo()
     {
       selector: 'variable',
       modifiers: ['const', 'global'],
-      format: ['camelCase', 'UPPER_CASE'],
+      format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
     },
     {selector: 'variable', modifiers: ['destructured'], format: null},
     {selector: 'typeLike', format: ['PascalCase']},

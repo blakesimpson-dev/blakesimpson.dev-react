@@ -9,6 +9,19 @@ function numberParam(key: string, fallback: number): number {
   return value === null ? fallback : Number(value);
 }
 
+/** Forces a layout for testing: ?compact on desktop, ?desktop on a phone. */
+export const VIEWPORT_OVERRIDE = viewportParam();
+
+function viewportParam(): 'compact' | 'desktop' | null {
+  if (params.has('compact')) {
+    return 'compact';
+  }
+  if (params.has('desktop')) {
+    return 'desktop';
+  }
+  return null;
+}
+
 export const RENDER_QUALITY = {
   /** FPS / frame time panel. */
   stats: params.has('stats'),
@@ -16,4 +29,15 @@ export const RENDER_QUALITY = {
   maxDpr: numberParam('dpr', 1.5),
   /** EffectComposer MSAA samples. */
   msaa: numberParam('msaa', 2),
+};
+
+/**
+ * Phones and tablets: the scene is a non-interactive backdrop, so render it
+ * at 1x and redraw at a capped rate instead of every display frame.
+ */
+export const COMPACT_QUALITY = {
+  /** Max device pixel ratio. */
+  maxDpr: numberParam('dpr', 1),
+  /** Redraws per second while Home is showing. */
+  fps: numberParam('fps', 30),
 };

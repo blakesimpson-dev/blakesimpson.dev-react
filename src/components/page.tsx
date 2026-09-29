@@ -9,15 +9,20 @@ export interface OverlayPageProps {
 
 interface PageProps extends OverlayPageProps {
   name: string;
+  /** Small avatar beside the title; compact mode shows it here instead of in the page blurb. */
+  avatar?: string;
   children: ReactNode;
 }
 
 /** Overlay page layout: title, close button (back to Home) and content. */
-export function Page({name, setPage, children}: PageProps) {
+export function Page({name, avatar, setPage, children}: PageProps) {
   return (
     <>
       <div className="overlay__header">
-        <h1>{name}</h1>
+        <div className="overlay__title">
+          {avatar && <img className="overlay__avatar" src={avatar} alt="" />}
+          <h1>{name}</h1>
+        </div>
         <button
           className="button--cancel"
           onClick={() => {

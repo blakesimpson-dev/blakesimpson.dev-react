@@ -167,39 +167,23 @@
   "achievements": [
     {
       "title": "Emergency Response Platforms",
-      "body": "Pitched and delivered Emergency WA platform for WA Government's Department of Fire and Emergency Services; rapidly adapted solution for Manitoba government during 2025 Canadian wildfire crisis"
+      "body": "Pitched and delivered the Emergency WA platform for the WA Government's Department of Fire and Emergency Services; rapidly adapted the solution for the Manitoba government during the 2025 Canadian wildfire crisis"
     },
     {
       "title": "Government Security Clearance",
       "body": "Maintained active security clearance for mission-critical government emergency services infrastructure (2022-2025)"
     },
     {
-      "title": "Visualisation, Procedural Music and Chiptune Performances",
-      "body": "Square Sounds Festival Melbourne, Square Sounds Festival Japan and venues across Australia."
+      "title": "International Game Exhibition",
+      "body": "'Ghoul Britannia' showcased at conventions across Australia, USA, and Europe; released on Steam to positive reception (2017-2019)"
     },
     {
-      "title": "Bush Bash: Touring Exhibition",
-      "body": "'Videogames: Design/Play/Disrupt' exhibition (2018), London Visual Arts Museum and others across Europe."
+      "title": "Museum & Festival Exhibition",
+      "body": "Interactive works exhibited at ACMI Melbourne, PAX Australia, GCAP, and V&A Museum London, reaching 45,000+ attendees (2011-2018)"
     },
     {
-      "title": "WA Culture and the arts funding Ambassador",
-      "body": "Ambassador to Senator Scott Ludlam regarding grants for independent games development in WA (2016)."
-    },
-    {
-      "title": "Repeat Game of the Year Award Nominations",
-      "body": "Western Australian Screen Awards, Perth (2013, 2014 and 2015)"
-    },
-    {
-      "title": "Visualisation Performance",
-      "body": "Square Sounds Festival, Melbourne (2015)"
-    },
-    {
-      "title": "Interstate Arcade Australian Showcase",
-      "body": "SK Games National Tour Melbourne, Brisbane, Sydney and Perth (2014)"
-    },
-    {
-      "title": "Game Developer Association (GDAA) Representative",
-      "body": "Game Connect Asia Pacific Convention, Melbourne (2014)"
+      "title": "Live Performance",
+      "body": "3D visualisation and procedural music performances at Square Sounds Festival, Melbourne and Tokyo (2015-2019)"
     }
   ],
   "history": [
@@ -216,34 +200,34 @@
       "body": "- Led a team to develop 'Ghoul Britannia: Land of Hope and Gorey', featured in gaming press and exhibited at conventions across Australia, America, and Europe\n- Released on Steam with positive reception; Nintendo Switch release in development\n- Established agile workflows and drove technical architecture, code reviews, and QA processes for the distributed team"
     },
     {
-      "title": "Developer @ Immersia: Perth 2016-2017",
+      "title": "Developer @ Immersia: Perth 2016",
       "body": "- Built multiple VR applications during the platform's early era, working with development kits and emerging hardware\n- Adapted to VR-specific challenges including spatial design, performance optimization, and motion comfort"
     },
     {
-      "title": "Developer @ SK Games: Perth 2010-2015",
+      "title": "Developer @ SK Games: Perth 2011-2015",
       "body": "- Showcased 20+ interactive titles to 45,000+ attendees at ACMI Melbourne, PAX Australia, and GCAP\n- Pioneered accessible gaming solutions for non-traditional exhibition spaces\n- Contributed to company's evolution from indie studio to established Interactive Gallery in Melbourne"
     },
     {
-      "title": "Freelance Developer and Visual Artist: Perth, Melbourne and Abroad 2010-2015",
-      "body": "Creating art, sound, music, software and hardware adaptations, I have worked towards engaging and exposing the local development community with numerous independent releases."
+      "title": "Freelance Developer and Visual Artist: Australia and International 2010-2017",
+      "body": "- Created interactive art, procedural audio-visual systems, and experimental software across multiple platforms\n- Engaged with the indie development community through releases, presentations, and collaborative projects"
     }
   ],
   "education": [
     {
-      "title": "Bachelor of Computer Science",
-      "body": "Edith Cowan University, Perth\nBachelor of Computer Science: Software Engineering"
+      "title": "BSc Computer Science",
+      "body": "Edith Cowan University, Perth / Online"
     },
     {
-      "title": "Interactive Media Design",
-      "body": "Qantm College, Perth\nBachelor of Interactive Entertainment Technology"
+      "title": "BSc Interactive Entertainment Technology",
+      "body": "Qantm College, Perth"
     },
     {
-      "title": "Architectural Design",
-      "body": "University of Western Australia, Perth\nBachelor of Environmental Design"
+      "title": "BArch Environmental Design",
+      "body": "University of Western Australia, Perth"
     },
     {
-      "title": "Sacred Heart College",
-      "body": "Chemistry, Physics, Biology, Calculus, English Literature, Japanese\nAchieved TER: 96.25"
+      "title": "TER 96.25",
+      "body": "Sacred Heart College, Perth"
     }
   ]
 }

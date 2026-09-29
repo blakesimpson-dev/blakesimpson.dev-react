@@ -24,6 +24,8 @@ export interface Logo extends ProgressiveImage {
 
 export interface ProjectImage extends ProgressiveImage {
   alt: string;
+  /** Small copy shown in the carousel; src only loads when opened. */
+  thumbSrc: string;
 }
 
 /** A titled block of Markdown (achievements, work history, education). */
@@ -95,15 +97,8 @@ export interface ScreenItem {
   details: string;
 }
 
-export interface Badge {
-  name: string;
-  href: string;
-  image: string;
-}
-
 export interface ContactContent {
   blurb: Blurb;
-  badges: Badge[];
 }
 
 export interface ImageLink extends Link {

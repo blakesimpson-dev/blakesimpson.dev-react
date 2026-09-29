@@ -11,7 +11,6 @@ import {useEffect, useRef, useState} from 'react';
 import type {PageName, SetPage} from '../constants/pages';
 import {RENDER_QUALITY} from '../constants/render_quality';
 import {SELECTABLE_OBJECTS, STATIC_OBJECTS} from '../constants/scene_objects';
-import type {BakedMaterial} from '../constants/scene_objects';
 import {
   CAMERA_CROSSFADE,
   CAMERA_TIME_SCALE,
@@ -21,11 +20,10 @@ import {
 } from '../constants/timing';
 import {playIntro, useCameraActions} from '../hooks/use_camera_actions';
 import {useSceneAssets} from '../hooks/use_scene_assets';
+import {COLOR_GRADE} from '../materials/color_grade';
 import {Fan} from './fan';
 import {GameboyScreen} from './gameboy_screen';
 import {Screen} from './screen';
-
-const FAN_SPEED = 8;
 
 interface SceneProps {
   page: PageName;
@@ -36,18 +34,8 @@ interface SceneProps {
 
 /** The desk: baked meshes, camera moves between pages, hover and click. */
 export function Scene({page, setPage, onReady}: SceneProps) {
-  const {
-    nodes,
-    animations,
-    bakedRoomMaterial,
-    bakedObjectsMaterial,
-    glassMaterial,
-  } = useSceneAssets();
+  const {nodes, animations, materials, glassMaterial} = useSceneAssets();
   const actions = useCameraActions(animations);
-  const materials: Record<BakedMaterial, typeof bakedRoomMaterial> = {
-    room: bakedRoomMaterial,
-    objects: bakedObjectsMaterial,
-  };
 
   const [isSelectionEnabled, setIsSelectionEnabled] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -134,12 +122,12 @@ export function Scene({page, setPage, onReady}: SceneProps) {
     <Selection>
       <group>
         <Screen page={page} />
-        <Fan speed={FAN_SPEED} />
+        <Fan />
       </group>
       <group>
         <mesh
           geometry={nodes.MergedRoomMesh.geometry}
-          material={bakedRoomMaterial}
+          material={materials.room}
         />
         <mesh geometry={nodes.PCGlassMesh.geometry} material={glassMaterial} />
       </group>
@@ -174,7 +162,10 @@ export function Scene({page, setPage, onReady}: SceneProps) {
           pulseSpeed={0.5}
           hiddenEdgeColor="#FFFFFF"
         />
-        <BrightnessContrast brightness={0.1} contrast={0.15} />
+        <BrightnessContrast
+          brightness={COLOR_GRADE.brightness}
+          contrast={COLOR_GRADE.contrast}
+        />
       </EffectComposer>
     </Selection>
   );

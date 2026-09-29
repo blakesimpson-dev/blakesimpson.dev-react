@@ -40,22 +40,17 @@ cost against quality:
 - `?stats` - FPS / frame time panel
 - `?dpr=2` - max device pixel ratio
 - `?msaa=8` - EffectComposer MSAA samples
+- `?compact` / `?desktop` - force the phone or desktop layout
+- `?fps=60` - compact redraw rate
 
-Desktop only for now (viewport of at least 1280px).
+## Phones and tablets
 
-## Build and run
-
-Requires Node 22 (see `.nvmrc`).
-
-```sh
-npm install
-npm run dev
-```
-
-The dev server runs on http://localhost:3000. Netlify builds with
-`npm run build` and publishes `build/`.
+Below 1280px, or on touch screens, the desk is a lighter, non-interactive
+backdrop: smaller textures, no post-processing, 30 fps, paused behind pages.
 
 ## Scripts
+
+Requires Node 22 (see `.nvmrc`).
 
 | Script                    | Purpose                                                |
 | ------------------------- | ------------------------------------------------------ |

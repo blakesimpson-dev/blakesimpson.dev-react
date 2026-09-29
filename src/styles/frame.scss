@@ -40,3 +40,38 @@
     }
   }
 }
+
+// Compact (phones/tablets): a one-line footer below the page panel; no desk
+// to explore, so no instructions ----------------------------------------------
+
+.is-compact {
+  .frame {
+    height: 100dvh;
+    padding: 0 calc(var(--compact-inset) + 0.25rem);
+    align-content: stretch;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr var(--compact-footer-height);
+    grid-template-areas: '. .' 'copyright links';
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+
+  .frame__copyright {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .frame__links {
+    svg,
+    img {
+      width: auto;
+      height: 14px;
+    }
+  }
+
+  .frame__instructions {
+    display: none;
+  }
+}
