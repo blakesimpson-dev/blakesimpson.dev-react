@@ -8,7 +8,6 @@ function createVideoElement(): HTMLVideoElement {
   return video;
 }
 
-/** A muted, looping video element for use as a VideoTexture source. */
 export function useVideo() {
   const [video] = useState(createVideoElement);
 
@@ -21,7 +20,7 @@ export function useVideo() {
     (path: string) => {
       video.src = path;
       video.load();
-      // Muted videos are allowed to autoplay; nothing to handle on failure
+      // Muted videos may autoplay
       void video.play();
     },
     [video],

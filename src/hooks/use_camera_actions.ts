@@ -6,10 +6,8 @@ import type {AnimationAction, AnimationClip} from 'three';
 import type {OverlayPageName} from '../constants/pages';
 import {CAMERA_TIME_SCALE, INTRO_START} from '../constants/timing';
 
-/** Camera clip that moves from the start pose to the Home view. */
 const INTRO_CLIP = 'CameraActionNLA1';
 
-/** Camera clip that zooms from the Home view to each page. */
 const PAGE_CLIPS: Record<OverlayPageName, string> = {
   Projects: 'CameraActionNLA2',
   Music: 'CameraActionNLA3',
@@ -33,10 +31,7 @@ function requireAction(
   return action;
 }
 
-/**
- * Binds the model's camera clips to the r3f camera. Call once (in Scene):
- * each call creates its own AnimationMixer on the camera.
- */
+// Call once: each call adds its own AnimationMixer to the camera
 export function useCameraActions(animations: AnimationClip[]): CameraActions {
   const camera = useThree(state => state.camera);
   const {actions} = useAnimations(animations, camera);
@@ -67,7 +62,6 @@ export function useCameraActions(animations: AnimationClip[]): CameraActions {
   return cameraActions;
 }
 
-/** Plays the intro camera move from the start pose to the Home view. */
 export function playIntro(intro: AnimationAction): void {
   intro.timeScale = CAMERA_TIME_SCALE;
   intro.play().startAt(INTRO_START);

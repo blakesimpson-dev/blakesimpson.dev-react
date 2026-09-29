@@ -4,8 +4,7 @@
 
 .menu {
   @include display--space-between;
-  // z-index needs a positioned element; before framer-motion 11 the leftover
-  // translateZ(0) transform kept this above the fixed canvas instead
+  // z-index needs a positioned element
   position: relative;
   z-index: 1000;
   width: calc(100vw - 6rem);
@@ -21,30 +20,24 @@
   &__title {
     font-size: 26px;
     font-weight: $font-weight--bold;
-
-    :first-child {
-      margin-bottom: 0.2rem;
-    }
-
-    :last-child {
-      font-size: 18px;
-      font-weight: $font-weight--regular;
-    }
   }
 
   &__buttons {
     @include display--center;
+    gap: 0.75rem;
 
-    > *:not(:last-child) {
-      margin-right: 0.5rem;
+    button {
+      padding: 0.4rem 1.25rem;
+      font-size: 16px;
+      font-weight: $font-weight--bold;
     }
   }
 }
 
-// Compact (phones/tablets) ---------------------------------------------------
+// Compact
 
 .is-compact .menu {
-  // Above the page panel, so the nav list opens over it
+  // Above the page panel so the nav list overlaps it
   z-index: 1001;
   width: calc(100vw - 2 * var(--compact-inset));
   height: var(--compact-menu-height);
@@ -56,8 +49,7 @@
     white-space: nowrap;
   }
 
-  // Out of the flow, so the page panel can use the height it frees up
-  // while hidden
+  // Out of the flow so the panel can use the freed height
   @media (max-height: 500px) {
     position: absolute;
     top: 0;

@@ -3,14 +3,11 @@
 @use 'mixins' as *;
 
 .overlay {
-  // Keep above the fixed canvas once framer-motion clears the transform
+  // Positioned so z-index keeps it above the fixed canvas
   position: relative;
   z-index: 1000;
-  // Half the screen, capped for wide monitors (above ~1920px); keep in step
-  // with OVERLAY_MOTION.visibleRight in constants/motion.ts
+  // Keep in step with OVERLAY_MOTION.visibleRight
   width: min(50%, 60rem);
-  // Desktop: as tall as the page needs, up to the space available; longer
-  // pages scroll inside .overlay__content. Compact sets a fixed height.
   display: flex;
   flex-direction: column;
   max-height: calc(100% - 14rem);
@@ -25,8 +22,6 @@
   }
 }
 
-// Desktop Music panel: anchored to the bottom (same 7rem clearance as the
-// top), with the fit-to-content height from .overlay
 .overlay--bottom {
   position: absolute;
   bottom: 7rem;
@@ -41,6 +36,11 @@
   padding: 2rem;
   background-color: $color--panel__header-background;
   border-radius: 1rem 1rem 0 0;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
 }
 
 .overlay__title {
@@ -50,7 +50,6 @@
   min-width: 0;
 }
 
-// Desktop keeps the large avatar in the page blurb
 .overlay__avatar {
   display: none;
 }
@@ -68,12 +67,10 @@
   padding: 0 0.4rem 0 0;
   overflow: auto;
   overflow-x: hidden;
-  // Takes what's left of the panel; min-height 0 lets it shrink and scroll
+  // min-height 0 lets it shrink and scroll
   flex: 1 1 auto;
   min-height: 0;
-  // Centre short pages vertically (compact's full-height panels). Auto
-  // margins (unlike justify-content: center) fall back to 0 when the page is
-  // taller, so it still scrolls from the top
+  // Auto margins centre short pages but collapse when the page overflows, so it scrolls from the top
   display: flex;
   flex-direction: column;
 
@@ -83,14 +80,12 @@
   }
 }
 
-// Compact (phones/tablets) ---------------------------------------------------
+// Compact
 
 .is-compact {
   .overlay {
-    // Full height rather than the desktop's fit-to-content
     max-height: none;
     width: calc(100% - 2 * var(--compact-inset));
-    // Everything between the menu (if shown) and the frame's footer
     height: calc(
       100dvh - var(--compact-menu-space) - var(--compact-gap) - var(
           --compact-footer-height
@@ -121,7 +116,7 @@
 
   .overlay__content {
     margin: 0.5rem 0.75rem;
-    // Header + separator (2px) + this element's margins (1rem)
+    // Header + separator + margins
     height: calc(100% - var(--compact-header-height) - 2px - 1rem);
   }
 

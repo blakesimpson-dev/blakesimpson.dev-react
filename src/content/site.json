@@ -1,16 +1,16 @@
 {
   "menu": {
-    "title": "<blakesimpson.dev />",
-    "subtitle": "KATAPLEXIA // キャタプレクシア // 3D Portfolio"
+    "title": "$ blakesimpson.dev_"
   },
   "frame": {
-    "copyright": "©2022 — Blake Simpson. All rights reserved.",
+    "copyright": "©2026 - Blake Simpson. All rights reserved.",
     "instructions": "Explore! Interact with the screen's **File** menu and **objects on the desk**.",
     "repository": {
       "label": "GitHub",
       "href": "https://github.com/blakesimpson-dev/blakesimpson.dev-react",
       "image": "/images/logos/github_logo.png"
-    }
+    },
+    "copyrightShort": "©2026 - Blake Simpson"
   },
   "gameboy": {
     "title": "Kataplexia"

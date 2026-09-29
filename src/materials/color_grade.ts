@@ -1,14 +1,8 @@
 import type {Material} from 'three';
 
-/** The desktop BrightnessContrast effect settings (see scene.tsx). */
 export const COLOR_GRADE = {brightness: 0.1, contrast: 0.15};
 
-/**
- * Bakes the desktop brightness/contrast grade into a material, for compact
- * mode where there's no EffectComposer. postprocessing's effect works on sRGB
- * input (it sets inputColorSpace = SRGBColorSpace), so the same maths runs
- * after the material's own linear -> sRGB conversion.
- */
+// postprocessing's BrightnessContrast grades sRGB input, so this runs after the material's linear -> sRGB conversion
 export function applyColorGrade(material: Material): void {
   const {brightness, contrast} = COLOR_GRADE;
   const grade = [
@@ -26,7 +20,6 @@ export function applyColorGrade(material: Material): void {
   material.customProgramCacheKey = () => 'color-grade';
 }
 
-/** Formats a number as a GLSL float literal (always with a decimal point). */
 function glslFloat(value: number): string {
   return value.toFixed(4);
 }

@@ -9,7 +9,6 @@
   padding: 0;
   border-radius: 50%;
 
-  // A little clear of the panel edges
   &--prev {
     left: 0.25rem;
   }
@@ -19,16 +18,13 @@
   }
 }
 
-// The library pads iframes 40px below for its own dots; without them the
-// arrows would centre on the padded slide rather than the player. Side
-// gutters leave a gap between the arrows and the player.
+// The library pads iframes below for its dots; without it the arrows centre on the player
 .carousel .slide iframe {
   width: calc(100% - 6rem);
   margin: 0 3rem;
 }
 
-// Compact: slides use the full width, so the arrows move to a row above the
-// slide, level with its edges, instead of covering it
+// Compact: arrows in a row above the slide
 .is-compact {
   .carousel.carousel-slider {
     padding-top: 2rem;
@@ -46,29 +42,27 @@
     }
   }
 
-  // The library insets iframes (40px each side, 40px below) to leave room
-  // for its own arrows
+  // Undo the library's iframe insets
   .carousel .slide iframe {
     width: 100%;
     margin: 0;
   }
 
-  // Slides that start with a title (projects): arrows on the title's row
+  // Project slides: arrows level with the title
   .carousel--titled {
     .carousel.carousel-slider {
       padding-top: 0;
     }
 
-    // Centred on the first line of the project title
     .carousel-arrow {
       top: 0.7rem;
 
       &--prev {
-        left: 0.25rem;
+        left: 0.75rem;
       }
 
       &--next {
-        right: 0.25rem;
+        right: 0.75rem;
       }
     }
   }

@@ -9,11 +9,9 @@ interface GameboyScreenProps {
   page: PageName;
 }
 
-/** The Gameboy's screen and battery light, lit while Music is open. */
 export function GameboyScreen({page}: GameboyScreenProps) {
   const [isScreenOn, setIsScreenOn] = useState(false);
 
-  // Turn the Gameboy screen on once the camera has zoomed in on Music
   useEffect(() => {
     if (page !== 'Music') {
       return;

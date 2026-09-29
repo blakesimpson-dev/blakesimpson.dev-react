@@ -9,7 +9,6 @@ import type {SoundcloudPlayer, Track} from '../content/types';
 const SOUNDCLOUD_PLAYER_URL =
   'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/';
 
-/** SoundCloud embed URL for a track with the shared player options. */
 function getSoundcloudSource(track: Track, player: SoundcloudPlayer): string {
   const options = {
     color: player.color,

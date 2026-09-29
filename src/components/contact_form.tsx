@@ -1,7 +1,6 @@
 import {FaEnvelope} from 'react-icons/fa';
 import '../styles/contact_form.scss';
 
-/** Contact form, submitted to Netlify Forms. */
 export function ContactForm() {
   return (
     <form
@@ -12,7 +11,7 @@ export function ContactForm() {
       className="contact-form"
     >
       <input type="hidden" name="form-name" value="contact" />
-      {/* Honeypot: hidden from people; Netlify drops submissions that fill it */}
+      {/* Honeypot: Netlify drops submissions that fill it */}
       <p hidden aria-hidden="true">
         <label>
           Leave this empty:{' '}

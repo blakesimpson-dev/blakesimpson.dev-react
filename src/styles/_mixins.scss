@@ -69,27 +69,16 @@
 }
 
 @mixin panel__background--diagonal {
-  // Note: undecided on the stroke...
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      $color--panel__background-stroke--one,
-      $color--panel__background-stroke--one 2px,
-      $color--panel__background-stroke--two 2px,
-      $color--panel__background-stroke--two 10px
-    ),
-    linear-gradient(
-      135deg,
-      $color--panel__background-gradient--start,
-      $color--panel__background-gradient--finish
-    );
-
-  // background: linear-gradient(
-  //       135deg,
-  //       $color--panel__background-gradient--start,
-  //       $color--panel__background-gradient--finish)
+  background: linear-gradient(
+    135deg,
+    $color--panel__background-gradient--start,
+    $color--panel__background-gradient--finish
+  );
+  // Frosted glass: blur the scene behind so it doesn't compete with the text
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
 @mixin panel__text-shadow {
-  text-shadow: 0px 0px 3px $color--panel__text-shadow;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }

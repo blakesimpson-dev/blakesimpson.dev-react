@@ -1,5 +1,3 @@
-// Site content, bundled from JSON at build time. Edit the JSON files; the
-// annotations below type-check them against ./types.
 import about from './about.json';
 import contact from './contact.json';
 import music from './music.json';

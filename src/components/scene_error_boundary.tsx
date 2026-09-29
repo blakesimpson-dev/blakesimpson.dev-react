@@ -3,7 +3,6 @@ import type {ReactNode} from 'react';
 
 interface SceneErrorBoundaryProps {
   children: ReactNode;
-  /** Called when the scene fails, e.g. WebGL is unavailable. */
   onError: () => void;
 }
 
@@ -11,10 +10,6 @@ interface SceneErrorBoundaryState {
   hasError: boolean;
 }
 
-/**
- * Renders nothing if the 3D scene throws, so the menu and pages still work
- * on the plain panel background.
- */
 export class SceneErrorBoundary extends Component<
   SceneErrorBoundaryProps,
   SceneErrorBoundaryState

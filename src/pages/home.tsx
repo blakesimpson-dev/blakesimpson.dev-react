@@ -18,16 +18,14 @@ import {useIsCompact} from '../hooks/use_is_compact';
 import '../styles/main.scss';
 import '../styles/pages.scss';
 
-// The interactive desktop scene (post-processing, outline, Gameboy screen) is
-// its own chunk, so compact mode never downloads it
+// Separate chunk, so compact never downloads the desktop scene
 const Scene = lazy(async () => {
   const module = await import('../components/scene');
   return {default: module.Scene};
 });
 
 const CLEAR_COLOR = '#FFFFFF';
-// The room has no ceiling; the backdrop's wider portrait view shows the space
-// above the walls, so fill it with the panels' dark tone instead of white
+// The room has no ceiling; wide views show the space above the walls
 const CLEAR_COLOR_COMPACT = '#1f2523';
 
 function setClearColor(state: RootState) {
@@ -38,17 +36,10 @@ function setClearColorCompact(state: RootState) {
   state.gl.setClearColor(CLEAR_COLOR_COMPACT);
 }
 
-/**
- * The whole site: the 3D desk plus the menu, page overlay and frame. On
- * phones and tablets (compact) the desk is a cheap, non-interactive backdrop
- * and pages are opened from the menu.
- */
 export function Home() {
   const [page, setPage] = useState<PageName>('Home');
-  // Fade in only once the scene has mounted (its assets have loaded), so the
-  // canvas clear colour never shows while the model and textures load
+  // Fade in once the scene has loaded, so the clear colour never flashes
   const [isSceneReady, setIsSceneReady] = useState(false);
-  // Navigation waits for the page panel to finish sliding
   const [isOverlayMoving, setIsOverlayMoving] = useState(false);
   const isCompact = useIsCompact();
 
@@ -94,7 +85,6 @@ interface DesktopCanvasProps extends CanvasProps {
   setPage: SetPage;
 }
 
-/** Full-quality interactive scene with post-processing. */
 function DesktopCanvas({page, setPage, onReady}: DesktopCanvasProps) {
   return (
     <Canvas
@@ -112,10 +102,6 @@ function DesktopCanvas({page, setPage, onReady}: DesktopCanvasProps) {
   );
 }
 
-/**
- * Compact backdrop: 1x resolution, redrawn at a capped rate and not at all
- * while a page covers it; touches pass through to the page.
- */
 function BackdropCanvas({page, onReady}: CanvasProps) {
   return (
     <SceneErrorBoundary

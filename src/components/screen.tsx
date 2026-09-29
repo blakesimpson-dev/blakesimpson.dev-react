@@ -17,19 +17,14 @@ import '../styles/screen.scss';
 import {Dropdown} from './dropdown';
 import {Markdown} from './markdown';
 
-// Raw (unconverted) value, matching how r141 applied '#AAAAAA'
+// Unconverted, as r141 applied '#AAAAAA'
 const VIDEO_TINT = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace);
 
 interface ScreenProps {
   page: PageName;
-  /** Compact backdrop: the boot image then the shader, without the DOM UI. */
   isBackdrop?: boolean;
 }
 
-/**
- * The monitor: a boot image, then either the GLSL shader or a project video,
- * picked from the DOM UI's File menu.
- */
 export function Screen({page, isBackdrop = false}: ScreenProps) {
   const shaderMaterial = useRef<ScreenMaterial>(null);
   const hasBooted = useRef(false);
@@ -47,7 +42,6 @@ export function Screen({page, isBackdrop = false}: ScreenProps) {
     }
   }, [screenItem, resetVideo, changeVideoSource]);
 
-  // Turn the screen on after the camera settles on Home (longer on first load)
   useEffect(() => {
     if (page !== 'Home') {
       return;

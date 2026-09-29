@@ -14,10 +14,7 @@ const SPRING_DEFAULT: Transition = {
   stiffness: 100,
 };
 
-/**
- * SPRING_DEFAULT made ~1.7x faster for compact mode: stiffness x3 with the
- * damping scaled to keep the same damping ratio, so the bounce looks the same.
- */
+// ~1.7x faster than SPRING_DEFAULT with the same damping ratio
 const SPRING_FAST: Transition = {
   type: 'spring',
   damping: 17,
@@ -65,8 +62,6 @@ export const OVERLAY_MOTION: Variants = {
     y: '-100vh',
     x: '25vw',
   },
-  // Music sits at the bottom-left; the bottom alignment is CSS
-  // (.overlay--bottom), so y stays a plain 0 here
   visibleLeft: {
     y: 0,
     x: 0,
@@ -74,12 +69,10 @@ export const OVERLAY_MOTION: Variants = {
   },
   visibleRight: {
     y: 0,
-    // Right edge 3rem from the screen edge: 100vw - both 3rem margins - the
-    // panel's width (overlay.scss)
+    // Right edge 3rem from the screen; the width matches .overlay
     x: 'calc(100vw - 6rem - min(50vw, 60rem))',
     transition: {...SPRING_DEFAULT, delay: OVERLAY_DELAY},
   },
-  // Compact: full width, dropping straight down
   hiddenCompact: {
     y: '-100vh',
     x: 0,

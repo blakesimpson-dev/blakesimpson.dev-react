@@ -134,7 +134,7 @@
 .music-page {
   justify-content: center;
 
-  // Replaces the deprecated frameBorder attribute on the SoundCloud embeds
+  // Replaces the deprecated frameBorder attribute
   iframe {
     border: none;
   }
@@ -147,10 +147,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // Every slide is as tall as the tallest one; fill it, so a short
-      // project's box doesn't leave a gap below it
+      // Fill the slide, which is as tall as the tallest slide
       height: 100%;
-      // Gutters leave room for the carousel arrows (carousel.scss)
       margin: 0 3rem 0 3rem;
       padding: 1.5rem;
       background-color: $color--panel__header-background;
@@ -159,7 +157,7 @@
 
     &--title h2 {
       margin: 0 0 1rem 0;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     &--content {
@@ -190,7 +188,7 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
-      // The carousel centres slide text; a wrapped link should stay left
+      // The carousel centres slide text
       text-align: left;
 
       > div {
@@ -205,8 +203,6 @@
   }
 }
 
-// Row under the blurb text, as wide as it: CV button at the left, the
-// references stacked and centred at the right
 .about-page__links {
   display: flex;
   justify-content: space-between;
@@ -222,14 +218,36 @@
   text-align: center;
 }
 
-// Space between the blurb and the carousel below it
+.blurb-heading {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+}
+
+.about-page__proficiencies,
+.about-page__languages,
+.about-page__attributes,
+.about-page__achievements,
+.about-page__history,
+.about-page__education {
+  > h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.about-page__achievements--item,
+.about-page__history--item,
+.about-page__education--item {
+  h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+}
+
 .projects-page__blurb,
 .music-page__blurb {
   margin-bottom: 1.5rem;
 }
 
-// CV button: an outlined pill, so it reads as the main action rather than
-// another reference link
 .about-page__cv {
   display: inline-flex;
   align-items: center;
@@ -248,7 +266,7 @@
   }
 }
 
-// Compact (phones/tablets): single column, tighter spacing ------------------
+// Compact
 
 .is-compact {
   .music-page,
@@ -258,8 +276,7 @@
     padding: 0;
   }
 
-  // The avatar moves to the panel's title bar (overlay.scss); the heading
-  // stays centred, the text left-aligned
+  // The avatar moves to the panel title bar
   .avatar {
     display: none;
   }
@@ -283,16 +300,9 @@
     font-size: 1.1rem;
   }
 
-  // Narrow: the CV button above the references, both left-aligned
   .about-page__links {
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.75rem;
-  }
-
-  .about-page__references {
-    align-items: flex-start;
-    text-align: left;
   }
 
   .projects-page__blurb,
@@ -300,7 +310,6 @@
     margin-bottom: 0.75rem;
   }
 
-  // BlurbHeading: one part per line, no separator
   .blurb-heading__separator {
     display: none;
   }
@@ -309,9 +318,8 @@
     display: block;
   }
 
-  // More room to write on narrow screens; landscape keeps it short
   .contact-form textarea {
-    min-height: 12rem;
+    min-height: 8rem;
 
     @media (max-height: 500px) {
       min-height: 4rem;
@@ -387,16 +395,15 @@
 
   .projects-page__project {
     &--container {
-      // Top-aligned, so the title stays level with the carousel arrows
+      // Keeps the title level with the carousel arrows
       justify-content: flex-start;
       margin: 0;
       padding: 0.75rem;
     }
 
     &--title h2 {
-      // Room for the carousel arrows on the same row (carousel.scss)
       margin: 0 0 0.5rem 0;
-      padding: 0 2rem;
+      padding: 0 2.5rem;
       font-size: 1.1rem;
     }
 
@@ -405,7 +412,6 @@
         margin: 0.25rem;
       }
 
-      // Two screenshots fit on one row; the rest are for desktop
       > :nth-child(n + 3) {
         display: none;
       }
