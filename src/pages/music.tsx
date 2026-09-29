@@ -11,7 +11,7 @@ const Music = ({setPage}) => {
       content={
         <div className="music-page">
           <div className="music-page__blurb">
-            <img className="avatar" src="/images/kataplexia-avatar.png" />
+            <img className="avatar" src="/images/kataplexia_avatar.png" />
             <div>
               <h1>KATAPLEXIA // キャタプレクシア</h1>
               <p>

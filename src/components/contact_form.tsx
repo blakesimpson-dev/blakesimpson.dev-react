@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaEnvelope} from 'react-icons/fa';
-import '../styles/contact-form.scss';
+import '../styles/contact_form.scss';
 
 const ContactForm = () => {
   return (

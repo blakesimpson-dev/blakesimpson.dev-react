@@ -21,7 +21,7 @@ const About = ({setPage}) => {
       content={
         <div className="about-page">
           <div className="about-page__blurb">
-            <img className="avatar" src="/images/blake-avatar.png" />
+            <img className="avatar" src="/images/blake_avatar.png" />
             <div>
               <h1>Blake Simpson - Technical Lead</h1>
               <p>

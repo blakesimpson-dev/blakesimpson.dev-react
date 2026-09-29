@@ -15,19 +15,19 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'portal-img-1',
-        src: '/images/projects/portal-1.png',
-        compressedSrc: '/images/projects/compressed/portal-1.png',
+        src: '/images/projects/portal_1.png',
+        compressedSrc: '/images/projects/compressed/portal_1.jpg',
       },
       {
         alt: 'portal-img-2',
-        src: '/images/projects/portal-2.png',
-        compressedSrc: '/images/projects/compressed/portal-2.png',
+        src: '/images/projects/portal_2.png',
+        compressedSrc: '/images/projects/compressed/portal_2.jpg',
       },
 
       {
         alt: 'portal-img-3',
-        src: '/images/projects/portal-3.png',
-        compressedSrc: '/images/projects/compressed/portal-3.png',
+        src: '/images/projects/portal_3.png',
+        compressedSrc: '/images/projects/compressed/portal_3.jpg',
       },
     ],
     links: [
@@ -64,18 +64,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'spartan-img-1',
-        src: '/images/projects/spartan-1.png',
-        compressedSrc: '/images/projects/compressed/spartan-1.png',
+        src: '/images/projects/spartan_1.png',
+        compressedSrc: '/images/projects/compressed/spartan_1.jpg',
       },
       {
         alt: 'spartan-img-2',
-        src: '/images/projects/spartan-2.png',
-        compressedSrc: '/images/projects/compressed/spartan-2.png',
+        src: '/images/projects/spartan_2.png',
+        compressedSrc: '/images/projects/compressed/spartan_2.jpg',
       },
       {
         alt: 'spartan-img-3',
-        src: '/images/projects/spartan-3.png',
-        compressedSrc: '/images/projects/compressed/spartan-3.png',
+        src: '/images/projects/spartan_3.png',
+        compressedSrc: '/images/projects/compressed/spartan_3.jpg',
       },
     ],
     links: [
@@ -106,18 +106,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'insig-img-1',
-        src: '/images/projects/uilib-1.png',
-        compressedSrc: '/images/projects/compressed/uilib-1.png',
+        src: '/images/projects/uilib_1.png',
+        compressedSrc: '/images/projects/compressed/uilib_1.jpg',
       },
       {
         alt: 'insig-img-2',
-        src: '/images/projects/uilib-2.png',
-        compressedSrc: '/images/projects/compressed/uilib-2.png',
+        src: '/images/projects/uilib_2.png',
+        compressedSrc: '/images/projects/compressed/uilib_2.jpg',
       },
       {
         alt: 'insig-img-3',
-        src: '/images/projects/uilib-3.png',
-        compressedSrc: '/images/projects/compressed/uilib-3.png',
+        src: '/images/projects/uilib_3.png',
+        compressedSrc: '/images/projects/compressed/uilib_3.jpg',
       },
     ],
     links: [
@@ -145,18 +145,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'hope-and-gorey-img-1',
-        src: '/images/games/hope-and-gorey-1.png',
-        compressedSrc: '/images/games/compressed/hope-and-gorey-1.png',
+        src: '/images/games/hope_and_gorey_1.png',
+        compressedSrc: '/images/games/compressed/hope_and_gorey_1.jpg',
       },
       {
         alt: 'hope-and-gorey-img-2',
-        src: '/images/games/hope-and-gorey-2.png',
-        compressedSrc: '/images/games/compressed/hope-and-gorey-2.png',
+        src: '/images/games/hope_and_gorey_2.png',
+        compressedSrc: '/images/games/compressed/hope_and_gorey_2.jpg',
       },
       {
         alt: 'hope-and-gorey-img-3',
-        src: '/images/games/hope-and-gorey-3.png',
-        compressedSrc: '/images/games/compressed/hope-and-gorey-3.png',
+        src: '/images/games/hope_and_gorey_3.png',
+        compressedSrc: '/images/games/compressed/hope_and_gorey_3.jpg',
       },
     ],
     links: [
@@ -192,18 +192,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'aliensche-img-1',
-        src: '/images/games/aliensche-1.png',
-        compressedSrc: '/images/games/compressed/aliensche-1.png',
+        src: '/images/games/aliensche_1.png',
+        compressedSrc: '/images/games/compressed/aliensche_1.jpg',
       },
       {
         alt: 'aliensche-img-2',
-        src: '/images/games/aliensche-2.png',
-        compressedSrc: '/images/games/compressed/aliensche-2.png',
+        src: '/images/games/aliensche_2.png',
+        compressedSrc: '/images/games/compressed/aliensche_2.jpg',
       },
       {
         alt: 'aliensche-img-3',
-        src: '/images/games/aliensche-3.png',
-        compressedSrc: '/images/games/compressed/aliensche-3.png',
+        src: '/images/games/aliensche_3.png',
+        compressedSrc: '/images/games/compressed/aliensche_3.jpg',
       },
     ],
     links: [
@@ -231,18 +231,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'blitz-img-1',
-        src: '/images/games/blitz-1.png',
-        compressedSrc: '/images/games/compressed/blitz-1.png',
+        src: '/images/games/blitz_1.png',
+        compressedSrc: '/images/games/compressed/blitz_1.jpg',
       },
       {
         alt: 'blitz-img-2',
-        src: '/images/games/blitz-2.png',
-        compressedSrc: '/images/games/compressed/blitz-2.png',
+        src: '/images/games/blitz_2.png',
+        compressedSrc: '/images/games/compressed/blitz_2.jpg',
       },
       {
         alt: 'blitz-img-3',
-        src: '/images/games/blitz-3.png',
-        compressedSrc: '/images/games/compressed/blitz-3.png',
+        src: '/images/games/blitz_3.png',
+        compressedSrc: '/images/games/compressed/blitz_3.jpg',
       },
     ],
     links: [
@@ -288,18 +288,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'bushbash-img-1',
-        src: '/images/games/bushbash-1.png',
-        compressedSrc: '/images/games/compressed/bushbash-1.png',
+        src: '/images/games/bushbash_1.png',
+        compressedSrc: '/images/games/compressed/bushbash_1.jpg',
       },
       {
         alt: 'bushbash-img-2',
-        src: '/images/games/bushbash-2.png',
-        compressedSrc: '/images/games/compressed/bushbash-2.png',
+        src: '/images/games/bushbash_2.png',
+        compressedSrc: '/images/games/compressed/bushbash_2.jpg',
       },
       {
         alt: 'bushbash-img-3',
-        src: '/images/games/bushbash-3.png',
-        compressedSrc: '/images/games/compressed/bushbash-3.png',
+        src: '/images/games/bushbash_3.png',
+        compressedSrc: '/images/games/compressed/bushbash_3.jpg',
       },
     ],
     links: [
@@ -343,18 +343,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'catnips-img-1',
-        src: '/images/games/catnips-1.png',
-        compressedSrc: '/images/games/compressed/catnips-1.png',
+        src: '/images/games/catnips_1.png',
+        compressedSrc: '/images/games/compressed/catnips_1.jpg',
       },
       {
         alt: 'catnips-img-2',
-        src: '/images/games/catnips-2.png',
-        compressedSrc: '/images/games/compressed/catnips-2.png',
+        src: '/images/games/catnips_2.png',
+        compressedSrc: '/images/games/compressed/catnips_2.jpg',
       },
       {
         alt: 'catnips-img-3',
-        src: '/images/games/catnips-3.png',
-        compressedSrc: '/images/games/compressed/catnips-3.png',
+        src: '/images/games/catnips_3.png',
+        compressedSrc: '/images/games/compressed/catnips_3.jpg',
       },
     ],
     links: [
@@ -392,18 +392,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'electric-img-1',
-        src: '/images/games/electric-1.png',
-        compressedSrc: '/images/games/compressed/electric-1.png',
+        src: '/images/games/electric_1.png',
+        compressedSrc: '/images/games/compressed/electric_1.jpg',
       },
       {
         alt: 'electric-img-2',
-        src: '/images/games/electric-2.png',
-        compressedSrc: '/images/games/compressed/electric-2.png',
+        src: '/images/games/electric_2.png',
+        compressedSrc: '/images/games/compressed/electric_2.jpg',
       },
       {
         alt: 'electric-img-3',
-        src: '/images/games/electric-3.png',
-        compressedSrc: '/images/games/compressed/electric-3.png',
+        src: '/images/games/electric_3.png',
+        compressedSrc: '/images/games/compressed/electric_3.jpg',
       },
     ],
     links: [
@@ -432,18 +432,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'gundash-img-1',
-        src: '/images/games/gundash-1.png',
-        compressedSrc: '/images/games/compressed/gundash-1.png',
+        src: '/images/games/gundash_1.png',
+        compressedSrc: '/images/games/compressed/gundash_1.jpg',
       },
       {
         alt: 'gundash-img-2',
-        src: '/images/games/gundash-2.png',
-        compressedSrc: '/images/games/compressed/gundash-2.png',
+        src: '/images/games/gundash_2.png',
+        compressedSrc: '/images/games/compressed/gundash_2.jpg',
       },
       {
         alt: 'gundash-img-3',
-        src: '/images/games/gundash-3.png',
-        compressedSrc: '/images/games/compressed/gundash-3.png',
+        src: '/images/games/gundash_3.png',
+        compressedSrc: '/images/games/compressed/gundash_3.jpg',
       },
     ],
     links: [
@@ -472,18 +472,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'skulls-img-1',
-        src: '/images/games/skulls-1.png',
-        compressedSrc: '/images/games/compressed/skulls-1.png',
+        src: '/images/games/skulls_1.png',
+        compressedSrc: '/images/games/compressed/skulls_1.jpg',
       },
       {
         alt: 'skulls-img-2',
-        src: '/images/games/skulls-2.png',
-        compressedSrc: '/images/games/compressed/skulls-2.png',
+        src: '/images/games/skulls_2.png',
+        compressedSrc: '/images/games/compressed/skulls_2.jpg',
       },
       {
         alt: 'skulls-img-3',
-        src: '/images/games/skulls-3.png',
-        compressedSrc: '/images/games/compressed/skulls-3.png',
+        src: '/images/games/skulls_3.png',
+        compressedSrc: '/images/games/compressed/skulls_3.jpg',
       },
     ],
     links: [],
@@ -504,18 +504,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'icarus-img-1',
-        src: '/images/games/icarus-1.png',
-        compressedSrc: '/images/games/compressed/icarus-1.png',
+        src: '/images/games/icarus_1.png',
+        compressedSrc: '/images/games/compressed/icarus_1.jpg',
       },
       {
         alt: 'icarus-img-2',
-        src: '/images/games/icarus-2.png',
-        compressedSrc: '/images/games/compressed/icarus-2.png',
+        src: '/images/games/icarus_2.png',
+        compressedSrc: '/images/games/compressed/icarus_2.jpg',
       },
       {
         alt: 'icarus-img-3',
-        src: '/images/games/icarus-3.png',
-        compressedSrc: '/images/games/compressed/icarus-3.png',
+        src: '/images/games/icarus_3.png',
+        compressedSrc: '/images/games/compressed/icarus_3.jpg',
       },
     ],
     links: [],
@@ -535,18 +535,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'twoshot-img-1',
-        src: '/images/games/twoshot-1.png',
-        compressedSrc: '/images/games/compressed/twoshot-1.png',
+        src: '/images/games/twoshot_1.png',
+        compressedSrc: '/images/games/compressed/twoshot_1.jpg',
       },
       {
         alt: 'twoshot-img-2',
-        src: '/images/games/twoshot-2.png',
-        compressedSrc: '/images/games/compressed/twoshot-2.png',
+        src: '/images/games/twoshot_2.png',
+        compressedSrc: '/images/games/compressed/twoshot_2.jpg',
       },
       {
         alt: 'twoshot-img-3',
-        src: '/images/games/twoshot-3.png',
-        compressedSrc: '/images/games/compressed/twoshot-3.png',
+        src: '/images/games/twoshot_3.png',
+        compressedSrc: '/images/games/compressed/twoshot_3.jpg',
       },
     ],
     links: [
@@ -573,18 +573,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'rt-img-1',
-        src: '/images/games/rt-1.png',
-        compressedSrc: '/images/games/compressed/rt-1.png',
+        src: '/images/games/rt_1.png',
+        compressedSrc: '/images/games/compressed/rt_1.jpg',
       },
       {
         alt: 'rt-img-2',
-        src: '/images/games/rt-2.png',
-        compressedSrc: '/images/games/compressed/rt-2.png',
+        src: '/images/games/rt_2.png',
+        compressedSrc: '/images/games/compressed/rt_2.jpg',
       },
       {
         alt: 'rt-img-3',
-        src: '/images/games/rt-3.png',
-        compressedSrc: '/images/games/compressed/rt-3.png',
+        src: '/images/games/rt_3.png',
+        compressedSrc: '/images/games/compressed/rt_3.jpg',
       },
     ],
     links: [
@@ -615,18 +615,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'seed-img-1',
-        src: '/images/games/seed-1.png',
-        compressedSrc: '/images/games/compressed/seed-1.png',
+        src: '/images/games/seed_1.png',
+        compressedSrc: '/images/games/compressed/seed_1.jpg',
       },
       {
         alt: 'seed-img-2',
-        src: '/images/games/seed-2.png',
-        compressedSrc: '/images/games/compressed/seed-2.png',
+        src: '/images/games/seed_2.png',
+        compressedSrc: '/images/games/compressed/seed_2.jpg',
       },
       {
         alt: 'seed-img-3',
-        src: '/images/games/seed-3.png',
-        compressedSrc: '/images/games/compressed/seed-3.png',
+        src: '/images/games/seed_3.png',
+        compressedSrc: '/images/games/compressed/seed_3.jpg',
       },
     ],
     links: [
@@ -655,18 +655,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'astral-img-1',
-        src: '/images/games/astral-1.png',
-        compressedSrc: '/images/games/compressed/astral-1.png',
+        src: '/images/games/astral_1.png',
+        compressedSrc: '/images/games/compressed/astral_1.jpg',
       },
       {
         alt: 'astral-img-2',
-        src: '/images/games/astral-2.png',
-        compressedSrc: '/images/games/compressed/astral-2.png',
+        src: '/images/games/astral_2.png',
+        compressedSrc: '/images/games/compressed/astral_2.jpg',
       },
       {
         alt: 'astral-img-3',
-        src: '/images/games/astral-3.png',
-        compressedSrc: '/images/games/compressed/astral-3.png',
+        src: '/images/games/astral_3.png',
+        compressedSrc: '/images/games/compressed/astral_3.jpg',
       },
     ],
     links: [],
@@ -686,18 +686,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'ocean-img-1',
-        src: '/images/games/ocean-1.png',
-        compressedSrc: '/images/games/compressed/ocean-1.png',
+        src: '/images/games/ocean_1.png',
+        compressedSrc: '/images/games/compressed/ocean_1.jpg',
       },
       {
         alt: 'ocean-img-2',
-        src: '/images/games/ocean-2.png',
-        compressedSrc: '/images/games/compressed/ocean-2.png',
+        src: '/images/games/ocean_2.png',
+        compressedSrc: '/images/games/compressed/ocean_2.jpg',
       },
       {
         alt: 'ocean-img-3',
-        src: '/images/games/ocean-3.png',
-        compressedSrc: '/images/games/compressed/ocean-3.png',
+        src: '/images/games/ocean_3.png',
+        compressedSrc: '/images/games/compressed/ocean_3.jpg',
       },
     ],
     links: [],
@@ -716,18 +716,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'drop-img-1',
-        src: '/images/games/drop-1.png',
-        compressedSrc: '/images/games/compressed/drop-1.png',
+        src: '/images/games/drop_1.png',
+        compressedSrc: '/images/games/compressed/drop_1.jpg',
       },
       {
         alt: 'drop-img-2',
-        src: '/images/games/drop-2.png',
-        compressedSrc: '/images/games/compressed/drop-2.png',
+        src: '/images/games/drop_2.png',
+        compressedSrc: '/images/games/compressed/drop_2.jpg',
       },
       {
         alt: 'drop-img-3',
-        src: '/images/games/drop-3.png',
-        compressedSrc: '/images/games/compressed/drop-3.png',
+        src: '/images/games/drop_3.png',
+        compressedSrc: '/images/games/compressed/drop_3.jpg',
       },
     ],
     links: [
@@ -755,18 +755,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'bassball-img-1',
-        src: '/images/games/bassball-1.png',
-        compressedSrc: '/images/games/compressed/bassball-1.png',
+        src: '/images/games/bassball_1.png',
+        compressedSrc: '/images/games/compressed/bassball_1.jpg',
       },
       {
         alt: 'bassball-img-2',
-        src: '/images/games/bassball-2.png',
-        compressedSrc: '/images/games/compressed/bassball-2.png',
+        src: '/images/games/bassball_2.png',
+        compressedSrc: '/images/games/compressed/bassball_2.jpg',
       },
       {
         alt: 'bassball-img-3',
-        src: '/images/games/bassball-3.png',
-        compressedSrc: '/images/games/compressed/bassball-3.png',
+        src: '/images/games/bassball_3.png',
+        compressedSrc: '/images/games/compressed/bassball_3.jpg',
       },
     ],
     links: [],
@@ -785,18 +785,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'cogandballs-img-1',
-        src: '/images/games/cogandballs-1.png',
-        compressedSrc: '/images/games/compressed/cogandballs-1.png',
+        src: '/images/games/cogandballs_1.png',
+        compressedSrc: '/images/games/compressed/cogandballs_1.jpg',
       },
       {
         alt: 'cogandballs-img-2',
-        src: '/images/games/cogandballs-2.png',
-        compressedSrc: '/images/games/compressed/cogandballs-2.png',
+        src: '/images/games/cogandballs_2.png',
+        compressedSrc: '/images/games/compressed/cogandballs_2.jpg',
       },
       {
         alt: 'cogandballs-img-3',
-        src: '/images/games/cogandballs-3.png',
-        compressedSrc: '/images/games/compressed/cogandballs-3.png',
+        src: '/images/games/cogandballs_3.png',
+        compressedSrc: '/images/games/compressed/cogandballs_3.jpg',
       },
     ],
     links: [],
@@ -815,18 +815,18 @@ export const PROJECT_DATA = [
     images: [
       {
         alt: 'biru-img-1',
-        src: '/images/games/biru-1.png',
-        compressedSrc: '/images/games/compressed/biru-1.png',
+        src: '/images/games/biru_1.png',
+        compressedSrc: '/images/games/compressed/biru_1.jpg',
       },
       {
         alt: 'biru-img-2',
-        src: '/images/games/biru-2.png',
-        compressedSrc: '/images/games/compressed/biru-2.png',
+        src: '/images/games/biru_2.png',
+        compressedSrc: '/images/games/compressed/biru_2.jpg',
       },
       {
         alt: 'biru-img-3',
-        src: '/images/games/biru-3.png',
-        compressedSrc: '/images/games/compressed/biru-3.png',
+        src: '/images/games/biru_3.png',
+        compressedSrc: '/images/games/compressed/biru_3.jpg',
       },
     ],
     links: [],

@@ -4,8 +4,8 @@ import * as THREE from 'three';
 
 const MODEL_PATH = '/models/model.glb';
 const TEXTURE_PATHS = [
-  '/textures/bakedRoom.jpg',
-  '/textures/bakedObjects.jpg',
+  '/textures/baked_room.jpg',
+  '/textures/baked_objects.jpg',
   '/textures/boot.jpg',
 ];
 

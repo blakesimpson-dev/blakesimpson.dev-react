@@ -28,7 +28,7 @@ const Projects = ({setPage}) => {
       content={
         <div className="projects-page">
           <div className="projects-page__blurb">
-            <img className="avatar" src="/images/project-avatar.png" />
+            <img className="avatar" src="/images/project_avatar.png" />
             <div>
               <p>
                 I&apos;ve built everything from Arduino-based racing game

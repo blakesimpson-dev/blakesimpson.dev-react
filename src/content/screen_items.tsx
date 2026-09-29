@@ -31,7 +31,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 1,
     name: 'Kataplexia @ SS2020',
-    url: '/videos/kataplexia-540.mp4',
+    url: '/videos/kataplexia_540.mp4',
     details: (
       <p>
         KATAPLEXIA performing a live DMG set at{' '}
@@ -50,7 +50,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 2,
     name: 'Making Bush Bash',
-    url: '/videos/making-bushbash-360.mp4',
+    url: '/videos/making_bushbash_360.mp4',
     details: (
       <p>
         A modified half-car complete with a 2 Player shoot &apos;em up racing
@@ -66,7 +66,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 3,
     name: 'Bush Bash Launch',
-    url: '/videos/bushbash-360.mp4',
+    url: '/videos/bushbash_360.mp4',
     details: (
       <p>
         A modified half-car complete with a 2 Player shoot &apos;em up racing
@@ -82,7 +82,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 4,
     name: 'Arcadian Dreams',
-    url: '/videos/arcadian-360.mp4',
+    url: '/videos/arcadian_360.mp4',
     details: (
       <p>
         An exhibited art and music colab game split over a wall mounted digital
@@ -98,7 +98,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 5,
     name: 'Making Catnips',
-    url: '/videos/making-catnips-360.mp4',
+    url: '/videos/making_catnips_360.mp4',
     details: (
       <p>
         Multiplayer kitten feeding game for 2-16 players with real plush cat
@@ -114,7 +114,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 6,
     name: 'Catnips',
-    url: '/videos/catnips-360.mp4',
+    url: '/videos/catnips_360.mp4',
     details: (
       <p>
         Multiplayer kitten feeding game for 2-16 players with real plush cat
@@ -130,7 +130,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 7,
     name: 'Gundash Event',
-    url: '/videos/gundash-360.mp4',
+    url: '/videos/gundash_360.mp4',
     details: (
       <p>
         Multiplayer shooter/racing hybrid for 2-4 players with an online
@@ -146,7 +146,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 8,
     name: 'Interstate Arcade',
-    url: '/videos/interstate-360.mp4',
+    url: '/videos/interstate_360.mp4',
     details: (
       <p>
         Pop-up indie games arcade in Melbourne. The arcade toured around
@@ -162,7 +162,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 9,
     name: 'L.M.P.O.',
-    url: '/videos/lmpo-360.mp4',
+    url: '/videos/lmpo_360.mp4',
     details: (
       <p>
         Local Multiplayer Only Bakery take over with local indie games and
@@ -178,7 +178,7 @@ export const SCREEN_ITEMS = [
     ...VIDEO_ITEM,
     id: 10,
     name: 'Blitz Bandits',
-    url: '/videos/blitzbandits-360.mp4',
+    url: '/videos/blitzbandits_360.mp4',
     details: (
       <p>
         2 player arena shooter with a DMG aesthetic and music by the great{' '}
