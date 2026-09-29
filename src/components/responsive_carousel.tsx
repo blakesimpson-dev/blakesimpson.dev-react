@@ -4,6 +4,9 @@ import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../styles/carousel.scss';
 
+/** Sideways movement (px) before a touch counts as a carousel swipe. */
+const SWIPE_TOLERANCE = 25;
+
 interface ResponsiveCarouselProps {
   children: ReactElement[];
   className?: string;
@@ -28,6 +31,10 @@ export function ResponsiveCarousel({
       showStatus={showStatus}
       showIndicators={showIndicators}
       showThumbs={showThumbs}
+      // Only claim a touch once it moves sideways past the tolerance, so
+      // vertical swipes scroll the panel instead
+      preventMovementUntilSwipeScrollTolerance
+      swipeScrollTolerance={SWIPE_TOLERANCE}
       renderArrowPrev={(onClickHandler, hasPrev, label) =>
         hasPrev && (
           <button

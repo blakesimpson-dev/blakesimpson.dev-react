@@ -1,5 +1,10 @@
 @use 'colors' as *;
 
+.carousel .slider-wrapper {
+  // Vertical drags scroll the page; sideways ones reach the carousel
+  touch-action: pan-y;
+}
+
 .carousel-arrow {
   position: absolute;
   z-index: 2;
