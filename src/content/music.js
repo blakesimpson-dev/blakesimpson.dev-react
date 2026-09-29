@@ -1,4 +1,4 @@
-const defaultSoundcloudIFrame = {
+const DEFAULT_SC_IFRAME = {
   width: '100%',
   height: '180px',
   color: '%23575757',
@@ -9,7 +9,7 @@ const defaultSoundcloudIFrame = {
   showTeaser: false,
 }
 
-const musicData = [
+const MUSIC_DATA = [
   {
     id: '363549341',
     autoPlay: true,
@@ -84,17 +84,20 @@ const musicData = [
   },
 ]
 
-export const soundcloudIFrames = musicData.map((data) => ({
-  ...defaultSoundcloudIFrame,
+export const SOUNDCLOUD_IFRAMES = MUSIC_DATA.map((data) => ({
+  ...DEFAULT_SC_IFRAME,
   id: data.id,
   autoPlay: data.autoPlay,
   href: data.href,
   title: data.title,
 }))
 
-export const getSoundcloudIFrameSource = (iframe) => {
-  const items = [
-    `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${iframe.id}`,
+const SC_IFRAME_URL =
+  'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'
+
+export const getSoundcloudIFrameSource = (iframe) =>
+  [
+    `${SC_IFRAME_URL}${iframe.id}`,
     `&color=${iframe.color}`,
     `&auto_play=${iframe.autoPlay}`,
     `&hide_related=${iframe.hideRelated}`,
@@ -102,6 +105,4 @@ export const getSoundcloudIFrameSource = (iframe) => {
     `&show_user=${iframe.showUser}`,
     `&show_reposts=${iframe.showReposts}`,
     `&show_teaser=${iframe.showTeaser}`,
-  ]
-  return items.join('')
-}
+  ].join('')

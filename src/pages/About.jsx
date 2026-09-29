@@ -3,14 +3,14 @@ import { FaFilePdf } from 'react-icons/fa'
 import Page from '../components/Page'
 import ProgressiveImg from '../components/ProgressiveImg'
 import {
-  achievementData,
-  attributeData,
-  educationData,
-  historyData,
-  languageData,
-  proficiencyData,
-  referenceData,
-  skillData,
+  ACHIEVEMENT_DATA,
+  ATTRIBUTE_DATA,
+  EDUCATION_DATA,
+  HISTORY_DATA,
+  LANGUAGE_DATA,
+  PROFICIENCY_DATA,
+  REFERENCE_DATA,
+  SKILL_DATA,
 } from '../content/about'
 
 const About = ({ setPage }) => {
@@ -35,7 +35,7 @@ const About = ({ setPage }) => {
                 creative problem-solving and a human-centered design approach to
                 applications where user experience is critical.
               </p>
-              {referenceData.map((item, index) => {
+              {REFERENCE_DATA.map((item, index) => {
                 return (
                   <div key={`reference-${index}`}>
                     <FaFilePdf />
@@ -48,7 +48,7 @@ const About = ({ setPage }) => {
             </div>
           </div>
           <div className="about-page__skills__container">
-            {skillData.map((item, index) => {
+            {SKILL_DATA.map((item, index) => {
               return (
                 <div
                   key={`skill-${index}`}
@@ -62,7 +62,7 @@ const About = ({ setPage }) => {
           <div className="about-page__proficiencies">
             <h2>Proficiencies</h2>
             <div className="about-page__proficiencies__container">
-              {proficiencyData.map((item, index) => {
+              {PROFICIENCY_DATA.map((item, index) => {
                 return (
                   <div
                     key={`proficiency-${index}`}
@@ -82,7 +82,7 @@ const About = ({ setPage }) => {
           <div className="about-page__languages">
             <h2>Languages</h2>
             <div className="about-page__languages__container">
-              {languageData.map((item, index) => {
+              {LANGUAGE_DATA.map((item, index) => {
                 return (
                   <div
                     key={`language-${index}`}
@@ -102,7 +102,7 @@ const About = ({ setPage }) => {
           <div className="about-page__attributes">
             <h2>Attributes</h2>
             <div className="about-page__attributes__container">
-              {attributeData.map((item, index) => {
+              {ATTRIBUTE_DATA.map((item, index) => {
                 return (
                   <div
                     key={`attribute-${index}`}
@@ -118,7 +118,7 @@ const About = ({ setPage }) => {
           <div className="about-page__achievements">
             <h2>Achievements</h2>
             <div className="about-page__achievements__container">
-              {achievementData.map((item, index) => {
+              {ACHIEVEMENT_DATA.map((item, index) => {
                 return (
                   <div
                     key={`achievement-${index}`}
@@ -134,7 +134,7 @@ const About = ({ setPage }) => {
           <div className="about-page__history">
             <h2>Work History</h2>
             <div className="about-page__history__container">
-              {historyData.map((item, index) => {
+              {HISTORY_DATA.map((item, index) => {
                 return (
                   <div
                     key={`history-${index}`}
@@ -150,7 +150,7 @@ const About = ({ setPage }) => {
           <div className="about-page__education">
             <h2>Education History</h2>
             <div className="about-page__education__container">
-              {educationData.map((item, index) => {
+              {EDUCATION_DATA.map((item, index) => {
                 return (
                   <div
                     key={`education-${index}`}

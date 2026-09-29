@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const projectData = [
+export const PROJECT_DATA = [
   {
     id: 'portal',
     title: <h2>Three.js Portal</h2>,

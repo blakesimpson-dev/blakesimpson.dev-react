@@ -1,86 +1,79 @@
-<h1 align="center"> &lt;blakesimpson.dev /&gt; </h1>
-<h3 align="center"> KATAPLEXIA // キャタプレクシア // 3D Portfolio </h3>
+# blakesimpson.dev
 
-<p align="center"> 
-  <img src="preview-anim.gif" alt="Animated preview" height="800" width="800">
-</p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/<NETLIFY_SITE_ID>/deploy-status)](https://app.netlify.com/sites/<NETLIFY_SITE_NAME>/deploys)
+![React 19](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)
+![three.js r186](https://img.shields.io/badge/three.js-r186-000000?logo=threedotjs&logoColor=white)
+![Vite 8](https://img.shields.io/badge/Vite-8-646cff?logo=vite&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-<!-- TABLE OF CONTENTS -->
-<h2 id="contents"> :book: Contents</h2>
+A 3D portfolio in JS using three.js, live at
+[blakesimpson.dev](https://blakesimpson.dev). Clicking objects on the desk opens 
+the Music, Projects, About and Contact pages.
 
-<details open="open">
-  <summary>Contents</summary>
-  <ol>
-    <li><a href="#about-the-project"> ➤ About The Project</a></li>
-    <li><a href="#overview"> ➤ Overview</a></li>
-    <li><a href="#getting-started"> ➤ Getting Started</a></li>
-    <li><a href="#credits"> ➤ Credits</a></li>
-    <li><a href="#contact"> ➤ Contact</a></li>
-  </ol>
-</details>
+![Preview](docs/preview.gif)
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
+## How it works
 
-<!-- ABOUT THE PROJECT -->
-<h2 id="about-the-project"> :pencil: About The Project</h2>
+- **Baked scene:** modelled in Blender, with lighting baked into two 4096²
+  textures (`bakedRoom`, `bakedObjects`). The model is a Draco-compressed glTF
+  drawn with unlit `MeshBasicMaterial`, so there are no real-time lights.
+- **Camera:** the camera moves are Blender clips (`CameraActionNLA1-5`) played
+  through drei `useAnimations`. Clicking an object plays the clip for its page,
+  and returning Home plays it in reverse.
+- **Post-processing:** hover outline plus brightness/contrast via
+  `@react-three/postprocessing`.
+- **Monitor:** a DOM UI placed on the screen with drei `<Html transform>`. Its
+  File menu switches the screen between a GLSL shader and project videos
+  (`VideoTexture`). The Gameboy screen on the Music page works the same way.
+- **Contact:** the form is handled by Netlify Forms.
 
-<p align="justify"> 
-  <b>blakesimpson.dev</b> is a digital portfolio and resume containing a collection of projects, examples of produced music and personal information.      
-</p>
+## Performance
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
+Tuned for integrated GPUs: device pixel ratio capped at 1.5, MSAA at 2 samples,
+no SSAO. These query switches in `src/constants/renderQuality.js` help compare
+cost against quality:
 
-<!-- OVERVIEW -->
-<h2 id="overview"> :cloud: Overview</h2>
+- `?stats` - FPS / frame time panel
+- `?dpr=2` - max device pixel ratio
+- `?msaa=8` - EffectComposer MSAA samples
 
-<p align="justify"> 
-  The project uses an omptimised GLTF scene, created in Blender, which uses a low poly count and baked textures for performance. With react-three-fiber, the scene is injected into the application, which is then overlayed with standard react components to create the experience. This website was my first fully-fledged three.js and react application and was intended to be a learning experiment.
-</p>
+Desktop only for now (viewport of at least 1280px).
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
+## Build and run
 
-<!-- GETTING STARTED -->
-<h2 id="getting-started"> :book: Getting Started</h2>
+Requires Node 22 (see `.nvmrc`).
 
-<p>In the project directory, you can run:</p>
+```sh
+npm install
+npm run dev
+```
 
-<pre><code>$ npm start</code></pre>
-<p>
-  Runs the app in the development mode. Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in your browser.
-</p>
+The dev server runs on http://localhost:3000. Netlify builds with
+`npm run build` and publishes `build/`.
 
-<pre><code>$ npm run build</code></pre>
-<p>
-  Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-</p>
+## Scripts
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
+| Script                           | Purpose                               |
+| -------------------------------- | ------------------------------------- |
+| `dev` / `start`                  | Vite dev server                       |
+| `build`                          | Production build into `build/`        |
+| `preview`                        | Serve the production build locally    |
+| `lint`                           | ESLint (neostandard, React, hooks)    |
+| `format` / `format:check`        | Prettier write / check                |
 
-<!-- CREDITS -->
-<h2 id="credits"> :scroll: Credits</h2>
+## Credits
 
-<p>Blake Simpson</p>
+The code is MIT licensed (see [LICENSE](LICENSE)). The 3D model, textures,
+images, videos and music are © Blake Simpson, all rights reserved.
 
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/blakesimpson-dev)
-[![Twitter Badge](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/Kataplexia_AU)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/blake-simpson-dev/)
+Built with [three.js](https://threejs.org) and pmndrs'
+[react-three-fiber](https://github.com/pmndrs/react-three-fiber),
+[drei](https://github.com/pmndrs/drei) and
+[postprocessing](https://github.com/pmndrs/postprocessing). The baking workflow
+comes from [Three.js Journey](https://threejs-journey.com) by Bruno Simon. The
+monitor shader is based on
+["Pretty Hip"](https://www.shadertoy.com/view/XsBfRW) on Shadertoy.
 
-<p>Acknowledgements:</p>
+## Contact
 
-<ul>
-  <li>threejs journey, by Bruno Simon, <a href="https://threejs-journey.com/">https://threejs-journey.com/</a></li>
-  <li>Three.js contributors, <a href="https://threejs.org/">https://threejs.org/</a></li>
-  <li>pmndrs/drei, by Poimandres <a href="https://github.com/pmndrs/drei/">https://github.com/pmndrs/drei/</a></li>
-</ul>
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png)
-
-<!-- CONTACT -->
-<h2 id="contact"> :email: Contact</h2>
-
-<p><a href="mailto:blakesimpson.dev@outlook.com">blakesimpson.dev@outlook.com</a></p>
-<p><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/625e5fcef7ab80b8c1fe559e_Discord-Logo-Color.png" height="20px" /> Kataplexia#0539</p>
-
-<p align="center"> 
-  <img src="mail-anim.gif" alt="Animated mail" height="215" width="214">
-</p>
+blakesimpson.dev@outlook.com

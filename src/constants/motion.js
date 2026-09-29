@@ -1,11 +1,11 @@
-const springDefault = {
+const SPRING_DEFAULT = {
   type: 'spring',
   damping: 10,
   mass: 0.375,
   stiffness: 100,
 }
 
-export const mainMotion = {
+export const MAIN_MOTION = {
   hidden: {
     opacity: 0,
   },
@@ -17,30 +17,30 @@ export const mainMotion = {
   },
 }
 
-export const menuMotion = {
+export const MENU_MOTION = {
   hidden: {
     y: '-100vh',
     transition: {
-      ...springDefault,
+      ...SPRING_DEFAULT,
     },
   },
   visibleInitial: {
     y: 0,
     transition: {
-      ...springDefault,
+      ...SPRING_DEFAULT,
       delay: 4.5,
     },
   },
   visible: {
     y: 0,
     transition: {
-      ...springDefault,
+      ...SPRING_DEFAULT,
       delay: 1.8,
     },
   },
 }
 
-export const overlayMotion = {
+export const OVERLAY_MOTION = {
   hidden: {
     y: '-100vh',
     x: '25vw',
@@ -49,7 +49,7 @@ export const overlayMotion = {
     y: 0,
     x: 0,
     transition: {
-      ...springDefault,
+      ...SPRING_DEFAULT,
       delay: 2,
     },
   },
@@ -57,7 +57,7 @@ export const overlayMotion = {
     y: 0,
     x: 'calc(50vw - 6rem)',
     transition: {
-      ...springDefault,
+      ...SPRING_DEFAULT,
       delay: 2,
     },
   },

@@ -3,15 +3,18 @@ import { useMemo } from 'react'
 import * as THREE from 'three'
 
 const MODEL_PATH = '/models/model.glb'
+const TEXTURE_PATHS = [
+  '/textures/bakedRoom.jpg',
+  '/textures/bakedObjects.jpg',
+  '/textures/boot.jpg',
+]
 
 // Loads the baked room model and its textures. useGLTF/useTexture cache by
 // path, so every component calling this shares one load of each asset.
 export const useSceneAssets = () => {
   const { nodes, animations } = useGLTF(MODEL_PATH)
   const [bakedRoomTexture, bakedObjectsTexture, bootTexture] = useTexture([
-    '/textures/bakedRoom.jpg',
-    '/textures/bakedObjects.jpg',
-    '/textures/boot.jpg',
+    ...TEXTURE_PATHS,
   ])
 
   // Configure the shared textures once, before their first upload

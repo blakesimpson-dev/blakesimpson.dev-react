@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const skillData = [
+export const SKILL_DATA = [
   'Communicator',
   'Motivator',
   'Manager',
@@ -8,7 +8,7 @@ export const skillData = [
   'Creator',
 ]
 
-export const attributeData = [
+export const ATTRIBUTE_DATA = [
   'Passionate',
   'Motivated',
   'Expressive',
@@ -20,7 +20,7 @@ export const attributeData = [
   'Organised',
 ]
 
-export const proficiencyData = [
+export const PROFICIENCY_DATA = [
   {
     name: 'Git',
     src: '/images/logos/git-logo.png',
@@ -93,7 +93,7 @@ export const proficiencyData = [
   },
 ]
 
-export const languageData = [
+export const LANGUAGE_DATA = [
   {
     name: 'js',
     src: '/images/logos/javascript-logo.png',
@@ -156,7 +156,7 @@ export const languageData = [
   },
 ]
 
-export const achievementData = [
+export const ACHIEVEMENT_DATA = [
   {
     title: <h2>Emergency Response Platforms</h2>,
     content: (
@@ -225,7 +225,7 @@ export const achievementData = [
   },
 ]
 
-export const historyData = [
+export const HISTORY_DATA = [
   {
     title: <h2>Technical Lead @ Genvis: Perth 2022-2025</h2>,
     content: (
@@ -369,7 +369,7 @@ export const historyData = [
   },
 ]
 
-export const educationData = [
+export const EDUCATION_DATA = [
   {
     title: <h2>Bachelor of Computer Science</h2>,
     content: (
@@ -412,7 +412,7 @@ export const educationData = [
   },
 ]
 
-export const referenceData = [
+export const REFERENCE_DATA = [
   {
     name: 'Professional Reference - Bruce Newton',
     path: '/references/bn-reference.pdf',

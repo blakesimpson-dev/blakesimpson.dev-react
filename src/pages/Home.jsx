@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import React, { Suspense, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import * as THREE from 'three'
-import { mainMotion } from '../constants/motion'
-import { renderQuality } from '../constants/renderQuality'
+import { MAIN_MOTION } from '../constants/motion'
+import { RENDER_QUALITY } from '../constants/renderQuality'
 import Frame from '../components/Frame'
 import Menu from '../components/Menu'
 import Overlay from '../components/Overlay'
@@ -25,13 +25,13 @@ const Home = () => {
     <>
       {isSupported && (
         <motion.main
-          variants={mainMotion}
+          variants={MAIN_MOTION}
           initial="hidden"
           animate={isSceneReady ? 'visible' : 'hidden'}
         >
           <Canvas
             style={{ position: 'fixed' }}
-            dpr={[1, renderQuality.maxDpr]}
+            dpr={[1, RENDER_QUALITY.maxDpr]}
             camera={{
               // Matches the glTF camera node the CameraActionNLA* tracks target
               name: 'Camera',
@@ -48,7 +48,7 @@ const Home = () => {
               state.gl.setClearColor('#FFFFFF')
             }}
           >
-            {renderQuality.stats && <Stats />}
+            {RENDER_QUALITY.stats && <Stats />}
             <Suspense fallback={null}>
               <Scene page={page} setPage={setPage} onReady={setSceneReady} />
             </Suspense>
