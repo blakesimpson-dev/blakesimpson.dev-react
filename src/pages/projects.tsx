@@ -1,26 +1,15 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {FaExternalLinkSquareAlt} from 'react-icons/fa';
-import ImgModal from '../components/img_modal';
+import {ImgModal} from '../components/img_modal';
+import type {ModalImage} from '../components/img_modal';
 import Page from '../components/page';
-import ProgressiveImg from '../components/progressive_img';
+import {ProgressiveImg} from '../components/progressive_img';
 import ResponsiveCarousel from '../components/responsive_carousel';
 import {PROJECTS} from '../content';
 import {Markdown} from '../components/markdown';
 
 const Projects = ({setPage}) => {
-  const imgModal = useRef();
-  const [imgModalSrc, setImgModalSrc] = useState(null);
-  const [isImgModalOpen, setIsImgModalOpen] = useState(false);
-
-  const openImgModal = imgModalSrc => {
-    setImgModalSrc(imgModalSrc);
-    setIsImgModalOpen(true);
-  };
-
-  const closeImgModal = () => {
-    setImgModalSrc(null);
-    setIsImgModalOpen(false);
-  };
+  const [modalImage, setModalImage] = useState<ModalImage | null>(null);
 
   return (
     <Page
@@ -35,10 +24,10 @@ const Projects = ({setPage}) => {
             </div>
           </div>
           <ImgModal
-            innerRef={imgModal}
-            src={imgModalSrc}
-            isImgModalOpen={isImgModalOpen}
-            closeImgModal={closeImgModal}
+            image={modalImage}
+            onClose={() => {
+              setModalImage(null);
+            }}
           />
           <ResponsiveCarousel
             content={PROJECTS.projects.map((item, index) => {
@@ -54,7 +43,9 @@ const Projects = ({setPage}) => {
                     {item.images.map((image, index) => {
                       return (
                         <ProgressiveImg
-                          onClick={() => openImgModal(image.src)}
+                          onClick={() => {
+                            setModalImage(image);
+                          }}
                           key={`${item.id}-modal-button-${index}`}
                           style={{cursor: 'pointer'}}
                           alt={image.alt}

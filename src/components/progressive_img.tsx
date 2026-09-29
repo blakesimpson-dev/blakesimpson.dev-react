@@ -1,28 +1,38 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
+import type {ImgHTMLAttributes} from 'react';
 
-const ProgressiveImg = ({compressedSrc, src, alt, ...props}) => {
-  const [imgSrc, setImgSrc] = useState(compressedSrc || src);
+interface ProgressiveImgProps extends ImgHTMLAttributes<HTMLImageElement> {
+  src: string;
+  alt: string;
+  /** Small placeholder shown until src has loaded. */
+  compressedSrc?: string;
+}
+
+/** An image that shows a small placeholder until the full image loads. */
+export function ProgressiveImg({
+  src,
+  alt,
+  compressedSrc,
+  className,
+  ...imgProps
+}: ProgressiveImgProps) {
+  const [imgSrc, setImgSrc] = useState(compressedSrc ?? src);
 
   useEffect(() => {
     const img = new Image();
-    img.src = src;
     img.onload = () => {
       setImgSrc(src);
     };
+    img.src = src;
+    return () => {
+      img.onload = null;
+    };
   }, [src]);
 
-  const loadClass =
-    compressedSrc && imgSrc === compressedSrc
-      ? 'image--loading'
-      : 'image--loaded';
+  const isLoading = compressedSrc !== undefined && imgSrc === compressedSrc;
+  const classes = [isLoading ? 'image--loading' : 'image--loaded', className]
+    .filter(Boolean)
+    .join(' ');
 
-  return (
-    <img
-      {...{src: imgSrc, ...props}}
-      alt={alt || ''}
-      className={`${loadClass}`}
-    />
-  );
-};
-
-export default ProgressiveImg;
+  return <img {...imgProps} src={imgSrc} alt={alt} className={classes} />;
+}

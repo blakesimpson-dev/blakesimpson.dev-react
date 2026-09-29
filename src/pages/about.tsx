@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaFilePdf} from 'react-icons/fa';
 import Page from '../components/page';
-import ProgressiveImg from '../components/progressive_img';
+import {ProgressiveImg} from '../components/progressive_img';
 import {ABOUT} from '../content';
 import {Markdown} from '../components/markdown';
 

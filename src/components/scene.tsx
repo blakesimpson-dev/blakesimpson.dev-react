@@ -1,4 +1,5 @@
 import {meshBounds} from '@react-three/drei';
+import type {ThreeEvent} from '@react-three/fiber';
 import {
   BrightnessContrast,
   EffectComposer,
@@ -6,15 +7,35 @@ import {
   Select,
   Selection,
 } from '@react-three/postprocessing';
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {playIntro, useCameraActions} from '../hooks/use_camera_actions';
+import {useEffect, useRef, useState} from 'react';
+import type {PageName, SetPage} from '../constants/pages';
 import {RENDER_QUALITY} from '../constants/render_quality';
+import {SELECTABLE_OBJECTS, STATIC_OBJECTS} from '../constants/scene_objects';
+import type {BakedMaterial} from '../constants/scene_objects';
+import {
+  CAMERA_CROSSFADE,
+  CAMERA_TIME_SCALE,
+  SELECTION_DELAY_INTRO,
+  SELECTION_DELAY_RETURN,
+  toMs,
+} from '../constants/timing';
+import {playIntro, useCameraActions} from '../hooks/use_camera_actions';
 import {useSceneAssets} from '../hooks/use_scene_assets';
-import Fan from './fan';
-import GameboyScreen from './gameboy_screen';
-import Screen from './screen';
+import {Fan} from './fan';
+import {GameboyScreen} from './gameboy_screen';
+import {Screen} from './screen';
 
-const Scene = ({page, setPage, onReady}) => {
+const FAN_SPEED = 8;
+
+interface SceneProps {
+  page: PageName;
+  setPage: SetPage;
+  /** Called once the scene's assets have loaded and it has mounted. */
+  onReady: (isReady: boolean) => void;
+}
+
+/** The desk: baked meshes, camera moves between pages, hover and click. */
+export function Scene({page, setPage, onReady}: SceneProps) {
   const {
     nodes,
     animations,
@@ -23,50 +44,14 @@ const Scene = ({page, setPage, onReady}) => {
     glassMaterial,
   } = useSceneAssets();
   const actions = useCameraActions(animations);
+  const materials: Record<BakedMaterial, typeof bakedRoomMaterial> = {
+    room: bakedRoomMaterial,
+    objects: bakedObjectsMaterial,
+  };
 
-  const [isSelectionEnabled, setSelectionEnabled] = useState(false);
-  const [hovered, setHovered] = useState(null);
+  const [isSelectionEnabled, setIsSelectionEnabled] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
   const previousPage = useRef(page);
-
-  const staticObjects = useMemo(
-    () => [
-      {name: 'Monitor', geometry: nodes.MonitorMesh.geometry},
-      {name: 'Mouse', geometry: nodes.MouseMesh.geometry},
-      {name: 'Plant', geometry: nodes.PlantMesh.geometry},
-      {name: 'PC', geometry: nodes.PCMesh.geometry},
-    ],
-    [nodes],
-  );
-
-  const selectableObjects = useMemo(
-    () => [
-      {
-        name: 'Gameboy',
-        page: 'Music',
-        geometry: nodes.GameboyMesh.geometry,
-        material: bakedObjectsMaterial,
-      },
-      {
-        name: 'Keyboard',
-        page: 'Projects',
-        geometry: nodes.KeyboardMesh.geometry,
-        material: bakedObjectsMaterial,
-      },
-      {
-        name: 'Envelope',
-        page: 'Contact',
-        geometry: nodes.EnvelopeMesh.geometry,
-        material: bakedRoomMaterial,
-      },
-      {
-        name: 'Coffee',
-        page: 'About',
-        geometry: nodes.CoffeeCupMesh.geometry,
-        material: bakedObjectsMaterial,
-      },
-    ],
-    [nodes, bakedObjectsMaterial, bakedRoomMaterial],
-  );
 
   // Assets have loaded once Scene mounts (it suspends until then)
   useEffect(() => {
@@ -76,8 +61,12 @@ const Scene = ({page, setPage, onReady}) => {
   // Intro camera move on first load
   useEffect(() => {
     playIntro(actions.intro);
-    const timer = setTimeout(() => setSelectionEnabled(true), 4200);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => {
+      setIsSelectionEnabled(true);
+    }, toMs(SELECTION_DELAY_INTRO));
+    return () => {
+      clearTimeout(timer);
+    };
   }, [actions]);
 
   // Zoom between the Home view and a page when the page changes
@@ -85,40 +74,67 @@ const Scene = ({page, setPage, onReady}) => {
     const from = previousPage.current;
     previousPage.current = page;
     const {intro} = actions;
-    let timer;
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
     if (from === 'Home' && page !== 'Home') {
       const action = actions.pages[page];
       action.reset();
-      action.timeScale = 2;
+      action.timeScale = CAMERA_TIME_SCALE;
       intro.time = intro.getClip().duration;
-      intro.crossFadeTo(action, 2, false);
+      intro.crossFadeTo(action, CAMERA_CROSSFADE, false);
       action.play();
-      setSelectionEnabled(false);
+      setIsSelectionEnabled(false);
       setHovered(null);
     } else if (from !== 'Home' && page === 'Home') {
       const action = actions.pages[from];
       intro.reset();
       action.time = action.getClip().duration;
       action.paused = false;
-      action.timeScale = -2;
+      action.timeScale = -CAMERA_TIME_SCALE;
       action.play();
-      action.crossFadeTo(intro, 2, false);
-      timer = setTimeout(() => setSelectionEnabled(true), 2000);
+      action.crossFadeTo(intro, CAMERA_CROSSFADE, false);
+      timer = setTimeout(() => {
+        setIsSelectionEnabled(true);
+      }, toMs(SELECTION_DELAY_RETURN));
     }
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [page, actions]);
 
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
   }, [hovered]);
 
+  function handlePointerOver(event: ThreeEvent<PointerEvent>) {
+    event.stopPropagation();
+    if (isSelectionEnabled) {
+      setHovered(event.object.name);
+    }
+  }
+
+  function handlePointerOut(event: ThreeEvent<PointerEvent>) {
+    event.stopPropagation();
+    if (isSelectionEnabled) {
+      setHovered(null);
+    }
+  }
+
+  function handleClick(event: ThreeEvent<MouseEvent>) {
+    const object = SELECTABLE_OBJECTS.find(
+      selectable => selectable.name === event.object.name,
+    );
+    if (isSelectionEnabled && object) {
+      setPage(object.page);
+    }
+  }
+
   return (
     <Selection>
       <group>
         <Screen page={page} />
-        <Fan speed={8} />
+        <Fan speed={FAN_SPEED} />
       </group>
       <group>
         <mesh
@@ -129,34 +145,23 @@ const Scene = ({page, setPage, onReady}) => {
       </group>
       <group
         raycast={meshBounds}
-        onPointerOver={e => {
-          e.stopPropagation();
-          if (isSelectionEnabled) setHovered(e.object.name);
-        }}
-        onPointerOut={e => {
-          e.stopPropagation();
-          if (isSelectionEnabled) setHovered(null);
-        }}
-        onClick={e => {
-          if (isSelectionEnabled && e.object.page) {
-            setPage(e.object.page);
-          }
-        }}
+        onPointerOver={handlePointerOver}
+        onPointerOut={handlePointerOut}
+        onClick={handleClick}
       >
-        {staticObjects.map(object => (
+        {STATIC_OBJECTS.map(object => (
           <mesh
             key={object.name}
-            geometry={object.geometry}
-            material={bakedObjectsMaterial}
+            geometry={nodes[object.node].geometry}
+            material={materials[object.material]}
           />
         ))}
-        {selectableObjects.map(object => (
+        {SELECTABLE_OBJECTS.map(object => (
           <Select key={object.name} enabled={hovered === object.name}>
             <mesh
               name={object.name}
-              page={object.page}
-              geometry={object.geometry}
-              material={object.material}
+              geometry={nodes[object.node].geometry}
+              material={materials[object.material]}
             />
           </Select>
         ))}
@@ -173,8 +178,4 @@ const Scene = ({page, setPage, onReady}) => {
       </EffectComposer>
     </Selection>
   );
-};
-
-Scene.displayName = 'Scene';
-
-export default Scene;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactForm from '../components/contact_form';
+import {ContactForm} from '../components/contact_form';
 import Page from '../components/page';
 import {Markdown} from '../components/markdown';
 import {CONTACT} from '../content';

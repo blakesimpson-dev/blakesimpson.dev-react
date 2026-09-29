@@ -1,8 +1,8 @@
-import React from 'react';
 import {FaEnvelope} from 'react-icons/fa';
 import '../styles/contact_form.scss';
 
-const ContactForm = () => {
+/** Contact form, submitted to Netlify Forms. */
+export function ContactForm() {
   return (
     <form
       name="contact"
@@ -36,6 +36,4 @@ const ContactForm = () => {
       </button>
     </form>
   );
-};
-
-export default ContactForm;
+}

@@ -1,10 +1,10 @@
-import React from 'react';
 import {FaExternalLinkSquareAlt} from 'react-icons/fa';
 import {SITE} from '../content';
 import {Markdown} from './markdown';
 import '../styles/frame.scss';
 
-const Frame = () => {
+/** Fixed page chrome: copyright, instructions and the repository link. */
+export function Frame() {
   return (
     <div className="frame">
       <div className="frame__copyright">{SITE.frame.copyright}</div>
@@ -17,12 +17,10 @@ const Frame = () => {
           <img
             src={SITE.frame.repository.image}
             alt={SITE.frame.repository.label}
-            height="18px"
+            height={18}
           />
         </a>
       </div>
     </div>
   );
-};
-
-export default Frame;
+}

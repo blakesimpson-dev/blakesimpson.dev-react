@@ -3,14 +3,14 @@ import {useThree} from '@react-three/fiber';
 import {useEffect, useMemo} from 'react';
 import {LoopOnce} from 'three';
 import type {AnimationAction, AnimationClip} from 'three';
-import type {OverlayPage} from '../constants/pages';
+import type {OverlayPageName} from '../constants/pages';
 import {CAMERA_TIME_SCALE, INTRO_START} from '../constants/timing';
 
 /** Camera clip that moves from the start pose to the Home view. */
 const INTRO_CLIP = 'CameraActionNLA1';
 
 /** Camera clip that zooms from the Home view to each page. */
-const PAGE_CLIPS: Record<OverlayPage, string> = {
+const PAGE_CLIPS: Record<OverlayPageName, string> = {
   Projects: 'CameraActionNLA2',
   Music: 'CameraActionNLA3',
   About: 'CameraActionNLA4',
@@ -19,7 +19,7 @@ const PAGE_CLIPS: Record<OverlayPage, string> = {
 
 export interface CameraActions {
   intro: AnimationAction;
-  pages: Record<OverlayPage, AnimationAction>;
+  pages: Record<OverlayPageName, AnimationAction>;
 }
 
 function requireAction(

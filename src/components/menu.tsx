@@ -1,23 +1,31 @@
 import {motion, useAnimationControls} from 'framer-motion';
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {MENU_MOTION} from '../constants/motion';
+import {OVERLAY_PAGES} from '../constants/pages';
+import type {PageName, SetPage} from '../constants/pages';
 import {SITE} from '../content';
 import '../styles/menu.scss';
 
-const Menu = ({page, setPage}) => {
+interface MenuProps {
+  page: PageName;
+  setPage: SetPage;
+}
+
+/** Site title and page buttons, shown only on Home. */
+export function Menu({page, setPage}: MenuProps) {
   const controls = useAnimationControls();
   // First reveal waits for the intro camera move; later ones are quicker
   const isFirstReveal = useRef(true);
 
   useEffect(() => {
     if (page !== 'Home') {
-      controls.start('hidden');
+      void controls.start('hidden');
     } else if (isFirstReveal.current) {
-      controls
-        .start('visibleInitial')
-        .then(() => (isFirstReveal.current = false));
+      void controls.start('visibleInitial').then(() => {
+        isFirstReveal.current = false;
+      });
     } else {
-      controls.start('visible');
+      void controls.start('visible');
     }
   }, [page, controls]);
 
@@ -33,15 +41,17 @@ const Menu = ({page, setPage}) => {
         <div>{SITE.menu.subtitle}</div>
       </div>
       <div className="menu__buttons">
-        <button onClick={() => setPage('Music')}>Music</button>
-        <button onClick={() => setPage('Projects')}>Projects</button>
-        <button onClick={() => setPage('About')}>About</button>
-        <button onClick={() => setPage('Contact')}>Contact</button>
+        {OVERLAY_PAGES.map(overlayPage => (
+          <button
+            key={overlayPage}
+            onClick={() => {
+              setPage(overlayPage);
+            }}
+          >
+            {overlayPage}
+          </button>
+        ))}
       </div>
     </motion.div>
   );
-};
-
-Menu.displayName = 'Menu';
-
-export default Menu;
+}
