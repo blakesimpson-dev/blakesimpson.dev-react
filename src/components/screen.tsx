@@ -2,12 +2,12 @@ import {Html} from '@react-three/drei';
 import {useFrame} from '@react-three/fiber';
 import React, {useEffect, useRef, useState} from 'react';
 import {Color, LinearSRGBColorSpace} from 'three';
-import {useSceneAssets} from '../hooks/useSceneAssets';
-import {SCREEN_ITEMS} from '../content/screenItems';
-import {useVideo} from '../hooks/useVideo';
-import '../materials/ScreenMaterial';
+import {useSceneAssets} from '../hooks/use_scene_assets';
+import {SCREEN_ITEMS} from '../content/screen_items';
+import {useVideo} from '../hooks/use_video';
+import '../materials/screen_material';
 import '../styles/screen.scss';
-import Dropdown from './Dropdown';
+import Dropdown from './dropdown';
 
 // Raw (unconverted) value, matching how r141 applied '#AAAAAA'
 const VIDEO_TINT = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace);

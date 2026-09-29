@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm';
-import Page from '../components/Page';
+import ContactForm from '../components/contact_form';
+import Page from '../components/page';
 
 const Contact = ({setPage}) => {
   return (

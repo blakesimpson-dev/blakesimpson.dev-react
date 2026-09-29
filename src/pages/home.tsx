@@ -5,12 +5,12 @@ import React, {Suspense, useState} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import * as THREE from 'three';
 import {MAIN_MOTION} from '../constants/motion';
-import {RENDER_QUALITY} from '../constants/renderQuality';
-import Frame from '../components/Frame';
-import Menu from '../components/Menu';
-import Overlay from '../components/Overlay';
-import Scene from '../components/Scene';
-import Unsupported from '../components/Unsupported';
+import {RENDER_QUALITY} from '../constants/render_quality';
+import Frame from '../components/frame';
+import Menu from '../components/menu';
+import Overlay from '../components/overlay';
+import Scene from '../components/scene';
+import Unsupported from '../components/unsupported';
 import '../styles/main.scss';
 import '../styles/pages.scss';
 

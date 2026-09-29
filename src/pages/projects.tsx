@@ -1,9 +1,9 @@
 import React, {useRef, useState} from 'react';
 import {FaExternalLinkSquareAlt} from 'react-icons/fa';
-import ImgModal from '../components/ImgModal';
-import Page from '../components/Page';
-import ProgressiveImg from '../components/ProgressiveImg';
-import ResponsiveCarousel from '../components/ResponsiveCarousel';
+import ImgModal from '../components/img_modal';
+import Page from '../components/page';
+import ProgressiveImg from '../components/progressive_img';
+import ResponsiveCarousel from '../components/responsive_carousel';
 import {PROJECT_DATA} from '../content/projects';
 
 const Projects = ({setPage}) => {

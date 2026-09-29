@@ -7,12 +7,12 @@ import {
   Selection,
 } from '@react-three/postprocessing';
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {useCameraActions} from '../hooks/useCameraActions';
-import {RENDER_QUALITY} from '../constants/renderQuality';
-import {useSceneAssets} from '../hooks/useSceneAssets';
-import Fan from './Fan';
-import GameboyScreen from './GameboyScreen';
-import Screen from './Screen';
+import {useCameraActions} from '../hooks/use_camera_actions';
+import {RENDER_QUALITY} from '../constants/render_quality';
+import {useSceneAssets} from '../hooks/use_scene_assets';
+import Fan from './fan';
+import GameboyScreen from './gameboy_screen';
+import Screen from './screen';
 
 const INTRO_ACTION = 'CameraActionNLA1';
 

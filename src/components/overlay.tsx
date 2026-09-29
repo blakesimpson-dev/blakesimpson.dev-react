@@ -1,10 +1,10 @@
 import {motion, useAnimationControls} from 'framer-motion';
 import React, {useEffect} from 'react';
 import {OVERLAY_MOTION} from '../constants/motion';
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Music from '../pages/Music';
-import Projects from '../pages/Projects';
+import About from '../pages/about';
+import Contact from '../pages/contact';
+import Music from '../pages/music';
+import Projects from '../pages/projects';
 import '../styles/overlay.scss';
 
 const Overlay = ({page, setPage}) => {

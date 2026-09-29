@@ -1,6 +1,6 @@
 import {useFrame} from '@react-three/fiber';
 import React, {useRef} from 'react';
-import {useSceneAssets} from '../hooks/useSceneAssets';
+import {useSceneAssets} from '../hooks/use_scene_assets';
 
 const Fan = ({speed = 5}) => {
   const fanMesh = useRef();

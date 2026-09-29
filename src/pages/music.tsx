@@ -1,6 +1,6 @@
 import React from 'react';
-import Page from '../components/Page';
-import ResponsiveCarousel from '../components/ResponsiveCarousel';
+import Page from '../components/page';
+import ResponsiveCarousel from '../components/responsive_carousel';
 import {getSoundcloudIFrameSource, SOUNDCLOUD_IFRAMES} from '../content/music';
 
 const Music = ({setPage}) => {
