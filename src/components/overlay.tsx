@@ -2,10 +2,10 @@ import {motion, useAnimationControls} from 'framer-motion';
 import {useEffect} from 'react';
 import {OVERLAY_MOTION} from '../constants/motion';
 import type {PageName, SetPage} from '../constants/pages';
-import About from '../pages/about';
-import Contact from '../pages/contact';
-import Music from '../pages/music';
-import Projects from '../pages/projects';
+import {About} from '../pages/about';
+import {Contact} from '../pages/contact';
+import {Music} from '../pages/music';
+import {Projects} from '../pages/projects';
 import '../styles/overlay.scss';
 
 /** OVERLAY_MOTION variant for each page: Music sits left of the Gameboy. */

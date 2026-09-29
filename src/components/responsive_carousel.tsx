@@ -1,25 +1,34 @@
-import React from 'react';
+import type {CSSProperties, ReactElement} from 'react';
 import {FaCaretLeft, FaCaretRight} from 'react-icons/fa';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const ResponsiveCarousel = ({
-  content,
+const ARROW_STYLES: CSSProperties = {
+  position: 'absolute',
+  zIndex: 2,
+  top: 'calc(50% - 2.25rem)',
+  width: '2rem',
+  height: '2rem',
+  padding: '0',
+  borderRadius: '50%',
+};
+
+interface ResponsiveCarouselProps {
+  children: ReactElement[];
+  autoPlay?: boolean;
+  showStatus?: boolean;
+  showIndicators?: boolean;
+  showThumbs?: boolean;
+}
+
+/** react-responsive-carousel with round arrow buttons and no chrome. */
+export function ResponsiveCarousel({
+  children,
   autoPlay = false,
   showStatus = false,
   showIndicators = false,
   showThumbs = false,
-}) => {
-  const arrowStyles = {
-    position: 'absolute',
-    zIndex: 2,
-    top: 'calc(50% - 2.25rem)',
-    width: '2rem',
-    height: '2rem',
-    padding: '0',
-    borderRadius: '50%',
-  };
-
+}: ResponsiveCarouselProps) {
   return (
     <Carousel
       autoPlay={autoPlay}
@@ -32,7 +41,7 @@ const ResponsiveCarousel = ({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{...arrowStyles, left: 0}}
+            style={{...ARROW_STYLES, left: 0}}
           >
             <FaCaretLeft />
           </button>
@@ -44,18 +53,14 @@ const ResponsiveCarousel = ({
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{...arrowStyles, right: 0}}
+            style={{...ARROW_STYLES, right: 0}}
           >
             <FaCaretRight />
           </button>
         )
       }
     >
-      {content}
+      {children}
     </Carousel>
   );
-};
-
-ResponsiveCarousel.displayName = 'Carousel';
-
-export default ResponsiveCarousel;
+}

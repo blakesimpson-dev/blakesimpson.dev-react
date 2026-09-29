@@ -1,62 +1,56 @@
-import React from 'react';
-import Page from '../components/page';
-import ResponsiveCarousel from '../components/responsive_carousel';
+import {Markdown} from '../components/markdown';
+import {Page} from '../components/page';
+import type {OverlayPageProps} from '../components/page';
+import {ResponsiveCarousel} from '../components/responsive_carousel';
 import {MUSIC} from '../content';
 import type {SoundcloudPlayer, Track} from '../content/types';
-import {Markdown} from '../components/markdown';
 
 const SOUNDCLOUD_PLAYER_URL =
   'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/';
 
-function getSoundcloudSource(track: Track, player: SoundcloudPlayer) {
-  return [
-    `${SOUNDCLOUD_PLAYER_URL}${track.id}`,
-    `&color=${player.color}`,
-    `&auto_play=${track.autoPlay}`,
-    `&hide_related=${player.hideRelated}`,
-    `&show_comments=${player.showComments}`,
-    `&show_user=${player.showUser}`,
-    `&show_reposts=${player.showReposts}`,
-    `&show_teaser=${player.showTeaser}`,
-  ].join('');
+/** SoundCloud embed URL for a track with the shared player options. */
+function getSoundcloudSource(track: Track, player: SoundcloudPlayer): string {
+  const options = {
+    color: player.color,
+    auto_play: track.autoPlay,
+    hide_related: player.hideRelated,
+    show_comments: player.showComments,
+    show_user: player.showUser,
+    show_reposts: player.showReposts,
+    show_teaser: player.showTeaser,
+  };
+  const query = Object.entries(options)
+    .map(([key, value]) => `&${key}=${String(value)}`)
+    .join('');
+  return `${SOUNDCLOUD_PLAYER_URL}${track.id}${query}`;
 }
 
-const Music = ({setPage}) => {
+export function Music({setPage}: OverlayPageProps) {
+  const {blurb, player, tracks} = MUSIC;
+
   return (
-    <Page
-      setPage={setPage}
-      name="Music"
-      content={
-        <div className="music-page">
-          <div className="music-page__blurb">
-            <img className="avatar" src={MUSIC.blurb.avatar} />
-            <div>
-              <h1>{MUSIC.blurb.heading}</h1>
-              <Markdown text={MUSIC.blurb.body} />
-            </div>
+    <Page name="Music" setPage={setPage}>
+      <div className="music-page">
+        <div className="music-page__blurb">
+          <img className="avatar" src={blurb.avatar} alt="" />
+          <div>
+            <h1>{blurb.heading}</h1>
+            <Markdown text={blurb.body} />
           </div>
-          <ResponsiveCarousel
-            content={MUSIC.tracks.map(track => {
-              return (
-                <iframe
-                  key={track.id}
-                  width={MUSIC.player.width}
-                  height={MUSIC.player.height}
-                  scrolling="no"
-                  frameBorder="no"
-                  allow="autoplay"
-                  title={track.title}
-                  src={getSoundcloudSource(track, MUSIC.player)}
-                />
-              );
-            })}
-          />
         </div>
-      }
-    />
+        <ResponsiveCarousel>
+          {tracks.map(track => (
+            <iframe
+              key={track.id}
+              width={player.width}
+              height={player.height}
+              allow="autoplay"
+              title={track.title}
+              src={getSoundcloudSource(track, player)}
+            />
+          ))}
+        </ResponsiveCarousel>
+      </div>
+    </Page>
   );
-};
-
-Music.displayName = 'Music';
-
-export default Music;
+}

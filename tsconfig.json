@@ -14,10 +14,7 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "noEmit": true,
-    // Removed once every source file is converted (Phase 4 checkpoint 4)
-    "allowJs": true,
-    "checkJs": false
+    "noEmit": true
   },
   "include": ["src"]
 }

@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Routes from './routes';
+import {StrictMode} from 'react';
+import {createRoot} from 'react-dom/client';
+import {AppRoutes} from './routes';
 
-const App = () => {
-  return <Routes />;
-};
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error('index.html is missing the #root element');
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+createRoot(rootElement).render(
+  <StrictMode>
+    <AppRoutes />
+  </StrictMode>,
 );

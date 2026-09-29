@@ -140,6 +140,11 @@
 
 .music-page {
   justify-content: center;
+
+  // Replaces the deprecated frameBorder attribute on the SoundCloud embeds
+  iframe {
+    border: none;
+  }
 }
 
 .projects-page {
