@@ -11,20 +11,13 @@ function createVideoElement(): HTMLVideoElement {
 export function useVideo() {
   const [video] = useState(createVideoElement);
 
-  const resetVideo = useCallback(() => {
-    video.pause();
-    video.currentTime = 0;
-  }, [video]);
-
-  const changeVideoSource = useCallback(
+  const loadVideo = useCallback(
     (path: string) => {
       video.src = path;
       video.load();
-      // Muted videos may autoplay
-      void video.play();
     },
     [video],
   );
 
-  return {video, resetVideo, changeVideoSource};
+  return {video, loadVideo};
 }

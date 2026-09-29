@@ -88,6 +88,9 @@ export function Scene({page, setPage, onReady}: SceneProps) {
 
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    return () => {
+      document.body.style.cursor = 'auto';
+    };
   }, [hovered]);
 
   function handlePointerOver(event: ThreeEvent<PointerEvent>) {

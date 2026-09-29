@@ -180,6 +180,7 @@
         max-height: $img-height;
         object-fit: cover;
         pointer-events: all;
+        cursor: pointer;
       }
     }
 
@@ -197,6 +198,7 @@
 
         svg {
           flex-shrink: 0;
+          margin-right: 4px;
         }
       }
     }

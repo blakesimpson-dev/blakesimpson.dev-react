@@ -49,7 +49,6 @@ export function Projects({setPage}: OverlayPageProps) {
                 {project.images.map(image => (
                   <ProgressiveImg
                     key={image.src}
-                    style={{cursor: 'pointer'}}
                     // Every slide mounts at once, so load thumbnails, not full images
                     src={image.thumbSrc}
                     alt={image.alt}
@@ -66,7 +65,7 @@ export function Projects({setPage}: OverlayPageProps) {
               <div className="projects-page__project--links">
                 {project.links.map(link => (
                   <div key={link.href}>
-                    <FaExternalLinkSquareAlt style={{marginRight: '4px'}} />
+                    <FaExternalLinkSquareAlt />
                     <a href={link.href} target="_blank" rel="noreferrer">
                       {link.label}
                     </a>
