@@ -45,6 +45,8 @@ export function Music({setPage}: OverlayPageProps) {
               width={player.width}
               height={player.height}
               allow="autoplay"
+              // Every slide mounts at once; only load players when shown
+              loading="lazy"
               title={track.title}
               src={getSoundcloudSource(track, player)}
             />

@@ -33,6 +33,7 @@ export function Dropdown<Id extends string | number>({
       <button
         type="button"
         className="dropdown-header"
+        aria-expanded={isOpen}
         onClick={() => {
           setIsOpen(!isOpen);
         }}
@@ -41,12 +42,13 @@ export function Dropdown<Id extends string | number>({
         {isOpen ? <FaCaretUp size={20} /> : <FaCaretDown size={20} />}
       </button>
       {isOpen && (
-        <div role="list" className="dropdown-list">
+        <div className="dropdown-list">
           {items.map(item => (
             <button
               type="button"
               className="dropdown-list-item"
               key={item.id}
+              aria-current={item.id === selectedId ? 'true' : undefined}
               onClick={() => {
                 selectItem(item.id);
               }}

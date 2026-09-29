@@ -8,7 +8,7 @@ import {ABOUT, SITE} from '../content';
 import type {Entry, Logo} from '../content/types';
 
 export function About({setPage}: OverlayPageProps) {
-  const {blurb, references, skills} = ABOUT;
+  const {blurb, references, skills, cvLabel} = ABOUT;
 
   return (
     <Page name="About" avatar={blurb.avatar} setPage={setPage}>
@@ -26,7 +26,7 @@ export function About({setPage}: OverlayPageProps) {
                 rel="noreferrer"
               >
                 <FaFileDownload />
-                {ABOUT.cvLabel}
+                {cvLabel}
               </a>
               <div className="about-page__references">
                 {references.map(reference => (

@@ -1,4 +1,4 @@
-import {createElement, Fragment} from 'react';
+import {createElement, Fragment, useMemo} from 'react';
 import type {ReactNode} from 'react';
 import {Lexer} from 'marked';
 import type {MarkedToken, Token} from 'marked';
@@ -11,7 +11,7 @@ interface MarkdownProps {
 
 // marked only tokenises; its HTML output is never used, so no dangerouslySetInnerHTML
 export function Markdown({text, inline = false}: MarkdownProps) {
-  const tokens = new Lexer({breaks: true}).lex(text);
+  const tokens = useMemo(() => new Lexer({breaks: true}).lex(text), [text]);
   const [first] = tokens;
   if (inline && tokens.length === 1 && first?.type === 'paragraph') {
     return renderTokens(first.tokens ?? []);

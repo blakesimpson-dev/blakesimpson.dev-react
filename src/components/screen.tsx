@@ -29,7 +29,7 @@ export function Screen({page, isBackdrop = false}: ScreenProps) {
   const shaderMaterial = useRef<ScreenMaterial>(null);
   const hasBooted = useRef(false);
   const {nodes, bootTexture} = useSceneAssets();
-  const {video, resetVideo, changeVideoSource} = useVideo();
+  const {video, loadVideo} = useVideo();
   const [isScreenOn, setIsScreenOn] = useState(false);
   const [selectedId, setSelectedId] = useState(SCREEN_ITEMS[0].id);
   const screenItem =
@@ -37,10 +37,9 @@ export function Screen({page, isBackdrop = false}: ScreenProps) {
 
   useEffect(() => {
     if (screenItem.url !== undefined) {
-      resetVideo();
-      changeVideoSource(screenItem.url);
+      loadVideo(screenItem.url);
     }
-  }, [screenItem, resetVideo, changeVideoSource]);
+  }, [screenItem.url, loadVideo]);
 
   useEffect(() => {
     if (page !== 'Home') {
@@ -56,6 +55,19 @@ export function Screen({page, isBackdrop = false}: ScreenProps) {
       setIsScreenOn(false);
     };
   }, [page]);
+
+  // Play only while the video is on screen; pause behind pages and on unmount
+  const isVideoShowing = isScreenOn && screenItem.url !== undefined;
+  useEffect(() => {
+    if (!isVideoShowing) {
+      return;
+    }
+    // Muted videos may autoplay
+    void video.play();
+    return () => {
+      video.pause();
+    };
+  }, [isVideoShowing, screenItem.url, video]);
 
   // Only mounted while the shader item is showing
   useFrame(state => {
