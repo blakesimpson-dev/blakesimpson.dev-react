@@ -102,6 +102,122 @@
       ]
     },
     {
+      "id": "thestonecraftsmen",
+      "title": "The Stone Craftsmen",
+      "body": "A rebuild of a Perth stonemason's website on smol-cms, replacing a Vue and Contentful site. The owner edits copy, testimonials and a paginated gallery of their work from their phone, with images served from Cloudinary and local business data for search.",
+      "images": [
+        {
+          "alt": "The Stone Craftsmen home page",
+          "src": "/images/projects/tsc_1.png",
+          "thumbSrc": "/images/projects/thumbs/tsc_1.jpg",
+          "compressedSrc": "/images/projects/compressed/tsc_1.jpg"
+        },
+        {
+          "alt": "The Stone Craftsmen featured work",
+          "src": "/images/projects/tsc_2.png",
+          "thumbSrc": "/images/projects/thumbs/tsc_2.jpg",
+          "compressedSrc": "/images/projects/compressed/tsc_2.jpg"
+        },
+        {
+          "alt": "The Stone Craftsmen contact form",
+          "src": "/images/projects/tsc_3.png",
+          "thumbSrc": "/images/projects/thumbs/tsc_3.jpg",
+          "compressedSrc": "/images/projects/compressed/tsc_3.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "The Stone Craftsmen",
+          "href": "https://thestonecraftsmen.netlify.app/"
+        }
+      ]
+    },
+    {
+      "id": "smol-cms",
+      "title": "smol-cms",
+      "body": "A very small CMS template for small business sites: a server-rendered public site and a password-protected admin where one editor updates content and uploads photos from their phone. Built with Hono, htmx and Netlify Functions, with Cloudinary for images.",
+      "images": [
+        {
+          "alt": "smol-cms on a phone, laptop and tablet",
+          "src": "/images/projects/smolcms_1.png",
+          "thumbSrc": "/images/projects/thumbs/smolcms_1.jpg",
+          "compressedSrc": "/images/projects/compressed/smolcms_1.jpg"
+        },
+        {
+          "alt": "smol-cms template home page",
+          "src": "/images/projects/smolcms_2.png",
+          "thumbSrc": "/images/projects/thumbs/smolcms_2.jpg",
+          "compressedSrc": "/images/projects/compressed/smolcms_2.jpg"
+        },
+        {
+          "alt": "smol-cms admin gallery editor",
+          "src": "/images/projects/smolcms_3.png",
+          "thumbSrc": "/images/projects/thumbs/smolcms_3.jpg",
+          "compressedSrc": "/images/projects/compressed/smolcms_3.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "smol-cms",
+          "href": "https://smol-cms.netlify.app/"
+        },
+        {
+          "label": "smol-cms on Github",
+          "href": "https://github.com/blakesimpson-dev/smol-cms"
+        }
+      ]
+    },
+    {
+      "id": "metal-cpp",
+      "title": "Metal C++ Sample",
+      "body": "A render pipeline sample in C++20 using Apple's Metal API through metal-cpp. It loads a glTF model and renders it with a perspective camera, triple-buffered frames, 4x MSAA, PBR-inspired lighting and procedural bump mapping.",
+      "images": [
+        {
+          "alt": "glTF model rendered with Metal",
+          "src": "/images/projects/metal_1.png",
+          "thumbSrc": "/images/projects/thumbs/metal_1.jpg",
+          "compressedSrc": "/images/projects/compressed/metal_1.jpg"
+        },
+        {
+          "alt": "Minimal Metal triangle scene",
+          "src": "/images/projects/metal_2.png",
+          "thumbSrc": "/images/projects/thumbs/metal_2.jpg",
+          "compressedSrc": "/images/projects/compressed/metal_2.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "Metal C++ Sample on Github",
+          "href": "https://github.com/blakesimpson-dev/metal-cpp-sample"
+        }
+      ]
+    },
+    {
+      "id": "laminas-api",
+      "title": "Laminas API Sample",
+      "body": "A REST backend in PHP 8.5 with Laminas and Doctrine, replicating a slice of the Path of Exile developer API. It covers mocked OAuth scopes, Redis rate limiting, an OpenAPI 3.1 spec kept honest by contract tests, and a Docker Compose stack.",
+      "images": [
+        {
+          "alt": "Laminas API Sample endpoints in Swagger UI",
+          "src": "/images/projects/laminas_1.png",
+          "thumbSrc": "/images/projects/thumbs/laminas_1.jpg",
+          "compressedSrc": "/images/projects/compressed/laminas_1.jpg"
+        },
+        {
+          "alt": "Laminas API Sample item filter list response",
+          "src": "/images/projects/laminas_2.png",
+          "thumbSrc": "/images/projects/thumbs/laminas_2.jpg",
+          "compressedSrc": "/images/projects/compressed/laminas_2.jpg"
+        }
+      ],
+      "links": [
+        {
+          "label": "Laminas API Sample on Github",
+          "href": "https://github.com/blakesimpson-dev/laminas-api-sample"
+        }
+      ]
+    },
+    {
       "id": "portal",
       "title": "Three.js Portal",
       "body": "Portal was a small performance test I created in preparation for creating my digital portfolio. The aim was to investigate methods for texture baking and optimization to allow the experience to run smoothly at high FPS on a range of devices.",
@@ -128,7 +244,7 @@
       "links": [
         {
           "label": "Three.js Portal",
-          "href": "https://polite-tanuki-e48e8b.netlify.app/"
+          "href": "https://bsdev-threejs-portal.netlify.app/"
         },
         {
           "label": "Three.js Portal on Github",
