@@ -1,53 +1,46 @@
-// Project tasks for the npm scripts in package.json. See
-// https://zed.dev/docs/tasks. `npm start` is the same as dev, so it's left out.
 [
-  // Long-running servers: own terminal tab, one instance at a time
   {
     "label": "npm: dev",
     "command": "npm run dev",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
-    "reveal": "always"
+    "reveal": "always",
   },
   {
     "label": "npm: preview",
     "command": "npm run preview",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
-    "reveal": "always"
+    "reveal": "always",
   },
-
-  // One-off commands: save edits first so they see the current files
   {
     "label": "npm: build",
     "command": "npm run build",
-    "save": "all"
+    "save": "all",
   },
   {
     "label": "npm: lint",
     "command": "npm run lint",
-    "save": "all"
+    "save": "all",
   },
   {
     "label": "npm: typecheck",
     "command": "npm run typecheck",
-    "save": "all"
+    "save": "all",
   },
   {
     "label": "npm: format",
     "command": "npm run format",
-    "save": "all"
+    "save": "all",
   },
   {
     "label": "npm: format:check",
     "command": "npm run format:check",
-    "save": "all"
+    "save": "all",
   },
-
-  // Everything CI would care about, stopping at the first failure
   {
     "label": "npm: check all",
     "command": "npm run lint && npm run typecheck && npm run format:check && npm run build",
-    "save": "all"
-  }
+    "save": "all",
+  },
 ]
