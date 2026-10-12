@@ -8,7 +8,7 @@ export interface OverlayPageProps {
 
 interface PageProps extends OverlayPageProps {
   name: string;
-  avatar?: string;
+  avatar?: string | undefined;
   children: ReactNode;
 }
 

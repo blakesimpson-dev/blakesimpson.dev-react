@@ -4,7 +4,7 @@ import type {ImgHTMLAttributes} from 'react';
 interface ProgressiveImgProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  compressedSrc?: string;
+  compressedSrc?: string | undefined;
 }
 
 export function ProgressiveImg({
