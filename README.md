@@ -52,18 +52,19 @@ backdrop: smaller textures, no post-processing, 30 fps, paused behind pages.
 
 Requires Node 22 (see `.nvmrc`).
 
-| Script                    | Purpose                                                |
-| ------------------------- | ------------------------------------------------------ |
-| `dev` / `start`           | Vite dev server                                        |
-| `build`                   | Production build into `build/`                         |
-| `preview`                 | Serve the production build locally                     |
-| `typecheck`               | `tsc --noEmit`                                         |
-| `lint`                    | ESLint: Google TypeScript Style, React, hooks          |
-| `format` / `format:check` | Prettier (gts config) write / check                    |
+| Script                    | Purpose                                       |
+| ------------------------- | --------------------------------------------- |
+| `dev`                     | Vite dev server                               |
+| `build`                   | Production build into `build/`                |
+| `preview`                 | Serve the production build locally            |
+| `typecheck`               | `tsc --noEmit`                                |
+| `lint`                    | ESLint: Google TypeScript Style, React, hooks |
+| `format` / `format:check` | Prettier (gts config) write / check           |
+| `check`                   | All of the above, except dev and preview      |
 
 The code follows the
 [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html);
-the rules ESLint can check are in `eslint.config.js`.
+the rules ESLint can check are in `eslint.gts.js`.
 
 ## Credits
 
@@ -75,8 +76,8 @@ Built with [three.js](https://threejs.org) and pmndrs'
 [drei](https://github.com/pmndrs/drei) and
 [postprocessing](https://github.com/pmndrs/postprocessing). The baking workflow
 comes from [Three.js Journey](https://threejs-journey.com) by Bruno Simon. The
-monitor shader is based on
-["Pretty Hip"](https://www.shadertoy.com/view/XsBfRW) on Shadertoy.
+monitor shader is based on ["Pretty Hip"](https://www.shadertoy.com/view/XsBfRW)
+on Shadertoy.
 
 ## Contact
 

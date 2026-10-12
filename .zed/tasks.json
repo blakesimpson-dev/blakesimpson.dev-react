@@ -4,43 +4,43 @@
     "command": "npm run dev",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
-    "reveal": "always",
+    "reveal": "always"
   },
   {
     "label": "npm: preview",
     "command": "npm run preview",
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
-    "reveal": "always",
+    "reveal": "always"
   },
   {
     "label": "npm: build",
     "command": "npm run build",
-    "save": "all",
+    "save": "all"
   },
   {
     "label": "npm: lint",
     "command": "npm run lint",
-    "save": "all",
+    "save": "all"
   },
   {
     "label": "npm: typecheck",
     "command": "npm run typecheck",
-    "save": "all",
+    "save": "all"
   },
   {
     "label": "npm: format",
     "command": "npm run format",
-    "save": "all",
+    "save": "all"
   },
   {
     "label": "npm: format:check",
     "command": "npm run format:check",
-    "save": "all",
+    "save": "all"
   },
   {
     "label": "npm: check all",
-    "command": "npm run lint && npm run typecheck && npm run format:check && npm run build",
-    "save": "all",
-  },
+    "command": "npm run check",
+    "save": "all"
+  }
 ]
