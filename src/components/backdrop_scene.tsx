@@ -8,7 +8,9 @@ import {useSceneAssets} from '../hooks/use_scene_assets';
 import {Fan} from './fan';
 import {Screen} from './screen';
 
-// View bounds as tangents from the camera's centre line at the Home pose, measured by eye
+/**
+ * View bounds as tangents from the camera's centre line at the Home pose, measured by eye
+ */
 const FRAMING = {
   left: -0.25,
   right: 0.225,
@@ -63,7 +65,9 @@ interface ViewWindow {
   centerX: number;
 }
 
-// Frames the desk with a view offset, so the camera clips (translation/rotation only) are untouched
+/**
+ * Frames the desk with a view offset, so the camera clips (translation/rotation only) are untouched
+ */
 function useBackdropFraming() {
   const camera = useThree(state => state.camera);
   const aspect = useThree(state => state.size.width / state.size.height);

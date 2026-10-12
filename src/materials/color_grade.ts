@@ -2,7 +2,9 @@ import type {Material} from 'three';
 
 export const COLOR_GRADE = {brightness: 0.1, contrast: 0.15};
 
-// postprocessing's BrightnessContrast grades sRGB input, so this runs after the material's linear -> sRGB conversion
+/**
+ * postprocessing's BrightnessContrast grades sRGB input, so this runs after the material's linear -> sRGB conversion
+ */
 export function applyColorGrade(material: Material): void {
   const {brightness, contrast} = COLOR_GRADE;
   const grade = [

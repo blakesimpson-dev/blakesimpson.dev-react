@@ -87,7 +87,7 @@ export interface MusicContent {
   tracks: Track[];
 }
 
-// A video when url is set, otherwise the shader
+/** A video when url is set, otherwise the shader */
 export interface ScreenItem {
   id: number;
   name: string;

@@ -1,8 +1,8 @@
 // Seconds. The UI waits for camera moves, so these depend on each other
 
-// The clips are authored at half speed
+/** The clips are authored at half speed */
 export const CAMERA_TIME_SCALE = 2;
-// Mixer time the intro starts at
+/** Mixer time the intro starts at */
 export const INTRO_START = 2.5;
 export const CAMERA_CROSSFADE = 2;
 

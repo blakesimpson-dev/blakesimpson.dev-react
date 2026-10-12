@@ -11,7 +11,7 @@ import type {IUniform} from 'three';
 import screenFragmentShader from '../shaders/screen_fragment.glsl?raw';
 import screenVertexShader from '../shaders/screen_vertex.glsl?raw';
 
-// Unconverted, as r141 passed it to the shader
+/** Unconverted, as r141 passed it to the shader */
 const SCREEN_MIX_COLOR = new Color().setHex(0x85c7e6, LinearSRGBColorSpace);
 
 interface ScreenUniforms {

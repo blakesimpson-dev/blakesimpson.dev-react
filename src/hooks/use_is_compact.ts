@@ -1,10 +1,10 @@
 import {useMediaQuery} from 'react-responsive';
 import {VIEWPORT_OVERRIDE} from '../constants/render_quality';
 
-// Touch screens too: hover-to-select needs a mouse
+/** Touch screens too: hover-to-select needs a mouse */
 const COMPACT_QUERY = '(max-width: 1279px), (pointer: coarse)';
 
-// Matches the max-height breakpoint in the SCSS
+/** Matches the max-height breakpoint in the SCSS */
 const SHORT_QUERY = '(max-height: 500px)';
 
 export function useIsCompact(): boolean {

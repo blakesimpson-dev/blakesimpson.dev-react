@@ -11,8 +11,10 @@ const BAKED_PATHS = {
   bakedRoom: '/textures/baked_room.jpg',
   bakedObjects: '/textures/baked_objects.jpg',
 };
-// A 4096² JPG takes ~85 MB of GPU memory with mipmaps (iOS Safari may reload
-// the page); these 2048² KTX2 files stay compressed on the GPU, ~3 MB each
+/**
+ * A 4096² JPG takes ~85 MB of GPU memory with mipmaps (iOS Safari may reload
+ * the page); these 2048² KTX2 files stay compressed on the GPU, ~3 MB each
+ */
 const COMPACT_BAKED_PATHS = {
   bakedRoom: '/textures/2048/baked_room.ktx2',
   bakedObjects: '/textures/2048/baked_objects.ktx2',
@@ -50,7 +52,9 @@ function getMeshes(nodes: Record<string, Object3D>): Record<MeshName, Mesh> {
   return Object.fromEntries(entries) as Record<MeshName, Mesh>;
 }
 
-// Shared textures (useTexture caches by path): configure once, before drei uploads them; another needsUpdate would re-upload
+/**
+ * Shared textures (useTexture caches by path): configure once, before drei uploads them; another needsUpdate would re-upload
+ */
 const configuredTextures = new WeakSet<Texture>();
 
 function configureTexture(texture: Texture, flipY: boolean): void {

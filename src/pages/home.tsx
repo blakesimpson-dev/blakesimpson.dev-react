@@ -18,14 +18,14 @@ import {useIsCompact} from '../hooks/use_is_compact';
 import '../styles/main.scss';
 import '../styles/pages.scss';
 
-// Separate chunk, so compact never downloads the desktop scene
+/** Separate chunk, so compact never downloads the desktop scene */
 const Scene = lazy(async () => {
   const module = await import('../components/scene');
   return {default: module.Scene};
 });
 
 const CLEAR_COLOR = '#FFFFFF';
-// The room has no ceiling; wide views show the space above the walls
+/** The room has no ceiling; wide views show the space above the walls */
 const CLEAR_COLOR_COMPACT = '#1f2523';
 
 function setClearColor(state: RootState) {

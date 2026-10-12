@@ -31,7 +31,7 @@ function requireAction(
   return action;
 }
 
-// Call once: each call adds its own AnimationMixer to the camera
+/** Call once: each call adds its own AnimationMixer to the camera */
 export function useCameraActions(animations: AnimationClip[]): CameraActions {
   const camera = useThree(state => state.camera);
   const {actions} = useAnimations(animations, camera);

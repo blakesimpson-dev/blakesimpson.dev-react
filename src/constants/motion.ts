@@ -14,7 +14,7 @@ const SPRING_DEFAULT: Transition = {
   stiffness: 100,
 };
 
-// ~1.7x faster than SPRING_DEFAULT with the same damping ratio
+/** ~1.7x faster than SPRING_DEFAULT with the same damping ratio */
 const SPRING_FAST: Transition = {
   type: 'spring',
   damping: 17,

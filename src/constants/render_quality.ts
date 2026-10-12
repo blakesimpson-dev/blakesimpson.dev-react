@@ -1,4 +1,4 @@
-// Query-string overrides for testing, e.g. /?stats&dpr=2&msaa=8&compact
+/** Query-string overrides for testing, e.g. /?stats&dpr=2&msaa=8&compact */
 const params = new URLSearchParams(window.location.search);
 
 function numberParam(key: string, fallback: number): number {

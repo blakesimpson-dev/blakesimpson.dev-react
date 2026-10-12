@@ -5,11 +5,13 @@ import type {MarkedToken, Token} from 'marked';
 
 interface MarkdownProps {
   text: string;
-  // Render one paragraph's contents without the <p>
+  /** Render one paragraph's contents without the <p> */
   inline?: boolean;
 }
 
-// marked only tokenises; its HTML output is never used, so no dangerouslySetInnerHTML
+/**
+ * marked only tokenises; its HTML output is never used, so no dangerouslySetInnerHTML
+ */
 export function Markdown({text, inline = false}: MarkdownProps) {
   const tokens = useMemo(() => new Lexer({breaks: true}).lex(text), [text]);
   const [first] = tokens;
@@ -66,7 +68,9 @@ function renderToken(token: MarkedToken): ReactNode {
   }
 }
 
-// Soft line breaks can stay inside text tokens; content newlines are always breaks
+/**
+ * Soft line breaks can stay inside text tokens; content newlines are always breaks
+ */
 function withLineBreaks(text: string): ReactNode {
   const lines = text.split('\n');
   return lines.map((line, index) => (

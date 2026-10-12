@@ -17,7 +17,7 @@ import '../styles/screen.scss';
 import {Dropdown} from './dropdown';
 import {Markdown} from './markdown';
 
-// Unconverted, as r141 applied '#AAAAAA'
+/** Unconverted, as r141 applied '#AAAAAA' */
 const VIDEO_TINT = new Color().setHex(0xaaaaaa, LinearSRGBColorSpace);
 
 interface ScreenProps {
