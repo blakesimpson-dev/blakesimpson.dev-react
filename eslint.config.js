@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import prettier from 'eslint-config-prettier/flat';
-import checkFile from 'eslint-plugin-check-file';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
@@ -10,6 +9,33 @@ import {defineConfig} from 'eslint/config';
 import {GOOGLE_TS_PLUGINS, GOOGLE_TS_RULES} from './eslint.gts.js';
 
 const TS_FILES = ['**/*.{ts,tsx}'];
+
+// TODO(Blake): Stands in for eslint-plugin-check-file's
+// filename-naming-convention, dropped because it depends on micromatch ->
+// braces, which has an unpatched high-severity advisory
+// (GHSA-vfj7-8cjw-p6xm). Switch back once braces ships a fix.
+const SNAKE_CASE = /^[a-z][a-z0-9]*(_[a-z0-9]+)*$/;
+const fileNaming = {
+  rules: {
+    'snake-case': {
+      meta: {type: 'suggestion'},
+      create(context) {
+        return {
+          Program(node) {
+            // Ignores middle extensions: `foo_bar.test.ts` checks `foo_bar`
+            const name = context.filename.split(/[\\/]/).pop().split('.')[0];
+            if (!SNAKE_CASE.test(name)) {
+              context.report({
+                node,
+                message: `Filename '${name}' must be snake_case.`,
+              });
+            }
+          },
+        };
+      },
+    },
+  },
+};
 
 export default defineConfig([
   {ignores: ['build/']},
@@ -59,14 +85,14 @@ export default defineConfig([
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    plugins: {...GOOGLE_TS_PLUGINS, 'check-file': checkFile},
+    plugins: GOOGLE_TS_PLUGINS,
+    rules: GOOGLE_TS_RULES,
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    plugins: {'file-naming': fileNaming},
     rules: {
-      ...GOOGLE_TS_RULES,
-      'check-file/filename-naming-convention': [
-        'error',
-        {'src/**/*.{ts,tsx}': 'SNAKE_CASE'},
-        {ignoreMiddleExtensions: true},
-      ],
+      'file-naming/snake-case': 'error',
     },
   },
   {
